@@ -1,4 +1,4 @@
-﻿using UI;
+﻿using Game.Characters.Spawners;
 using UnityEngine;
 
 namespace Game
@@ -6,14 +6,15 @@ namespace Game
     public class LevelEntryPoint: MonoBehaviour
     {
         [SerializeField]
-        HealthViewsDrawer hpViewsDrawer;
-            
-        [SerializeField]
-        Gates gates;
+        CharactersSpawner charactersSpawner;
 
-        public void Init()
+        [SerializeField]
+        WavesManager wavesManager;
+        
+        public void Start()
         {
-            
+            charactersSpawner.Init();
+            wavesManager.LaunchWaves();
         }
     }
 }

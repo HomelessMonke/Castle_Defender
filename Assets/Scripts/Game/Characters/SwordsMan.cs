@@ -1,37 +1,43 @@
-﻿using System;
-using Game.Characters.Attacks;
-using Game.Characters.Movements;
-using Game.Characters.States;
+﻿using Game.Characters.States;
+using UI;
 using UnityEngine;
 using UnityEngine.AI;
+using IState = Game.Characters.States.IState;
 
 namespace Game.Characters
 {
-    public class SwordsMan : MonoBehaviour, ICharacter
+
+    public class SwordsMan : Character
     {
         [SerializeField]
         NavMeshAgent agent;
+
+        [SerializeField]
+        CharacterFieldOfView fieldOfView;
         
-        IAttack attack;
-        IMovement movement;
+        [SerializeField]
+        HealthView healthView;
+        
+        CharacterMoveState moveState;
         
         IState currentState;
-
-        public IState State => currentState;
         
-        // void Init()
-        void Awake()
-        {           
-            // currentState = new MoveState(new WalkMovement(aget));
-            movement = new WalkMovement(agent);
+        public void Init(Transform mainTarget, CharacterParameters parameters)
+        {
+            health.Init(parameters.Hp);
+            health.DamageTaken += ()=> healthView.Draw(health);
+            health.Died += ()=> healthView.SetActive(false);
+            
+            currentState = moveState = new CharacterMoveState(agent);
+            moveState.SetTarget(mainTarget);
+            moveState.Enter();
         }
 
         void Update()
         {
-            if (Input.GetMouseButtonDown(0))
+            if (currentState != null)
             {
-                var target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-                movement.MoveToTarget(new Vector3(target.x, target.y, transform.position.z));
+                currentState.Update();
             }
         }
     }
