@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Utilities.Extensions;
 using Object = UnityEngine.Object;
+
 namespace Game.Characters.Spawners
 {
     [Serializable]
@@ -17,8 +18,10 @@ namespace Game.Characters.Spawners
         [SerializeField]
         int initialCount;
         
-        Queue<T> queue = new Queue<T>();
+        int counter = 0;
         
+        Queue<T> queue = new Queue<T>();
+            
         public void Init()
         {
             root.DestroyChildren();
@@ -34,16 +37,11 @@ namespace Game.Characters.Spawners
         public T Spawn(bool setActive)
         {
             T obj;
+            counter++;
             
-            if(queue.Count > 0)
-            {
-                obj = queue.Dequeue();
-                obj.gameObject.SetActive(true);
-                return obj;
-            }
-
-            obj = Object.Instantiate(prefab, root);
+            obj = queue.Count > 0 ? queue.Dequeue() : Object.Instantiate(prefab, root);
             obj.gameObject.SetActive(setActive);
+            obj.name = $"{prefab.name}_{counter}";
             return obj;
         }
 

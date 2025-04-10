@@ -4,13 +4,14 @@ using Game.Characters.Spawners;
 using Game.Waves;
 using UI;
 using UnityEngine;
+using Utilities.Attributes;
 
 namespace Game
 {
     public class WavesManager: MonoBehaviour
     {
         [SerializeField]
-        CharactersSpawner charactersSpawner;
+        CharactersSpawnerManager charactersSpawner;
         
         [SerializeField]
         WavesList wavesList;
@@ -41,6 +42,12 @@ namespace Game
         {
             yield return new WaitForSeconds(squadInfo.SpawnDelay);
             charactersSpawner.Spawn(squadInfo);
+        }
+        
+        [Button]
+        public void SpawnFirstWave()
+        {
+            StartCoroutine(SpawnWave(wavesList.Waves[0]));
         }
     }
 }

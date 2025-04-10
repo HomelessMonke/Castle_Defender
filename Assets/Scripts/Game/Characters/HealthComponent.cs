@@ -10,12 +10,13 @@ namespace Game.Characters
         public int MaxHealth { get; private set; }
         
         public float Percentage => (float)CurrentHealth / MaxHealth;
+        public bool IsAlive => CurrentHealth > 0;
         
         public event UnityAction DamageTaken, Healed, Died;
 
         public void Init(int maxHealth)
         {
-            ResetActions();
+            ResetEvents();
             MaxHealth = maxHealth;
             CurrentHealth = maxHealth;
         }
@@ -49,7 +50,7 @@ namespace Game.Characters
             Healed?.Invoke();
         }
         
-        void ResetActions()
+        void ResetEvents()
         {
             DamageTaken = null;
             Healed = null;

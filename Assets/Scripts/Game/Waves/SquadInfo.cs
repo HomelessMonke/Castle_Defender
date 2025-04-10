@@ -15,6 +15,9 @@ namespace Game.Waves
         CharacterParameters parameters;
 
         [SerializeField]
+        int maxUnitsInRow = 1;
+        
+        [SerializeField]
         int count;
 
         [SerializeField]
@@ -24,5 +27,6 @@ namespace Game.Waves
         public CharacterParameters Parameters => parameters;
         public float SpawnDelay => spawnDelay;
         public int Count => count;
+        public int MaxUnitsInRow => maxUnitsInRow;
     }
 }

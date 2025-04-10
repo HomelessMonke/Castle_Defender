@@ -16,10 +16,7 @@ MonoBehaviour:
   - squads:
     - type: 0
       parameters: {fileID: 11400000, guid: ff620081349b9254cafba120ece91e31, type: 2}
-      count: 5
+      maxUnitsInRow: 6
+      count: 12
       spawnDelay: 0
-    - type: 0
-      parameters: {fileID: 11400000, guid: ff620081349b9254cafba120ece91e31, type: 2}
-      count: 5
-      spawnDelay: 15
     nextWaveDelay: 15

@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073f96ac4c604a4cb57e6b6dfba71592, type: 3}
   m_Name: SwordsMan(E)
   m_EditorClassIdentifier: 
-  type: 0
   hp: 20
   attackPoints: 5
-  moveSpeed: 8
+  moveSpeed: 1
+  attackDistance: 0.5
+  attackCD: 2

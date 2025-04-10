@@ -1,5 +1,21 @@
 {
   "dependencies": {
+    "com.coffee.ui-effect": {
+      "version": "https://github.com/mob-sakai/UIEffect.git?path=Packages/src",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {
+        "com.unity.ugui": "1.0.0"
+      },
+      "hash": "2a900987f5e5903f6991dd279c5c9c95d364cce3"
+    },
+    "com.elringus.spriteglow": {
+      "version": "https://github.com/elringus/sprite-glow.git#package",
+      "depth": 0,
+      "source": "git",
+      "dependencies": {},
+      "hash": "05442994ffb7f6c679f648d702cdf888bd8c01dc"
+    },
     "com.h8man.2d.navmeshplus": {
       "version": "https://github.com/h8man/NavMeshPlus.git",
       "depth": 0,

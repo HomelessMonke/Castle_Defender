@@ -1,3 +1,4 @@
+using UI;
 using UnityEngine;
 
 namespace Game.Characters
@@ -5,11 +6,16 @@ namespace Game.Characters
     public class Gates : MonoBehaviour
     {
         [SerializeField]
-        HealthComponent healthComponent;
+        HealthComponent health;
+
+        [SerializeField]
+        HealthView hpView;
         
-        void Init(int maxHealth)
+        public void Init(int maxHealth)
         {
-            healthComponent.Init(maxHealth);
+            health.Init(maxHealth);
+            health.DamageTaken += ()=> hpView.Draw(health);
+            health.Died += ()=> hpView.SetActive(false);
         }
     }
 }
