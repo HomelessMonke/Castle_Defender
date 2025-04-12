@@ -23,6 +23,9 @@ namespace Game.Characters
         [SerializeField]
         protected HealthComponent health;
         
+        [SerializeField]
+        DamageFlash damageFlash;
+        
         Transform mainTarget;
         CharacterParameters parameters;
         
@@ -48,7 +51,7 @@ namespace Game.Characters
             Died = null;
             
             health.Init(parameters.Hp);
-            health.DamageTaken += ()=> healthView.Draw(health);
+            health.DamageTaken += OnGetDamage;
             health.Died += OnDeath;
             healthView.SetActive(false);
 
@@ -57,6 +60,12 @@ namespace Game.Characters
             moveState = new MoveState(this);
             attackState = new AttackState(this);
             SetMoveState(mainTarget);
+        }
+
+        void OnGetDamage()
+        {
+            healthView.Draw(health);
+            damageFlash.Flash();
         }
 
         void Update()

@@ -102,9 +102,6 @@ namespace Game.Characters
                     }
                 }
             }
-
-            if (!currentTarget && isTargetChanged)
-                ;
             
             if(isTargetChanged)
                 TargetChanged?.Invoke(currentTarget);

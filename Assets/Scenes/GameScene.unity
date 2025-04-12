@@ -2259,7 +2259,7 @@ MonoBehaviour:
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
   m_Interactable: 1
-  m_TargetGraphic: {fileID: 962732794}
+  m_TargetGraphic: {fileID: 0}
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
@@ -2449,10 +2449,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2547722841168635541, guid: 2af2064cb378a314180283d3aa2fe233, type: 3}
-      propertyPath: updateFrameRate
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4483097558059183312, guid: 2af2064cb378a314180283d3aa2fe233, type: 3}
       propertyPath: m_Name
       value: SwordsMan(E)
@@ -2518,10 +2514,6 @@ PrefabInstance:
     - target: {fileID: 2334795779472546635, guid: f0923a2c763b9e14bb9d2fb2abb371ca, type: 3}
       propertyPath: m_Name
       value: SwordsMan(A)
-      objectReference: {fileID: 0}
-    - target: {fileID: 3711412251249260469, guid: f0923a2c763b9e14bb9d2fb2abb371ca, type: 3}
-      propertyPath: updateFrameRate
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

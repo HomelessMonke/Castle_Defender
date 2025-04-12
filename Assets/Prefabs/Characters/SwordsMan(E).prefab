@@ -49,7 +49,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   collider2D: {fileID: 1758191717563920645}
-  updateFrameRate: 2
+  updateFrameRate: 1
   character: {fileID: 2397049951394010970}
 --- !u!61 &1758191717563920645
 BoxCollider2D:
@@ -113,6 +113,7 @@ GameObject:
   - component: {fileID: 8422952420421492035}
   - component: {fileID: 1945095116540582767}
   - component: {fileID: 2316410166846690132}
+  - component: {fileID: 1124184918502720701}
   m_Layer: 8
   m_Name: SwordsMan(E)
   m_TagString: Untagged
@@ -160,7 +161,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 4294967295
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 7c3a8af727f69a8469ab5f9e8ce28c5e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -181,9 +182,9 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: dcea51d6065d64246aeec467afeff684, type: 3}
-  m_Color: {r: 0.8584906, g: 0.15170409, b: 0, a: 1}
-  m_FlipX: 0
+  m_Sprite: {fileID: 4723107735738678597, guid: c1cdd26cc09ad224884556bc4d8296ae, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 1
   m_FlipY: 0
   m_DrawMode: 0
   m_Size: {x: 1, y: 1}
@@ -239,10 +240,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfView: {fileID: 2547722841168635541}
-  collider2D: {fileID: 2316410166846690132}
   agent: {fileID: 1610290838426017790}
   healthView: {fileID: 836918250081237646}
   health: {fileID: 8422952420421492035}
+  damageFlash: {fileID: 1124184918502720701}
 --- !u!114 &8422952420421492035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -319,6 +320,55 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.2, y: 0.38}
   m_Direction: 0
+--- !u!114 &1124184918502720701
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4483097558059183312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17c60f77b6814729bee205397c337c6b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  duration: 0.5
+  flashColor: {r: 1, g: 1, b: 1, a: 1}
+  animationCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: -0.115438744
+      outSlope: -0.115438744
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.34676918
+    - serializedVersion: 3
+      time: 0.50269383
+      value: 0.56401986
+      inSlope: -2.7294192
+      outSlope: -2.28477
+      tangentMode: 1
+      weightedMode: 0
+      inWeight: 0.16855545
+      outWeight: 0.08467011
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: -0.3415606
+      outSlope: -0.3415606
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.15793613
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spriteRenderers:
+  - {fileID: 2835858933996546555}
 --- !u!1001 &7099463736067129181
 PrefabInstance:
   m_ObjectHideFlags: 0
