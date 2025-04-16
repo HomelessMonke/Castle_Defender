@@ -8,8 +8,11 @@ namespace Game.Characters
     {
         protected IState currentState;
         
-        protected void ChangeState(IState newState)
+        protected void SetState(IState newState)
         {
+            if (newState.Equals(currentState))
+                return;
+            
             currentState?.Exit();
             newState.Enter();
             currentState = newState;

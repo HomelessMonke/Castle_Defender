@@ -1,9 +1,11 @@
 ﻿using System;
+using Game.Characters.Attacks;
 using Game.Characters.States;
 using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
+using Utilities.Attributes;
 
 namespace Game.Characters
 {
@@ -38,9 +40,9 @@ namespace Game.Characters
         void Awake()
         {
             moveState = new MoveState(agent);
-            attackState = new AttackState(fieldOfView);
-            moveState.ArrivedToTarget += SetAttackState;
-            attackState.LoseTargetToAttack += ()=> SetMoveState();
+            attackState = new AttackState(new MeleeAttack());
+            moveState.ArrivedToTarget += OnArrivedToTarget;
+            attackState.LoseTargetToAttack += OnLoseTargetToAttack;
             fieldOfView.TargetChanged += OnTargetChanged;
         }
 
@@ -75,9 +77,16 @@ namespace Game.Characters
             Debug.DrawLine(transform.position, agent.destination, pathLineColor);
         }
 
-        public void SetAttackState()
+        bool TrySetAttackState(Transform target)
         {
-            ChangeState(attackState);
+            var targetHP = target.GetComponent<HealthComponent>();
+            if (targetHP && targetHP.IsAlive)
+            {
+                attackState.SetTarget(targetHP);
+                SetState(attackState);
+                return true;
+            }
+            return false;
         }
 
         void SetMoveState(Transform target = null)
@@ -85,23 +94,40 @@ namespace Game.Characters
             var newTarget = target? target : mainTarget;
             var isStatic = newTarget.gameObject.isStatic;
             moveState.SetTarget(newTarget, isStatic);
-            ChangeState(moveState);
+            SetState(moveState);
         }
 
-        void OnTargetChanged(Transform targetTransform)
+        void OnTargetChanged(Transform target)
         {
-            if (targetTransform && targetTransform.gameObject.activeSelf)
+            if (target && target.gameObject.activeSelf)
             {
-                var targetDistance = Vector2.Distance(transform.position, targetTransform.position);
+                var targetDistance = Vector2.Distance(transform.position, target.position);
                 if (targetDistance > agent.stoppingDistance)
                 {
-                    SetMoveState(targetTransform);
+                    SetMoveState(target);
+                    return;
+                }
+
+                if (TrySetAttackState(target))
+                {
+                    return;
                 }
             }
-            else
+            
+            SetMoveState();
+        }
+
+        void OnArrivedToTarget(Transform target)
+        {
+            if(!TrySetAttackState(target))
             {
                 SetMoveState();
             }
+        }
+        
+        void OnLoseTargetToAttack()
+        {
+            OnTargetChanged(fieldOfView.CurrentTarget);
         }
         
         void OnDeath()
@@ -110,6 +136,12 @@ namespace Game.Characters
             currentState = null;
             Died?.Invoke();
             Died = null;
+        }
+
+        [Button]
+        void SetOneHP()
+        {
+            health.GetDamage(health.MaxHealth-1);
         }
     }
 }

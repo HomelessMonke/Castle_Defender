@@ -1,10 +1,24 @@
-﻿namespace Game.Characters.Attacks
+﻿using System;
+
+namespace Game.Characters.Attacks
 {
     public class RangedAttack: IAttack
     {
-        public void Attack()
+        int attackPoints;
+        public event Action AttackCompleted;
+        
+        public void Init(int attackPoints)
         {
-            throw new System.NotImplementedException();
+            this.attackPoints = attackPoints;
+        }
+        
+        public void Attack(HealthComponent targetHP)
+        {
+            /*
+             * создаём стрелу
+             * вызываём полёт
+             * подписываем что должно произойти когда стрела долетит
+             */
         }
     }
 }

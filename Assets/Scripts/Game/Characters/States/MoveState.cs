@@ -13,7 +13,7 @@ namespace Game.Characters.States
         
         bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
         
-        public event UnityAction ArrivedToTarget;
+        public event UnityAction<Transform> ArrivedToTarget;
         
         public MoveState(NavMeshAgent agent)
         {
@@ -46,7 +46,7 @@ namespace Game.Characters.States
             
             if (IsArrivedToTarget)
             {
-                ArrivedToTarget?.Invoke();
+                ArrivedToTarget?.Invoke(target);
             }
         }
         

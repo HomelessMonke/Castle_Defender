@@ -1,14 +1,15 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.Serialization;
 
 namespace Game.Characters
 {
     public class HealthComponent: MonoBehaviour
     {
+        public int MaxHealth { get; private set; } 
         int currentHealth;
-        int maxHealth;
         
-        public float Percentage => (float)currentHealth / maxHealth;
+        public float Percentage => (float)currentHealth / MaxHealth;
         public bool IsAlive => currentHealth > 0;
         
         public event UnityAction DamageTaken, Healed, Died;
@@ -16,7 +17,7 @@ namespace Game.Characters
         public void Init(int maxHealth)
         {
             ResetEvents();
-            this.maxHealth = maxHealth;
+            MaxHealth = maxHealth;
             currentHealth = maxHealth;
         }
 

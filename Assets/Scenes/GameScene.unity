@@ -245,7 +245,7 @@ GameObject:
   - component: {fileID: 38424956}
   - component: {fileID: 38424957}
   m_Layer: 6
-  m_Name: GatesObj
+  m_Name: GatesObj (DEFEND)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,7 +395,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_OverrideArea: 1
-  m_Area: 0
+  m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
 --- !u!114 &38424956
@@ -1373,7 +1373,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1722922279}
-  - {fileID: 1433721840}
   m_Father: {fileID: 1131912205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &882566233
@@ -1581,7 +1580,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1097690849}
   m_Layer: 0
-  m_Name: Gates(DEFEND)
+  m_Name: Gates
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1789,37 +1788,6 @@ Transform:
   - {fileID: 104219363}
   - {fileID: 1517062078}
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &1433721839
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1433721840}
-  m_Layer: 0
-  m_Name: TargetPosition
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1433721840
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1433721839}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.76, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 862440845}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1517062077
 GameObject:
@@ -2112,7 +2080,7 @@ MonoBehaviour:
     root: {fileID: 686667119}
     initialCount: 20
   spawnPointTransform: {fileID: 34672000}
-  mainTargetTransform: {fileID: 1433721840}
+  mainTargetTransform: {fileID: 38424950}
   unitsOffsetX: 0.3
   unitsOffsetY: 0.3
 --- !u!1 &1760002054

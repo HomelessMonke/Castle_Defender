@@ -10,25 +10,29 @@ namespace Game.Characters.States
         IAttack attackVariation;
         Character character;
         CustomTimer timer;
-        int attackPoints;
-        CharacterFieldOfView fieldOfView;
+        
+        HealthComponent targetHP;
 
         public event UnityAction LoseTargetToAttack;
         
-        public AttackState(CharacterFieldOfView fieldOfView)
+        public AttackState(IAttack attackVariation)
         {
-            // attacker = ;
             timer = new CustomTimer();
             timer.OnTimerEnd += Attack;
-            this.fieldOfView = fieldOfView;
+            this.attackVariation = attackVariation;
+            attackVariation.AttackCompleted += timer.Restart;
         }
 
         public void Init(int attackPoints, float attackCD)
         {
             timer.SetDuration(attackCD);
-            this.attackPoints = attackPoints;
+            attackVariation.Init(attackPoints);
         }
-        
+
+        public void SetTarget(HealthComponent targetHP)
+        {
+            this.targetHP = targetHP;
+        }
 
         public void Enter()
         {
@@ -39,7 +43,7 @@ namespace Game.Characters.States
         
         public void Update()
         {
-            if (!fieldOfView.CurrentTarget)
+            if (!targetHP.IsAlive)
             {
                 LoseTargetToAttack?.Invoke();
                 return;
@@ -55,14 +59,13 @@ namespace Game.Characters.States
         
         void Attack()
         {
-            var targetHP = fieldOfView.CurrentTarget.GetComponent<HealthComponent>();
-            if (!targetHP || !targetHP.IsAlive)
+            if (!targetHP.IsAlive)
             {
                 LoseTargetToAttack?.Invoke();
                 return;
             }
-            targetHP.GetDamage(attackPoints);
-            timer.Restart();
+            
+            attackVariation.Attack(targetHP);
         }
     }
 }
