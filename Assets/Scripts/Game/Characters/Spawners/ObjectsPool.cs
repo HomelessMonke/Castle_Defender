@@ -10,10 +10,10 @@ namespace Game.Characters.Spawners
     public class ObjectsPool<T> where T : MonoBehaviour
     {
         [SerializeField]
-        Transform root;
+        T prefab;
         
         [SerializeField]
-        T prefab;
+        Transform root;
         
         [SerializeField]
         int initialCount;

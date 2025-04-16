@@ -11,60 +11,32 @@ namespace Game.Characters
         [SerializeField]
         LayerMask layerMask;
         
-        [SerializeField]
-        Collider2D collider2D;
-
-        [Header("Обновление fov раз в N кадров")]
-        [SerializeField]
-        int updateFrameRate = 2;
-        
-        [SerializeField]
-        Character character;
-
-        int frameCounter;
-        
         Transform currentTarget;
+        Transform characterTransform;
         List<Transform> triggeredObjects = new List<Transform>();
         
         public Transform CurrentTarget => currentTarget;
         
         public event UnityAction<Transform> TargetChanged;
 
-        public void Init()
+        public void Init(Transform characterTransform)
         {
-            TargetChanged = null;
-            TargetChanged += (target) =>
-            {
-                character.stateLog.Append($"<color=yellow>{nameof(TargetChanged)} event {target}</color>");
-                character.stateLog.Append(Environment.NewLine);
-                character.stateLog.Append($"<color=yellow>triggeredObjects.Count {triggeredObjects.Count}</color>");
-                character.stateLog.Append(Environment.NewLine);
-            };
             currentTarget = null;
             triggeredObjects.Clear();
+            this.characterTransform = characterTransform;
         }
 
         public void UpdateViewTarget()
         {
-            // frameCounter++;
-            // if (frameCounter == updateFrameRate)
-            // {
-            //     frameCounter = 0;
-            //     
-            // }
             TryUpdateTarget();
         }
 
-        public void TryUpdateTarget()
+        void TryUpdateTarget()
         {
             var isTargetChanged = false;
             
             if(currentTarget && !currentTarget.gameObject.activeSelf)
             {
-                character.stateLog.Append($"{nameof(TryUpdateTarget)}1 {currentTarget.name} isn't Active");
-                character.stateLog.Append(Environment.NewLine);
-                character.stateLog.Append($"{nameof(TryUpdateTarget)}1 {triggeredObjects.Count}");
-                character.stateLog.Append(Environment.NewLine);
                 triggeredObjects.Remove(currentTarget);
                 currentTarget = null;
                 isTargetChanged = true;
@@ -76,10 +48,6 @@ namespace Game.Characters
 
                 if (!triggeredObj.gameObject.activeSelf)
                 {
-                    character.stateLog.Append($"{nameof(TryUpdateTarget)}2  {triggeredObj.name} isn't Active");
-                    character.stateLog.Append(Environment.NewLine);
-                    character.stateLog.Append($"{nameof(TryUpdateTarget)}2 {triggeredObjects.Count}");
-                    character.stateLog.Append(Environment.NewLine);
                     triggeredObjects.Remove(triggeredObj);
                     continue;
                 }
@@ -93,8 +61,8 @@ namespace Game.Characters
 
                 if (triggeredObjects.Count > 1)
                 {
-                    var sqrTargetDistance = (currentTarget.position - character.transform.position).sqrMagnitude;
-                    var sqrTriggeredObjDistance = (triggeredObj.position - character.transform.position).sqrMagnitude;
+                    var sqrTargetDistance = (currentTarget.position - characterTransform.position).sqrMagnitude;
+                    var sqrTriggeredObjDistance = (triggeredObj.position - characterTransform.position).sqrMagnitude;
                     if (sqrTriggeredObjDistance < sqrTargetDistance)
                     {
                         currentTarget = triggeredObj;
@@ -105,10 +73,6 @@ namespace Game.Characters
             
             if(isTargetChanged)
                 TargetChanged?.Invoke(currentTarget);
-            
-            // Debug.Log($"{character.name} triggeredObjects Count: {triggeredObjects.Count}");
-            // if(currentTarget)
-            //     Debug.Log($"{character.name} currentTarget: {currentTarget.name}");
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -119,26 +83,26 @@ namespace Game.Characters
                 if (!triggeredObjects.Contains(otherObj.transform))
                 {
                     triggeredObjects.Add(otherObj.transform);
-                    character.stateLog.Append($"<color=green>{nameof(OnTriggerEnter2D)} {otherObj.name}</color>");
-                    character.stateLog.Append(Environment.NewLine);
                 }
             }
         }
         
         void OnTriggerExit2D(Collider2D other)
         {
-            if(!character.IsAlive)
+            if(!gameObject.activeInHierarchy)
                 return;
                 
             var otherObj = other.gameObject;
             if (!layerMask.Contains(otherObj.layer))
                 return;
             
-            character.stateLog.Append($"<color=red>{nameof(OnTriggerExit2D)} {otherObj.name}</color>");
-            character.stateLog.Append(Environment.NewLine);
-            
             triggeredObjects.Remove(otherObj.transform);
             TryUpdateTarget();     
+        }
+
+        void OnDestroy()
+        {
+            TargetChanged = null;
         }
     }
 }

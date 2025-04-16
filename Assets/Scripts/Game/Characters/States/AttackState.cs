@@ -1,27 +1,37 @@
-﻿using System;
+﻿using Game.Characters.Attacks;
 using UnityEngine;
+using UnityEngine.Events;
 using Utilities;
 
 namespace Game.Characters.States
 {
     public class AttackState: IState
     {
+        IAttack attackVariation;
         Character character;
         CustomTimer timer;
         int attackPoints;
+        CharacterFieldOfView fieldOfView;
+
+        public event UnityAction LoseTargetToAttack;
         
-        public AttackState(Character character)
+        public AttackState(CharacterFieldOfView fieldOfView)
         {
-            this.character = character;
-            attackPoints = character.Parameters.AttackPoints;
-            timer = new CustomTimer(character.Parameters.AttackCD);
+            // attacker = ;
+            timer = new CustomTimer();
             timer.OnTimerEnd += Attack;
+            this.fieldOfView = fieldOfView;
         }
+
+        public void Init(int attackPoints, float attackCD)
+        {
+            timer.SetDuration(attackCD);
+            this.attackPoints = attackPoints;
+        }
+        
 
         public void Enter()
         {
-            character.stateLog.Append("<color=brown>AttackState ENTER</color>");
-            character.stateLog.Append(Environment.NewLine);
             Attack();
             timer.Reset();
             timer.Start();
@@ -29,9 +39,9 @@ namespace Game.Characters.States
         
         public void Update()
         {
-            if (!character.FovTarget)
+            if (!fieldOfView.CurrentTarget)
             {
-                character.SetMoveState();
+                LoseTargetToAttack?.Invoke();
                 return;
             }
             
@@ -40,17 +50,15 @@ namespace Game.Characters.States
         
         public void Exit()
         {
-            character.stateLog.Append("<color=brown>AttackState EXIT</color>");
-            character.stateLog.Append(Environment.NewLine);
             timer.Stop();
         }
         
         void Attack()
         {
-            var targetHP = character.FovTarget.GetComponent<HealthComponent>();
+            var targetHP = fieldOfView.CurrentTarget.GetComponent<HealthComponent>();
             if (!targetHP || !targetHP.IsAlive)
             {
-                character.SetMoveState();
+                LoseTargetToAttack?.Invoke();
                 return;
             }
             targetHP.GetDamage(attackPoints);

@@ -1,24 +1,29 @@
 ﻿using System;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 namespace Game.Characters.States
 {
     public class MoveState : IState
-    {
-        Character character;
+    { 
         NavMeshAgent agent;
         Transform target;
         bool isStaticTarget;
         
-        bool ArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
+        bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
         
-        public MoveState(Character character)
+        public event UnityAction ArrivedToTarget;
+        
+        public MoveState(NavMeshAgent agent)
         {
-            this.character = character;
-            agent = character.NavAgent;
-            agent.speed = character.Parameters.MoveSpeed;
-            agent.stoppingDistance = character.Parameters.AttackDistance;
+            this.agent = agent;
+        }
+
+        public void Init(float moveSpeed, float attackDistance)
+        {
+            agent.speed = moveSpeed;
+            agent.stoppingDistance = attackDistance;
         }
 
         public void SetTarget(Transform target, bool isStaticTarget)
@@ -30,8 +35,6 @@ namespace Game.Characters.States
 
         public void Enter()
         {
-            character.stateLog.Append("<color=magenta>MoveState ENTER</color>");
-            character.stateLog.Append(Environment.NewLine);
             if(isStaticTarget)
                 agent.SetDestination(target.position);
         }
@@ -41,19 +44,14 @@ namespace Game.Characters.States
             if(!isStaticTarget || !agent.hasPath)
                 agent.SetDestination(target.position);
             
-            Debug.DrawLine(character.transform.position, agent.destination, Color.red);
-            if (ArrivedToTarget)
+            if (IsArrivedToTarget)
             {
-                character.stateLog.Append("Вызов character.SetAttackState(target) из MoveState");
-                character.stateLog.Append(Environment.NewLine);
-                character.SetAttackState();
+                ArrivedToTarget?.Invoke();
             }
         }
         
         public void Exit()
         {
-            character.stateLog.Append("<color=magenta>MoveState EXIT</color>");
-            character.stateLog.Append(Environment.NewLine);
             agent.ResetPath();
         }
     }

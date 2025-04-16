@@ -1,44 +1,31 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using Utilities.Attributes;
 
 namespace Game.Characters
 {
     public class HealthComponent: MonoBehaviour
     {
-        public int CurrentHealth { get; private set; }
-        public int MaxHealth { get; private set; }
+        int currentHealth;
+        int maxHealth;
         
-        public float Percentage => (float)CurrentHealth / MaxHealth;
-        public bool IsAlive => CurrentHealth > 0;
+        public float Percentage => (float)currentHealth / maxHealth;
+        public bool IsAlive => currentHealth > 0;
         
         public event UnityAction DamageTaken, Healed, Died;
 
         public void Init(int maxHealth)
         {
             ResetEvents();
-            MaxHealth = maxHealth;
-            CurrentHealth = maxHealth;
-        }
-
-        [Button]
-        void GetDamage()
-        {
-            GetDamage(5);
-        }
-
-        [Button]
-        public void GetHeal()
-        {
-            GetHeal(5);
+            this.maxHealth = maxHealth;
+            currentHealth = maxHealth;
         }
 
         public void GetDamage(int amount)
         {
-            CurrentHealth = Mathf.Max(CurrentHealth-amount,0);
+            currentHealth = Mathf.Max(currentHealth-amount,0);
             DamageTaken?.Invoke();
             
-            if (CurrentHealth <= 0)
+            if (currentHealth <= 0)
             {
                 Died?.Invoke();
             }
@@ -46,7 +33,7 @@ namespace Game.Characters
 
         public void GetHeal(int amount)
         {
-            CurrentHealth += amount;
+            currentHealth += amount;
             Healed?.Invoke();
         }
         

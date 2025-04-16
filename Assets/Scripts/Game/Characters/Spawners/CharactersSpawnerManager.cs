@@ -1,6 +1,8 @@
 ﻿using System.Linq;
 using Game.Waves;
+using UnityEditor;
 using UnityEngine;
+using Utilities.Attributes;
 
 namespace Game.Characters.Spawners
 {
@@ -29,6 +31,13 @@ namespace Game.Characters.Spawners
                 return characters;
             }
             return null;
+        }
+
+        [Button]
+        void SetAllSpawners()
+        {
+            spawners = GetComponentsInChildren<CharacterSpawner>();
+            EditorUtility.SetDirty(this);
         }
     }
 }
