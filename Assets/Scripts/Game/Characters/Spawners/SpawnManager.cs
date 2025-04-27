@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Game.Characters.Units;
 using Game.Waves;
 using UnityEditor;
 using UnityEngine;
@@ -6,13 +7,17 @@ using Utilities.Attributes;
 
 namespace Game.Characters.Spawners
 {
-    public class CharactersSpawnerManager: MonoBehaviour
+    public class SpawnManager: MonoBehaviour
     {
         [SerializeField]
         CharacterSpawner[] spawners;
 
+        [SerializeField]
+        ProjectileSpawner projectileSpawner;
+        
         public void Init()
         {
+            projectileSpawner.Init();
             foreach (var spawner in spawners)
             {
                 spawner.Init();
@@ -38,6 +43,7 @@ namespace Game.Characters.Spawners
         {
             spawners = GetComponentsInChildren<CharacterSpawner>();
             EditorUtility.SetDirty(this);
+            projectileSpawner = GetComponentInChildren<ProjectileSpawner>();
         }
     }
 }

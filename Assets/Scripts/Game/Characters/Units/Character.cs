@@ -1,9 +1,8 @@
 ﻿using Game.Characters.States;
 using UnityEngine;
 
-namespace Game.Characters
+namespace Game.Characters.Units
 {
-
     public abstract class Character: MonoBehaviour
     {
         protected IState currentState;

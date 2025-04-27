@@ -1,19 +1,14 @@
 ﻿using System;
+
 namespace Game.Characters.Attacks
 {
     public class MeleeAttack: IAttack
     {
-        int attackPoints;
-
         public event Action AttackCompleted;
         
-        public void Init(int attackPoints)
+        public void Attack(int damage, HealthComponent targetHP)
         {
-            this.attackPoints = attackPoints;
-        }
-        public void Attack(HealthComponent targetHP)
-        {
-            targetHP.GetDamage(attackPoints);
+            targetHP.GetDamage(damage);
             AttackCompleted?.Invoke();
         }
     }

@@ -1,5 +1,5 @@
-﻿using System;
-using Game.Characters.Attacks;
+﻿using Game.Characters.Attacks;
+using Game.Characters.Parameters;
 using Game.Characters.States;
 using UI;
 using UnityEngine;
@@ -7,7 +7,7 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using Utilities.Attributes;
 
-namespace Game.Characters
+namespace Game.Characters.Units
 {
     [RequireComponent(typeof(HealthComponent))]
     public class SwordsManCharacter: Character
@@ -29,7 +29,8 @@ namespace Game.Characters
 
         [SerializeField]
         DamageFlash damageFlash;
-        
+
+        MeleeAttack meleeAttack;
         AttackState attackState;
         MoveState moveState;
         
@@ -40,13 +41,14 @@ namespace Game.Characters
         void Awake()
         {
             moveState = new MoveState(agent);
-            attackState = new AttackState(new MeleeAttack());
+            meleeAttack = new MeleeAttack();
+            attackState = new AttackState(meleeAttack);
             moveState.ArrivedToTarget += OnArrivedToTarget;
             attackState.LoseTargetToAttack += OnLoseTargetToAttack;
             fieldOfView.TargetChanged += OnTargetChanged;
         }
 
-        public void Init(Transform mainTarget, CharacterParameters parameters)
+        public void Init(Transform mainTarget, MeleeUnitParameters parameters)
         {
             this.mainTarget = mainTarget;
             

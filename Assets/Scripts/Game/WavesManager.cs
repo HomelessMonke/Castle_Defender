@@ -11,7 +11,7 @@ namespace Game
     public class WavesManager: MonoBehaviour
     {
         [SerializeField]
-        CharactersSpawnerManager charactersSpawner;
+        SpawnManager charactersSpawner;
         
         [SerializeField]
         WavesList wavesList;

@@ -11,8 +11,11 @@ namespace Game
         Gates gates;
         
         [SerializeField]
-        CharactersSpawnerManager charactersSpawner;
+        SpawnManager spawnManager;
 
+        [SerializeField]
+        AllyInitializer allyInitializer;
+        
         [SerializeField]
         WavesManager wavesManager;
         
@@ -24,7 +27,8 @@ namespace Game
             //TODO: убрать магию
             gates.Init(100);
             playerAbilitiesUI.Init();
-            charactersSpawner.Init();
+            spawnManager.Init();
+            allyInitializer.Init();
             wavesManager.LaunchWaves();
         }
     }

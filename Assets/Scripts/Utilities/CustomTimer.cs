@@ -9,8 +9,15 @@ namespace Utilities
         public bool IsRunning { get; private set; }
         public bool IsFinished => TimeLeft <= 0f;
 
-        public event UnityAction OnTimerEnd;
-        
+        public event UnityAction TimerEnd;
+
+        public CustomTimer() { }
+
+        public CustomTimer(float duration)
+        {
+            SetDuration(duration);
+        }
+
         public void SetDuration(float duration)
         {
             Duration = duration;
@@ -49,7 +56,7 @@ namespace Utilities
             {
                 TimeLeft = 0f;
                 Stop();
-                OnTimerEnd?.Invoke();
+                TimerEnd?.Invoke();
             }
         }
     }

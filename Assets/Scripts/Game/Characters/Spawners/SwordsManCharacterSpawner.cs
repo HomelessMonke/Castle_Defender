@@ -1,4 +1,6 @@
-﻿using Game.Waves;
+﻿using Game.Characters.Parameters;
+using Game.Characters.Units;
+using Game.Waves;
 using UnityEngine;
 namespace Game.Characters.Spawners
 {
@@ -6,6 +8,9 @@ namespace Game.Characters.Spawners
     {
         [SerializeField]
         ObjectsPool<SwordsManCharacter> pool;
+        
+        [SerializeField]
+        MeleeUnitParameters meleeUnitParameters;
         
         [Space(10)]
         [SerializeField]
@@ -34,16 +39,16 @@ namespace Game.Characters.Spawners
             for (int i = 0; i < unitsCount; i++)
             {
                 var spawnPos = armyFormation.GetSpawnPoint(i);
-                characters[i] = Spawn(squadInfo.Parameters, spawnPos);
+                characters[i] = Spawn(spawnPos);
             }
             return characters;
         }
         
-        Character Spawn(CharacterParameters parameters, Vector3 spawnPosition)
+        Character Spawn(Vector2 spawnPosition)
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
-            unit.Init(mainTargetTransform, parameters);
+            unit.Init(mainTargetTransform, meleeUnitParameters);
             unit.Died+= ()=> pool.Despawn(unit);
             return unit;
         }

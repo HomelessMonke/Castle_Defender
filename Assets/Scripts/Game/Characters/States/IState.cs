@@ -6,4 +6,22 @@
         void Update();
         void Exit();
     }
+
+    public class IdleState: IState
+    {
+        public void Enter()
+        {
+            
+        }
+        
+        public void Update()
+        {
+            
+        }
+        
+        public void Exit()
+        {
+            
+        }
+    }
 }

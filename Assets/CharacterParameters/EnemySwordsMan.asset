@@ -9,11 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 073f96ac4c604a4cb57e6b6dfba71592, type: 3}
-  m_Name: SwordsMan(E)
+  m_Script: {fileID: 11500000, guid: 629415485b6d4c39a1f35f478dfab37a, type: 3}
+  m_Name: EnemySwordsMan
   m_EditorClassIdentifier: 
   hp: 20
-  attackPoints: 5
+  attackPoints: 4
   moveSpeed: 1
   attackDistance: 0.5
   attackCD: 2

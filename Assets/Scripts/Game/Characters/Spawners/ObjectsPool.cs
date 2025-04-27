@@ -47,8 +47,8 @@ namespace Game.Characters.Spawners
 
         public void Despawn(T obj)
         {
-            obj.gameObject.SetActive(false);
             queue.Enqueue(obj);
+            obj.gameObject.SetActive(false);
         }
     }
 }

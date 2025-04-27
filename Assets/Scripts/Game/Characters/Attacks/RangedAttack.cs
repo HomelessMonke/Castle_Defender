@@ -1,24 +1,35 @@
 ﻿using System;
+using Game.Characters.Projectiles;
+using Game.Characters.Spawners;
+using UnityEngine;
 
 namespace Game.Characters.Attacks
 {
     public class RangedAttack: IAttack
     {
-        int attackPoints;
-        public event Action AttackCompleted;
+        float speed;
+        Transform projSpawnPos;
+        ProjectileSpawner spawner;
+        ProjectileAnimationData animationData;
         
-        public void Init(int attackPoints)
+        public event Action AttackCompleted;
+
+        public RangedAttack(Transform projSpawnPos, ProjectileAnimationData animationData)
         {
-            this.attackPoints = attackPoints;
+            this.projSpawnPos = projSpawnPos;
+            this.animationData = animationData;
+        }
+
+        public void Init(float speed, ProjectileSpawner spawner)
+        {
+            this.spawner = spawner;
+            this.speed = speed;
         }
         
-        public void Attack(HealthComponent targetHP)
+        public void Attack(int damage, HealthComponent targetHP)
         {
-            /*
-             * создаём стрелу
-             * вызываём полёт
-             * подписываем что должно произойти когда стрела долетит
-             */
+            var projectile = spawner.Spawn(projSpawnPos.position);
+            projectile.Launch(targetHP, animationData, damage, speed);
         }
     }
 }

@@ -1,4 +1,5 @@
 ﻿using Game.Characters.Attacks;
+using Game.Characters.Units;
 using UnityEngine;
 using UnityEngine.Events;
 using Utilities;
@@ -7,6 +8,7 @@ namespace Game.Characters.States
 {
     public class AttackState: IState
     {
+        int damage;
         IAttack attackVariation;
         Character character;
         CustomTimer timer;
@@ -17,16 +19,15 @@ namespace Game.Characters.States
         
         public AttackState(IAttack attackVariation)
         {
-            timer = new CustomTimer();
-            timer.OnTimerEnd += Attack;
             this.attackVariation = attackVariation;
-            attackVariation.AttackCompleted += timer.Restart;
+            timer = new CustomTimer();
+            timer.TimerEnd += Attack;
         }
 
-        public void Init(int attackPoints, float attackCD)
+        public void Init(int damage, float attackCD)
         {
+            this.damage = damage;
             timer.SetDuration(attackCD);
-            attackVariation.Init(attackPoints);
         }
 
         public void SetTarget(HealthComponent targetHP)
@@ -65,7 +66,8 @@ namespace Game.Characters.States
                 return;
             }
             
-            attackVariation.Attack(targetHP);
+            attackVariation.Attack(damage, targetHP);
+            timer.Restart();
         }
     }
 }
