@@ -9,7 +9,7 @@ namespace Game.Characters.Units
         
         protected void SetState(IState newState)
         {
-            if (newState.Equals(currentState))
+            if (newState.Equals(currentState) && !newState.CanSelfEnter)
                 return;
             
             currentState?.Exit();

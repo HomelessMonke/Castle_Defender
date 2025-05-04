@@ -10,7 +10,7 @@ namespace Game.Characters.Projectiles
         
         public event Action Hit;
 
-        public abstract void Launch(HealthComponent target, ProjectileAnimationData animationData, int damage, float duration);
+        public abstract void Launch(HealthComponent target, ProjectileAnimationData animationData, int damage, float speed);
 
         void Update()
         {

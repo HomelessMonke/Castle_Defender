@@ -48,7 +48,8 @@ namespace Game.Characters.Spawners
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
-            unit.Init(mainTargetTransform, meleeUnitParameters);
+            var targetToMove = new Vector2(mainTargetTransform.position.x, unit.transform.position.y);
+            unit.Init(targetToMove, meleeUnitParameters);
             unit.Died+= ()=> pool.Despawn(unit);
             return unit;
         }

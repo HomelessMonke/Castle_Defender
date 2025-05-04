@@ -1,18 +1,18 @@
 ﻿using UnityEngine;
 namespace Game.Characters.Parameters
 {
-    [CreateAssetMenu(menuName = "Characters/Parameters/AllyArchersParameters")]
-    public class AllyArchersParameters : ScriptableObject
+    [CreateAssetMenu(menuName = "Characters/Parameters/BallistaTowerParameters")]
+    public class BallistaTowerParameters : ScriptableObject
     {
         [SerializeField]
-        int damage = 3;
+        int damage = 10;
         
         [SerializeField]
-        float projectileSpeed = 5.5f;
+        float projectileSpeed = 8;
         
         [SerializeField]
         float attackCD = 4;
-
+        
         [SerializeField]
         float attackDistance = 10;
         

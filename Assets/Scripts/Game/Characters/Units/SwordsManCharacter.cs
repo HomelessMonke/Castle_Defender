@@ -31,10 +31,11 @@ namespace Game.Characters.Units
         DamageFlash damageFlash;
 
         MeleeAttack meleeAttack;
+
         AttackState attackState;
         MoveState moveState;
         
-        Transform mainTarget;
+        Vector2 mainTargetPos;
         
         public event UnityAction Died;
 
@@ -48,9 +49,9 @@ namespace Game.Characters.Units
             fieldOfView.TargetChanged += OnTargetChanged;
         }
 
-        public void Init(Transform mainTarget, MeleeUnitParameters parameters)
+        public void Init(Vector2 mainTargetPos, MeleeUnitParameters parameters)
         {
-            this.mainTarget = mainTarget;
+            this.mainTargetPos = mainTargetPos;
             
             healthView.SetActive(false);
             health.Init(parameters.Hp);
@@ -60,7 +61,7 @@ namespace Game.Characters.Units
             fieldOfView.Init(transform);
             moveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
             attackState.Init(parameters.AttackPoints, parameters.AttackCD);
-            SetMoveState(mainTarget);
+            SetMoveState();
         }
         
         void OnGetDamage()
@@ -81,6 +82,9 @@ namespace Game.Characters.Units
 
         bool TrySetAttackState(Transform target)
         {
+            if (!target)
+                return false;
+                
             var targetHP = target.GetComponent<HealthComponent>();
             if (targetHP && targetHP.IsAlive)
             {
@@ -93,9 +97,11 @@ namespace Game.Characters.Units
 
         void SetMoveState(Transform target = null)
         {
-            var newTarget = target? target : mainTarget;
-            var isStatic = newTarget.gameObject.isStatic;
-            moveState.SetTarget(newTarget, isStatic);
+            if (target)
+                moveState.SetTargetObj(target);
+            else
+                moveState.SetTargetPos(mainTargetPos);
+            
             SetState(moveState);
         }
 

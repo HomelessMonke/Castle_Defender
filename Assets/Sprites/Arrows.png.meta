@@ -487,7 +487,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrows_14
+      name: PurpleArrow
       rect:
         serializedVersion: 2
         x: 139
@@ -531,7 +531,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Arrows_16
+      name: BalistaArrow
       rect:
         serializedVersion: 2
         x: 171
@@ -644,7 +644,7 @@ TextureImporter:
       name: Arrows_21
       rect:
         serializedVersion: 2
-        x: 295
+        x: 296
         y: 19
         width: 24
         height: 72
@@ -698,7 +698,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
+      BalistaArrow: -6073973932922368642
       Default_Arrow: -9146782503041755686
+      PurpleArrow: 4444580458615500998
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -9,11 +9,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 629415485b6d4c39a1f35f478dfab37a, type: 3}
-  m_Name: EnemySwordsMan
+  m_Script: {fileID: 11500000, guid: b79ea3848f9f430a89e6b365b19f9e5e, type: 3}
+  m_Name: AllyArchersParameters
   m_EditorClassIdentifier: 
-  hp: 20
-  attackPoints: 4
-  moveSpeed: 1.5
-  attackDistance: 0.4
-  attackCD: 2
+  damage: 3
+  projectileSpeed: 9
+  attackCD: 3
+  attackDistance: 10

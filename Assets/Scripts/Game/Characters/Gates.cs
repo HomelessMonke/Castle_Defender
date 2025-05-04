@@ -7,9 +7,6 @@ namespace Game.Characters
     {
         [SerializeField]
         HealthComponent health;
-
-        [SerializeField]
-        DamageFlash damageFlash;
         
         [SerializeField]
         HealthView hpView;
@@ -20,7 +17,6 @@ namespace Game.Characters
             health.DamageTaken += ()=>
             {
                 hpView.Draw(health);
-                damageFlash.Flash();
             };
             health.Died += ()=> hpView.SetActive(false);
         }

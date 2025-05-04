@@ -15,5 +15,5 @@ MonoBehaviour:
   hp: 25
   attackPoints: 3
   moveSpeed: 1.5
-  attackDistance: 0.5
+  attackDistance: 0.3
   attackCD: 2.5

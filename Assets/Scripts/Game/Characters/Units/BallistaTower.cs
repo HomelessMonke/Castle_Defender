@@ -1,5 +1,5 @@
-﻿using System;
-using Game.Characters.Attacks;
+﻿using Game.Characters.Attacks;
+using Game.Characters.Parameters;
 using Game.Characters.Projectiles;
 using Game.Characters.Spawners;
 using Game.Characters.States;
@@ -7,11 +7,7 @@ using UnityEngine;
 
 namespace Game.Characters.Units
 {
-    /// <summary>
-    /// Башня которая может стрелять любыми видами снарядов
-    /// принимает параметры 
-    /// </summary>
-    public class ShootingTower : Character
+    public class BallistaTower : Character
     {
         [SerializeField]
         Transform projectileSpawnPoint;
@@ -22,20 +18,22 @@ namespace Game.Characters.Units
         [SerializeField]
         ProjectileAnimationData animationData;
         
-        [Header("Индекс для fov")]
-        [SerializeField]
-        int index;
+        float attackDistance;
 
         IdleState idleState;
+        AimAttackState aimState;
         AttackState attackState;
+        
         RangedAttack rangedAttack;
 
         void Awake()
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);
             idleState = new IdleState();
+            aimState = new AimAttackState(transform);
             attackState = new AttackState(rangedAttack);
             attackState.LoseTargetToAttack += OnUpdateTargets;
+            aimState.AttackTarget += OnAimStateCanAttack;
             fov.TargetsChanged += OnUpdateTargets;
         }
 
@@ -47,10 +45,11 @@ namespace Game.Characters.Units
             }
         }
 
-        public void Init(int attackCD, int damage, float speed, ProjectileSpawner projectileSpawner)
+        public void Init(BallistaTowerParameters parameters, ProjectileSpawner projectileSpawner)
         {
-            rangedAttack.Init(speed, projectileSpawner);
-            attackState.Init(damage, attackCD);
+            attackDistance = parameters.AttackDistance;
+            rangedAttack.Init(parameters.ProjectileSpeed, projectileSpawner);
+            attackState.Init(parameters.Damage, parameters.AttackCD);
             SetState(idleState);
         }
 
@@ -63,6 +62,21 @@ namespace Game.Characters.Units
             }
 
             var target = fov.GetTargetByDistance(transform.position);
+            var distance = Vector2.Distance(target.transform.position, transform.position);
+            if (distance > attackDistance)
+            {
+                aimState.SetTarget(target, attackDistance);
+                SetState(aimState);
+            }
+            else
+            {
+                attackState.SetTarget(target);
+                SetState(attackState);
+            }
+        }
+
+        void OnAimStateCanAttack(HealthComponent target)
+        {
             attackState.SetTarget(target);
             SetState(attackState);
         }

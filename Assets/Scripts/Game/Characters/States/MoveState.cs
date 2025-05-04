@@ -8,10 +8,13 @@ namespace Game.Characters.States
     public class MoveState : IState
     { 
         NavMeshAgent agent;
-        Transform target;
+        Transform targetObj;
+        Vector2 targetPos;
         bool isStaticTarget;
+        Vector2 lastPos;
         
         bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
+        public bool CanSelfEnter => true;
         
         public event UnityAction<Transform> ArrivedToTarget;
         
@@ -26,33 +29,45 @@ namespace Game.Characters.States
             agent.stoppingDistance = attackDistance;
         }
 
-        public void SetTarget(Transform target, bool isStaticTarget)
+        public void SetTargetObj(Transform target)
         {
-            this.target = target;
-            this.isStaticTarget = isStaticTarget;
             agent.ResetPath();
+            targetObj = target;
+        }
+
+        public void SetTargetPos(Vector2 position)
+        {
+            agent.ResetPath();
+            targetObj = null;
+            targetPos = position;
         }
 
         public void Enter()
         {
-            if(isStaticTarget)
-                agent.SetDestination(target.position);
+            if(!targetObj)
+                agent.SetDestination(targetPos);
         }
         
         public void Update()
         {
-            if(!isStaticTarget || !agent.hasPath)
-                agent.SetDestination(target.position);
+            if (targetObj)
+            {
+                targetPos = targetObj.position;
+                agent.SetDestination(targetPos);
+            }
+            else if(!agent.hasPath)
+            {
+                agent.SetDestination(targetPos);
+            }
             
             if (IsArrivedToTarget)
             {
-                ArrivedToTarget?.Invoke(target);
+                ArrivedToTarget?.Invoke(targetObj);
             }
         }
         
         public void Exit()
         {
-            agent.ResetPath();
         }
     }
 }

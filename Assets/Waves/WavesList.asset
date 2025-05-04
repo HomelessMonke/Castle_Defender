@@ -15,8 +15,7 @@ MonoBehaviour:
   waves:
   - squads:
     - type: 0
-      parameters: {fileID: 11400000, guid: ff620081349b9254cafba120ece91e31, type: 2}
-      maxUnitsInRow: 6
-      count: 12
+      maxUnitsInRow: 10
+      count: 20
       spawnDelay: 0
     nextWaveDelay: 15

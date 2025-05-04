@@ -31,16 +31,19 @@ namespace Game.Characters
                 return null;
 
             var target = triggeredObjects[0];
-            var targetSqrDistance = ((Vector2)target.transform.position - comparePos).sqrMagnitude;
-            for (int i = 1; i < triggeredObjects.Count; i++)
+            if (triggeredObjects.Count > 1)
             {
-                var obj = triggeredObjects[i];
-                Vector2 direction = (Vector2)obj.transform.position - comparePos;
-                float objSqrDistance = direction.sqrMagnitude;
-                if (objSqrDistance < targetSqrDistance)
+                var targetSqrDistance = ((Vector2)target.transform.position - comparePos).sqrMagnitude;
+                for (int i = 1; i < triggeredObjects.Count; i++)
                 {
-                    target = obj;
-                    targetSqrDistance = objSqrDistance;
+                    var obj = triggeredObjects[i];
+                    Vector2 direction = (Vector2)obj.transform.position - comparePos;
+                    float objSqrDistance = direction.sqrMagnitude;
+                    if (objSqrDistance < targetSqrDistance)
+                    {
+                        target = obj;
+                        targetSqrDistance = objSqrDistance;
+                    }
                 }
             }
             return target;

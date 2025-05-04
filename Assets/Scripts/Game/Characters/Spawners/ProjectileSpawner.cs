@@ -8,9 +8,6 @@ namespace Game.Characters.Spawners
         [SerializeField]
         ObjectsPool<Projectile> pool;
         
-        [SerializeField]
-        
-        
         public void Init()
         {
             pool.Init();

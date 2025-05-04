@@ -1,4 +1,5 @@
-﻿using Game.Characters.Spawners;
+﻿using Game.Characters.Parameters;
+using Game.Characters.Spawners;
 using Game.Characters.Units;
 using UnityEditor;
 using UnityEngine;
@@ -9,8 +10,11 @@ namespace Game.Characters
     public class TowersInitializer : MonoBehaviour
     {
         [SerializeField]
-        ShootingTower[] towers;
+        BallistaTower[] towers;
 
+        [SerializeField]
+        BallistaTowerParameters parameters;
+        
         [SerializeField]
         ProjectileSpawner arrowForTowerSpawner;
         
@@ -18,14 +22,14 @@ namespace Game.Characters
         {
             foreach (var tower in towers)
             {
-                tower.Init(1, 10, 10, arrowForTowerSpawner);
+                tower.Init(parameters, arrowForTowerSpawner);
             }                    
         }
 
         [Button]
         void GetTowersInChildren()
         {
-            towers = transform.GetComponentsInChildren<ShootingTower>();
+            towers = transform.GetComponentsInChildren<BallistaTower>();
             EditorUtility.SetDirty(this);
         }
     }

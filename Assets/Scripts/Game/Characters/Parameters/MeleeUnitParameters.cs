@@ -25,5 +25,4 @@ namespace Game.Characters.Parameters
         public float AttackCD => attackCD;
         public int Hp => hp;
     }
-
 }

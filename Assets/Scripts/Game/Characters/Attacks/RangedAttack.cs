@@ -7,7 +7,7 @@ namespace Game.Characters.Attacks
 {
     public class RangedAttack: IAttack
     {
-        float speed;
+        float projectileSpeed;
         Transform projSpawnPos;
         ProjectileSpawner spawner;
         ProjectileAnimationData animationData;
@@ -20,16 +20,16 @@ namespace Game.Characters.Attacks
             this.animationData = animationData;
         }
 
-        public void Init(float speed, ProjectileSpawner spawner)
+        public void Init(float projectileSpeed, ProjectileSpawner spawner)
         {
             this.spawner = spawner;
-            this.speed = speed;
+            this.projectileSpeed = projectileSpeed;
         }
         
         public void Attack(int damage, HealthComponent targetHP)
         {
             var projectile = spawner.Spawn(projSpawnPos.position);
-            projectile.Launch(targetHP, animationData, damage, speed);
+            projectile.Launch(targetHP, animationData, damage, projectileSpeed);
         }
     }
 }

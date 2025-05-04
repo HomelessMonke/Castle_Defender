@@ -15,6 +15,8 @@ namespace Game.Characters.States
         
         HealthComponent targetHP;
 
+        public bool CanSelfEnter => false;
+        
         public event UnityAction LoseTargetToAttack;
         
         public AttackState(IAttack attackVariation)
