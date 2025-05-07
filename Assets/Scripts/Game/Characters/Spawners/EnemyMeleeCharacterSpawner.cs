@@ -69,6 +69,7 @@ namespace Game.Characters.Spawners
         {
             pool.Despawn(unit);
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
+            Debug.Log($"CoinReward = {unitParameters.CoinReward}");
             Debug.Log($"CurrencyType.Soft: {currencyService.GetAmount(CurrencyType.Soft)}");
         }
     }
