@@ -13,7 +13,7 @@ namespace Game.Characters.States
         Character character;
         CustomTimer timer;
         
-        HealthComponent targetHP;
+        Health targetHP;
 
         public bool CanSelfEnter => false;
         
@@ -32,7 +32,7 @@ namespace Game.Characters.States
             timer.SetDuration(attackCD);
         }
 
-        public void SetTarget(HealthComponent targetHP)
+        public void SetTarget(Health targetHP)
         {
             this.targetHP = targetHP;
         }

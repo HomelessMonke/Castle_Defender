@@ -6,6 +6,6 @@ namespace Game.Characters.Attacks
     {
         public event Action AttackCompleted;
         
-        void Attack(int damage, HealthComponent targetHP);
+        void Attack(int damage, Health targetHP);
     }
 }

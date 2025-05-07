@@ -1005,7 +1005,7 @@ GameObject:
   - component: {fileID: 415040426}
   - component: {fileID: 415040425}
   m_Layer: 0
-  m_Name: WavesManager
+  m_Name: WavesSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1033,7 +1033,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 415040424}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1626,7 +1626,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   archerTemplate: {fileID: 1363838825}
-  targetByDistanceRatio: 0.33
   maxArchers: 36
   maxInRow: 12
   xOffset: 0.7
@@ -2056,6 +2055,69 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cf1d021f40f945aaaf22638cc757e8bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &901362580
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 901362582}
+  - component: {fileID: 901362581}
+  m_Layer: 0
+  m_Name: SceneContext
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &901362581
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901362580}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 89715ad69b973a14899afa2c6730b30b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _scriptableObjectInstallers: []
+  _monoInstallers: []
+  _installerPrefabs: []
+  _autoRun: 1
+  OnPreInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostInstall:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPreResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  OnPostResolve:
+    m_PersistentCalls:
+      m_Calls: []
+  _parentNewObjectsUnderSceneContext: 0
+  _contractNames: []
+  _parentContractNames: []
+--- !u!4 &901362582
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 901362580}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &920593438
 GameObject:
   m_ObjectHideFlags: 0
@@ -2391,7 +2453,7 @@ GameObject:
   - component: {fileID: 1131912205}
   - component: {fileID: 1131912206}
   m_Layer: 0
-  m_Name: SpawnManager
+  m_Name: CharacterSpawnerList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3170,7 +3232,7 @@ MonoBehaviour:
     prefab: {fileID: 6039229518978487604}
     root: {fileID: 652525932}
     initialCount: 5
-  meleeUnitParameters: {fileID: 11400000, guid: 68f26d10a1837ae49bd624b09c4a69a2, type: 2}
+  unitParameters: {fileID: 11400000, guid: dfe34c47e9c9123468ea406803b8b532, type: 2}
   spawnPointTransform: {fileID: 162432940}
   mainTargetTransform: {fileID: 1760002055}
   unitsOffsetX: 0.5
@@ -3220,19 +3282,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1722922278}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 514ba9bcae5a48188c2542bcdda43b01, type: 3}
+  m_Script: {fileID: 11500000, guid: 586ed7f88ad949afa226e3ef7bfcaa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 0
+  characterType: 4
   pool:
     prefab: {fileID: 3973691326169565893}
     root: {fileID: 686667119}
-    initialCount: 20
-  meleeUnitParameters: {fileID: 11400000, guid: 8682ecb567fba4f45a31e6988c3ec556, type: 2}
+    initialCount: 30
+  unitParameters: {fileID: 11400000, guid: 8682ecb567fba4f45a31e6988c3ec556, type: 2}
   spawnPointTransform: {fileID: 34672000}
   mainTargetTransform: {fileID: 109857876}
   unitsOffsetX: 0.5
-  unitsOffsetY: 0.5
+  unitsOffsetY: 0.7
 --- !u!1 &1760002054
 GameObject:
   m_ObjectHideFlags: 0
@@ -4114,12 +4176,13 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 267978357}
-  - {fileID: 415040426}
   - {fileID: 2085461808}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1351481471}
+  - {fileID: 415040426}
   - {fileID: 1131912205}
   - {fileID: 1550109967}
   - {fileID: 1201001270}
   - {fileID: 15537918}
+  - {fileID: 901362582}

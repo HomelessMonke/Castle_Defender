@@ -35,6 +35,7 @@ MonoBehaviour:
     - Coffee.UIEffect
     - Elringus.SpriteGlow.Runtime
     - NavMeshPlus
+    - Zenject
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

@@ -17,3 +17,5 @@ MonoBehaviour:
   moveSpeed: 1.5
   attackDistance: 0.4
   attackCD: 2
+  minCoinsReward: 20
+  maxCoinsReward: 40

@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using UnityEngine.Events;
+using Zenject;
 
 namespace Game.Currencies
 {
-    public class CurrencyManager
+    public class CurrencyService
     {
         public UnityEvent<CurrencyType, int> OnCurrencyChanged = new();
 
         Dictionary<CurrencyType, int> currencies = new();
 
         const string SaveKeyPrefix = "Currency_";
-
-        void InitializeCurrencies()
+        
+        public void Init()
         {
             foreach (CurrencyType type in System.Enum.GetValues(typeof(CurrencyType)))
             {
@@ -25,10 +26,10 @@ namespace Game.Currencies
 
         public int GetAmount(CurrencyType type)
         {
-            return currencies.TryGetValue(type, out var amount) ? amount : 0;
+            return currencies.GetValueOrDefault(type, 0);
         }
 
-        public void Add(CurrencyType type, int amount)
+        public void Earn(CurrencyType type, int amount)
         {
             currencies[type] += amount;
             OnCurrencyChanged?.Invoke(type, currencies[type]);

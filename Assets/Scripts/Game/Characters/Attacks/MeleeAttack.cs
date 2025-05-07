@@ -6,7 +6,7 @@ namespace Game.Characters.Attacks
     {
         public event Action AttackCompleted;
         
-        public void Attack(int damage, HealthComponent targetHP)
+        public void Attack(int damage, Health targetHP)
         {
             targetHP.GetDamage(damage);
             AttackCompleted?.Invoke();

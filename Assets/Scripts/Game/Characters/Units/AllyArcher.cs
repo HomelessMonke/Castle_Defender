@@ -27,6 +27,8 @@ namespace Game.Characters.Units
         AimAttackState aimState;
         RangedAttack rangedAttack;
 
+        public override CharacterType CharacterType => CharacterType.AllyArcher;
+
         void Awake()
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);
@@ -78,7 +80,7 @@ namespace Game.Characters.Units
             }
         }
 
-        void OnAimStateCanAttack(HealthComponent target)
+        void OnAimStateCanAttack(Health target)
         {
             attackState.SetTarget(target);
             SetState(attackState);

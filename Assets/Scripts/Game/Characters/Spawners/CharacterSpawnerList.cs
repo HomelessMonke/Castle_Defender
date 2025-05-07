@@ -7,7 +7,7 @@ using Utilities.Attributes;
 
 namespace Game.Characters.Spawners
 {
-    public class SpawnManager: MonoBehaviour
+    public class CharacterSpawnerList: MonoBehaviour
     {
         [SerializeField]
         CharacterSpawner[] spawners;

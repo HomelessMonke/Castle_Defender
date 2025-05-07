@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using Game.Characters;
 using Game.Characters.Spawners;
+using Game.Currencies;
 using Game.Waves;
-using UI;
 using UnityEngine;
 using Utilities.Attributes;
+using Zenject;
 
-namespace Game
+namespace Game.Characters.Spawners
 {
-    public class WavesManager: MonoBehaviour
+    public class WavesSpawner: MonoBehaviour
     {
         [SerializeField]
-        SpawnManager charactersSpawner;
+        CharacterSpawnerList charactersSpawner;
         
         [SerializeField]
         WavesList wavesList;
-        
+
         public void LaunchWaves()
         {
             StartCoroutine(LaunchWavesCoroutine());

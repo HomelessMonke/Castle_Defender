@@ -8,19 +8,19 @@ namespace Game.Characters.States
         int updatePerFrame = 5;
         float attackDistance;
         Transform parent;
-        HealthComponent target;
+        Health target;
 
         bool CanAttack => Vector2.Distance(target.transform.position, parent.position) <= attackDistance;
         public bool CanSelfEnter => false;
         
-        public event UnityAction<HealthComponent> AttackTarget;
+        public event UnityAction<Health> AttackTarget;
 
         public AimAttackState(Transform parent)
         {
             this.parent = parent;
         }
 
-        public void SetTarget(HealthComponent target, float attackDistance)
+        public void SetTarget(Health target, float attackDistance)
         {
             this.attackDistance = attackDistance;
             this.target = target;

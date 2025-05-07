@@ -2,15 +2,16 @@
 using Game.Characters.Units;
 using Game.Waves;
 using UnityEngine;
+
 namespace Game.Characters.Spawners
 {
-    public class SwordsManCharacterSpawner : CharacterSpawner
+    public class AllyMeleeCharacterSpawner : CharacterSpawner
     {
         [SerializeField]
-        ObjectsPool<SwordsManCharacter> pool;
+        ObjectsPool<MeleeCharacter> pool;
         
         [SerializeField]
-        MeleeUnitParameters meleeUnitParameters;
+        AllyMeleeUnitParameters unitParameters;
         
         [Space(10)]
         [SerializeField]
@@ -19,7 +20,7 @@ namespace Game.Characters.Spawners
         [SerializeField]
         Transform mainTargetTransform;
         
-        //TODO: перенести оффсеты в squadInfo или отдельынй класс, на который будет ссылать squadInfo
+        //TODO: перенести оффсеты в squadInfo или отдельный класс, на который будет ссылать squadInfo
         [SerializeField]
         protected float unitsOffsetX;
         
@@ -49,7 +50,7 @@ namespace Game.Characters.Spawners
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
             var targetToMove = new Vector2(mainTargetTransform.position.x, unit.transform.position.y);
-            unit.Init(targetToMove, meleeUnitParameters);
+            unit.Init(targetToMove, unitParameters);
             unit.Died+= ()=> pool.Despawn(unit);
             return unit;
         }

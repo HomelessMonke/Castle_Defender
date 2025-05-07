@@ -10,13 +10,13 @@ namespace Game.Characters
         [SerializeField]
         LayerMask layerMask;
         
-        List<HealthComponent> triggeredObjects = new (32);
+        List<Health> triggeredObjects = new (32);
         
         public bool HaveTargets => triggeredObjects.Count > 0;
 
         public event Action TargetsChanged;
 
-        public HealthComponent GetTargetByIndex(int index)
+        public Health GetTargetByIndex(int index)
         {
             if (triggeredObjects.Count == 0)
                 return null;
@@ -25,7 +25,7 @@ namespace Game.Characters
             return triggeredObjects[targetIndex];
         }
         
-        public HealthComponent GetTargetByDistance(Vector2 comparePos)
+        public Health GetTargetByDistance(Vector2 comparePos)
         {
             if (triggeredObjects.Count == 0)
                 return null;
@@ -54,7 +54,7 @@ namespace Game.Characters
             var otherObj = other.gameObject;
             if (layerMask.Contains(otherObj.layer))
             {
-                var hpComponent = otherObj.GetComponent<HealthComponent>();
+                var hpComponent = otherObj.GetComponent<Health>();
                 if (hpComponent.IsAlive)
                 {
                     triggeredObjects.Add(hpComponent);
@@ -69,7 +69,7 @@ namespace Game.Characters
             if (!layerMask.Contains(otherObj.layer))
                 return;
             
-            var hpComponent = otherObj.GetComponent<HealthComponent>();
+            var hpComponent = otherObj.GetComponent<Health>();
             triggeredObjects.Remove(hpComponent);
             TargetsChanged?.Invoke();
         }

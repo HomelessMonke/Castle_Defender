@@ -11,13 +11,13 @@ namespace Game
         Gates gates;
         
         [SerializeField]
-        SpawnManager spawnManager;
+        CharacterSpawnerList spawnManager;
 
         [SerializeField]
         AllyInitializer allyInitializer;
         
         [SerializeField]
-        WavesManager wavesManager;
+        WavesSpawner wavesManager;
         
         [SerializeField]
         PlayerAbilitiesUI playerAbilitiesUI;

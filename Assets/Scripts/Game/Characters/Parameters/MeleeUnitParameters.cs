@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
+
 namespace Game.Characters.Parameters
 {
-    [CreateAssetMenu(menuName = "Characters/Parameters/MeleeUnitParameters")]
     public class MeleeUnitParameters: ScriptableObject
     {
         [SerializeField]

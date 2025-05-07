@@ -8,7 +8,7 @@ namespace UI
         [SerializeField]
         SpriteRenderer fillArea;
 
-        public void Draw(HealthComponent health)
+        public void Draw(Health health)
         {
             SetActive(true);
             fillArea.transform.localScale = new Vector3(health.Percentage, 1, 1);

@@ -5,12 +5,12 @@ namespace Game.Characters.Projectiles
 {
     public abstract class Projectile: MonoBehaviour
     {
-        protected HealthComponent target;
+        protected Health target;
         protected Vector2 targetPos;
         
         public event Action Hit;
 
-        public abstract void Launch(HealthComponent target, ProjectileAnimationData animationData, int damage, float speed);
+        public abstract void Launch(Health target, ProjectileAnimationData animationData, int damage, float speed);
 
         void Update()
         {

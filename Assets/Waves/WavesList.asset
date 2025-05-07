@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   waves:
   - squads:
-    - type: 0
+    - type: 4
       maxUnitsInRow: 10
       count: 20
       spawnDelay: 0

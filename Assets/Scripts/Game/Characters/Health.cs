@@ -1,10 +1,9 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
-using UnityEngine.Serialization;
 
 namespace Game.Characters
 {
-    public class HealthComponent: MonoBehaviour
+    public class Health: MonoBehaviour
     {
         public int MaxHealth { get; private set; } 
         int currentHealth;

@@ -6,7 +6,7 @@ namespace Game.Characters
     public class Gates : MonoBehaviour
     {
         [SerializeField]
-        HealthComponent health;
+        Health health;
         
         [SerializeField]
         HealthView hpView;

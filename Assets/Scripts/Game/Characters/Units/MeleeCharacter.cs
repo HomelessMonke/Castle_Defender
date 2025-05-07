@@ -9,14 +9,17 @@ using Utilities.Attributes;
 
 namespace Game.Characters.Units
 {
-    [RequireComponent(typeof(HealthComponent))]
-    public class SwordsManCharacter: Character
+    [RequireComponent(typeof(Health))]
+    public class MeleeCharacter: Character
     {
+        [SerializeField]
+        CharacterType characterType;
+            
         [SerializeField]
         CharacterFieldOfView fieldOfView;
         
         [SerializeField]
-        HealthComponent health;
+        Health health;
         
         [SerializeField]
         HealthView healthView;
@@ -38,6 +41,8 @@ namespace Game.Characters.Units
         Vector2 mainTargetPos;
         
         public event UnityAction Died;
+        
+        public override CharacterType CharacterType => characterType;
 
         void Awake()
         {
@@ -85,7 +90,7 @@ namespace Game.Characters.Units
             if (!target)
                 return false;
                 
-            var targetHP = target.GetComponent<HealthComponent>();
+            var targetHP = target.GetComponent<Health>();
             if (targetHP && targetHP.IsAlive)
             {
                 attackState.SetTarget(targetHP);

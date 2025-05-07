@@ -25,6 +25,8 @@ namespace Game.Characters.Units
         AttackState attackState;
         
         RangedAttack rangedAttack;
+        
+        public override CharacterType CharacterType => CharacterType.BallistaTower;
 
         void Awake()
         {
@@ -75,7 +77,7 @@ namespace Game.Characters.Units
             }
         }
 
-        void OnAimStateCanAttack(HealthComponent target)
+        void OnAimStateCanAttack(Health target)
         {
             attackState.SetTarget(target);
             SetState(attackState);

@@ -5,6 +5,8 @@ namespace Game.Characters.Units
 {
     public abstract class Character: MonoBehaviour
     {
+        public abstract CharacterType CharacterType { get; }
+
         protected IState currentState;
         
         protected void SetState(IState newState)

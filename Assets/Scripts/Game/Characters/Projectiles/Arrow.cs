@@ -6,7 +6,7 @@ namespace Game.Characters.Projectiles
 
     public class Arrow: Projectile 
     {
-        public override void Launch(HealthComponent target, ProjectileAnimationData animationData, int damage, float speed)
+        public override void Launch(Health target, ProjectileAnimationData animationData, int damage, float speed)
         {
             this.target = target;
             var yOffset = animationData.YOffset;
