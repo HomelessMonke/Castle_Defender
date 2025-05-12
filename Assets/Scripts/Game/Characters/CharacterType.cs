@@ -2,10 +2,11 @@
 {
     public enum CharacterType
     {
-        AllySwordsMan,
+        AllyKnight,
         AllyArcher,
-        BallistaTower,
+        AllyBallistaTower,
         EnemyArcher,
-        EnemySwordsMan
+        EnemySwordsManSkeleton,
+        EnemyTroll
     }
 }

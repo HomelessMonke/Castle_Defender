@@ -21,11 +21,6 @@ namespace Game.Characters
             targets = new List<Health>(capacity);
         }
 
-        public void RegisterTargets(Health[] addTargets)
-        {
-            targets.AddRange(addTargets);
-        }
-
         public Health GetTargetByIndex(int index)
         {
             if (targets.Count == 0)
@@ -68,7 +63,6 @@ namespace Game.Characters
                 if (hpComponent.IsAlive)
                 {
                     targets.Add(hpComponent);
-                    Debug.Log($"{name} add new trigger {hpComponent.name}");
                     TargetsChanged?.Invoke();
                 }
             }
@@ -82,7 +76,6 @@ namespace Game.Characters
             
             var hpComponent = otherObj.GetComponent<Health>();
             targets.Remove(hpComponent);
-            Debug.Log($"{name} remove new trigger {hpComponent.name}");
             TargetsChanged?.Invoke();
         }
     }

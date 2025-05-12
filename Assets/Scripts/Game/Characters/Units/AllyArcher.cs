@@ -10,6 +10,12 @@ namespace Game.Characters.Units
     public class AllyArcher : Character
     {
         [SerializeField]
+        Animator animator;
+        
+        [SerializeField]
+        CharacterAnimator characterAnimator;
+        
+        [SerializeField]
         Transform projectileSpawnPoint;
         
         [SerializeField]
@@ -22,17 +28,17 @@ namespace Game.Characters.Units
         float attackDistance;
         bool lookTargetByDistance;
         
-        IdleState idleState;
-        AttackState attackState;
+        AnimatedIdleState idleState;
+        AnimatedAttackState attackState;
         AimAttackState aimState;
         RangedAttack rangedAttack;
         
         void Awake()
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);
-            idleState = new IdleState();
+            idleState = new AnimatedIdleState(characterAnimator.Animator);
             aimState = new AimAttackState(transform);
-            attackState = new AttackState(rangedAttack);
+            attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
             attackState.LoseTargetToAttack += OnUpdateTargets;
             aimState.AttackTarget += OnAimStateCanAttack;
             fov.TargetsChanged += OnUpdateTargets;

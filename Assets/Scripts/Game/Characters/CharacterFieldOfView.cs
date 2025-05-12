@@ -12,7 +12,7 @@ namespace Game.Characters
         
         Transform currentTarget;
         Transform characterTransform;
-        List<Transform> triggeredObjects = new List<Transform>();
+        List<Transform> triggeredObjects = new ();
         
         public Transform CurrentTarget => currentTarget;
         
@@ -25,7 +25,7 @@ namespace Game.Characters
             this.characterTransform = characterTransform;
         }
 
-        public void UpdateViewTarget()
+        public void Update()
         {
             TryUpdateTarget();
         }

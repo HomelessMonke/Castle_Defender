@@ -9,6 +9,7 @@ namespace Game.Characters
         bool isImmortal;
         
         public int MaxHealth { get; private set; } 
+        public float CurrentHealth => currentHealth;
         public float Percentage => (float)currentHealth / MaxHealth;
         public bool IsAlive => currentHealth > 0;
         
@@ -25,15 +26,17 @@ namespace Game.Characters
 
         public void GetDamage(int amount)
         {
-            DamageTaken?.Invoke(amount);
-            if(isImmortal)
+            if (isImmortal)
+            {
+                DamageTaken?.Invoke(amount);
                 return;
+            }
             
             currentHealth = Mathf.Max(currentHealth-amount,0);
+            DamageTaken?.Invoke(amount);
+            
             if (currentHealth <= 0)
-            {
                 Died?.Invoke();
-            }
         }
 
         public void GetHeal(int amount)

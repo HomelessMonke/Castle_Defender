@@ -16,14 +16,14 @@ MonoBehaviour:
   - squads:
     - type: 4
       maxUnitsInRow: 12
+      count: 48
+      spawnDelay: 3
+    - type: 3
+      maxUnitsInRow: 12
       count: 24
       spawnDelay: 1
-    - type: 3
-      maxUnitsInRow: 10
-      count: 10
-      spawnDelay: 1
-    - type: 4
-      maxUnitsInRow: 10
-      count: 20
+    - type: 0
+      maxUnitsInRow: 12
+      count: 24
       spawnDelay: 1
     nextWaveDelay: 15

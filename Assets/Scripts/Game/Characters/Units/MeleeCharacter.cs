@@ -14,10 +14,10 @@ namespace Game.Characters.Units
     public class MeleeCharacter: Character
     {
         [SerializeField]
-        CharacterType characterType;
-            
-        [SerializeField]
         CharacterFieldOfView fieldOfView;
+        
+        [SerializeField]
+        CharacterAnimator characterAnimator;
         
         [SerializeField]
         Health health;
@@ -36,16 +36,16 @@ namespace Game.Characters.Units
 
         MeleeAttack meleeAttack;
 
-        AttackState attackState;
+        AnimatedAttackState attackState;
         MoveState moveState;
         
         public event UnityAction Died;
         
         void Awake()
         {
-            moveState = new MoveState(agent);
+            moveState = new MoveState(agent, characterAnimator.Animator);
             meleeAttack = new MeleeAttack();
-            attackState = new AttackState(meleeAttack);
+            attackState = new AnimatedAttackState(meleeAttack, characterAnimator);
             moveState.ArrivedToTarget += OnArrivedToTarget;
             attackState.LoseTargetToAttack += OnLoseTargetToAttack;
             fieldOfView.TargetChanged += OnTargetChanged;
@@ -72,7 +72,6 @@ namespace Game.Characters.Units
 
         void Update()
         {
-            fieldOfView.UpdateViewTarget();
             if (currentState != null)
             {
                 currentState.Update();
@@ -97,7 +96,7 @@ namespace Game.Characters.Units
 
         void SetMoveState(Transform target = null)
         {
-            moveState.SetTargetObj(target);
+            moveState.SetTarget(target);
             SetState(moveState);
         }
 

@@ -5,7 +5,8 @@ using UnityEngine.Events;
 namespace Game.Characters.States
 {
     public class MoveState : IState
-    { 
+    {
+        Animator animator;
         NavMeshAgent agent;
         Transform agentTransform;
         Transform targetObj;
@@ -18,9 +19,10 @@ namespace Game.Characters.States
         
         public event UnityAction<Transform> ArrivedToTarget;
         
-        public MoveState(NavMeshAgent agent, bool canSelfEnter = false)
+        public MoveState(NavMeshAgent agent, Animator animator, bool canSelfEnter = false)
         {
             this.agent = agent;
+            this.animator = animator;
             agentTransform = agent.transform;
             this.canSelfEnter = canSelfEnter;
         }
@@ -32,7 +34,7 @@ namespace Game.Characters.States
             agent.stoppingDistance = attackDistance;
         }
 
-        public void SetTargetObj(Transform target)
+        public void SetTarget(Transform target)
         {
             if (!target)
             {
@@ -52,7 +54,7 @@ namespace Game.Characters.States
 
         public void Enter()
         {
-            agent.ResetPath();
+            animator.SetTrigger("Walk");
         }
         
         public void Update()

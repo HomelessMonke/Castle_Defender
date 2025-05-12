@@ -8,23 +8,4 @@
         void Exit();
     }
 
-    public class IdleState: IState
-    {
-        public bool CanSelfEnter => false;
-
-        public void Enter()
-        {
-            
-        }
-        
-        public void Update()
-        {
-            
-        }
-        
-        public void Exit()
-        {
-            
-        }
-    }
 }

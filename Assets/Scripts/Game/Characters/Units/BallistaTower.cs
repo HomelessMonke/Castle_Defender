@@ -20,18 +20,18 @@ namespace Game.Characters.Units
         
         float attackDistance;
 
-        IdleState idleState;
+        NotAnimatedIdleState idleState;
         AimAttackState aimState;
-        AttackState attackState;
+        NotAnimatedAttackState attackState;
         
         RangedAttack rangedAttack;
         
         void Awake()
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);
-            idleState = new IdleState();
+            idleState = new NotAnimatedIdleState();
             aimState = new AimAttackState(transform);
-            attackState = new AttackState(rangedAttack);
+            attackState = new NotAnimatedAttackState(rangedAttack);
             attackState.LoseTargetToAttack += OnUpdateTargets;
             aimState.AttackTarget += OnAimStateCanAttack;
             fov.TargetsChanged += OnUpdateTargets;

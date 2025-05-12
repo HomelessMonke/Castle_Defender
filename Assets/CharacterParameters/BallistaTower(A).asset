@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 2f6ad1d45b894f98a21753d95a1f0abb, type: 3}
-  m_Name: BallistaTowerParameters
+  m_Name: BallistaTower(A)
   m_EditorClassIdentifier: 
   damage: 20
   projectileSpeed: 15

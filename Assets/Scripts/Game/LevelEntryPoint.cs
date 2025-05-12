@@ -14,9 +14,6 @@ namespace Game
         TargetsDetectionArea allyDetectionArea;
         
         [SerializeField]
-        TargetsDetectionArea enemyDetectionArea;
-        
-        [SerializeField]
         CharacterSpawnerList spawnManager;
 
         [SerializeField]
@@ -36,9 +33,7 @@ namespace Game
             allyInitializer.Init();
             wavesManager.LaunchWaves();
             
-            allyDetectionArea.Init(16);
-            enemyDetectionArea.Init(128);
-            enemyDetectionArea.RegisterTargets(castle.HpAreas);
+            allyDetectionArea.Init(128);
         }
     }
 }

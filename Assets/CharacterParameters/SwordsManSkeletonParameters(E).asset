@@ -9,11 +9,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 21dcfb18d0184444a21f5e6753c13683, type: 3}
-  m_Name: AllySwordsMan
+  m_Script: {fileID: 11500000, guid: 629415485b6d4c39a1f35f478dfab37a, type: 3}
+  m_Name: SwordsManSkeletonParameters(E)
   m_EditorClassIdentifier: 
-  hp: 20
+  hp: 25
   attackPoints: 4
-  moveDirection: {x: 1.5, y: 0}
-  attackDistance: 0.5
+  moveDirection: {x: -1.2, y: 0}
+  attackDistance: 0.6
   attackCD: 2
+  minCoinsReward: 20
+  maxCoinsReward: 40

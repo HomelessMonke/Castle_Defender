@@ -2,16 +2,15 @@
 using Game.Characters.Units;
 using UnityEngine;
 using UnityEngine.Events;
-using Utilities;
 
 namespace Game.Characters.States
 {
-    public class AttackState: IState
+    public class AnimatedAttackState: IState
     {
         int damage;
+        Animator animator;
         IAttack attackVariation;
         Character character;
-        CustomTimer timer;
         
         Health targetHP;
 
@@ -19,17 +18,17 @@ namespace Game.Characters.States
         
         public event UnityAction LoseTargetToAttack;
         
-        public AttackState(IAttack attackVariation)
+        public AnimatedAttackState(IAttack attackVariation, CharacterAnimator characterAnimator)
         {
             this.attackVariation = attackVariation;
-            timer = new CustomTimer();
-            timer.TimerEnd += Attack;
+            characterAnimator.AttackEvent -= Attack;
+            characterAnimator.AttackEvent += Attack;
+            animator = characterAnimator.Animator;
         }
 
         public void Init(int damage, float attackCD)
         {
             this.damage = damage;
-            timer.SetDuration(attackCD);
         }
 
         public void SetTarget(Health targetHP)
@@ -39,37 +38,23 @@ namespace Game.Characters.States
 
         public void Enter()
         {
-            Attack();
-            timer.Reset();
-            timer.Start();
+            if(animator)
+                animator.SetTrigger("Attack");
         }
         
         public void Update()
         {
             if (!targetHP.IsAlive)
-            {
                 LoseTargetToAttack?.Invoke();
-                return;
-            }
-            
-            timer.Tick(Time.deltaTime);
         }
         
         public void Exit()
         {
-            timer.Stop();
         }
-        
+
         void Attack()
         {
-            if (!targetHP.IsAlive)
-            {
-                LoseTargetToAttack?.Invoke();
-                return;
-            }
-            
             attackVariation.Attack(damage, targetHP);
-            timer.Restart();
         }
     }
 }

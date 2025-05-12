@@ -7,7 +7,6 @@ using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
-using Utilities;
 using Utilities.Attributes;
 
 namespace Game.Characters.Units
@@ -16,10 +15,10 @@ namespace Game.Characters.Units
     public class EnemyRangedCharacter: Character
     {
         [SerializeField]
-        CharacterType characterType;
-            
+        CharacterAnimator characterAnimator;
+
         [SerializeField]
-        TargetsDetectionArea fov;
+        CharacterFieldOfView fov;
 
         [SerializeField]
         Transform projSpawnPos;
@@ -43,11 +42,9 @@ namespace Game.Characters.Units
         DamageFlash damageFlash;
         
         RangedAttack rangedAttack;
-        AttackState attackState;
+        AnimatedAttackState attackState;
         MoveState moveState;
         
-        CustomTimer timer;
-
         float attackDistance;
         float fovDistance;
         
@@ -55,29 +52,26 @@ namespace Game.Characters.Units
         
         void Awake()
         {
-            moveState = new MoveState(agent);
+            moveState = new MoveState(agent, characterAnimator.Animator);
             moveState.ArrivedToTarget += OnArrivedToTarget;
             
             rangedAttack = new RangedAttack(projSpawnPos, animationData);
-            attackState = new AttackState(rangedAttack);
-            attackState.LoseTargetToAttack += UpdateTarget;
-            
-            timer = new CustomTimer() {Repeatable = true};
-            timer.TimerEnd += UpdateTarget;
+            attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
+            attackState.LoseTargetToAttack += OnLoseTargetToAttack;
+            fov.TargetChanged += UpdateTarget;
         }
 
         public void Init(EnemyRangedParameters parameters, ProjectileSpawner projSpawner)
         {
             attackDistance = parameters.AttackDistance;
             fovDistance = parameters.FovDistance;
-            timer.SetDuration(parameters.UpdateFovCD);
-            timer.Start();
             
             healthView.SetActive(false);
             health.Init(parameters.Hp);
             health.DamageTaken += (_)=> OnGetDamage();
             health.Died += OnDeath;
 
+            fov.Init(transform);
             rangedAttack.Init(parameters.ProjectileSpeed, projSpawner);
             moveState.Init(parameters.MoveDirection, parameters.AttackDistance);
             attackState.Init(parameters.Damage, parameters.AttackCD);
@@ -92,7 +86,6 @@ namespace Game.Characters.Units
 
         void Update()
         {
-            timer.Tick(Time.deltaTime);
             if (currentState != null)
             {
                 currentState.Update();
@@ -100,50 +93,58 @@ namespace Game.Characters.Units
             Debug.DrawLine(transform.position, agent.destination, pathLineColor);
         }
 
-        void SetMoveState(Transform target = null)
+        void UpdateTarget(Transform target)
         {
-            moveState.SetTargetObj(target);
-            SetState(moveState);
-        }
-
-        void UpdateTarget()
-        {
-            var target = fov.GetTargetByDistance(transform.position);
-            
-            if (target && target.IsAlive)
+            if (target && target.gameObject.activeSelf)
             {
-                var targetDistance = Vector2.Distance(transform.position, target.transform.position);
-                if (targetDistance <= attackDistance)
+                var targetDistance = Vector2.Distance(transform.position, target.position);
+                if (targetDistance > agent.stoppingDistance)
                 {
-                    attackState.SetTarget(target);
-                    SetState(attackState);
+                    SetMoveState(target);
                     return;
                 }
 
-                if (targetDistance <= fovDistance)
+                if (TrySetAttackState(target))
                 {
-                    moveState.SetTargetObj(target.transform);
-                    SetState(moveState);
                     return;
                 }
             }
             
             SetMoveState();
         }
-
+        
+        void SetMoveState(Transform target = null)
+        {
+            moveState.SetTarget(target);
+            SetState(moveState);
+        }
+        
+        bool TrySetAttackState(Transform target)
+        {
+            if (!target)
+                return false;
+                
+            var targetHP = target.GetComponent<Health>();
+            if (targetHP && targetHP.IsAlive)
+            {
+                attackState.SetTarget(targetHP);
+                SetState(attackState);
+                return true;
+            }
+            return false;
+        }
+        
         void OnArrivedToTarget(Transform target)
         {
-            if (target && target.TryGetComponent(out Health health))
+            if(!TrySetAttackState(target))
             {
-                if (health.IsAlive)
-                {
-                    attackState.SetTarget(health);
-                    SetState(attackState);
-                    return;
-                }
+                SetMoveState();
             }
-            
-            UpdateTarget();
+        }
+        
+        void OnLoseTargetToAttack()
+        {
+            UpdateTarget(fov.CurrentTarget);
         }
 
         void OnDeath()
@@ -158,6 +159,12 @@ namespace Game.Characters.Units
         void SetOneHP()
         {
             health.GetDamage(health.MaxHealth-1);
+        }
+        
+        [Button]
+        void LogCurrentHP()
+        {
+            Debug.Log($"currentHealth: {health.CurrentHealth}");
         }
     }
 }

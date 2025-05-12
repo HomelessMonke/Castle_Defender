@@ -9,10 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b79ea3848f9f430a89e6b365b19f9e5e, type: 3}
-  m_Name: AllyArchersParameters
+  m_Script: {fileID: 11500000, guid: 21dcfb18d0184444a21f5e6753c13683, type: 3}
+  m_Name: KnightParameters(A)
   m_EditorClassIdentifier: 
-  damage: 3
-  projectileSpeed: 9
-  attackCD: 3
-  attackDistance: 10
+  hp: 20
+  attackPoints: 4
+  moveDirection: {x: 1.4, y: 0}
+  attackDistance: 0.5
+  attackCD: 2

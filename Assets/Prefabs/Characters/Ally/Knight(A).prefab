@@ -16,12 +16,12 @@ GameObject:
   - component: {fileID: 1813736336390844923}
   - component: {fileID: 1431322647330348535}
   m_Layer: 6
-  m_Name: SwordsMan(A)
+  m_Name: Knight(A)
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &887646720392928295
 Transform:
   m_ObjectHideFlags: 0
@@ -30,7 +30,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2334795779472546635}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.32, y: 0.21, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -163,6 +163,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fieldOfView: {fileID: 3711412251249260469}
+  characterAnimator: {fileID: 9145174655565671439}
   health: {fileID: 7516751326100797198}
   healthView: {fileID: 389636709023439617}
   agent: {fileID: 6703155641917846953}
@@ -401,6 +402,8 @@ GameObject:
   - component: {fileID: 8564103599731851920}
   - component: {fileID: 6722726479061784755}
   - component: {fileID: 144315566445218092}
+  - component: {fileID: 4994401019332276063}
+  - component: {fileID: 9145174655565671439}
   m_Layer: 6
   m_Name: Visual
   m_TagString: Untagged
@@ -417,7 +420,7 @@ Transform:
   m_GameObject: {fileID: 5673513354264399059}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.066, y: 0, z: 0}
+  m_LocalPosition: {x: 0.002, y: -0.04, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -467,7 +470,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 4723107735738678597, guid: 1018b0ba13578bf459bd254ae1a2be99, type: 3}
+  m_Sprite: {fileID: 4723107735738678597, guid: 174209194dbf2fb44aef1ea1ba76a2f1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -527,6 +530,41 @@ MonoBehaviour:
     m_RotationOrder: 4
   spriteRenderers:
   - {fileID: 6722726479061784755}
+--- !u!95 &4994401019332276063
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673513354264399059}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: ba572cac7144f594eae779a006ccd746, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &9145174655565671439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5673513354264399059}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ea2e98c289c48138d22c29169de6e78, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4994401019332276063}
 --- !u!1 &5984168960719045598
 GameObject:
   m_ObjectHideFlags: 0
@@ -537,7 +575,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7107083847321889512}
   - component: {fileID: 3711412251249260469}
-  - component: {fileID: 8938674356245735023}
+  - component: {fileID: 5501624734463415355}
   m_Layer: 7
   m_Name: FieldOfView
   m_TagString: Untagged
@@ -575,8 +613,8 @@ MonoBehaviour:
   layerMask:
     serializedVersion: 2
     m_Bits: 256
---- !u!61 &8938674356245735023
-BoxCollider2D:
+--- !u!58 &5501624734463415355
+CircleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -609,18 +647,8 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.2979579, y: -0.05066228}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0, y: 0}
-    oldSize: {x: 0, y: 0}
-    newSize: {x: 0, y: 0}
-    adaptiveTilingThreshold: 0
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  m_Size: {x: 0.5931151, y: 2.8596463}
-  m_EdgeRadius: 0
+  m_Offset: {x: 0, y: 0}
+  m_Radius: 1
 --- !u!1 &6743389304365311148
 GameObject:
   m_ObjectHideFlags: 0
