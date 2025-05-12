@@ -7,6 +7,7 @@ namespace Utilities
         public float Duration { get; private set; }
         public float TimeLeft { get; private set; }
         public bool IsRunning { get; private set; }
+        public bool Repeatable { get; set; }
         public bool IsFinished => TimeLeft <= 0f;
 
         public event UnityAction TimerEnd;
@@ -57,6 +58,9 @@ namespace Utilities
                 TimeLeft = 0f;
                 Stop();
                 TimerEnd?.Invoke();
+                
+                if(Repeatable)
+                    Restart();
             }
         }
     }

@@ -15,7 +15,15 @@ MonoBehaviour:
   waves:
   - squads:
     - type: 4
+      maxUnitsInRow: 12
+      count: 24
+      spawnDelay: 1
+    - type: 3
+      maxUnitsInRow: 10
+      count: 10
+      spawnDelay: 1
+    - type: 4
       maxUnitsInRow: 10
       count: 20
-      spawnDelay: 0
+      spawnDelay: 1
     nextWaveDelay: 15

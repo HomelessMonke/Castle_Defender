@@ -13,7 +13,7 @@ namespace Game.Characters.Units
         Transform projectileSpawnPoint;
         
         [SerializeField]
-        MultiTargetFieldOfView fov;
+        TargetsDetectionArea fov;
 
         [SerializeField]
         ProjectileAnimationData animationData;
@@ -26,8 +26,6 @@ namespace Game.Characters.Units
         
         RangedAttack rangedAttack;
         
-        public override CharacterType CharacterType => CharacterType.BallistaTower;
-
         void Awake()
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);

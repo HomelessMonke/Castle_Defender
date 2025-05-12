@@ -17,9 +17,6 @@ namespace Game.Characters.Spawners
         [SerializeField]
         Transform spawnPointTransform;
         
-        [SerializeField]
-        Transform mainTargetTransform;
-        
         //TODO: перенести оффсеты в squadInfo или отдельный класс, на который будет ссылать squadInfo
         [SerializeField]
         protected float unitsOffsetX;
@@ -49,8 +46,7 @@ namespace Game.Characters.Spawners
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
-            var targetToMove = new Vector2(mainTargetTransform.position.x, unit.transform.position.y);
-            unit.Init(targetToMove, unitParameters);
+            unit.Init(unitParameters);
             unit.Died+= ()=> pool.Despawn(unit);
             return unit;
         }

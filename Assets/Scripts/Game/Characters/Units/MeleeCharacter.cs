@@ -39,12 +39,8 @@ namespace Game.Characters.Units
         AttackState attackState;
         MoveState moveState;
         
-        Vector2 mainTargetPos;
-        
         public event UnityAction Died;
         
-        public override CharacterType CharacterType => characterType;
-
         void Awake()
         {
             moveState = new MoveState(agent);
@@ -55,17 +51,15 @@ namespace Game.Characters.Units
             fieldOfView.TargetChanged += OnTargetChanged;
         }
 
-        public void Init(Vector2 mainTargetPos, MeleeUnitParameters parameters)
+        public void Init(MeleeUnitParameters parameters)
         {
-            this.mainTargetPos = mainTargetPos;
-            
             healthView.SetActive(false);
             health.Init(parameters.Hp);
-            health.DamageTaken += OnGetDamage;
+            health.DamageTaken += (_)=> OnGetDamage();
             health.Died += OnDeath;
 
             fieldOfView.Init(transform);
-            moveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
+            moveState.Init(parameters.MoveDirection, parameters.AttackDistance);
             attackState.Init(parameters.AttackPoints, parameters.AttackCD);
             SetMoveState();
         }
@@ -103,11 +97,7 @@ namespace Game.Characters.Units
 
         void SetMoveState(Transform target = null)
         {
-            if (target)
-                moveState.SetTargetObj(target);
-            else
-                moveState.SetTargetPos(mainTargetPos);
-            
+            moveState.SetTargetObj(target);
             SetState(moveState);
         }
 

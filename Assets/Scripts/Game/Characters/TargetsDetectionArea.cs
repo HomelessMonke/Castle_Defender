@@ -5,38 +5,48 @@ using Utilities.Extensions;
 
 namespace Game.Characters
 {
-    public class MultiTargetFieldOfView : MonoBehaviour
+    public class TargetsDetectionArea : MonoBehaviour
     {
         [SerializeField]
         LayerMask layerMask;
+
+        List<Health> targets;
         
-        List<Health> triggeredObjects = new (32);
-        
-        public bool HaveTargets => triggeredObjects.Count > 0;
+        public bool HaveTargets => targets.Count > 0;
 
         public event Action TargetsChanged;
 
+        public void Init(int capacity)
+        {
+            targets = new List<Health>(capacity);
+        }
+
+        public void RegisterTargets(Health[] addTargets)
+        {
+            targets.AddRange(addTargets);
+        }
+
         public Health GetTargetByIndex(int index)
         {
-            if (triggeredObjects.Count == 0)
+            if (targets.Count == 0)
                 return null;
                 
-            var targetIndex = index % triggeredObjects.Count;
-            return triggeredObjects[targetIndex];
+            var targetIndex = index % targets.Count;
+            return targets[targetIndex];
         }
         
         public Health GetTargetByDistance(Vector2 comparePos)
         {
-            if (triggeredObjects.Count == 0)
+            if (targets.Count == 0)
                 return null;
 
-            var target = triggeredObjects[0];
-            if (triggeredObjects.Count > 1)
+            var target = targets[0];
+            if (targets.Count > 1)
             {
                 var targetSqrDistance = ((Vector2)target.transform.position - comparePos).sqrMagnitude;
-                for (int i = 1; i < triggeredObjects.Count; i++)
+                for (int i = 1; i < targets.Count; i++)
                 {
-                    var obj = triggeredObjects[i];
+                    var obj = targets[i];
                     Vector2 direction = (Vector2)obj.transform.position - comparePos;
                     float objSqrDistance = direction.sqrMagnitude;
                     if (objSqrDistance < targetSqrDistance)
@@ -57,7 +67,8 @@ namespace Game.Characters
                 var hpComponent = otherObj.GetComponent<Health>();
                 if (hpComponent.IsAlive)
                 {
-                    triggeredObjects.Add(hpComponent);
+                    targets.Add(hpComponent);
+                    Debug.Log($"{name} add new trigger {hpComponent.name}");
                     TargetsChanged?.Invoke();
                 }
             }
@@ -70,7 +81,8 @@ namespace Game.Characters
                 return;
             
             var hpComponent = otherObj.GetComponent<Health>();
-            triggeredObjects.Remove(hpComponent);
+            targets.Remove(hpComponent);
+            Debug.Log($"{name} remove new trigger {hpComponent.name}");
             TargetsChanged?.Invoke();
         }
     }

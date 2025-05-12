@@ -24,7 +24,8 @@ namespace Game.Characters.Spawners
 
         IEnumerator LaunchWavesCoroutine()
         {
-            foreach (var wave in wavesList.Waves)
+            var waves = wavesList.Waves;
+            foreach (var wave in waves)
             {
                 yield return SpawnWave(wave);
                 yield return new WaitForSeconds(wave.NextWaveDelay);

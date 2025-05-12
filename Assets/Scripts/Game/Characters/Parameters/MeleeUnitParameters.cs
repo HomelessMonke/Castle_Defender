@@ -11,7 +11,7 @@ namespace Game.Characters.Parameters
         int attackPoints = 4;
         
         [SerializeField]
-        float moveSpeed = 2;
+        Vector2 moveDirection = new Vector2(2, 0);
 
         [SerializeField]
         float attackDistance = 0.5f;
@@ -20,7 +20,7 @@ namespace Game.Characters.Parameters
         float attackCD = 2;
         
         public int AttackPoints => attackPoints;
-        public float MoveSpeed => moveSpeed;
+        public Vector2 MoveDirection => moveDirection;
         public float AttackDistance => attackDistance;
         public float AttackCD => attackCD;
         public int Hp => hp;

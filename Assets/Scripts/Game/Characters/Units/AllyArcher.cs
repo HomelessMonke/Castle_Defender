@@ -13,7 +13,7 @@ namespace Game.Characters.Units
         Transform projectileSpawnPoint;
         
         [SerializeField]
-        MultiTargetFieldOfView fov;
+        TargetsDetectionArea fov;
 
         [SerializeField]
         ProjectileAnimationData animationData;
@@ -26,9 +26,7 @@ namespace Game.Characters.Units
         AttackState attackState;
         AimAttackState aimState;
         RangedAttack rangedAttack;
-
-        public override CharacterType CharacterType => CharacterType.AllyArcher;
-
+        
         void Awake()
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);

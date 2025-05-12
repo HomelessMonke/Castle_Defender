@@ -8,7 +8,13 @@ namespace Game
     public class LevelEntryPoint: MonoBehaviour
     {
         [SerializeField]
-        Gates gates;
+        Castle castle;
+
+        [SerializeField]
+        TargetsDetectionArea allyDetectionArea;
+        
+        [SerializeField]
+        TargetsDetectionArea enemyDetectionArea;
         
         [SerializeField]
         CharacterSpawnerList spawnManager;
@@ -24,12 +30,15 @@ namespace Game
         
         public void Start()
         {
-            //TODO: убрать магию
-            gates.Init(100);
+            castle.Init(100);
             playerAbilitiesUI.Init();
             spawnManager.Init();
             allyInitializer.Init();
             wavesManager.LaunchWaves();
+            
+            allyDetectionArea.Init(16);
+            enemyDetectionArea.Init(128);
+            enemyDetectionArea.RegisterTargets(castle.HpAreas);
         }
     }
 }

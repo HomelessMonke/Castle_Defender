@@ -5,26 +5,31 @@ namespace Game.Characters
 {
     public class Health: MonoBehaviour
     {
-        public int MaxHealth { get; private set; } 
         int currentHealth;
+        bool isImmortal;
         
+        public int MaxHealth { get; private set; } 
         public float Percentage => (float)currentHealth / MaxHealth;
         public bool IsAlive => currentHealth > 0;
         
-        public event UnityAction DamageTaken, Healed, Died;
+        public event UnityAction Healed, Died;
+        public event UnityAction<int> DamageTaken;
 
-        public void Init(int maxHealth)
+        public void Init(int maxHealth, bool isImmortal = false)
         {
             ResetEvents();
             MaxHealth = maxHealth;
             currentHealth = maxHealth;
+            this.isImmortal = isImmortal;
         }
 
         public void GetDamage(int amount)
         {
-            currentHealth = Mathf.Max(currentHealth-amount,0);
-            DamageTaken?.Invoke();
+            DamageTaken?.Invoke(amount);
+            if(isImmortal)
+                return;
             
+            currentHealth = Mathf.Max(currentHealth-amount,0);
             if (currentHealth <= 0)
             {
                 Died?.Invoke();

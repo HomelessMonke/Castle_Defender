@@ -1,5 +1,4 @@
-﻿using System;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
@@ -8,66 +7,72 @@ namespace Game.Characters.States
     public class MoveState : IState
     { 
         NavMeshAgent agent;
+        Transform agentTransform;
         Transform targetObj;
-        Vector2 targetPos;
-        bool isStaticTarget;
-        Vector2 lastPos;
+        bool canSelfEnter;
+        Vector2 moveDirection;
+        
         
         bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
-        public bool CanSelfEnter => true;
+        public bool CanSelfEnter => canSelfEnter;
         
         public event UnityAction<Transform> ArrivedToTarget;
         
-        public MoveState(NavMeshAgent agent)
+        public MoveState(NavMeshAgent agent, bool canSelfEnter = false)
         {
             this.agent = agent;
+            agentTransform = agent.transform;
+            this.canSelfEnter = canSelfEnter;
         }
 
-        public void Init(float moveSpeed, float attackDistance)
+        public void Init(Vector2 moveDirection, float attackDistance)
         {
-            agent.speed = moveSpeed;
+            agent.speed = Mathf.Abs(moveDirection.x);
+            this.moveDirection = moveDirection;
             agent.stoppingDistance = attackDistance;
         }
 
         public void SetTargetObj(Transform target)
         {
+            if (!target)
+            {
+                agent.ResetPath();
+                targetObj = null;
+                return;
+            }
+
+            if (target.Equals(targetObj))
+            {
+                return;
+            }
+            
             agent.ResetPath();
             targetObj = target;
         }
 
-        public void SetTargetPos(Vector2 position)
-        {
-            agent.ResetPath();
-            targetObj = null;
-            targetPos = position;
-        }
-
         public void Enter()
         {
-            if(!targetObj)
-                agent.SetDestination(targetPos);
+            agent.ResetPath();
         }
         
         public void Update()
         {
             if (targetObj)
             {
-                targetPos = targetObj.position;
-                agent.SetDestination(targetPos);
+                agent.SetDestination(targetObj.position);
             }
-            else if(!agent.hasPath)
+            else
             {
-                agent.SetDestination(targetPos);
+                agentTransform.Translate(moveDirection * Time.deltaTime);
             }
             
             if (IsArrivedToTarget)
-            {
                 ArrivedToTarget?.Invoke(targetObj);
-            }
         }
         
         public void Exit()
         {
+            agent.ResetPath();
         }
     }
 }
