@@ -1,4 +1,5 @@
 using System;
+using Game.Characters.Parameters;
 using UI;
 using UnityEngine;
 using UnityEngine.Serialization;
@@ -8,6 +9,9 @@ namespace Game.Characters
     [RequireComponent(typeof(Health))]
     public class Castle : MonoBehaviour
     {
+        [SerializeField]
+        CastleParameters parameters;
+        
         [SerializeField]
         Health health;
         
@@ -20,9 +24,9 @@ namespace Game.Characters
         public Health[] HpAreas => hpAreas;
         public event Action Die;
         
-        public void Init(int maxHealth)
+        public void Init()
         {
-            health.Init(maxHealth);
+            health.Init(parameters.HP);
             health.DamageTaken += (_)=> hpView.Draw(health);
             health.Died += OnDie;
 

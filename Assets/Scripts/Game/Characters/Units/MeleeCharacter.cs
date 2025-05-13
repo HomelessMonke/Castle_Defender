@@ -135,8 +135,11 @@ namespace Game.Characters.Units
         
         void OnDeath()
         {
-            currentState.Exit();
-            currentState = null;
+            if (currentState != null)
+            {
+                currentState.Exit();
+                currentState = null;
+            }
             Died?.Invoke();
             Died = null;
         }

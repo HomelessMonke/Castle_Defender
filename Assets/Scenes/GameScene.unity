@@ -662,6 +662,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 200493902}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -1179,6 +1180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 441948537}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -1679,6 +1681,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 621497150}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -1814,6 +1817,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 622903261}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -3176,6 +3180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 1160670779}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -3311,6 +3316,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 1165036150}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -3636,6 +3642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 1323199093}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -3940,6 +3947,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 11400000, guid: e8b44ae231dac5a4ab2d1be5deae46c6, type: 2}
   health: {fileID: 1351481473}
   hpAreas:
   - {fileID: 622903261}
@@ -4040,6 +4048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 1380049217}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -4693,6 +4702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 1759829760}
   hpAreas: []
   hpView: {fileID: 882566235}
@@ -5112,6 +5122,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 38c70f5b09b990f449676971cca1398d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  parameters: {fileID: 0}
   health: {fileID: 2015239869}
   hpAreas: []
   hpView: {fileID: 882566235}

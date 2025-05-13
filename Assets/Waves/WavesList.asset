@@ -17,13 +17,13 @@ MonoBehaviour:
     - type: 4
       maxUnitsInRow: 12
       count: 48
-      spawnDelay: 3
+      spawnDelay: 2.5
     - type: 3
       maxUnitsInRow: 12
       count: 24
-      spawnDelay: 1
+      spawnDelay: 2
     - type: 0
-      maxUnitsInRow: 12
-      count: 24
+      maxUnitsInRow: 10
+      count: 30
       spawnDelay: 1
     nextWaveDelay: 15

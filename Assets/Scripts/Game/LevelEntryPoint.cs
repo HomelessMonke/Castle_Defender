@@ -27,7 +27,7 @@ namespace Game
         
         public void Start()
         {
-            castle.Init(100);
+            castle.Init();
             playerAbilitiesUI.Init();
             spawnManager.Init();
             allyInitializer.Init();
