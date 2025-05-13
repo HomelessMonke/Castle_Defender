@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 25
   attackPoints: 4
-  moveDirection: {x: -1.2, y: 0}
+  moveDirection: {x: -1, y: 0}
   attackDistance: 0.6
   attackCD: 2
   minCoinsReward: 20

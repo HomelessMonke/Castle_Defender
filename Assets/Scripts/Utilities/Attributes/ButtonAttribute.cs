@@ -1,16 +1,17 @@
 ﻿using System;
-using PropertyAttribute = NUnit.Framework.PropertyAttribute;
 
 namespace Utilities.Attributes
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class ButtonAttribute : PropertyAttribute
+    public class ButtonAttribute : Attribute
     {
-        public string ButtonName { get; private set; }
+        public string ButtonName { get; }
+        public bool RuntimeOnly { get; }
 
-        public ButtonAttribute(string buttonName = null)
+        public ButtonAttribute(string buttonName = null, bool runtimeOnly = false)
         {
             ButtonName = buttonName;
+            RuntimeOnly = runtimeOnly;
         }
     }
 }

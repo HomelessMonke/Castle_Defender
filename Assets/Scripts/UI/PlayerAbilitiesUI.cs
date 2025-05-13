@@ -1,4 +1,5 @@
 ﻿using Game.Characters.Spawners;
+using Game.Characters.Spawners.FormationSpawnParameters;
 using Game.Waves;
 using UnityEngine;
 using UnityEngine.UI;

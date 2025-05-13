@@ -8,6 +8,10 @@ namespace Game.Waves
         [SerializeField]
         Wave[] waves;
         
+        [SerializeField]
+        float timeBetweenWaves = 5f;
+        
         public Wave[] Waves => waves;
+        public float TimeBetweenWaves => timeBetweenWaves;
     }
 }

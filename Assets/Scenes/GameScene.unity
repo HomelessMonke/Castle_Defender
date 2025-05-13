@@ -990,10 +990,19 @@ MonoBehaviour:
   callSoldiersButton: {fileID: 2014030475}
   soldiersSpawner: {fileID: 1709023014}
   soldiersInfo:
-    type: 1
-    maxUnitsInRow: 5
-    count: 2
     spawnDelay: 0
+    type: 0
+    formation:
+      rid: 707700957143892291
+  references:
+    version: 2
+    RefIds:
+    - rid: 707700957143892291
+      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
+      data:
+        linePositionsCounts: 
+        unitsOffsetX: 0.2
+        unitsOffsetY: 0.2
 --- !u!1 &413913388
 GameObject:
   m_ObjectHideFlags: 0
@@ -3448,8 +3457,6 @@ MonoBehaviour:
   unitParameters: {fileID: 11400000, guid: 213e05daf69918b46b4954505691ccd4, type: 2}
   projectileSpawner: {fileID: 1614923132}
   spawnPointTransform: {fileID: 1237871085}
-  unitsOffsetX: 0.5
-  unitsOffsetY: 0.5
 --- !u!1 &1201001266
 GameObject:
   m_ObjectHideFlags: 0
@@ -4585,8 +4592,6 @@ MonoBehaviour:
     initialCount: 5
   unitParameters: {fileID: 11400000, guid: dfe34c47e9c9123468ea406803b8b532, type: 2}
   spawnPointTransform: {fileID: 162432940}
-  unitsOffsetX: 0.5
-  unitsOffsetY: 0.5
 --- !u!1 &1722922278
 GameObject:
   m_ObjectHideFlags: 0
@@ -4641,8 +4646,6 @@ MonoBehaviour:
     initialCount: 30
   unitParameters: {fileID: 11400000, guid: 8682ecb567fba4f45a31e6988c3ec556, type: 2}
   spawnPointTransform: {fileID: 34672000}
-  unitsOffsetX: 0.5
-  unitsOffsetY: 0.7
 --- !u!1 &1759829758
 GameObject:
   m_ObjectHideFlags: 0
@@ -4996,7 +4999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2014030474
 RectTransform:
   m_ObjectHideFlags: 0

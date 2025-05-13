@@ -8,7 +8,7 @@ using UnityEditor;
 using UnityEngine;
 
 /// <summary>
-/// Добавь <see cref="SelectTypeAttribute"/> к полю который имеет аттрибут [SerializeReference] шобы нарисовать выпадающий список с реализациями этой абстракции
+/// Добавь <see cref="SelectTypeAttribute"/> к полю который имеет аттрибут [SerializeReference] чтобы нарисовать выпадающий список с реализациями этой абстракции
 /// </summary>
 /// <remarks>
 /// https://forum.unity.com/threads/how-to-set-serializedproperty-managedreferencevalue-to-null.746645/
@@ -68,7 +68,7 @@ public sealed class SelectTypeAttributeDrawer : PropertyDrawer
         {
             Undo.RegisterCompleteObjectUndo(property.serializedObject.targetObject, "selected type change");
             Type selectedType2 = instantiableTypes2[newSelectedIndex2];
-            property.managedReferenceValue = FormatterServices.GetUninitializedObject(selectedType2);
+            property.managedReferenceValue = Activator.CreateInstance(selectedType2);
         }
 		
 		EditorGUI.PropertyField(

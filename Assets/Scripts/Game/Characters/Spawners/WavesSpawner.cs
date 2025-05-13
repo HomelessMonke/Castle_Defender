@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using Game.Characters;
 using Game.Characters.Spawners;
+using Game.Characters.Spawners.FormationSpawnParameters;
 using Game.Currencies;
 using Game.Waves;
 using UnityEngine;
@@ -25,10 +26,11 @@ namespace Game.Characters.Spawners
         IEnumerator LaunchWavesCoroutine()
         {
             var waves = wavesList.Waves;
+            var timeBetweenWaves = wavesList.TimeBetweenWaves;
             foreach (var wave in waves)
             {
                 yield return SpawnWave(wave);
-                yield return new WaitForSeconds(wave.NextWaveDelay);
+                yield return new WaitForSeconds(timeBetweenWaves);
             }
         }
 
@@ -46,7 +48,7 @@ namespace Game.Characters.Spawners
             charactersSpawner.Spawn(squadInfo);
         }
         
-        [Button]
+        [Button(runtimeOnly: true)]
         public void SpawnFirstWave()
         {
             StartCoroutine(SpawnWave(wavesList.Waves[0]));

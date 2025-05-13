@@ -1,40 +1,58 @@
-﻿using System;
-using System.Reflection;
+﻿using System.Reflection;
 using UnityEditor;
 using UnityEngine;
+
 namespace Utilities.Attributes
 {
-    [CustomEditor(typeof(MonoBehaviour), true)]
+    // Указываем, что редактор работает для MonoBehaviour И ScriptableObject
+    [CustomEditor(typeof(UnityEngine.Object), true)]
+    [CanEditMultipleObjects]
     public class ButtonEditor : Editor
     {
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
+            // Отрисовываем стандартные поля
+            DrawDefaultInspector();
 
-            // Получаем все методы текущего объекта
-            MonoBehaviour monoBehaviour = (MonoBehaviour)target;
-            MethodInfo[] methods = monoBehaviour.GetType().GetMethods(
-                BindingFlags.Instance | BindingFlags.Static | BindingFlags.Public | BindingFlags.NonPublic
+            // Получаем текущий объект (работает для любого UnityEngine.Object)
+            UnityEngine.Object targetObject = target;
+
+            // Пропускаем объекты без методов (например, скрипты по умолчанию)
+            if (targetObject.GetType().Namespace == "UnityEngine") return;
+
+            // Получаем все методы
+            MethodInfo[] methods = targetObject.GetType().GetMethods(
+                BindingFlags.Instance | BindingFlags.Static | 
+                BindingFlags.Public | BindingFlags.NonPublic
             );
 
-            // Проходим по всем методам
+            // Отрисовываем кнопки для методов с атрибутом
             foreach (MethodInfo method in methods)
             {
-                // Проверяем, есть ли у метода атрибут ButtonAttribute
-                ButtonAttribute buttonAttribute = (ButtonAttribute)Attribute.GetCustomAttribute(method, typeof(ButtonAttribute));
-                if (buttonAttribute != null)
+                ButtonAttribute buttonAttribute = method.GetCustomAttribute<ButtonAttribute>();
+                if (buttonAttribute != null && IsValidMethod(method))
                 {
-                    // Определяем текст кнопки
-                    string buttonName = string.IsNullOrEmpty(buttonAttribute.ButtonName) ? method.Name : buttonAttribute.ButtonName;
+                    string buttonName = string.IsNullOrEmpty(buttonAttribute.ButtonName) 
+                        ? ObjectNames.NicifyVariableName(method.Name) 
+                        : buttonAttribute.ButtonName;
 
-                    // Отображаем кнопку
+                    EditorGUI.BeginDisabledGroup(!Application.isPlaying && buttonAttribute.RuntimeOnly);
                     if (GUILayout.Button(buttonName))
                     {
-                        // Вызываем метод при нажатии на кнопку
-                        method.Invoke(monoBehaviour, null);
+                        foreach (var t in targets) // Поддержка multi-select
+                        {
+                            method.Invoke(t, null);
+                        }
                     }
+                    EditorGUI.EndDisabledGroup();
                 }
             }
+        }
+
+        private bool IsValidMethod(MethodInfo method)
+        {
+            // Проверяем, что метод не имеет параметров
+            return method.GetParameters().Length == 0;
         }
     }
 }

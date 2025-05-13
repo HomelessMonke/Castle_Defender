@@ -1,4 +1,5 @@
 ﻿using System.Linq;
+using Game.Characters.Spawners.FormationSpawnParameters;
 using Game.Characters.Units;
 using Game.Waves;
 using UnityEditor;
@@ -27,13 +28,10 @@ namespace Game.Characters.Spawners
         public Character[] Spawn(SquadInfo squadInfo)
         {
             var characterType = squadInfo.Type;
-            var charactersCount = squadInfo.Count;
-            Character[] characters = new Character[charactersCount];
             var spawner = spawners.FirstOrDefault(x => x.CharacterType.Equals(characterType));
             if (spawner)
             {
-                characters = spawner.Spawn(squadInfo);
-                return characters;
+                return spawner.Spawn(squadInfo);;
             }
             return null;
         }
