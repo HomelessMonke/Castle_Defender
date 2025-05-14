@@ -1000,9 +1000,9 @@ MonoBehaviour:
     - rid: 707700957143892291
       type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
       data:
-        linePositionsCounts: 
+        linePositionsCounts: 05000000
         unitsOffsetX: 0.2
-        unitsOffsetY: 0.2
+        unitsOffsetY: 0.3
 --- !u!1 &413913388
 GameObject:
   m_ObjectHideFlags: 0
@@ -4999,7 +4999,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &2014030474
 RectTransform:
   m_ObjectHideFlags: 0
