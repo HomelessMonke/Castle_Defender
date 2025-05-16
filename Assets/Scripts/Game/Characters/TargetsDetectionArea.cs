@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Utilities.Extensions;
+using Random = UnityEngine.Random;
 
 namespace Game.Characters
 {
@@ -10,48 +11,95 @@ namespace Game.Characters
         [SerializeField]
         LayerMask layerMask;
 
-        List<Health> targets;
+        List<Health> targetsInArea;
         
-        public bool HaveTargets => targets.Count > 0;
-
         public event Action TargetsChanged;
 
         public void Init(int capacity)
         {
-            targets = new List<Health>(capacity);
+            targetsInArea = new List<Health>(capacity);
         }
 
         public Health GetTargetByIndex(int index)
         {
-            if (targets.Count == 0)
+            if (targetsInArea.Count == 0)
                 return null;
                 
-            var targetIndex = index % targets.Count;
-            return targets[targetIndex];
+            var targetIndex = index % targetsInArea.Count;
+            return targetsInArea[targetIndex];
         }
         
-        public Health GetTargetByDistance(Vector2 comparePos)
+        public (Health, bool) GetClosestTarget(Vector2 comparePos, float range)
         {
-            if (targets.Count == 0)
-                return null;
+            if (targetsInArea.Count == 0)
+                return (null, false);
 
-            var target = targets[0];
-            if (targets.Count > 1)
+            var closestTarget = targetsInArea[0];
+            bool inRange = false;
+            if (targetsInArea.Count > 1)
             {
-                var targetSqrDistance = ((Vector2)target.transform.position - comparePos).sqrMagnitude;
-                for (int i = 1; i < targets.Count; i++)
+                var sqrRange = range * range;
+                var targetSqrDistance = ((Vector2)closestTarget.transform.position - comparePos).sqrMagnitude;
+                for (int i = 1; i < targetsInArea.Count; i++)
                 {
-                    var obj = targets[i];
-                    Vector2 direction = (Vector2)obj.transform.position - comparePos;
-                    float objSqrDistance = direction.sqrMagnitude;
-                    if (objSqrDistance < targetSqrDistance)
+                    var targetInArea = targetsInArea[i];
+                    Vector2 distance = (Vector2)targetInArea.transform.position - comparePos;
+                    float sqrDistance = distance.sqrMagnitude;
+                    if (sqrDistance < targetSqrDistance)
                     {
-                        target = obj;
-                        targetSqrDistance = objSqrDistance;
+                        closestTarget = targetInArea;
+                        targetSqrDistance = sqrDistance;
+                        if (sqrDistance < range)
+                        {
+                            inRange = true;
+                        }
                     }
                 }
             }
-            return target;
+            return (closestTarget, inRange);
+        }
+        
+        public (Health, bool) GetRandomTargetInRange(Vector2 comparePos, float range)
+        {
+            if (targetsInArea.Count == 0)
+                return (null,false);
+            
+            if (targetsInArea.Count > 1)
+            {
+                var targetsInRange = new List<Health>();
+                var sqrRange = range * range;
+
+                Health closestTarget = null;
+                var minDistance = Mathf.Infinity;
+                for (int i = 1; i < targetsInArea.Count; i++)
+                {
+                    var target = targetsInArea[i];
+                    Vector2 distance = (Vector2)target.transform.position - comparePos;
+                    float targetSqrDistance = distance.sqrMagnitude;
+                    if (targetSqrDistance < sqrRange)
+                    {
+                        targetsInRange.Add(target);
+                    }
+                    else
+                    {
+                        if (targetSqrDistance < minDistance)
+                        {
+                            minDistance = targetSqrDistance;
+                            closestTarget = target;
+                        }
+                    }
+                }
+
+                if (targetsInRange.Count > 0)
+                {
+                    var index = Random.Range(0, targetsInRange.Count);
+                    return (targetsInRange[index], true);
+                }
+                   
+                return (closestTarget, false);
+            }
+            
+            return (targetsInArea[0], false);
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -62,7 +110,7 @@ namespace Game.Characters
                 var hpComponent = otherObj.GetComponent<Health>();
                 if (hpComponent.IsAlive)
                 {
-                    targets.Add(hpComponent);
+                    targetsInArea.Add(hpComponent);
                     TargetsChanged?.Invoke();
                 }
             }
@@ -75,7 +123,7 @@ namespace Game.Characters
                 return;
             
             var hpComponent = otherObj.GetComponent<Health>();
-            targets.Remove(hpComponent);
+            targetsInArea.Remove(hpComponent);
             TargetsChanged?.Invoke();
         }
     }

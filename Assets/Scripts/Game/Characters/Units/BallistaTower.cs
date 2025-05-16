@@ -30,7 +30,7 @@ namespace Game.Characters.Units
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);
             idleState = new NotAnimatedIdleState();
-            aimState = new AimAttackState(transform);
+            aimState = new AimAttackState(transform, 10);
             attackState = new NotAnimatedAttackState(rangedAttack);
             attackState.LoseTargetToAttack += OnUpdateTargets;
             aimState.AttackTarget += OnAimStateCanAttack;
@@ -48,6 +48,7 @@ namespace Game.Characters.Units
         public void Init(BallistaTowerParameters parameters, ProjectileSpawner projectileSpawner)
         {
             attackDistance = parameters.AttackDistance;
+            aimState.Init(attackDistance);
             rangedAttack.Init(parameters.ProjectileSpeed, projectileSpawner);
             attackState.Init(parameters.Damage, parameters.AttackCD);
             SetState(idleState);
@@ -55,23 +56,22 @@ namespace Game.Characters.Units
 
         void OnUpdateTargets()
         {
-            if (!fov.HaveTargets)
+            (var target, bool inRange) = fov.GetClosestTarget(transform.position, attackDistance);
+            if (!target)
             {
                 SetState(idleState);
                 return;
             }
-
-            var target = fov.GetTargetByDistance(transform.position);
-            var distance = Vector2.Distance(target.transform.position, transform.position);
-            if (distance > attackDistance)
-            {
-                aimState.SetTarget(target, attackDistance);
-                SetState(aimState);
-            }
-            else
+            
+            if (inRange)
             {
                 attackState.SetTarget(target);
                 SetState(attackState);
+            }
+            else
+            {
+                aimState.SetTarget(target);
+                SetState(aimState);
             }
         }
 

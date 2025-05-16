@@ -41,9 +41,8 @@ namespace Game.Characters
         {
             for (int i = 0; i < maxArchers; i++)
             {
-                var isDistanceAlgorithm = i / maxInRow < 1;
                 var archer = SpawnArcher(i);
-                archer.Init(i, isDistanceAlgorithm, parameters, arrowForTowerSpawner);
+                archer.Init(parameters, arrowForTowerSpawner);
                 allyArchers.Add(archer);
             }
         }

@@ -5,7 +5,7 @@ namespace Game.Characters.States
     public class AimAttackState : IState
     {
         int currentFrame;
-        int updatePerFrame = 5;
+        int updatePerFrame;
         float attackDistance;
         Transform parent;
         Health target;
@@ -15,14 +15,19 @@ namespace Game.Characters.States
         
         public event UnityAction<Health> AttackTarget;
 
-        public AimAttackState(Transform parent)
+        public AimAttackState(Transform parent, int updatePerFrame)
         {
             this.parent = parent;
+            this.updatePerFrame = updatePerFrame;
         }
 
-        public void SetTarget(Health target, float attackDistance)
+        public void Init(float attackDistance)
         {
             this.attackDistance = attackDistance;
+        }
+
+        public void SetTarget(Health target)
+        {
             this.target = target;
         }
 

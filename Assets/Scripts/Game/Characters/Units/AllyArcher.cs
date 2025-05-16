@@ -1,9 +1,12 @@
-﻿using Game.Characters.Attacks;
+﻿using System;
+using Game.Characters.Attacks;
 using Game.Characters.Parameters;
 using Game.Characters.Projectiles;
 using Game.Characters.Spawners;
 using Game.Characters.States;
+using UnityEditor;
 using UnityEngine;
+using Utilities.Attributes;
 
 namespace Game.Characters.Units
 {
@@ -24,9 +27,7 @@ namespace Game.Characters.Units
         [SerializeField]
         ProjectileAnimationData animationData;
 
-        int index;
         float attackDistance;
-        bool lookTargetByDistance;
         
         AnimatedIdleState idleState;
         AnimatedAttackState attackState;
@@ -37,7 +38,7 @@ namespace Game.Characters.Units
         {
             rangedAttack = new RangedAttack(projectileSpawnPoint, animationData);
             idleState = new AnimatedIdleState(characterAnimator.Animator);
-            aimState = new AimAttackState(transform);
+            aimState = new AimAttackState(transform, 10);
             attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
             attackState.LoseTargetToAttack += OnUpdateTargets;
             aimState.AttackTarget += OnAimStateCanAttack;
@@ -50,13 +51,13 @@ namespace Game.Characters.Units
             {
                 currentState.Update();
             }
+            
         }
 
-        public void Init(int index, bool lookTargetByDistance, AllyArchersParameters parameters, ProjectileSpawner projectileSpawner)
+        public void Init(AllyArchersParameters parameters, ProjectileSpawner projectileSpawner)
         {
-            this.index = index;
-            this.lookTargetByDistance = lookTargetByDistance;
             attackDistance = parameters.AttackDistance;
+            aimState.Init(attackDistance);
             rangedAttack.Init(parameters.ProjectileSpeed, projectileSpawner);
             attackState.Init(parameters.Damage, parameters.AttackCD);
             SetState(idleState);
@@ -64,23 +65,23 @@ namespace Game.Characters.Units
 
         void OnUpdateTargets()
         {
-            if (!fov.HaveTargets)
+            (var target, bool inRange) = fov.GetRandomTargetInRange(transform.position, attackDistance);
+            if (!target)
             {
                 SetState(idleState);
                 return;
             }
-
-            var target = lookTargetByDistance? fov.GetTargetByDistance(transform.position): fov.GetTargetByIndex(index);
-            var distance = Vector2.Distance(target.transform.position, transform.position);
-            if (distance > attackDistance)
-            {
-                aimState.SetTarget(target, attackDistance);
-                SetState(aimState);
-            }
-            else
+                
+            if (inRange)
             {
                 attackState.SetTarget(target);
                 SetState(attackState);
+            }
+            else
+            {
+                animator.SetTrigger("Idle");
+                aimState.SetTarget(target);
+                SetState(aimState);
             }
         }
 
