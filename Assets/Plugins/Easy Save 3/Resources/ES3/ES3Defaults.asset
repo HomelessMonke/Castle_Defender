@@ -36,6 +36,8 @@ MonoBehaviour:
     - Elringus.SpriteGlow.Runtime
     - NavMeshPlus
     - Zenject
+    - Zenject-IntegrationTests
+    - Zenject-IntegrationTests-Editor
     showAdvancedSettings: 0
   addMgrToSceneAutomatically: 0
   autoUpdateReferences: 1

@@ -1,5 +1,5 @@
 ﻿using Game.Characters.Spawners;
-using Game.Characters.Spawners.FormationSpawnParameters;
+using Game.Characters.Spawners.Formations;
 using UnityEngine;
 using UnityEngine.UI;
 

@@ -74,3 +74,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 701536127f934c8891ac0fd2df78d326, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gradesSequenceList: {fileID: 11400000, guid: 4d43b8a9189741f45aeae4df173cc743, type: 2}

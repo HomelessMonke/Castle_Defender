@@ -12,6 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b79ea3848f9f430a89e6b365b19f9e5e, type: 3}
   m_Name: ArcherParameters(A)
   m_EditorClassIdentifier: 
+  countGrades: {fileID: 11400000, guid: e27d0f26c3b44344c8374bcb788119f9, type: 2}
+  maxInLine: 14
   damage: 3
   projectileSpeed: 9
   attackCD: 3

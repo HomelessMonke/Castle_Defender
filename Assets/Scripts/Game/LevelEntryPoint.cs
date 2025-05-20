@@ -1,5 +1,6 @@
 ﻿using Game.Characters;
 using Game.Characters.Spawners;
+using Game.Upgrades;
 using UI;
 using UnityEngine;
 

@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using Game.Characters.Spawners.FormationSpawnParameters;
+using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
 using Game.Waves;
 using UnityEditor;

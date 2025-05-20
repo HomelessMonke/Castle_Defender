@@ -993,16 +993,17 @@ MonoBehaviour:
     spawnDelay: 0
     type: 0
     formation:
-      rid: 707700957143892291
+      rid: 707701051566588303
   references:
     version: 2
     RefIds:
-    - rid: 707700957143892291
-      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
+    - rid: 707701051566588303
+      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:
+        spawnToRight: 1
         linePositionsCounts: 05000000
         unitsOffsetX: 0.2
-        unitsOffsetY: 0.3
+        unitsOffsetY: 0.2
 --- !u!1 &413913388
 GameObject:
   m_ObjectHideFlags: 0
@@ -2202,14 +2203,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   archerTemplate: {fileID: 1363838825}
-  maxArchers: 36
-  maxInRow: 12
-  xOffset: 0.7
-  yOffset: 0.7
+  parameters: {fileID: 11400000, guid: b51d4c8fa01862a47a4938efa580541b, type: 2}
   startSpawnPoint: {fileID: 1045404676}
   root: {fileID: 413913389}
-  parameters: {fileID: 11400000, guid: b51d4c8fa01862a47a4938efa580541b, type: 2}
   arrowForTowerSpawner: {fileID: 1423010076}
+  formation:
+    spawnToRight: 0
+    linePositionsCounts: 
+    unitsOffsetX: 0.45
+    unitsOffsetY: 0.6
 --- !u!1 &686667118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3071,13 +3073,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045404675}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.7558745, w: 0.6547166}
-  m_LocalPosition: {x: -5.47, y: 4.11, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.072668545, w: 0.9973562}
+  m_LocalPosition: {x: -5.89, y: 0.23, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 670028984}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -98.204}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -8.335}
 --- !u!1 &1131912204
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,5 @@
 ﻿using Game.Characters.Parameters;
-using Game.Characters.Spawners.FormationSpawnParameters;
+using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
 using UnityEngine;
 
@@ -24,7 +24,7 @@ namespace Game.Characters.Spawners
         
         public override Character[] Spawn(SquadInfo squadInfo)
         {
-            var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform.position);
+            var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform);
             var count = spawnPositions.Length;
             var characters = new Character[count];
             for (int i = 0; i < count; i++)

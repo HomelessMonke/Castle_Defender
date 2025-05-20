@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using Game.Characters;
 using Game.Characters.Spawners;
-using Game.Characters.Spawners.FormationSpawnParameters;
+using Game.Characters.Spawners.Formations;
 using Game.Currencies;
 using Game.Waves;
 using UnityEngine;

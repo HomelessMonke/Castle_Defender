@@ -12,8 +12,6 @@ namespace Game.Characters.Attacks
         ProjectileSpawner spawner;
         ProjectileAnimationData animationData;
         
-        public event Action AttackCompleted;
-
         public RangedAttack(Transform projSpawnPos, ProjectileAnimationData animationData)
         {
             this.projSpawnPos = projSpawnPos;

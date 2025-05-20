@@ -1,5 +1,5 @@
 ﻿using Game.Characters.Parameters;
-using Game.Characters.Spawners.FormationSpawnParameters;
+using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
 using Game.Currencies;
 using UnityEngine;
@@ -19,10 +19,10 @@ namespace Game.Characters.Spawners
         [SerializeField]
         Transform spawnPointTransform;
         
-        CurrencyService currencyService;
+        CurrencyManager currencyService;
         
         [Inject]
-        public void Constructor(CurrencyService currencyService)
+        public void Constructor(CurrencyManager currencyService)
         {
             this.currencyService = currencyService;
         }
@@ -34,7 +34,7 @@ namespace Game.Characters.Spawners
         
         public override Character[] Spawn(SquadInfo squadInfo)
         {
-            var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform.position);
+            var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform);
             var count = spawnPositions.Length;
             var characters = new Character[count];
             for (int i = 0; i < count; i++)

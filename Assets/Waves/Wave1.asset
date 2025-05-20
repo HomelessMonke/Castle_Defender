@@ -16,55 +16,26 @@ MonoBehaviour:
   - spawnDelay: 0
     type: 4
     formation:
-      rid: 707700957143892279
+      rid: 707701051566588300
   - spawnDelay: 2
-    type: 4
-    formation:
-      rid: 707700957143892268
-  - spawnDelay: 3
     type: 3
     formation:
-      rid: 707700957143892267
-  - spawnDelay: 2
-    type: 0
-    formation:
-      rid: 707700957143892287
-  - spawnDelay: 3
-    type: 3
-    formation:
-      rid: 707700957143892269
+      rid: 707701132208898143
   references:
     version: 2
     RefIds:
-    - rid: 707700957143892267
-      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
+    - rid: 707701051566588300
+      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:
-        linePositionsCounts: 0300000006000000080000000c000000
+        spawnToRight: 1
+        linePositionsCounts: 0a0000000c00000012000000
         unitsOffsetX: 0.3
         unitsOffsetY: 0.3
-    - rid: 707700957143892268
-      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
+    - rid: 707701132208898143
+      type: {class: CrescentFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:
-        linePositionsCounts: 070000000800000009000000
-        unitsOffsetX: 0.3
-        unitsOffsetY: 0.416
-    - rid: 707700957143892269
-      type: {class: CrescentFormation, ns: Game.Characters.Spawners.FormationSpawnParameters, asm: Assembly-CSharp}
-      data:
-        facingLeft: 0
-        linePositionsCounts: 0700000009000000
+        facingLeft: 1
+        linePositionsCounts: 080000000a000000
         lineSpacing: 0.5
-        angleRangeDegrees: 120
-        baseRadius: 0.339
-    - rid: 707700957143892279
-      type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
-      data:
-        linePositionsCounts: 0a0000000c0000000a000000
-        maxOffsetX: 0.467
-        maxOffsetY: 0.516
-    - rid: 707700957143892287
-      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners, asm: Assembly-CSharp}
-      data:
-        linePositionsCounts: 030000000500000007000000090000000b000000
-        unitsOffsetX: 0.323
-        unitsOffsetY: 0.337
+        angleRangeDegrees: 180
+        baseRadius: 0.5

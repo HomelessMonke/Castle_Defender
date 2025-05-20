@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Characters.Spawners;
+using UnityEngine;
 
 namespace Game.Characters
 {
