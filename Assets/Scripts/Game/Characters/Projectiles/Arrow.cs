@@ -6,7 +6,7 @@ namespace Game.Characters.Projectiles
 
     public class Arrow: Projectile 
     {
-        public override void Launch(Health target, ProjectileAnimationData animationData, int damage, float speed)
+        public override void Launch(Health target, ProjectileAnimationData animationData, float damage, float speed)
         {
             this.target = target;
             var yOffset = animationData.YOffset;
@@ -33,7 +33,7 @@ namespace Game.Characters.Projectiles
             }, 1, duration).OnComplete(()=> OnFlew(damage));
         }
 
-        void OnFlew(int damage)
+        void OnFlew(float damage)
         {
             if (target && target.IsAlive)
             {

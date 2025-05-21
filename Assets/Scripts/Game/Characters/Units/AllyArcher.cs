@@ -59,8 +59,13 @@ namespace Game.Characters.Units
             attackDistance = parameters.AttackDistance;
             aimState.Init(attackDistance);
             rangedAttack.Init(parameters.ProjectileSpeed, projectileSpawner);
-            attackState.Init(parameters.Damage, parameters.AttackCD);
+            SetAttackParameter(parameters.Damage);
             SetState(idleState);
+        }
+
+        public void SetAttackParameter(float damage)
+        {
+            attackState.Init(damage);
         }
 
         void OnUpdateTargets()

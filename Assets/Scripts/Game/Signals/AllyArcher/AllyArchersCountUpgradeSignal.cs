@@ -1,12 +1,13 @@
 ﻿namespace Game.Signals.AllyArcher
 {
-    public struct AllyArchersCountSignal
+    public struct AllyArchersCountUpgradeSignal
     {
         public int AddCount { get; private set; }
 
-        public AllyArchersCountSignal(int addCount)
+        public AllyArchersCountUpgradeSignal(int addCount)
         {
             AddCount = addCount;
         }
     }
+
 }

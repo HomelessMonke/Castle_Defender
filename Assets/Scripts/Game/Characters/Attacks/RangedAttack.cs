@@ -24,7 +24,7 @@ namespace Game.Characters.Attacks
             this.projectileSpeed = projectileSpeed;
         }
         
-        public void Attack(int damage, Health targetHP)
+        public void Attack(float damage, Health targetHP)
         {
             var projectile = spawner.Spawn(projSpawnPos.position);
             projectile.Launch(targetHP, animationData, damage, projectileSpeed);

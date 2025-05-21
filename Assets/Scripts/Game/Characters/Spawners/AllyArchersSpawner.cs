@@ -41,15 +41,16 @@ namespace Game.Characters.Spawners
         
         public void Start()
         {
-            signalBus.Subscribe<AllyArchersCountSignal>(OnArchersCountIncreased);
+            signalBus.Subscribe<AllyArchersCountUpgradeSignal>(OnArchersCountIncreased);
+            signalBus.Subscribe<AllyArchersDamageUpgradeSignal>(OnArchersDamageIncreased);
         }
 
         public void SpawnAllyArchers()
         {
-            SpawnArchersAtPositions(GetSpawnPoints());
+            SpawnArchersAtPositions(GetSpawnPoints(parameters.ArchersCount));
         }
 
-        void SpawnArchersAtPositions(Vector2[] positions)
+        void SpawnArchersAtPositions(IEnumerable<Vector2> positions)
         {
             foreach (var spawnPos in positions)
             {
@@ -73,18 +74,27 @@ namespace Game.Characters.Spawners
             }
         }
 
-        Vector2[] GetSpawnPoints()
+        Vector2[] GetSpawnPoints(int count)
         {
-            formation.SetLinePositionsCounts(parameters.ArchersCount, parameters.MaxInLine);
+            formation.SetLinePositionsCounts(count, parameters.MaxInLine);
             return formation.GetSpawnPoints(startSpawnPoint);
         }
 
-        void OnArchersCountIncreased(AllyArchersCountSignal signal)
+        void OnArchersCountIncreased(AllyArchersCountUpgradeSignal signal)
         {
-            var positions = GetSpawnPoints();
+            var positions = GetSpawnPoints(parameters.ArchersCount);
             UpdateArchersPositions(positions);
-            var newArchersPositions = positions.TakeLast(signal.AddCount).ToArray();
+            var newArchersPositions = positions.TakeLast(signal.AddCount);
             SpawnArchersAtPositions(newArchersPositions);
+        }
+        
+        void OnArchersDamageIncreased(AllyArchersDamageUpgradeSignal signal)
+        {
+            var damage = parameters.Damage;
+            foreach (var archer in archers)
+            {
+                archer.SetAttackParameter(damage);
+            }
         }
     }
 }

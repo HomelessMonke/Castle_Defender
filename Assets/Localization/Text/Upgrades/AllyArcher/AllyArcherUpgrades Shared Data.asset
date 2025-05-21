@@ -16,7 +16,11 @@ MonoBehaviour:
   m_TableCollectionNameGuidString: bce447c7e74e6ea449d30afb4932dacb
   m_Entries:
   - m_Id: 165636210688
-    m_Key: AllyArcherUpgrades.Count
+    m_Key: (A)ArcherUpgrades.Count
+    m_Metadata:
+      m_Items: []
+  - m_Id: 1379939759685632
+    m_Key: (A)ArcherUpgrades.Damage
     m_Metadata:
       m_Items: []
   m_Metadata:

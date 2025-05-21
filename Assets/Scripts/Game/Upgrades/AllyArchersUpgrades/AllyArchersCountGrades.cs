@@ -3,61 +3,42 @@ using Game.Signals.AllyArcher;
 using UnityEngine;
 using UnityEngine.Localization;
 using Utilities.Attributes;
-using Zenject;
 
 namespace Game.Upgrades.AllyArchersUpgrades
 {
     /// <summary>
     /// Конфиг грейдов кол-ва союзных лучников
     /// </summary>
-    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllyArchers/AllyArchersCount", fileName = "AllyArchersCountUpgrades")]
+    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllyArchers/(A)ArchersCount", fileName = "(A)ArchersCountUpgrades")]
     public class AllyArchersCountGrades: CharacterParameterGrades
     {
+        [SerializeField]
+        int defaultCount = 4;
+        
         [Header("Значение поля означает кол-во лучников на поле")]
         [SerializeField]
-        IntGrade[] grades;
-
-        [SerializeField]
-        Sprite sprite;
+        Grade<int>[] grades;
 
         [SerializeField]
         LocalizedString localization;
         
-        const string SaveKey = "AllyArchersCountLevel";
-
-        int level;
-        bool inited;
-        int archersCount;
-
-        SignalBus signalBus;
+        protected override string SaveKey => "AllyArchersCountLevel";
         
-        public override bool IsCompleted => level >= grades.Length-1;
-        public override int Level => level;
-        public override Sprite Sprite => sprite;
+        public override bool IsCompleted => gradeIndex == grades.Length-1;
 
         public override string LocalizedDescription => String.Format(localization.GetLocalizedString(), GetCountForLocalization);
-        int GetCountForLocalization => grades[level+1].Value - grades[level].Value;
+        int GetCountForLocalization => gradeIndex<0
+            ? grades[gradeIndex+1].Value - defaultCount
+            : grades[gradeIndex+1].Value - grades[gradeIndex].Value;
 
-        public int ArchersCount => archersCount;
-        
-        public override void Init(SignalBus signalBus)
-        {
-            this.signalBus = signalBus;
-
-            level = ES3.KeyExists(SaveKey)
-                ? ES3.Load<int>(SaveKey)
-                : 0;
-            
-            archersCount = grades[level].Value;
-        }
+        public int ArchersCount => gradeIndex<0 ? defaultCount: grades[gradeIndex].Value;
 
         [Button(runtimeOnly:true)]
         public override void Upgrade()
         {
-            level = Mathf.Min(level+1, grades.Length-1);
-            var previousCount = archersCount;
-            archersCount = grades[level].Value;
-            signalBus.Fire(new AllyArchersCountSignal(archersCount-previousCount));
+            var previousCount = gradeIndex<0? defaultCount : grades[gradeIndex].Value;
+            gradeIndex = Mathf.Min(gradeIndex+1, grades.Length-1);
+            signalBus.Fire(new AllyArchersCountUpgradeSignal(ArchersCount-previousCount));
         }
     }
 }

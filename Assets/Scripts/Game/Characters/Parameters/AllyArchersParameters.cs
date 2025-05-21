@@ -14,7 +14,7 @@ namespace Game.Characters.Parameters
         int maxInLine;
 
         [SerializeField]
-        int damage = 3;
+        AllyArchersDamageGrades damageGrades;
 
         [SerializeField]
         float projectileSpeed = 5.5f;
@@ -26,7 +26,7 @@ namespace Game.Characters.Parameters
         float attackDistance = 10;
         
         public int ArchersCount => countGrades.ArchersCount;
-        public int Damage => damage;
+        public float Damage => damageGrades.Damage;
         public int MaxInLine => maxInLine;
         public float ProjectileSpeed => projectileSpeed;
         public float AttackCD => attackCD;

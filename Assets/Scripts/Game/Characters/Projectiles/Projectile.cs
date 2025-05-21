@@ -10,7 +10,7 @@ namespace Game.Characters.Projectiles
         
         public event Action Hit;
 
-        public abstract void Launch(Health target, ProjectileAnimationData animationData, int damage, float speed);
+        public abstract void Launch(Health target, ProjectileAnimationData animationData, float damage, float speed);
 
         void Update()
         {

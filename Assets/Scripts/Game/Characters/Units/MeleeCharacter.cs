@@ -60,7 +60,7 @@ namespace Game.Characters.Units
 
             fieldOfView.Init(transform);
             moveState.Init(parameters.MoveDirection, parameters.AttackDistance);
-            attackState.Init(parameters.AttackPoints, parameters.AttackCD);
+            attackState.Init(parameters.AttackPoints);
             SetMoveState();
         }
         

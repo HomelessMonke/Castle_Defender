@@ -7,7 +7,7 @@ namespace Game.Characters.States
 {
     public class AnimatedAttackState: IState
     {
-        int damage;
+        float damage;
         Animator animator;
         IAttack attackVariation;
         Character character;
@@ -26,7 +26,7 @@ namespace Game.Characters.States
             animator = characterAnimator.Animator;
         }
 
-        public void Init(int damage, float attackCD)
+        public void Init(float damage)
         {
             this.damage = damage;
         }

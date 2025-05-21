@@ -10,11 +10,9 @@ namespace Game.Upgrades
         [SerializeField]
         CharacterParameterGrades[] parametersToUpgrade;
         
-        public int Level => parametersToUpgrade.Sum(x => x.Level);
         public bool IsCompleted => parametersToUpgrade.All(x => x.IsCompleted);
-
-        public CharacterParameterGrades[] AllParameters => parametersToUpgrade;
-
+        int TotalUpgrades => parametersToUpgrade.Sum(x => x.TotalUpgrades);
+        
         public void Init(SignalBus signalBus)
         {
             foreach (var paramGrades in parametersToUpgrade)
@@ -26,10 +24,10 @@ namespace Game.Upgrades
         public CharacterParameterGrades TryGetNextToUpgrade()
         {
             var lenght = parametersToUpgrade.Length;
-            var level = Level;
+            var totalUpgrades = TotalUpgrades;
             for (var i = 0; i < lenght; i++)
             {
-                var curIndex = (level + i) % lenght;
+                var curIndex = (totalUpgrades + i) % lenght;
                 var upgrades = parametersToUpgrade[curIndex];
                 if(!upgrades.IsCompleted)
                     return upgrades;

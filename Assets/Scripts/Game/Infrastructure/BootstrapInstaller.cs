@@ -33,7 +33,8 @@ namespace Game.Infrastructure
         void BindSignals()
         {
             SignalBusInstaller.Install(Container);
-            Container.DeclareSignal<AllyArchersCountSignal>();
+            Container.DeclareSignal<AllyArchersCountUpgradeSignal>();
+            Container.DeclareSignal<AllyArchersDamageUpgradeSignal>();
         }
 
         public void Initialize()

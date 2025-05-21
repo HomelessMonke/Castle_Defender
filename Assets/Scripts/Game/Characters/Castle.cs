@@ -2,7 +2,6 @@ using System;
 using Game.Characters.Parameters;
 using UI;
 using UnityEngine;
-using UnityEngine.Serialization;
 
 namespace Game.Characters
 {
@@ -38,7 +37,7 @@ namespace Game.Characters
             }
         }
 
-        void OnDamageablePartDamaged(int damage)
+        void OnDamageablePartDamaged(float damage)
         {
             health.GetDamage(damage);
         }

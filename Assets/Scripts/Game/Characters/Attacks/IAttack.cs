@@ -4,6 +4,6 @@ namespace Game.Characters.Attacks
 {
     public interface IAttack
     {
-        void Attack(int damage, Health targetHP);
+        void Attack(float damage, Health targetHP);
     }
 }

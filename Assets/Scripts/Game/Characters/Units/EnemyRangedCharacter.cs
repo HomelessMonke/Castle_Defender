@@ -74,7 +74,7 @@ namespace Game.Characters.Units
             fov.Init(transform);
             rangedAttack.Init(parameters.ProjectileSpeed, projSpawner);
             moveState.Init(parameters.MoveDirection, parameters.AttackDistance);
-            attackState.Init(parameters.Damage, parameters.AttackCD);
+            attackState.Init(parameters.Damage);
             SetMoveState();
         }
         

@@ -5,15 +5,15 @@ using UnityEngine;
 namespace Game.Upgrades
 {
     [Serializable]
-    public class IntGrade
+    public class Grade<T>
     {
         [SerializeField]
-        int value;
+        T value;
 
         [SerializeField]
         CurrencyItem currency;
-        
-        public int Value => value;
+    
+        public T Value => value;
         public CurrencyItem Currency => currency;
     }
 }

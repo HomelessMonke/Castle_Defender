@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: Increase the number of archers by {0}.
     m_Metadata:
       m_Items: []
+  - m_Id: 1379939759685632
+    m_Localized: Increase archer damage by {0}%
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

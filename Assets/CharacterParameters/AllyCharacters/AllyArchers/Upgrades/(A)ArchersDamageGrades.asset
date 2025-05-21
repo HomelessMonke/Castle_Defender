@@ -1,0 +1,57 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: adbd5533a39546928c2f037a3d630099, type: 3}
+  m_Name: (A)ArchersDamageGrades
+  m_EditorClassIdentifier: 
+  sprite: {fileID: 0}
+  baseDamage: 4
+  grades:
+  - value: 5
+    currency:
+      type: 0
+      amount: 0
+  - value: 10
+    currency:
+      type: 0
+      amount: 500
+  - value: 15
+    currency:
+      type: 0
+      amount: 1000
+  - value: 17.5
+    currency:
+      type: 0
+      amount: 1000
+  - value: 20
+    currency:
+      type: 0
+      amount: 1000
+  - value: 22.5
+    currency:
+      type: 0
+      amount: 1000
+  - value: 25
+    currency:
+      type: 0
+      amount: 1000
+  localization:
+    m_TableReference:
+      m_TableCollectionName: GUID:bce447c7e74e6ea449d30afb4932dacb
+    m_TableEntryReference:
+      m_KeyId: 1379939759685632
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []
