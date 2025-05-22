@@ -1,17 +1,18 @@
 ﻿using System;
 using Game.Signals.AllyArcher;
+using Game.Upgrades;
 using UnityEngine;
 using UnityEngine.Localization;
 using Utilities.Attributes;
 using Zenject;
 
-namespace Game.Upgrades.AllyArchersUpgrades
+namespace Game.Grades.AllyArchersGrades
 {
     /// <summary>
     /// Конфиг грейдов урона союзных лучников
     /// </summary>
     [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllyArchers/(A)ArchersDamage", fileName = "(A)ArchersDamageGrades")]
-    public class AllyArchersDamageGrades: CharacterParameterGrades
+    public class AllyArchersDamageGrades: ParameterGrades
     {
         [SerializeField]
         float baseDamage;
@@ -25,7 +26,7 @@ namespace Game.Upgrades.AllyArchersUpgrades
 
         float currentDamage;
         
-        protected override string SaveKey => "AllyArchersDamageLevel";
+        protected override string SaveKey => "AllyArchersDamageGradeIndex";
         
         public override bool IsCompleted => gradeIndex == grades.Length-1;
 

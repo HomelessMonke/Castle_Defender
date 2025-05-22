@@ -9,5 +9,4 @@
             AddCount = addCount;
         }
     }
-
 }

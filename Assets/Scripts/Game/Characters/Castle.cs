@@ -1,10 +1,16 @@
 using System;
 using Game.Characters.Parameters;
+using Game.Signals.Castle;
 using UI;
 using UnityEngine;
+using Utilities.Attributes;
+using Zenject;
 
 namespace Game.Characters
 {
+    /// <summary>
+    /// Главный объект, который нужно защищать
+    /// </summary>
     [RequireComponent(typeof(Health))]
     public class Castle : MonoBehaviour
     {
@@ -14,15 +20,28 @@ namespace Game.Characters
         [SerializeField]
         Health health;
         
+        [Header("Участки линии которые принимают урон")]
         [SerializeField]
         Health[] hpAreas;
         
         [SerializeField]
         HealthView hpView;
 
-        public Health[] HpAreas => hpAreas;
         public event Action Die;
+
+        SignalBus signalBus;
         
+        [Inject]
+        public void Construct(SignalBus signalBus)
+        {
+            this.signalBus = signalBus;
+        }
+
+        void Start()
+        {
+            signalBus.Subscribe<CastleHealthUpgradeSignal>(OnHpUpgrade);
+        }
+
         public void Init()
         {
             health.Init(parameters.HP);
@@ -37,6 +56,11 @@ namespace Game.Characters
             }
         }
 
+        void OnHpUpgrade(CastleHealthUpgradeSignal signal)
+        {
+            health.SetHealth(parameters.HP);
+        }
+
         void OnDamageablePartDamaged(float damage)
         {
             health.GetDamage(damage);
@@ -46,6 +70,12 @@ namespace Game.Characters
         {
             Die?.Invoke();
             hpView.SetActive(false);
+        }
+
+        [Button]
+        void LogCurrentHP()
+        {
+            Debug.Log(health.CurrentHealth);
         }
     }
 }

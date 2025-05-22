@@ -3,20 +3,20 @@ using System.Linq;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Upgrades
+namespace Game.Grades
 {
     /// <summary>
     /// Список всех возможных улучшений для пользователя
     /// </summary>
-    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/CharacterUpgradesSequenceList", fileName = "CharacterUpgradesList")]
-    public class CharacterGradesSequenceList: ScriptableObject
+    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/GradesSequenceList", fileName = "GradesSequenceList")]
+    public class GradesSequenceList: ScriptableObject
     {
         [SerializeField]
-        CharacterGradesSequence[] upgradeSequences;
+        ParameterGradesSequence[] upgradeSequences;
 
         SignalBus signalBus;
 
-        public List<CharacterGradesSequence> GetNotCompletedSequences => upgradeSequences.Where(x => !x.IsCompleted).ToList();
+        public List<ParameterGradesSequence> GetNotCompletedSequences => upgradeSequences.Where(x => !x.IsCompleted).ToList();
         
         [Inject]
         void Construct(SignalBus signalBus)

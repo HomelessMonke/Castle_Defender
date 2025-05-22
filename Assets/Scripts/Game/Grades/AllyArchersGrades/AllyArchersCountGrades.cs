@@ -1,16 +1,17 @@
 ﻿using System;
 using Game.Signals.AllyArcher;
+using Game.Upgrades;
 using UnityEngine;
 using UnityEngine.Localization;
 using Utilities.Attributes;
 
-namespace Game.Upgrades.AllyArchersUpgrades
+namespace Game.Grades.AllyArchersGrades
 {
     /// <summary>
     /// Конфиг грейдов кол-ва союзных лучников
     /// </summary>
     [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllyArchers/(A)ArchersCount", fileName = "(A)ArchersCountUpgrades")]
-    public class AllyArchersCountGrades: CharacterParameterGrades
+    public class AllyArchersCountGrades: ParameterGrades
     {
         [SerializeField]
         int defaultCount = 4;
@@ -22,7 +23,7 @@ namespace Game.Upgrades.AllyArchersUpgrades
         [SerializeField]
         LocalizedString localization;
         
-        protected override string SaveKey => "AllyArchersCountLevel";
+        protected override string SaveKey => "AllyArchersCountGradeIndex";
         
         public override bool IsCompleted => gradeIndex == grades.Length-1;
 

@@ -1,5 +1,7 @@
 ﻿using Game.Currencies;
+using Game.Grades;
 using Game.Signals.AllyArcher;
+using Game.Signals.Castle;
 using Game.Upgrades;
 using UnityEngine;
 using Zenject;
@@ -9,7 +11,7 @@ namespace Game.Infrastructure
     public class BootstrapInstaller: MonoInstaller, IInitializable
     {
         [SerializeField]
-        CharacterGradesSequenceList gradesSequenceList;
+        GradesSequenceList gradesSequenceList;
         
         public override void InstallBindings()
         {
@@ -35,6 +37,7 @@ namespace Game.Infrastructure
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<AllyArchersCountUpgradeSignal>();
             Container.DeclareSignal<AllyArchersDamageUpgradeSignal>();
+            Container.DeclareSignal<CastleHealthUpgradeSignal>();
         }
 
         public void Initialize()

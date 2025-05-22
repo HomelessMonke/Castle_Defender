@@ -1,4 +1,4 @@
-﻿using Game.Upgrades.AllyArchersUpgrades;
+﻿using Game.Grades.AllyArchersGrades;
 using UnityEngine;
 
 namespace Game.Characters.Parameters

@@ -9,9 +9,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c973de6dc984817b56d91f3b95d1ccf, type: 3}
-  m_Name: CharacterGradesList
+  m_Script: {fileID: 11500000, guid: fc5cd55387a240fcb985f22d8ab2a80f, type: 3}
+  m_Name: CastleParameters
   m_EditorClassIdentifier: 
-  upgradeSequences:
-  - {fileID: 11400000, guid: ab079b350cb5004418747e30c1d45e6c, type: 2}
-  - {fileID: 11400000, guid: 5edbc8a34caf8464a89bb6d33805cd4f, type: 2}
+  hpGrades: {fileID: 11400000, guid: 264853cf14163064991a404fa819c785, type: 2}

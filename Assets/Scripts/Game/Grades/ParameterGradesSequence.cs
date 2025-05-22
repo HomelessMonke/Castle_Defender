@@ -2,13 +2,13 @@
 using UnityEngine;
 using Zenject;
 
-namespace Game.Upgrades
+namespace Game.Grades
 {
-    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/CharacterUpgradesSequence", fileName = "CharacterUpgradesSequence")]
-    public class CharacterGradesSequence : ScriptableObject
+    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/ParameterGradesSequence", fileName = "ParameterGradesSequence")]
+    public class ParameterGradesSequence : ScriptableObject
     {
         [SerializeField]
-        CharacterParameterGrades[] parametersToUpgrade;
+        ParameterGrades[] parametersToUpgrade;
         
         public bool IsCompleted => parametersToUpgrade.All(x => x.IsCompleted);
         int TotalUpgrades => parametersToUpgrade.Sum(x => x.TotalUpgrades);
@@ -21,7 +21,7 @@ namespace Game.Upgrades
             }
         }
 
-        public CharacterParameterGrades TryGetNextToUpgrade()
+        public ParameterGrades TryGetNextToUpgrade()
         {
             var lenght = parametersToUpgrade.Length;
             var totalUpgrades = TotalUpgrades;

@@ -1,11 +1,12 @@
 ﻿using System;
+using Game.Upgrades;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Upgrades
+namespace Game.Grades
 {
     [Serializable]
-    public abstract class CharacterParameterGrades : ScriptableObject, IUpgrade
+    public abstract class ParameterGrades : ScriptableObject, IUpgrade
     {
         [SerializeField]
         Sprite sprite;

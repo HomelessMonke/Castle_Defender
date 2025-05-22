@@ -19,9 +19,14 @@ namespace Game.Characters
         public void Init(float maxHealth, bool isImmortal = false)
         {
             ResetEvents();
+            SetHealth(maxHealth);
+            this.isImmortal = isImmortal;
+        }
+
+        public void SetHealth(float maxHealth)
+        {
             MaxHealth = maxHealth;
             currentHealth = maxHealth;
-            this.isImmortal = isImmortal;
         }
 
         public void GetDamage(float amount)
@@ -39,7 +44,7 @@ namespace Game.Characters
                 Died?.Invoke();
         }
 
-        public void GetHeal(int amount)
+        public void GetHeal(float amount)
         {
             currentHealth += amount;
             Healed?.Invoke();

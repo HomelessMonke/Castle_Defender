@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Game.Grades.CastleGrades;
+using UnityEngine;
 
 namespace Game.Characters.Parameters
 {
@@ -6,8 +7,8 @@ namespace Game.Characters.Parameters
     public class CastleParameters : ScriptableObject
     {
         [SerializeField]
-        int hp = 150;
+        CastleHealthGrades hpGrades;
         
-        public int HP => hp;
+        public float HP => hpGrades.HP;
     }
 }
