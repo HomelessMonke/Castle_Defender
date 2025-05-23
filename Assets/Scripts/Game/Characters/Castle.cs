@@ -32,7 +32,7 @@ namespace Game.Characters
         SignalBus signalBus;
         
         [Inject]
-        public void Construct(SignalBus signalBus)
+        void Construct(SignalBus signalBus)
         {
             this.signalBus = signalBus;
         }

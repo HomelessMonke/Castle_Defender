@@ -2,6 +2,7 @@
 using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
 using Game.Currencies;
+using Game.Signals;
 using UnityEngine;
 using Zenject;
 
@@ -18,13 +19,15 @@ namespace Game.Characters.Spawners
         [Space(10)]
         [SerializeField]
         Transform spawnPointTransform;
-        
+
+        SignalBus signalBus;
         CurrencyManager currencyService;
         
         [Inject]
-        public void Constructor(CurrencyManager currencyService)
+        public void Constructor(CurrencyManager currencyService, SignalBus signalBus)
         {
             this.currencyService = currencyService;
+            this.signalBus = signalBus;
         }
 
         public override void Init()
@@ -57,8 +60,7 @@ namespace Game.Characters.Spawners
         {
             pool.Despawn(unit);
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
-            Debug.Log($"CoinReward = {unitParameters.CoinReward}");
-            Debug.Log($"CurrencyType.Soft: {currencyService.GetAmount(CurrencyType.Soft)}");
+            signalBus.Fire<CurrencyChangedSignal>();
         }
     }
 }

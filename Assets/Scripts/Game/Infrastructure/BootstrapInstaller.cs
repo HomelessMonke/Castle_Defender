@@ -1,5 +1,6 @@
 ﻿using Game.Currencies;
 using Game.Grades;
+using Game.Signals;
 using Game.Signals.AllyArcher;
 using Game.Signals.Castle;
 using Game.Upgrades;
@@ -38,6 +39,7 @@ namespace Game.Infrastructure
             Container.DeclareSignal<AllyArchersCountUpgradeSignal>();
             Container.DeclareSignal<AllyArchersDamageUpgradeSignal>();
             Container.DeclareSignal<CastleHealthUpgradeSignal>();
+            Container.DeclareSignal<CurrencyChangedSignal>();
         }
 
         public void Initialize()

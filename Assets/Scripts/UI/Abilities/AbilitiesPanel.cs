@@ -3,15 +3,15 @@ using Game.Characters.Spawners.Formations;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI
+namespace UI.Abilities
 {
-    public class PlayerAbilitiesUI: MonoBehaviour
+    public class AbilitiesPanel: MonoBehaviour
     {
         [SerializeField]
         Button callSoldiersButton;
 
         [SerializeField]
-        CharacterSpawner soldiersSpawner;
+        AllyMeleeCharacterSpawner soldiersSpawner;
 
         [SerializeField]
         SquadInfo soldiersInfo;

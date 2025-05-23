@@ -2,6 +2,7 @@
 using Game.Characters.Spawners;
 using Game.Upgrades;
 using UI;
+using UI.Abilities;
 using UnityEngine;
 
 namespace Game
@@ -24,12 +25,12 @@ namespace Game
         WavesSpawner wavesManager;
         
         [SerializeField]
-        PlayerAbilitiesUI playerAbilitiesUI;
+        GUIEntryPoint guiEntryPoint;
         
         public void Start()
         {
             castle.Init();
-            playerAbilitiesUI.Init();
+            guiEntryPoint.Init();
             spawnManager.Init();
             allyInitializer.Init();
             wavesManager.LaunchWaves();
