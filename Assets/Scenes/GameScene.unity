@@ -4425,6 +4425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parameters: {fileID: 11400000, guid: e8b44ae231dac5a4ab2d1be5deae46c6, type: 2}
   health: {fileID: 1351481473}
+  hpView: {fileID: 124140656}
   hpAreas:
   - {fileID: 622903261}
   - {fileID: 200493902}
@@ -4436,7 +4437,6 @@ MonoBehaviour:
   - {fileID: 1380049217}
   - {fileID: 1165036150}
   - {fileID: 441948537}
-  hpView: {fileID: 0}
 --- !u!114 &1351481473
 MonoBehaviour:
   m_ObjectHideFlags: 0
