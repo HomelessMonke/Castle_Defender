@@ -1,8 +1,6 @@
 ﻿using Game.Characters;
 using Game.Characters.Spawners;
-using Game.Upgrades;
 using UI;
-using UI.Abilities;
 using UnityEngine;
 
 namespace Game
@@ -11,6 +9,9 @@ namespace Game
     {
         [SerializeField]
         Castle castle;
+        
+        [SerializeField]
+        UIHealthView castleHpView;
 
         [SerializeField]
         TargetsDetectionArea allyDetectionArea;
@@ -25,7 +26,7 @@ namespace Game
         WavesSpawner wavesManager;
         
         [SerializeField]
-        GUIEntryPoint guiEntryPoint;
+        UIEntryPoint guiEntryPoint;
         
         public void Start()
         {

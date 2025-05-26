@@ -12,5 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 06e9ec22d53d4b25ab8ec5a58bb6f3b5, type: 3}
   m_Name: FastSelectionTool
   m_EditorClassIdentifier: 
-  objects: []
-  sceneObjectsNames: []
+  objects:
+  - {fileID: 11400000, guid: 5c248c6168e15214abf31f8d9a307e51, type: 2}
+  - {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}

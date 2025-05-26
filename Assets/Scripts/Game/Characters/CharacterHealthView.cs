@@ -1,9 +1,8 @@
-﻿using Game.Characters;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace UI
+namespace Game.Characters
 {
-    public class HealthView: MonoBehaviour
+    public class CharacterHealthView: MonoBehaviour
     {
         [SerializeField]
         SpriteRenderer fillArea;
@@ -19,4 +18,5 @@ namespace UI
             gameObject.SetActive(active);
         }
     }
+
 }

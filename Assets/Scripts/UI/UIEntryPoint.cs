@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace UI
 {
-    public class GUIEntryPoint: MonoBehaviour
+    public class UIEntryPoint: MonoBehaviour
     {
         [SerializeField]
         CurrenciesPanel currenciesPanel;

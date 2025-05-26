@@ -30,7 +30,7 @@ namespace Game.Characters.Units
         Health health;
         
         [SerializeField]
-        HealthView healthView;
+        CharacterHealthView healthView;
         
         [SerializeField]
         NavMeshAgent agent;
@@ -154,18 +154,6 @@ namespace Game.Characters.Units
             currentState = null;
             Died?.Invoke();
             Died = null;
-        }
-
-        [Button]
-        void SetOneHP()
-        {
-            health.GetDamage(health.MaxHealth-1);
-        }
-        
-        [Button]
-        void LogCurrentHP()
-        {
-            Debug.Log($"currentHealth: {health.CurrentHealth}");
         }
     }
 }

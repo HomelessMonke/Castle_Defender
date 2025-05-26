@@ -23,7 +23,7 @@ namespace Game.Characters.Units
         Health health;
         
         [SerializeField]
-        HealthView healthView;
+        CharacterHealthView healthView;
         
         [SerializeField]
         NavMeshAgent agent;
@@ -147,7 +147,7 @@ namespace Game.Characters.Units
         [Button]
         void SetOneHP()
         {
-            health.GetDamage(health.MaxHealth-1);
+            health.GetDamage(health.MaxHp-1);
         }
     }
 }

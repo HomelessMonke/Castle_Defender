@@ -19,14 +19,14 @@ namespace Game.Characters
         
         [SerializeField]
         Health health;
+
+        [SerializeField]
+        UIHealthView hpView;
         
         [Header("Участки линии которые принимают урон")]
         [SerializeField]
         Health[] hpAreas;
         
-        [SerializeField]
-        HealthView hpView;
-
         public event Action Die;
 
         SignalBus signalBus;
@@ -45,37 +45,34 @@ namespace Game.Characters
         public void Init()
         {
             health.Init(parameters.HP);
-            health.DamageTaken += (_)=> hpView.Draw(health);
+            health.Died -= OnDie;
             health.Died += OnDie;
 
             foreach (var hpArea in hpAreas)
             {
                 hpArea.Init(1, true);
-                hpArea.DamageTaken -= OnDamageablePartDamaged;
-                hpArea.DamageTaken += OnDamageablePartDamaged;
+                hpArea.DamageTaken -= OnDamageTaken;
+                hpArea.DamageTaken += OnDamageTaken;
             }
+            
+            hpView.Draw(health);
         }
 
         void OnHpUpgrade(CastleHealthUpgradeSignal signal)
         {
             health.SetHealth(parameters.HP);
+            hpView.Draw(health);
         }
 
-        void OnDamageablePartDamaged(float damage)
+        void OnDamageTaken(float damage)
         {
             health.GetDamage(damage);
+            hpView.Draw(health.CurrentHp, health.Percentage);
         }
-
+        
         void OnDie()
         {
             Die?.Invoke();
-            hpView.SetActive(false);
-        }
-
-        [Button]
-        void LogCurrentHP()
-        {
-            Debug.Log(health.CurrentHealth);
         }
     }
 }

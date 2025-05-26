@@ -5,13 +5,13 @@ namespace Game.Characters
 {
     public class Health: MonoBehaviour
     {
-        float currentHealth;
+        float currentHp;
         bool isImmortal;
         
-        public float MaxHealth { get; private set; } 
-        public float CurrentHealth => currentHealth;
-        public float Percentage => currentHealth / MaxHealth;
-        public bool IsAlive => currentHealth > 0;
+        public float MaxHp { get; private set; }
+        public float CurrentHp => currentHp; 
+        public float Percentage => currentHp / MaxHp;
+        public bool IsAlive => currentHp > 0;
         
         public event UnityAction Healed, Died;
         public event UnityAction<float> DamageTaken;
@@ -25,8 +25,8 @@ namespace Game.Characters
 
         public void SetHealth(float maxHealth)
         {
-            MaxHealth = maxHealth;
-            currentHealth = maxHealth;
+            MaxHp = maxHealth;
+            currentHp = maxHealth;
         }
 
         public void GetDamage(float amount)
@@ -37,16 +37,16 @@ namespace Game.Characters
                 return;
             }
             
-            currentHealth = Mathf.Max(currentHealth-amount,0);
+            currentHp = Mathf.Max(currentHp-amount,0);
             DamageTaken?.Invoke(amount);
             
-            if (currentHealth <= 0)
+            if (currentHp <= 0)
                 Died?.Invoke();
         }
 
         public void GetHeal(float amount)
         {
-            currentHealth += amount;
+            currentHp += amount;
             Healed?.Invoke();
         }
         
