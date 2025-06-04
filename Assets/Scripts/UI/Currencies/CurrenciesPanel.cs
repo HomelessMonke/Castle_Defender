@@ -43,7 +43,8 @@ namespace UI.Currencies
         void DrawViewByType(CurrencyType type)
         {
             var value = currencyManager.GetAmount(type);
-            viewsDict[type].Draw(value);
+            var convertedValue = NumberFormatter.FormatNumber(value);
+            viewsDict[type].Draw(convertedValue);
         }
 
         void OnCurrencyChanged(CurrencyChangedSignal signal)
