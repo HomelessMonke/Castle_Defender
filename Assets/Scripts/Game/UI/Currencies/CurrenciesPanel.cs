@@ -2,6 +2,7 @@
 using Game.Currencies;
 using Game.Signals;
 using UnityEngine;
+using Utilities;
 using Zenject;
 
 namespace Game.UI.Currencies

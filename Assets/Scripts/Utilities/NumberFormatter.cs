@@ -1,7 +1,6 @@
-
 using System;
 
-namespace UI.Currencies
+namespace Utilities
 {
     public static class NumberFormatter
     {
