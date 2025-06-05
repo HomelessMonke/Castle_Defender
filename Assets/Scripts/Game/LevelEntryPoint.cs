@@ -1,5 +1,6 @@
 ﻿using Game.Characters;
 using Game.Characters.Spawners;
+using Game.UI;
 using UI;
 using UnityEngine;
 
@@ -26,12 +27,12 @@ namespace Game
         WavesSpawner wavesManager;
         
         [SerializeField]
-        UIEntryPoint guiEntryPoint;
+        UIEntryPoint uiEntryPoint;
         
         public void Start()
         {
             castle.Init();
-            guiEntryPoint.Init();
+            uiEntryPoint.Init();
             spawnManager.Init();
             allyInitializer.Init();
             wavesManager.LaunchWaves();

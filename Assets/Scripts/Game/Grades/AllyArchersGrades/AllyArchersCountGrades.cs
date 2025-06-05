@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Currencies;
 using Game.Signals.AllyArcher;
 using Game.Upgrades;
 using UnityEngine;
@@ -26,8 +27,9 @@ namespace Game.Grades.AllyArchersGrades
         protected override string SaveKey => "AllyArchersCountGradeIndex";
         
         public override bool IsCompleted => gradeIndex == grades.Length-1;
-
+        public override CurrencyItem CurrencyToUpgrade => grades[gradeIndex].Currency;
         public override string LocalizedDescription => String.Format(localization.GetLocalizedString(), GetCountForLocalization);
+        
         int GetCountForLocalization => gradeIndex<0
             ? grades[gradeIndex+1].Value - defaultCount
             : grades[gradeIndex+1].Value - grades[gradeIndex].Value;

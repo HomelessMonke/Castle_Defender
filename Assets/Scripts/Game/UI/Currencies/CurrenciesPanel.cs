@@ -4,7 +4,7 @@ using Game.Signals;
 using UnityEngine;
 using Zenject;
 
-namespace UI.Currencies
+namespace Game.UI.Currencies
 {
     public class CurrenciesPanel : MonoBehaviour
     {
