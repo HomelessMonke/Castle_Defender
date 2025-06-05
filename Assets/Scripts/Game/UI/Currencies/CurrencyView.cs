@@ -14,9 +14,9 @@ namespace Game.UI.Currencies
 
         public CurrencyType Type => type;
 
-        public void Draw(int value)
+        public void Draw(string value)
         {
-            text.text = value.ToString();
+            text.text = value;
         }
     }
 }
