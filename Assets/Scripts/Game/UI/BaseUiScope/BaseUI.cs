@@ -1,13 +1,15 @@
 ﻿using System.Collections;
 using Game.UI.Popups;
+using UnityEditor;
 using UnityEngine;
+using Utilities.Attributes;
 
 namespace Game.UI.BaseUiScope
 {
     public class BaseUI : MonoBehaviour
     {
         [SerializeField]
-        UiItemsList items;
+        BaseUiItemArray itemsArray;
 
         [SerializeField]
         CanvasGroup canvasGroup;
@@ -19,24 +21,17 @@ namespace Game.UI.BaseUiScope
         PopupConfig preBattlePopupConfig;
 
         [SerializeField]
-        BaseUiAnimator[] baseUiAnimators;
+        BaseUiAnimator[] animators;
 
         [SerializeField]
-        BaseUiAnimatorInfo animatorInfo;
+        float animateDuration;
 
         PopupConfig currentDefaultConfig;
         Coroutine coroutine;
         
         public void Init()
         {
-            var offsetVector = animatorInfo.OffsetVector;
-            foreach (var animator in baseUiAnimators)
-            {
-                animator.Init(items, offsetVector);
-            }
-
-            currentDefaultConfig = inBattlePopupConfig;
-            InteractUiButtons(true);
+            SwitchPreBattleConfig(true);
         }
         
         public void SwitchInBattleConfig(bool immediate = false)
@@ -49,6 +44,24 @@ namespace Game.UI.BaseUiScope
         {
             currentDefaultConfig = preBattlePopupConfig;
             Switch(preBattlePopupConfig, immediate);
+        }
+
+        [Button]
+        public void Hide()
+        {
+            Hide(false);
+        }
+        
+        [Button]
+        public void SwitchPreBattleConfig()
+        {
+            SwitchPreBattleConfig(false);
+        }
+        
+        [Button]
+        public void SwitchInBattleConfig()
+        {
+            SwitchInBattleConfig(false);
         }
         
         public void Hide(bool immediate = true)
@@ -73,11 +86,12 @@ namespace Game.UI.BaseUiScope
 
         void SwitchInternal(PopupConfig config, float duration)
         {
-            foreach (var anim in baseUiAnimators)
+            foreach (var anim in animators)
             {
                 var uiGroup = config.GetUIGroupByDirection(anim.Direction);
                 var visibleElements = uiGroup != null ? uiGroup.VisibleElements : new string[] { };
-                anim.SetState(visibleElements, duration);
+                var itemsToShow = itemsArray.GetUiElementsArray(visibleElements);
+                anim.SetState(itemsToShow, duration);
             }
         }
 
@@ -85,11 +99,28 @@ namespace Game.UI.BaseUiScope
         {
             InteractUiButtons(false);
 
-            float duration = immediate ? 0 : animatorInfo.Duration;
+            float duration = immediate ? 0 : animateDuration;
             SwitchInternal(config, duration);
             
             yield return new WaitForSeconds(duration);
             InteractUiButtons(true);
         }
+        
+#if UNITY_EDITOR
+        [Button]
+        void SetAllChildrenItems()
+        {
+            var items = GetComponentsInChildren<BaseUiItem>();
+            itemsArray.SetItems(items);
+            EditorUtility.SetDirty(this);
+        }
+        
+        [Button]
+        void SetAllChildrenAnimators()
+        {
+            animators = GetComponentsInChildren<BaseUiAnimator>();
+            EditorUtility.SetDirty(this);
+        }
+#endif
     }
 }

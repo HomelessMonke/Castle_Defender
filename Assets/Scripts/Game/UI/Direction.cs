@@ -10,5 +10,6 @@ namespace Game.UI
         BottomLeft = 5,
         Left = 6,
         TopLeft = 7,
+        None = 8
     }
 }

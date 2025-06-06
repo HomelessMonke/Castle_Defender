@@ -24,9 +24,6 @@ namespace Game
         AllyInitializer allyInitializer;
         
         [SerializeField]
-        WavesSpawner wavesManager;
-        
-        [SerializeField]
         UIEntryPoint uiEntryPoint;
         
         public void Start()
@@ -35,7 +32,6 @@ namespace Game
             uiEntryPoint.Init();
             spawnManager.Init();
             allyInitializer.Init();
-            wavesManager.LaunchWaves();
             
             allyDetectionArea.Init(128);
         }

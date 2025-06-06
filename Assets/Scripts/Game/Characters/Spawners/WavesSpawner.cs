@@ -18,7 +18,7 @@ namespace Game.Characters.Spawners
         [SerializeField]
         WavesList wavesList;
 
-        public void LaunchWaves()
+        public void LaunchNextWave()
         {
             StartCoroutine(LaunchWavesCoroutine());
         }

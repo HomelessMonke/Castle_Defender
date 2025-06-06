@@ -3,20 +3,20 @@ using Utilities.Attributes;
 
 namespace Game.UI.BaseUiScope
 {
-    [RequireComponent(typeof(MoveAnimator))]
+    [RequireComponent(typeof(UIAnimator))]
     public class BaseUiItem : MonoBehaviour
     {
         [SerializeField]
         RectTransform rectTransform;
 
         [SerializeField]
-        MoveAnimator moveAnimator;
+        UIAnimator uiAnimator;
 
         [SerializeField, AsEnum(typeof(UIElementIDList))]
         string itemId;
 
         public RectTransform RectTransform => rectTransform;
-        public MoveAnimator MoveAnimator => moveAnimator;
+        public UIAnimator UIAnimator => uiAnimator;
         public string ItemId => itemId;
 
         public bool IsEnabled { get; set; } = true;

@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,36 +7,27 @@ using UnityEngine.UI;
 
 namespace Game.UI.BaseUiScope
 {
-    public class BaseUiAnimator : MonoBehaviour
+    public abstract class BaseUiAnimator : MonoBehaviour
     {
         [SerializeField]
-        Direction direction;
-
-        [SerializeField]
-        UIBehaviour layoutGroup;
-
-        BaseUiItem[] currentItems;
-        UiItemsList uiElementsList;
+        protected UIBehaviour layoutGroup;
         
-        Vector2 rotatedOffsetVector;
+        protected BaseUiItem[] currentItems;
+        
+        public abstract Direction Direction { get; }
 
-        public Direction Direction => direction;
-
+        void Awake()
+        {
+            currentItems = transform.GetComponentsInChildren<BaseUiItem>().Where(x => x.gameObject.activeSelf).ToArray();
+        }
+        
         IEnumerator Start()
         {
             yield return null;
             layoutGroup.enabled = false;
         }
-
-        public void Init(UiItemsList uiElementsList, Vector3 offsetVector)
-        {
-            this.uiElementsList = uiElementsList;
-            rotatedOffsetVector = Quaternion.AngleAxis(-(int)direction * 45, Vector3.forward) * offsetVector;
-            
-            currentItems = transform.GetComponentsInChildren<BaseUiItem>().Where(x => x.gameObject.activeSelf).ToArray();
-        }
-
-        public void SetState(string[] itemsIdsToShow, float duration)
+        
+        public void SetState(BaseUiItem[] itemsToShow, float duration)
         {
             var allUniqueElements = new List<BaseUiItem>();
             Dictionary<BaseUiItem, RectInfo> oldItemsInfo = new Dictionary<BaseUiItem, RectInfo>();
@@ -49,8 +39,7 @@ namespace Game.UI.BaseUiScope
                 oldItemsInfo.Add(element, new RectInfo(element));
                 element.gameObject.SetActive(false);
             }
-
-            var itemsToShow = uiElementsList.GetUiElementsArray(itemsIdsToShow);
+            
             for (int i = 0; i < itemsToShow.Length; i++)
             {
                 var item = itemsToShow[i];
@@ -81,40 +70,14 @@ namespace Game.UI.BaseUiScope
 
             currentItems = itemsToShow;
         }
-
+        
+        protected abstract void AnimateItem(BaseUiItem item, RectInfo oldRectInfo, RectInfo newRectInfo, float duration);
+        
         void RebuildLayout()
         {
             layoutGroup.enabled = true;
             LayoutRebuilder.ForceRebuildLayoutImmediate(GetComponent<RectTransform>());
             layoutGroup.enabled = false;
-        }
-        
-        void AnimateItem(BaseUiItem item, RectInfo oldRectInfo, RectInfo newRectInfo, float duration)
-        {
-            if (oldRectInfo.Enable && newRectInfo.Enable)
-                item.MoveAnimator.Move(oldRectInfo.Position, newRectInfo.Position, duration);
-
-            if (!oldRectInfo.Enable && newRectInfo.Enable)
-            {
-                item.gameObject.SetActive(true);
-                var startPos = newRectInfo.Position + rotatedOffsetVector;
-                item.RectTransform.position = startPos;
-                item.MoveAnimator.Move(startPos, newRectInfo.Position, duration);
-            }
-
-            if (oldRectInfo.Enable && !newRectInfo.Enable)
-            {
-                item.gameObject.SetActive(true);
-                var endPos = oldRectInfo.Position + rotatedOffsetVector;
-                var item1 = item;
-                item.MoveAnimator.Move(oldRectInfo.Position, endPos, duration, () =>
-                {
-                    item1.gameObject.SetActive(false);
-                });
-            }
-
-            if (!oldRectInfo.Enable && !newRectInfo.Enable)
-                item.gameObject.SetActive(false);
         }
     }
 }

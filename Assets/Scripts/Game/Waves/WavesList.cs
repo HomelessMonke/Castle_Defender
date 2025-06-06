@@ -13,5 +13,7 @@ namespace Game.Waves
         
         public Wave[] Waves => waves;
         public float TimeBetweenWaves => timeBetweenWaves;
+        
+        //TODO: Добавить сейв int каунтер последней волны.
     }
 }

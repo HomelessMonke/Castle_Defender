@@ -7,8 +7,10 @@ namespace Game.UI.BaseUiScope
     [AsEnumSource]
     public static class UIElementIDList
     {
-        public const string PlayerAbilities = "Player_Abilities";
+        public const string StartWaveButton = "StartWaveButton";
+        public const string PlayerAbilities = "PlayerAbilities";
         public const string CoinsBar = "Coins";
         public const string HpBar = "HpBar";
+        public const string UpgradesButton = "UpgradesButton";
     }
 }
