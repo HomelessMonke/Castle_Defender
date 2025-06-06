@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Currencies;
 using Game.Signals.AllyArcher;
 using Game.Upgrades;
 using UnityEngine;
@@ -29,7 +30,7 @@ namespace Game.Grades.AllyArchersGrades
         protected override string SaveKey => "AllyArchersDamageGradeIndex";
         
         public override bool IsCompleted => gradeIndex == grades.Length-1;
-
+        public override CurrencyItem CurrencyToUpgrade => grades[gradeIndex].Currency;
         public override string LocalizedDescription => String.Format(localization.GetLocalizedString(), grades[gradeIndex+1].Value);
 
         public float Damage => currentDamage;

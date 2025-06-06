@@ -1,4 +1,5 @@
 ﻿using System;
+using Game.Currencies;
 using Game.Upgrades;
 using UnityEngine;
 using Zenject;
@@ -21,6 +22,7 @@ namespace Game.Grades
         protected abstract string SaveKey { get; }
         public abstract bool IsCompleted { get; }
         public abstract string LocalizedDescription { get; }
+        public abstract CurrencyItem CurrencyToUpgrade { get; }
         
         public virtual void Init(SignalBus signalBus)
         {

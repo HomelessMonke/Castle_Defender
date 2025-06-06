@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Game.UI.Popups;
 using UnityEngine;
 
 namespace Game.Popups
@@ -13,6 +14,8 @@ namespace Game.Popups
         GameObject overlay;
 
         readonly Dictionary<string, Popup> popupCache = new();
+
+        public event Action<PopupConfig> ConfigChanged;
 
         public T OpenPopup<T>(string name, Action<T> popupLoaded = null) where T : Popup
         {
@@ -34,19 +37,28 @@ namespace Game.Popups
                 return null;
             }
 
+            popup.Closed -= OnPopupClosed;
+            popup.Closed += OnPopupClosed;
+            ConfigChanged?.Invoke(popup.Config);
+
             popupLoaded?.Invoke(typedPopup);
-            typedPopup.Show();
+            typedPopup.Open();
             return typedPopup;
         }
 
-        public void ShowBlockOverlay()
+        public void ShowOverlay()
         {
             overlay.SetActive(true);
         }
         
-        public void HideBlockOverlay()
+        public void HideOverlay()
         {
             overlay.SetActive(false);
+        }
+
+        void OnPopupClosed()
+        {
+            ConfigChanged?.Invoke(null);
         }
 
         Popup LoadPopup(string name)

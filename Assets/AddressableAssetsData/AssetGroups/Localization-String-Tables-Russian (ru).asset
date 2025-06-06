@@ -21,6 +21,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: da115ad990a6c5b4da9559b968a0d5b8
+    m_Address: GUI_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: df1d3d3a9476a084d870c90932388829
     m_Address: CastleUpgrades_ru
     m_ReadOnly: 1

@@ -1,17 +1,26 @@
 ﻿using System.Linq;
 using UnityEngine;
+using UnityEngine.Localization;
 using Zenject;
 
 namespace Game.Grades
 {
+    /// <summary>
+    /// Несколько параметров, объединённые в одну последовательность.
+    /// </summary>
     [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/ParameterGradesSequence", fileName = "ParameterGradesSequence")]
     public class ParameterGradesSequence : ScriptableObject
     {
         [SerializeField]
         ParameterGrades[] parametersToUpgrade;
+
+        [SerializeField]
+        LocalizedString headerLocalization;
+        
+        int TotalUpgrades => parametersToUpgrade.Sum(x => x.TotalUpgrades);
         
         public bool IsCompleted => parametersToUpgrade.All(x => x.IsCompleted);
-        int TotalUpgrades => parametersToUpgrade.Sum(x => x.TotalUpgrades);
+        public string HeaderText => headerLocalization.GetLocalizedString(); 
         
         public void Init(SignalBus signalBus)
         {
@@ -21,7 +30,7 @@ namespace Game.Grades
             }
         }
 
-        public ParameterGrades TryGetNextToUpgrade()
+        public ParameterGrades GetParameterToUpgrade()
         {
             var lenght = parametersToUpgrade.Length;
             var totalUpgrades = TotalUpgrades;

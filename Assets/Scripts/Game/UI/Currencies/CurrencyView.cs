@@ -2,7 +2,7 @@
 using TMPro;
 using UnityEngine;
 
-namespace UI.Currencies
+namespace Game.UI.Currencies
 {
     public class CurrencyView : MonoBehaviour
     {

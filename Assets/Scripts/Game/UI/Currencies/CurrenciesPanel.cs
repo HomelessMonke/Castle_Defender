@@ -2,9 +2,10 @@
 using Game.Currencies;
 using Game.Signals;
 using UnityEngine;
+using Utilities;
 using Zenject;
 
-namespace UI.Currencies
+namespace Game.UI.Currencies
 {
     public class CurrenciesPanel : MonoBehaviour
     {

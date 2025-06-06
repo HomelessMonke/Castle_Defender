@@ -8,21 +8,20 @@ namespace Game.Grades
     /// <summary>
     /// Список всех возможных улучшений для пользователя
     /// </summary>
-    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/GradesSequenceList", fileName = "GradesSequenceList")]
-    public class GradesSequenceList: ScriptableObject
+    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllGradesSequenceList", fileName = "AllGradesSequenceList")]
+    public class AllGradesSequenceList: ScriptableObject
     {
         [SerializeField]
         ParameterGradesSequence[] upgradeSequences;
 
         SignalBus signalBus;
 
-        public List<ParameterGradesSequence> GetNotCompletedSequences => upgradeSequences.Where(x => !x.IsCompleted).ToList();
+        public IEnumerable<ParameterGradesSequence> GetNotCompletedSequences => upgradeSequences.Where(x => !x.IsCompleted).ToList();
         
         [Inject]
         void Construct(SignalBus signalBus)
         {
             this.signalBus = signalBus;
-            Debug.Log($"signalBus Installed in {name}");
         }
         
         public void Init()
