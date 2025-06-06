@@ -8,9 +8,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 861972649186157283, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 002e3e340758b8b4ca6b9b18772e8e95, type: 2}
+    - target: {fileID: 861972649186157283, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -3719246100971431176, guid: 002e3e340758b8b4ca6b9b18772e8e95, type: 2}
+    - target: {fileID: 861972649186157283, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2391389222083994310, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
       propertyPath: m_Name
-      value: CoinView Variant
+      value: CoinView
       objectReference: {fileID: 0}
     - target: {fileID: 5996424215516666977, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
       propertyPath: m_Pivot.x
@@ -102,6 +114,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2391389222083994310, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2331886859613730290}
+    - targetCorrespondingSourceObject: {fileID: 2391389222083994310, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4597341852439271091}
   m_SourcePrefab: {fileID: 100100000, guid: bb3086105e304024b85e968a72b5e89c, type: 3}
 --- !u!1 &4204019372181424662 stripped
 GameObject:
@@ -121,6 +136,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveObj: {fileID: 11400000, guid: cb5c6115fe31a404697b27d36fdd4cd0, type: 2}
+  canvasGroup: {fileID: 4597341852439271091}
 --- !u!114 &2331886859613730290
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -134,8 +150,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 5210614767627302065}
-  moveAnimator: {fileID: 4115449152674797957}
+  uiAnimator: {fileID: 4115449152674797957}
   itemId: Coins
+--- !u!225 &4597341852439271091
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4204019372181424662}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!224 &5210614767627302065 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5996424215516666977, guid: bb3086105e304024b85e968a72b5e89c, type: 3}

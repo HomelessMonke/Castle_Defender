@@ -68,8 +68,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Button
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 002e3e340758b8b4ca6b9b18772e8e95, type: 2}
+  m_sharedMaterial: {fileID: -3719246100971431176, guid: 002e3e340758b8b4ca6b9b18772e8e95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -93,8 +93,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 24
-  m_fontSizeBase: 24
+  m_fontSize: 20.98
+  m_fontSizeBase: 20.98
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -191,6 +191,7 @@ GameObject:
   - component: {fileID: 7306767901370834877}
   - component: {fileID: 8887831096330766463}
   - component: {fileID: 1953953036179475653}
+  - component: {fileID: 1811241180799036622}
   m_Layer: 5
   m_Name: UpgradesButton
   m_TagString: Untagged
@@ -281,7 +282,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -313,6 +314,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveObj: {fileID: 11400000, guid: cb5c6115fe31a404697b27d36fdd4cd0, type: 2}
+  canvasGroup: {fileID: 1811241180799036622}
 --- !u!114 &1953953036179475653
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -326,5 +328,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 3738160059602944498}
-  moveAnimator: {fileID: 8887831096330766463}
+  uiAnimator: {fileID: 8887831096330766463}
   itemId: UpgradesButton
+--- !u!225 &1811241180799036622
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7702741291005025173}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0

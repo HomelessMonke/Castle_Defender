@@ -1,0 +1,6568 @@
+fileFormatVersion: 2
+guid: b9e9689e485a4334a92420c8cf922a89
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -8429309885389232516
+    second: PressStart2P-Regular Atlas_0
+  - first:
+      213: 993626965606395148
+    second: PressStart2P-Regular Atlas_1
+  - first:
+      213: -8262359981471550426
+    second: PressStart2P-Regular Atlas_2
+  - first:
+      213: -792456369567284750
+    second: PressStart2P-Regular Atlas_3
+  - first:
+      213: 3059235221975750847
+    second: PressStart2P-Regular Atlas_4
+  - first:
+      213: 6723553268333897365
+    second: PressStart2P-Regular Atlas_5
+  - first:
+      213: -2413813123094758993
+    second: PressStart2P-Regular Atlas_6
+  - first:
+      213: 6269710602130055104
+    second: PressStart2P-Regular Atlas_7
+  - first:
+      213: -4683432409745458324
+    second: PressStart2P-Regular Atlas_8
+  - first:
+      213: -6507333420079798611
+    second: PressStart2P-Regular Atlas_9
+  - first:
+      213: 5178726920818445317
+    second: PressStart2P-Regular Atlas_10
+  - first:
+      213: -3779640556157644799
+    second: PressStart2P-Regular Atlas_11
+  - first:
+      213: 6578265703492902337
+    second: PressStart2P-Regular Atlas_12
+  - first:
+      213: -1197579855237155701
+    second: PressStart2P-Regular Atlas_13
+  - first:
+      213: -7313630684362589371
+    second: PressStart2P-Regular Atlas_14
+  - first:
+      213: 8977595285793167409
+    second: PressStart2P-Regular Atlas_15
+  - first:
+      213: -7650255485660115109
+    second: PressStart2P-Regular Atlas_16
+  - first:
+      213: -3004984100072770641
+    second: PressStart2P-Regular Atlas_17
+  - first:
+      213: 7891337227562566434
+    second: PressStart2P-Regular Atlas_18
+  - first:
+      213: -3271689962959440218
+    second: PressStart2P-Regular Atlas_19
+  - first:
+      213: -1745701374898489753
+    second: PressStart2P-Regular Atlas_20
+  - first:
+      213: 5131380084959001549
+    second: PressStart2P-Regular Atlas_21
+  - first:
+      213: -4984876686544877879
+    second: PressStart2P-Regular Atlas_22
+  - first:
+      213: -4512807375277848651
+    second: PressStart2P-Regular Atlas_23
+  - first:
+      213: 3736718629115753641
+    second: PressStart2P-Regular Atlas_24
+  - first:
+      213: -7534108008048210719
+    second: PressStart2P-Regular Atlas_25
+  - first:
+      213: 5530826592745080210
+    second: PressStart2P-Regular Atlas_26
+  - first:
+      213: 5539636971569523267
+    second: PressStart2P-Regular Atlas_27
+  - first:
+      213: 5361459267134299774
+    second: PressStart2P-Regular Atlas_28
+  - first:
+      213: 3374698588096916859
+    second: PressStart2P-Regular Atlas_29
+  - first:
+      213: -4006718534691882232
+    second: PressStart2P-Regular Atlas_30
+  - first:
+      213: -5234466674315435940
+    second: PressStart2P-Regular Atlas_31
+  - first:
+      213: 7513558947740827335
+    second: PressStart2P-Regular Atlas_32
+  - first:
+      213: -2401029045036178400
+    second: PressStart2P-Regular Atlas_33
+  - first:
+      213: -3891127660000255013
+    second: PressStart2P-Regular Atlas_34
+  - first:
+      213: 5358033368842569069
+    second: PressStart2P-Regular Atlas_35
+  - first:
+      213: 6733296350496049618
+    second: PressStart2P-Regular Atlas_36
+  - first:
+      213: 7121878225548597523
+    second: PressStart2P-Regular Atlas_37
+  - first:
+      213: 3965873591629111630
+    second: PressStart2P-Regular Atlas_38
+  - first:
+      213: 6500246939756222800
+    second: PressStart2P-Regular Atlas_39
+  - first:
+      213: 3829341484269849466
+    second: PressStart2P-Regular Atlas_40
+  - first:
+      213: -1987858126353171126
+    second: PressStart2P-Regular Atlas_41
+  - first:
+      213: -6825422654415419985
+    second: PressStart2P-Regular Atlas_42
+  - first:
+      213: 4596779288898740020
+    second: PressStart2P-Regular Atlas_43
+  - first:
+      213: 518357392231475110
+    second: PressStart2P-Regular Atlas_44
+  - first:
+      213: 370038127834406979
+    second: PressStart2P-Regular Atlas_45
+  - first:
+      213: 958558428207696687
+    second: PressStart2P-Regular Atlas_46
+  - first:
+      213: 2435253457992496260
+    second: PressStart2P-Regular Atlas_47
+  - first:
+      213: 5693010140211455258
+    second: PressStart2P-Regular Atlas_48
+  - first:
+      213: 8433600971373722939
+    second: PressStart2P-Regular Atlas_49
+  - first:
+      213: 2776981798905912057
+    second: PressStart2P-Regular Atlas_50
+  - first:
+      213: 112484405952291389
+    second: PressStart2P-Regular Atlas_51
+  - first:
+      213: 5931463909046375846
+    second: PressStart2P-Regular Atlas_52
+  - first:
+      213: -9054227826519694679
+    second: PressStart2P-Regular Atlas_53
+  - first:
+      213: 3675037121199470054
+    second: PressStart2P-Regular Atlas_54
+  - first:
+      213: -5744556053886051744
+    second: PressStart2P-Regular Atlas_55
+  - first:
+      213: -3408001603705417816
+    second: PressStart2P-Regular Atlas_56
+  - first:
+      213: 4119230728820214743
+    second: PressStart2P-Regular Atlas_57
+  - first:
+      213: 5363476143191603931
+    second: PressStart2P-Regular Atlas_58
+  - first:
+      213: 5868154897777356636
+    second: PressStart2P-Regular Atlas_59
+  - first:
+      213: 6392892813152313741
+    second: PressStart2P-Regular Atlas_60
+  - first:
+      213: -4994180992175366125
+    second: PressStart2P-Regular Atlas_61
+  - first:
+      213: -7893221246499470248
+    second: PressStart2P-Regular Atlas_62
+  - first:
+      213: 2496964393710954911
+    second: PressStart2P-Regular Atlas_63
+  - first:
+      213: 7242468833479669235
+    second: PressStart2P-Regular Atlas_64
+  - first:
+      213: -8415938413168367679
+    second: PressStart2P-Regular Atlas_65
+  - first:
+      213: 8456630266171999051
+    second: PressStart2P-Regular Atlas_66
+  - first:
+      213: -2731661530862364410
+    second: PressStart2P-Regular Atlas_67
+  - first:
+      213: -5399894860150182910
+    second: PressStart2P-Regular Atlas_68
+  - first:
+      213: 2845575080329681819
+    second: PressStart2P-Regular Atlas_69
+  - first:
+      213: 453953170571103449
+    second: PressStart2P-Regular Atlas_70
+  - first:
+      213: 8729160404313365206
+    second: PressStart2P-Regular Atlas_71
+  - first:
+      213: 5797192006071263202
+    second: PressStart2P-Regular Atlas_72
+  - first:
+      213: -5042067869769777229
+    second: PressStart2P-Regular Atlas_73
+  - first:
+      213: -3050243760428645162
+    second: PressStart2P-Regular Atlas_74
+  - first:
+      213: -758017326417882475
+    second: PressStart2P-Regular Atlas_75
+  - first:
+      213: -3330320002449290545
+    second: PressStart2P-Regular Atlas_76
+  - first:
+      213: 1967780038112822822
+    second: PressStart2P-Regular Atlas_77
+  - first:
+      213: -9142676147736622236
+    second: PressStart2P-Regular Atlas_78
+  - first:
+      213: 6377672082873189470
+    second: PressStart2P-Regular Atlas_79
+  - first:
+      213: 1196842683572723958
+    second: PressStart2P-Regular Atlas_80
+  - first:
+      213: -2045627847604137439
+    second: PressStart2P-Regular Atlas_81
+  - first:
+      213: 8268274730021808760
+    second: PressStart2P-Regular Atlas_82
+  - first:
+      213: -8359105771077824366
+    second: PressStart2P-Regular Atlas_83
+  - first:
+      213: 3727827457740895624
+    second: PressStart2P-Regular Atlas_84
+  - first:
+      213: 1183946832357391741
+    second: PressStart2P-Regular Atlas_85
+  - first:
+      213: 5693005532420943456
+    second: PressStart2P-Regular Atlas_86
+  - first:
+      213: -4029553401461386294
+    second: PressStart2P-Regular Atlas_87
+  - first:
+      213: -8109062851578104369
+    second: PressStart2P-Regular Atlas_88
+  - first:
+      213: -6455997360390888880
+    second: PressStart2P-Regular Atlas_89
+  - first:
+      213: 4970954994890875781
+    second: PressStart2P-Regular Atlas_90
+  - first:
+      213: 8163666523852960202
+    second: PressStart2P-Regular Atlas_91
+  - first:
+      213: -4901586649449239155
+    second: PressStart2P-Regular Atlas_92
+  - first:
+      213: 953826414700010315
+    second: PressStart2P-Regular Atlas_93
+  - first:
+      213: -9069263705053403925
+    second: PressStart2P-Regular Atlas_94
+  - first:
+      213: -3909344529677491384
+    second: PressStart2P-Regular Atlas_95
+  - first:
+      213: 8569253900306526660
+    second: PressStart2P-Regular Atlas_96
+  - first:
+      213: 3230141681976770886
+    second: PressStart2P-Regular Atlas_97
+  - first:
+      213: -1505450191068204036
+    second: PressStart2P-Regular Atlas_98
+  - first:
+      213: 6795172567619138821
+    second: PressStart2P-Regular Atlas_99
+  - first:
+      213: 7415737337110843405
+    second: PressStart2P-Regular Atlas_100
+  - first:
+      213: -8044268207251140200
+    second: PressStart2P-Regular Atlas_101
+  - first:
+      213: 749911225645813485
+    second: PressStart2P-Regular Atlas_102
+  - first:
+      213: 8706101209494518904
+    second: PressStart2P-Regular Atlas_103
+  - first:
+      213: 287459463949383745
+    second: PressStart2P-Regular Atlas_104
+  - first:
+      213: 4533178622155680690
+    second: PressStart2P-Regular Atlas_105
+  - first:
+      213: 5877118017831470737
+    second: PressStart2P-Regular Atlas_106
+  - first:
+      213: -3913911927526299012
+    second: PressStart2P-Regular Atlas_107
+  - first:
+      213: -9058043912011948215
+    second: PressStart2P-Regular Atlas_108
+  - first:
+      213: 3587274244266856438
+    second: PressStart2P-Regular Atlas_109
+  - first:
+      213: 6199601028505491964
+    second: PressStart2P-Regular Atlas_110
+  - first:
+      213: 8603987136648517748
+    second: PressStart2P-Regular Atlas_111
+  - first:
+      213: -7317390725740838891
+    second: PressStart2P-Regular Atlas_112
+  - first:
+      213: 3346922068517716418
+    second: PressStart2P-Regular Atlas_113
+  - first:
+      213: -1308680937500648694
+    second: PressStart2P-Regular Atlas_114
+  - first:
+      213: -5302922261008300363
+    second: PressStart2P-Regular Atlas_115
+  - first:
+      213: -9024555848808609186
+    second: PressStart2P-Regular Atlas_116
+  - first:
+      213: -682847117868923821
+    second: PressStart2P-Regular Atlas_117
+  - first:
+      213: -6754632636703467916
+    second: PressStart2P-Regular Atlas_118
+  - first:
+      213: -1715799355764274292
+    second: PressStart2P-Regular Atlas_119
+  - first:
+      213: -1721114281345358797
+    second: PressStart2P-Regular Atlas_120
+  - first:
+      213: -3689038826909871299
+    second: PressStart2P-Regular Atlas_121
+  - first:
+      213: 3972569887101664709
+    second: PressStart2P-Regular Atlas_122
+  - first:
+      213: -321648060877021782
+    second: PressStart2P-Regular Atlas_123
+  - first:
+      213: 2745787706474633563
+    second: PressStart2P-Regular Atlas_124
+  - first:
+      213: -444500671912690057
+    second: PressStart2P-Regular Atlas_125
+  - first:
+      213: 6789488797761505656
+    second: PressStart2P-Regular Atlas_126
+  - first:
+      213: -6065504804953762332
+    second: PressStart2P-Regular Atlas_127
+  - first:
+      213: -7825871242622061669
+    second: PressStart2P-Regular Atlas_128
+  - first:
+      213: 9068658168701946719
+    second: PressStart2P-Regular Atlas_129
+  - first:
+      213: -5395895465241751493
+    second: PressStart2P-Regular Atlas_130
+  - first:
+      213: 2570872140100567344
+    second: PressStart2P-Regular Atlas_131
+  - first:
+      213: -1794502904542146418
+    second: PressStart2P-Regular Atlas_132
+  - first:
+      213: -2074500471082316274
+    second: PressStart2P-Regular Atlas_133
+  - first:
+      213: 1428371429899495421
+    second: PressStart2P-Regular Atlas_134
+  - first:
+      213: -6004620503848978592
+    second: PressStart2P-Regular Atlas_135
+  - first:
+      213: -5998185384014672205
+    second: PressStart2P-Regular Atlas_136
+  - first:
+      213: -7411212693098386464
+    second: PressStart2P-Regular Atlas_137
+  - first:
+      213: 7895618914894261170
+    second: PressStart2P-Regular Atlas_138
+  - first:
+      213: -7365475199754246622
+    second: PressStart2P-Regular Atlas_139
+  - first:
+      213: 7502925211738381049
+    second: PressStart2P-Regular Atlas_140
+  - first:
+      213: 1482773118447949229
+    second: PressStart2P-Regular Atlas_141
+  - first:
+      213: 2710503104309377349
+    second: PressStart2P-Regular Atlas_142
+  - first:
+      213: -590476081156280296
+    second: PressStart2P-Regular Atlas_143
+  - first:
+      213: -7242391771172428396
+    second: PressStart2P-Regular Atlas_144
+  - first:
+      213: -4781448089091861528
+    second: PressStart2P-Regular Atlas_145
+  - first:
+      213: -2491419764883866196
+    second: PressStart2P-Regular Atlas_146
+  - first:
+      213: -4875556006253343104
+    second: PressStart2P-Regular Atlas_147
+  - first:
+      213: 1513669831193156906
+    second: PressStart2P-Regular Atlas_148
+  - first:
+      213: 892897238701209725
+    second: PressStart2P-Regular Atlas_149
+  - first:
+      213: -8273251014546032305
+    second: PressStart2P-Regular Atlas_150
+  - first:
+      213: -396820000435789816
+    second: PressStart2P-Regular Atlas_151
+  - first:
+      213: -6230530473429300194
+    second: PressStart2P-Regular Atlas_152
+  - first:
+      213: -3590024344670786823
+    second: PressStart2P-Regular Atlas_153
+  - first:
+      213: 3637508942892094900
+    second: PressStart2P-Regular Atlas_154
+  - first:
+      213: 3767078467100124227
+    second: PressStart2P-Regular Atlas_155
+  - first:
+      213: 8636665214634245074
+    second: PressStart2P-Regular Atlas_156
+  - first:
+      213: -3566030606633691545
+    second: PressStart2P-Regular Atlas_157
+  - first:
+      213: 6405662828629937520
+    second: PressStart2P-Regular Atlas_158
+  - first:
+      213: 386252575792250364
+    second: PressStart2P-Regular Atlas_159
+  - first:
+      213: 8344936375763709528
+    second: PressStart2P-Regular Atlas_160
+  - first:
+      213: -2083715807551888621
+    second: PressStart2P-Regular Atlas_161
+  - first:
+      213: 4920266083712986793
+    second: PressStart2P-Regular Atlas_162
+  - first:
+      213: -7979946257170364746
+    second: PressStart2P-Regular Atlas_163
+  - first:
+      213: 5465507053455865443
+    second: PressStart2P-Regular Atlas_164
+  - first:
+      213: -8430036820543853030
+    second: PressStart2P-Regular Atlas_165
+  - first:
+      213: 3121276026612710985
+    second: PressStart2P-Regular Atlas_166
+  - first:
+      213: 4913417662198054730
+    second: PressStart2P-Regular Atlas_167
+  - first:
+      213: 2546572989300467389
+    second: PressStart2P-Regular Atlas_168
+  - first:
+      213: -5948442959803856077
+    second: PressStart2P-Regular Atlas_169
+  - first:
+      213: -3714029357767476567
+    second: PressStart2P-Regular Atlas_170
+  - first:
+      213: -8172538837292778419
+    second: PressStart2P-Regular Atlas_171
+  - first:
+      213: -4234417025126654516
+    second: PressStart2P-Regular Atlas_172
+  - first:
+      213: 9085820952258521569
+    second: PressStart2P-Regular Atlas_173
+  - first:
+      213: 6710587490223450004
+    second: PressStart2P-Regular Atlas_174
+  - first:
+      213: 3345416115980195384
+    second: PressStart2P-Regular Atlas_175
+  - first:
+      213: -8947937413436281637
+    second: PressStart2P-Regular Atlas_176
+  - first:
+      213: -3282536287992515837
+    second: PressStart2P-Regular Atlas_177
+  - first:
+      213: 7479242963420871917
+    second: PressStart2P-Regular Atlas_178
+  - first:
+      213: 8195059993965931392
+    second: PressStart2P-Regular Atlas_179
+  - first:
+      213: -6725973356370682679
+    second: PressStart2P-Regular Atlas_180
+  - first:
+      213: 1141695015195543160
+    second: PressStart2P-Regular Atlas_181
+  - first:
+      213: -2564222067397804751
+    second: PressStart2P-Regular Atlas_182
+  - first:
+      213: 5562106566008332
+    second: PressStart2P-Regular Atlas_183
+  - first:
+      213: -388573252536589719
+    second: PressStart2P-Regular Atlas_184
+  - first:
+      213: 8709114918266054622
+    second: PressStart2P-Regular Atlas_185
+  - first:
+      213: 427632899783122579
+    second: PressStart2P-Regular Atlas_186
+  - first:
+      213: 4422753048161882629
+    second: PressStart2P-Regular Atlas_187
+  - first:
+      213: -1747560840589118670
+    second: PressStart2P-Regular Atlas_188
+  - first:
+      213: 4145756543093232034
+    second: PressStart2P-Regular Atlas_189
+  - first:
+      213: 814267471790798997
+    second: PressStart2P-Regular Atlas_190
+  - first:
+      213: 1807228311431436069
+    second: PressStart2P-Regular Atlas_191
+  - first:
+      213: -371063982918189849
+    second: PressStart2P-Regular Atlas_192
+  - first:
+      213: 4382629914198681117
+    second: PressStart2P-Regular Atlas_193
+  - first:
+      213: -1472758707176072357
+    second: PressStart2P-Regular Atlas_194
+  - first:
+      213: 7799314235274238652
+    second: PressStart2P-Regular Atlas_195
+  - first:
+      213: 4257384519335993775
+    second: PressStart2P-Regular Atlas_196
+  - first:
+      213: -5554298924762748626
+    second: PressStart2P-Regular Atlas_197
+  - first:
+      213: -564975932989857511
+    second: PressStart2P-Regular Atlas_198
+  - first:
+      213: 3154741470163819932
+    second: PressStart2P-Regular Atlas_199
+  - first:
+      213: -2303313193891152281
+    second: PressStart2P-Regular Atlas_200
+  - first:
+      213: 4955807203096469631
+    second: PressStart2P-Regular Atlas_201
+  - first:
+      213: 7919344261568643798
+    second: PressStart2P-Regular Atlas_202
+  - first:
+      213: -3399341063918296459
+    second: PressStart2P-Regular Atlas_203
+  - first:
+      213: 633852283093985318
+    second: PressStart2P-Regular Atlas_204
+  - first:
+      213: -3504456311866571409
+    second: PressStart2P-Regular Atlas_205
+  - first:
+      213: -1246985920844365734
+    second: PressStart2P-Regular Atlas_206
+  - first:
+      213: -3341668311289061000
+    second: PressStart2P-Regular Atlas_207
+  - first:
+      213: -8851466528867975600
+    second: PressStart2P-Regular Atlas_208
+  - first:
+      213: -5067697026233451471
+    second: PressStart2P-Regular Atlas_209
+  - first:
+      213: 8527191081139653830
+    second: PressStart2P-Regular Atlas_210
+  - first:
+      213: -6575676871860978858
+    second: PressStart2P-Regular Atlas_211
+  - first:
+      213: -5786212634247964384
+    second: PressStart2P-Regular Atlas_212
+  - first:
+      213: -6814950125764237078
+    second: PressStart2P-Regular Atlas_213
+  - first:
+      213: 1089056556867517790
+    second: PressStart2P-Regular Atlas_214
+  - first:
+      213: 661446324168783612
+    second: PressStart2P-Regular Atlas_215
+  - first:
+      213: 180139778302130580
+    second: PressStart2P-Regular Atlas_216
+  - first:
+      213: 3920450556437870853
+    second: PressStart2P-Regular Atlas_217
+  - first:
+      213: -8014587189066345844
+    second: PressStart2P-Regular Atlas_218
+  - first:
+      213: 3886781064943767441
+    second: PressStart2P-Regular Atlas_219
+  - first:
+      213: -6560951658530578894
+    second: PressStart2P-Regular Atlas_220
+  - first:
+      213: -6917732041068892935
+    second: PressStart2P-Regular Atlas_221
+  - first:
+      213: 608023613260971165
+    second: PressStart2P-Regular Atlas_222
+  - first:
+      213: 7934667330860652461
+    second: PressStart2P-Regular Atlas_223
+  - first:
+      213: 197185470266103265
+    second: PressStart2P-Regular Atlas_224
+  - first:
+      213: 7024975085029856879
+    second: PressStart2P-Regular Atlas_225
+  - first:
+      213: -1352932174732178942
+    second: PressStart2P-Regular Atlas_226
+  - first:
+      213: 3882711348041030121
+    second: PressStart2P-Regular Atlas_227
+  - first:
+      213: 9049241678141574685
+    second: PressStart2P-Regular Atlas_228
+  - first:
+      213: -7374356296594181373
+    second: PressStart2P-Regular Atlas_229
+  - first:
+      213: 8676164324040224849
+    second: PressStart2P-Regular Atlas_230
+  - first:
+      213: -8676985060764383440
+    second: PressStart2P-Regular Atlas_231
+  - first:
+      213: -6197103174271943066
+    second: PressStart2P-Regular Atlas_232
+  - first:
+      213: 5053710375754382960
+    second: PressStart2P-Regular Atlas_233
+  - first:
+      213: 3472659990091747425
+    second: PressStart2P-Regular Atlas_234
+  - first:
+      213: -2127615473629186221
+    second: PressStart2P-Regular Atlas_235
+  - first:
+      213: -5206462090573320312
+    second: PressStart2P-Regular Atlas_236
+  - first:
+      213: -7633193390031924452
+    second: PressStart2P-Regular Atlas_237
+  - first:
+      213: -2590175572919312626
+    second: PressStart2P-Regular Atlas_238
+  - first:
+      213: -9051398509932515675
+    second: PressStart2P-Regular Atlas_239
+  - first:
+      213: 6065278387434669171
+    second: PressStart2P-Regular Atlas_240
+  - first:
+      213: 3560552562827820404
+    second: PressStart2P-Regular Atlas_241
+  - first:
+      213: 2718263384083782309
+    second: PressStart2P-Regular Atlas_242
+  - first:
+      213: 8742435013413371646
+    second: PressStart2P-Regular Atlas_243
+  - first:
+      213: -5231444255823793447
+    second: PressStart2P-Regular Atlas_244
+  - first:
+      213: -4420117650854615506
+    second: PressStart2P-Regular Atlas_245
+  - first:
+      213: 5225645519031962727
+    second: PressStart2P-Regular Atlas_246
+  - first:
+      213: -910817234679649558
+    second: PressStart2P-Regular Atlas_247
+  - first:
+      213: 2532141190731195761
+    second: PressStart2P-Regular Atlas_248
+  - first:
+      213: 5799772330790134419
+    second: PressStart2P-Regular Atlas_249
+  - first:
+      213: 7597948279030839082
+    second: PressStart2P-Regular Atlas_250
+  - first:
+      213: 8297255254958998681
+    second: PressStart2P-Regular Atlas_251
+  - first:
+      213: 926816632339892122
+    second: PressStart2P-Regular Atlas_252
+  - first:
+      213: 2220824299266287357
+    second: PressStart2P-Regular Atlas_253
+  - first:
+      213: -1000452396440040198
+    second: PressStart2P-Regular Atlas_254
+  - first:
+      213: -6782334378499284374
+    second: PressStart2P-Regular Atlas_255
+  - first:
+      213: 1640085916836396558
+    second: PressStart2P-Regular Atlas_256
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_0
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 484
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c76afa3d153150b80800000000000000
+      internalID: -8429309885389232516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_1
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 479
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0de734f5721acd00800000000000000
+      internalID: 993626965606395148
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_2
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 484
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6243cf96f53365d80800000000000000
+      internalID: -8262359981471550426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_3
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 478
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2f142f76121a005f0800000000000000
+      internalID: -792456369567284750
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_4
+      rect:
+        serializedVersion: 2
+        x: 157
+        y: 478
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb85a32d936947a20800000000000000
+      internalID: 3059235221975750847
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_5
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 503
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 596657b131cde4d50800000000000000
+      internalID: 6723553268333897365
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_6
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 503
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa9b2c3e0c9608ed0800000000000000
+      internalID: -2413813123094758993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_7
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 503
+        width: 27
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0cf5674039c720750800000000000000
+      internalID: 6269710602130055104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_8
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 487
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c6bf197890b110fb0800000000000000
+      internalID: -4683432409745458324
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_9
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 487
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da6ad155bbe41b5a0800000000000000
+      internalID: -6507333420079798611
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_10
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 497
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50cc22842b88ed740800000000000000
+      internalID: 5178726920818445317
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_11
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 491
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 100509780f40c8bc0800000000000000
+      internalID: -3779640556157644799
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_12
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 491
+        width: 17
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cd54deddc1ba4b50800000000000000
+      internalID: 6578265703492902337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_13
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 489
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b84fc6a7777516fe0800000000000000
+      internalID: -1197579855237155701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_14
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 489
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54bbb2054a3c08a90800000000000000
+      internalID: -7313630684362589371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_15
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 489
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1385cead853d69c70800000000000000
+      internalID: 8977595285793167409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_16
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 468
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5fce382b25d4d590800000000000000
+      internalID: -7650255485660115109
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_17
+      rect:
+        serializedVersion: 2
+        x: 341
+        y: 468
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa3377fc1e62c46d0800000000000000
+      internalID: -3004984100072770641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_18
+      rect:
+        serializedVersion: 2
+        x: 365
+        y: 467
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 223ceabf569a38d60800000000000000
+      internalID: 7891337227562566434
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_19
+      rect:
+        serializedVersion: 2
+        x: 389
+        y: 467
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a67796105f9892d0800000000000000
+      internalID: -3271689962959440218
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_20
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 484
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 766b34149d506c7e0800000000000000
+      internalID: -1745701374898489753
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_21
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 445
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dcbbe730003563740800000000000000
+      internalID: 5131380084959001549
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_22
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 440
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9c6cd59801922dab0800000000000000
+      internalID: -4984876686544877879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_23
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 445
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b70dc02a994f51c0800000000000000
+      internalID: -4512807375277848651
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_24
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 469
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a477029bcd7bd330800000000000000
+      internalID: 3736718629115753641
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_25
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 469
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ec4cd02fa8717790800000000000000
+      internalID: -7534108008048210719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_26
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 439
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 295cad68b7171cc40800000000000000
+      internalID: 5530826592745080210
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_27
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 464
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34aa503b97eb0ec40800000000000000
+      internalID: 5539636971569523267
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_28
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 464
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7e14471ccab76a40800000000000000
+      internalID: 5361459267134299774
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_29
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 458
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b7d67876c7655de20800000000000000
+      internalID: 3374698588096916859
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_30
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 470
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 80b77b0a8b64568c0800000000000000
+      internalID: -4006718534691882232
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_31
+      rect:
+        serializedVersion: 2
+        x: 432
+        y: 470
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c50eec80b407b57b0800000000000000
+      internalID: -5234466674315435940
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_32
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 439
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7cebc0fed06854860800000000000000
+      internalID: 7513558947740827335
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_33
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 455
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 02429330ec4ddaed0800000000000000
+      internalID: -2401029045036178400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_34
+      rect:
+        serializedVersion: 2
+        x: 206
+        y: 455
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bd3ecf16200fff9c0800000000000000
+      internalID: -3891127660000255013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_35
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 450
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d650d8cf5fe8b5a40800000000000000
+      internalID: 5358033368842569069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_36
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 445
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d940c23b59717d50800000000000000
+      internalID: 6733296350496049618
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_37
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 429
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 319d967438ef5d260800000000000000
+      internalID: 7121878225548597523
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_38
+      rect:
+        serializedVersion: 2
+        x: 307
+        y: 439
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e41e72df40d990730800000000000000
+      internalID: 3965873591629111630
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_39
+      rect:
+        serializedVersion: 2
+        x: 346
+        y: 448
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0595d74e624853a50800000000000000
+      internalID: 6500246939756222800
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_40
+      rect:
+        serializedVersion: 2
+        x: 380
+        y: 448
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a7b429d8acd842530800000000000000
+      internalID: 3829341484269849466
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_41
+      rect:
+        serializedVersion: 2
+        x: 399
+        y: 443
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4d78d2f095b964e0800000000000000
+      internalID: -1987858126353171126
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_42
+      rect:
+        serializedVersion: 2
+        x: 413
+        y: 446
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa54aa9224a3741a0800000000000000
+      internalID: -6825422654415419985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_43
+      rect:
+        serializedVersion: 2
+        x: 437
+        y: 451
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43f9ea1986a0bcf30800000000000000
+      internalID: 4596779288898740020
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_44
+      rect:
+        serializedVersion: 2
+        x: 456
+        y: 451
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a7a7a64d43913700800000000000000
+      internalID: 518357392231475110
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_45
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 406
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 340abea77b3a22500800000000000000
+      internalID: 370038127834406979
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_46
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 401
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f2bc6c1dfcb7d4d00800000000000000
+      internalID: 958558428207696687
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_47
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 436
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4843fa51e12cbc120800000000000000
+      internalID: 2435253457992496260
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_48
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 400
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1520064f82a10f40800000000000000
+      internalID: 5693010140211455258
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_49
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 400
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b3dbe1c766b2a0570800000000000000
+      internalID: 8433600971373722939
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_50
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 425
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa1387ab32d98620800000000000000
+      internalID: 2776981798905912057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_51
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 425
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d32ae83a8ff9f8100800000000000000
+      internalID: 112484405952291389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_52
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 425
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6a552c0cffac05250800000000000000
+      internalID: 5931463909046375846
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_53
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 410
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a226dc53cbe85280800000000000000
+      internalID: -9054227826519694679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_54
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 419
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e5f7716aca500330800000000000000
+      internalID: 3675037121199470054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_55
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 424
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06a5dc774bc3740b0800000000000000
+      internalID: -5744556053886051744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_56
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 427
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8af4d29099854b0d0800000000000000
+      internalID: -3408001603705417816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_57
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 427
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7dbc333f5827a2930800000000000000
+      internalID: 4119230728820214743
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_58
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 427
+        width: 22
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdab734a225ee6a40800000000000000
+      internalID: 5363476143191603931
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_59
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 406
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5fecf8e9cfdf6150800000000000000
+      internalID: 5868154897777356636
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_60
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 386
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d81671f742e18b850800000000000000
+      internalID: 6392892813152313741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_61
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 386
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 310216119da11bab0800000000000000
+      internalID: -4994180992175366125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_62
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 386
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85445dca815a57290800000000000000
+      internalID: -7893221246499470248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_63
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 420
+        width: 37
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f99a0f7f2eff6a220800000000000000
+      internalID: 2496964393710954911
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_64
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 410
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f5b464280b628460800000000000000
+      internalID: 7242468833479669235
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_65
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 418
+        width: 37
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1c7e88f4a94943b80800000000000000
+      internalID: -8415938413168367679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_66
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 418
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b43cff30c6cfb5570800000000000000
+      internalID: 8456630266171999051
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_67
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 410
+        width: 37
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 60959568f40371ad0800000000000000
+      internalID: -2731661530862364410
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_68
+      rect:
+        serializedVersion: 2
+        x: 356
+        y: 390
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20c6a4c0c38bf05b0800000000000000
+      internalID: -5399894860150182910
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_69
+      rect:
+        serializedVersion: 2
+        x: 414
+        y: 389
+        width: 27
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b9b11c485738d7720800000000000000
+      internalID: 2845575080329681819
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_70
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 394
+        width: 32
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9dc8d84e004cc4600800000000000000
+      internalID: 453953170571103449
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_71
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 394
+        width: 27
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6dad08e7325342970800000000000000
+      internalID: 8729160404313365206
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_72
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 367
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ef9c982a63c37050800000000000000
+      internalID: 5797192006071263202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_73
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 362
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3bf36f88cf9f60ab0800000000000000
+      internalID: -5042067869769777229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_74
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 367
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d48c45f57b5ba5d0800000000000000
+      internalID: -3050243760428645162
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_75
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 361
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 592554df14bfa75f0800000000000000
+      internalID: -758017326417882475
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_76
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 371
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fcac1a14a9358c1d0800000000000000
+      internalID: -3330320002449290545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_77
+      rect:
+        serializedVersion: 2
+        x: 278
+        y: 381
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 626c1d7d485fe4b10800000000000000
+      internalID: 1967780038112822822
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_78
+      rect:
+        serializedVersion: 2
+        x: 317
+        y: 381
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 46bc8bdcb70be1180800000000000000
+      internalID: -9142676147736622236
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_79
+      rect:
+        serializedVersion: 2
+        x: 395
+        y: 390
+        width: 17
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e54059118fa028850800000000000000
+      internalID: 6377672082873189470
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_80
+      rect:
+        serializedVersion: 2
+        x: 448
+        y: 375
+        width: 32
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6f0a06e541a0c9010800000000000000
+      internalID: 1196842683572723958
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_81
+      rect:
+        serializedVersion: 2
+        x: 482
+        y: 375
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 12298e09f487c93e0800000000000000
+      internalID: -2045627847604137439
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_82
+      rect:
+        serializedVersion: 2
+        x: 497
+        y: 375
+        width: 12
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87ae94c4f00deb270800000000000000
+      internalID: 8268274730021808760
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_83
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 347
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2901df2f69d7efb80800000000000000
+      internalID: -8359105771077824366
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_84
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 347
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 885f79a6257ebb330800000000000000
+      internalID: 3727827457740895624
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_85
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 347
+        width: 12
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7d7c970f593e6010800000000000000
+      internalID: 1183946832357391741
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_86
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 372
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 06ea8407e5e910f40800000000000000
+      internalID: 5693005532420943456
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_87
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 372
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac35d66e7862418c0800000000000000
+      internalID: -4029553401461386294
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_88
+      rect:
+        serializedVersion: 2
+        x: 302
+        y: 342
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fc5fe56dc42d67f80800000000000000
+      internalID: -8109062851578104369
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_89
+      rect:
+        serializedVersion: 2
+        x: 336
+        y: 342
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 052aa072b90b766a0800000000000000
+      internalID: -6455997360390888880
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_90
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 371
+        width: 37
+        height: 17
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 583ace80b316cf440800000000000000
+      internalID: 4970954994890875781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_91
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 375
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ac1f003537b2b4170800000000000000
+      internalID: 8163666523852960202
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_92
+      rect:
+        serializedVersion: 2
+        x: 424
+        y: 375
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d8de7cb79e01afbb0800000000000000
+      internalID: -4901586649449239155
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_93
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 375
+        width: 7
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b4b1491121cac3d00800000000000000
+      internalID: 953826414700010315
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_94
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 361
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: be4e2f516b0832280800000000000000
+      internalID: -9069263705053403925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_95
+      rect:
+        serializedVersion: 2
+        x: 268
+        y: 342
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 843e4f3ecd73fb9c0800000000000000
+      internalID: -3909344529677491384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_96
+      rect:
+        serializedVersion: 2
+        x: 370
+        y: 342
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4c1b6ed350b1ce670800000000000000
+      internalID: 8569253900306526660
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_97
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 346
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6418868eeb4c3dc20800000000000000
+      internalID: 3230141681976770886
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_98
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 366
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf3f55607019b1be0800000000000000
+      internalID: -1505450191068204036
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_99
+      rect:
+        serializedVersion: 2
+        x: 477
+        y: 346
+        width: 22
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 505fa68a27d4d4e50800000000000000
+      internalID: 6795172567619138821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_100
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 328
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d00d71e51ddf9e660800000000000000
+      internalID: 7415737337110843405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_101
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 323
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 891d3d49fa40d5090800000000000000
+      internalID: -8044268207251140200
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_102
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 328
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dee42b95948386a00800000000000000
+      internalID: 749911225645813485
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_103
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 322
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 87cf4825ce842d870800000000000000
+      internalID: 8706101209494518904
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_104
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 322
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 148f6040cd24df300800000000000000
+      internalID: 287459463949383745
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_105
+      rect:
+        serializedVersion: 2
+        x: 443
+        y: 356
+        width: 32
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bbebf460f519ee30800000000000000
+      internalID: 4533178622155680690
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_106
+      rect:
+        serializedVersion: 2
+        x: 453
+        y: 346
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19684ebe2b7bf8150800000000000000
+      internalID: 5877118017831470737
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_107
+      rect:
+        serializedVersion: 2
+        x: 186
+        y: 313
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c7a61a5b6ddfea9c0800000000000000
+      internalID: -3913911927526299012
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_108
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 313
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94f53a8bd0d5b4280800000000000000
+      internalID: -9058043912011948215
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_109
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 313
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ff0f614bee88c130800000000000000
+      internalID: 3587274244266856438
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_110
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 313
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf9573dd948690650800000000000000
+      internalID: 6199601028505491964
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_111
+      rect:
+        serializedVersion: 2
+        x: 342
+        y: 313
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47817f307b0876770800000000000000
+      internalID: 8603987136648517748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_112
+      rect:
+        serializedVersion: 2
+        x: 381
+        y: 313
+        width: 32
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 510ca7577e7637a90800000000000000
+      internalID: -7317390725740838891
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_113
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 337
+        width: 37
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2c10ae873e7a27e20800000000000000
+      internalID: 3346922068517716418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_114
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 337
+        width: 37
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a0bd2fbfe91a6dde0800000000000000
+      internalID: -1308680937500648694
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_115
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 328
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6c619bc4c3866b0800000000000000
+      internalID: -5302922261008300363
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_116
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 289
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5ac618054652c280800000000000000
+      internalID: -9024555848808609186
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_117
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 284
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35406870a2a0686f0800000000000000
+      internalID: -682847117868923821
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_118
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 289
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 476970d8769b242a0800000000000000
+      internalID: -6754632636703467916
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_119
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 283
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c8b83dd93914038e0800000000000000
+      internalID: -1715799355764274292
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_120
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 283
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 334ee821eaf5d18e0800000000000000
+      internalID: -1721114281345358797
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_121
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 308
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d33d9677bb6edccc0800000000000000
+      internalID: -3689038826909871299
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_122
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 308
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5cdbb16c347612730800000000000000
+      internalID: 3972569887101664709
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_123
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 313
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aad5bb4fac6498bf0800000000000000
+      internalID: -321648060877021782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_124
+      rect:
+        serializedVersion: 2
+        x: 191
+        y: 299
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b591e090f5ffa1620800000000000000
+      internalID: 2745787706474633563
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_125
+      rect:
+        serializedVersion: 2
+        x: 235
+        y: 299
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 77eb8347ef0d4d9f0800000000000000
+      internalID: -444500671912690057
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_126
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 299
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 879811dd61c193e50800000000000000
+      internalID: 6789488797761505656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_127
+      rect:
+        serializedVersion: 2
+        x: 303
+        y: 304
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4e55e4d248ff2dba0800000000000000
+      internalID: -6065504804953762332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_128
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 304
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b93319d619be46390800000000000000
+      internalID: -7825871242622061669
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_129
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 274
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f5b8cee7e885add70800000000000000
+      internalID: 9068658168701946719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_130
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 274
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b30df1db9aded15b0800000000000000
+      internalID: -5395895465241751493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_131
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 274
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03184a127929da320800000000000000
+      internalID: 2570872140100567344
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_132
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 274
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e80db52bd15a817e0800000000000000
+      internalID: -1794502904542146418
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_133
+      rect:
+        serializedVersion: 2
+        x: 498
+        y: 304
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e02ce00d4e533e0800000000000000
+      internalID: -2074500471082316274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_134
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 260
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df7e9766f3892d310800000000000000
+      internalID: 1428371429899495421
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_135
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 245
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 067fd01377d4baca0800000000000000
+      internalID: -6004620503848978592
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_136
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 250
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3be8dd84c2a22cca0800000000000000
+      internalID: -5998185384014672205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_137
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 244
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0eb21096255162990800000000000000
+      internalID: -7411212693098386464
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_138
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 244
+        width: 27
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2bba020029fd29d60800000000000000
+      internalID: 7895618914894261170
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_139
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 274
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 226e2bc645398c990800000000000000
+      internalID: -7365475199754246622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_140
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 274
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fa1df55abebf1860800000000000000
+      internalID: 7502925211738381049
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_141
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 274
+        width: 37
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da5969f8b4ed39410800000000000000
+      internalID: 1482773118447949229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_142
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 274
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54934f66634ad9520800000000000000
+      internalID: 2710503104309377349
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_143
+      rect:
+        serializedVersion: 2
+        x: 493
+        y: 274
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 810b056f1253ec7f0800000000000000
+      internalID: -590476081156280296
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_144
+      rect:
+        serializedVersion: 2
+        x: 181
+        y: 235
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4952e035e0bdd7b90800000000000000
+      internalID: -7242391771172428396
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_145
+      rect:
+        serializedVersion: 2
+        x: 220
+        y: 235
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e395b1db42e4adb0800000000000000
+      internalID: -4781448089091861528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_146
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 235
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cadb5b78ce2bc6dd0800000000000000
+      internalID: -2491419764883866196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_147
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 235
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08e4fb4e4ab865cb0800000000000000
+      internalID: -4875556006253343104
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_148
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 235
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a2d5e7311b2a10510800000000000000
+      internalID: 1513669831193156906
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_149
+      rect:
+        serializedVersion: 2
+        x: 376
+        y: 235
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7876bdce45346c00800000000000000
+      internalID: 892897238701209725
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_150
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 265
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f49f75c29028f2d80800000000000000
+      internalID: -8273251014546032305
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_151
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 265
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8002142ef463e7af0800000000000000
+      internalID: -396820000435789816
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_152
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 235
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e1c00019b85b889a0800000000000000
+      internalID: -6230530473429300194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_153
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 235
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9faa4e811ebad2ec0800000000000000
+      internalID: -3590024344670786823
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_154
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 250
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b5d3687c170b7230800000000000000
+      internalID: 3637508942892094900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_155
+      rect:
+        serializedVersion: 2
+        x: 415
+        y: 235
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 344a68038e9574430800000000000000
+      internalID: 3767078467100124227
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_156
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 211
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2db3f32f0499bd770800000000000000
+      internalID: 8636665214634245074
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_157
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 206
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7669d619e0ae28ec0800000000000000
+      internalID: -3566030606633691545
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_158
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 211
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07d496b676c75e850800000000000000
+      internalID: 6405662828629937520
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_159
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 205
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cfd3da5dbae3c5500800000000000000
+      internalID: 386252575792250364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_160
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 205
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 85ea1ae9b6b2fc370800000000000000
+      internalID: 8344936375763709528
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_161
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 196
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 313e00653872513e0800000000000000
+      internalID: -2083715807551888621
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_162
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 196
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9ae6d183feb484440800000000000000
+      internalID: 4920266083712986793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_163
+      rect:
+        serializedVersion: 2
+        x: 259
+        y: 226
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6b607ae9829814190800000000000000
+      internalID: -7979946257170364746
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_164
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 226
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 366f0a625b169db40800000000000000
+      internalID: 5465507053455865443
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_165
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 196
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1e250c0d2e720b80800000000000000
+      internalID: -8430036820543853030
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_166
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 196
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 94e713c4200015b20800000000000000
+      internalID: 3121276026612710985
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_167
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 196
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a4ff174d457ff2440800000000000000
+      internalID: 4913417662198054730
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_168
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 196
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db6ebd534ae375320800000000000000
+      internalID: 2546572989300467389
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_169
+      rect:
+        serializedVersion: 2
+        x: 454
+        y: 226
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 33bc73ee4a2e27da0800000000000000
+      internalID: -5948442959803856077
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_170
+      rect:
+        serializedVersion: 2
+        x: 469
+        y: 226
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9aab5e41afd157cc0800000000000000
+      internalID: -3714029357767476567
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_171
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 196
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d4c741a3a3f459e80800000000000000
+      internalID: -8172538837292778419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_172
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 172
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ccd957a86245c35c0800000000000000
+      internalID: -4234417025126654516
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_173
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 167
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e9ab207402571e70800000000000000
+      internalID: 9085820952258521569
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_174
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 172
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 497e2f4a4cbc02d50800000000000000
+      internalID: 6710587490223450004
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_175
+      rect:
+        serializedVersion: 2
+        x: 118
+        y: 196
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 836ddd29b3e4d6e20800000000000000
+      internalID: 3345416115980195384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_176
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 196
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdce3b7a45a82d380800000000000000
+      internalID: -8947937413436281637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_177
+      rect:
+        serializedVersion: 2
+        x: 152
+        y: 166
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 30370ef33a61272d0800000000000000
+      internalID: -3282536287992515837
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_178
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 196
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dec7a8739db9bc760800000000000000
+      internalID: 7479242963420871917
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_179
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 196
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 08baa5d25a3bab170800000000000000
+      internalID: 8195059993965931392
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_180
+      rect:
+        serializedVersion: 2
+        x: 113
+        y: 166
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cc98cc3eda88a2a0800000000000000
+      internalID: -6725973356370682679
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_181
+      rect:
+        serializedVersion: 2
+        x: 176
+        y: 157
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 876809e319d18df00800000000000000
+      internalID: 1141695015195543160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_182
+      rect:
+        serializedVersion: 2
+        x: 225
+        y: 182
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13d39839d9d0a6cd0800000000000000
+      internalID: -2564222067397804751
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_183
+      rect:
+        serializedVersion: 2
+        x: 269
+        y: 182
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c0ed11ad4b2c31000800000000000000
+      internalID: 5562106566008332
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_184
+      rect:
+        serializedVersion: 2
+        x: 298
+        y: 182
+        width: 27
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 962a6518fa28b9af0800000000000000
+      internalID: -388573252536589719
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_185
+      rect:
+        serializedVersion: 2
+        x: 337
+        y: 187
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ed7ad4310edfcd870800000000000000
+      internalID: 8709114918266054622
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_186
+      rect:
+        serializedVersion: 2
+        x: 352
+        y: 187
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39ed7dd4bd14fe500800000000000000
+      internalID: 427632899783122579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_187
+      rect:
+        serializedVersion: 2
+        x: 371
+        y: 157
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50217fce676c06d30800000000000000
+      internalID: 4422753048161882629
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_188
+      rect:
+        serializedVersion: 2
+        x: 410
+        y: 157
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2337d49acaa6fb7e0800000000000000
+      internalID: -1747560840589118670
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_189
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 157
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2a1d25c5c9fa88930800000000000000
+      internalID: 4145756543093232034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_190
+      rect:
+        serializedVersion: 2
+        x: 488
+        y: 157
+        width: 22
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 598fe3093fbdc4b00800000000000000
+      internalID: 814267471790798997
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_191
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 133
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 52756eaf290941910800000000000000
+      internalID: 1807228311431436069
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_192
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 128
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7ec38350647b9daf0800000000000000
+      internalID: -371063982918189849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_193
+      rect:
+        serializedVersion: 2
+        x: 94
+        y: 163
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1620d1dfaa32dc30800000000000000
+      internalID: 4382629914198681117
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_194
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 157
+        width: 42
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b5b18e242c5bf8be0800000000000000
+      internalID: -1472758707176072357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_195
+      rect:
+        serializedVersion: 2
+        x: 215
+        y: 157
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cba1b2579fabc3c60800000000000000
+      internalID: 7799314235274238652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_196
+      rect:
+        serializedVersion: 2
+        x: 254
+        y: 157
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa1e44be9a4451b30800000000000000
+      internalID: 4257384519335993775
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_197
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 157
+        width: 37
+        height: 22
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e29ae2d4e8a2be2b0800000000000000
+      internalID: -5554298924762748626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_198
+      rect:
+        serializedVersion: 2
+        x: 332
+        y: 157
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 911ae7fd16dc828f0800000000000000
+      internalID: -564975932989857511
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_199
+      rect:
+        serializedVersion: 2
+        x: 79
+        y: 128
+        width: 27
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c9dde4f07a4e7cb20800000000000000
+      internalID: 3154741470163819932
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_200
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 133
+        width: 17
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76eb5a78adcf800e0800000000000000
+      internalID: -2303313193891152281
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_201
+      rect:
+        serializedVersion: 2
+        x: 127
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f7023ebe46096c440800000000000000
+      internalID: 4955807203096469631
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_202
+      rect:
+        serializedVersion: 2
+        x: 166
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d2c3dcb5a927ed60800000000000000
+      internalID: 7919344261568643798
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_203
+      rect:
+        serializedVersion: 2
+        x: 205
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 57260c6105d13d0d0800000000000000
+      internalID: -3399341063918296459
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_204
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 148
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 62823ed0b45ebc800800000000000000
+      internalID: 633852283093985318
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_205
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 148
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6541504d8bad5fc0800000000000000
+      internalID: -3504456311866571409
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_206
+      rect:
+        serializedVersion: 2
+        x: 283
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a50882c69e0d1bee0800000000000000
+      internalID: -1246985920844365734
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_207
+      rect:
+        serializedVersion: 2
+        x: 322
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 871af64306200a1d0800000000000000
+      internalID: -3341668311289061000
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_208
+      rect:
+        serializedVersion: 2
+        x: 361
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 05e709dc616492580800000000000000
+      internalID: -8851466528867975600
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_209
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 13c3d0a876ceba9b0800000000000000
+      internalID: -5067697026233451471
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_210
+      rect:
+        serializedVersion: 2
+        x: 439
+        y: 118
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cc453bfb1ba65670800000000000000
+      internalID: 8527191081139653830
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_211
+      rect:
+        serializedVersion: 2
+        x: 478
+        y: 118
+        width: 32
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 65b79f679b08eb4a0800000000000000
+      internalID: -6575676871860978858
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_212
+      rect:
+        serializedVersion: 2
+        x: 16
+        y: 119
+        width: 12
+        height: 12
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 029d5cc044e33bfa0800000000000000
+      internalID: -5786212634247964384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_213
+      rect:
+        serializedVersion: 2
+        x: 40
+        y: 89
+        width: 42
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ae8a1dfb7fe6c61a0800000000000000
+      internalID: -6814950125764237078
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_214
+      rect:
+        serializedVersion: 2
+        x: 108
+        y: 123
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e5df56c1b2b1d1f00800000000000000
+      internalID: 1089056556867517790
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_215
+      rect:
+        serializedVersion: 2
+        x: 244
+        y: 118
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cf671166deded2900800000000000000
+      internalID: 661446324168783612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_216
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 89
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 499bd978c2cff7200800000000000000
+      internalID: 180139778302130580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_217
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 84
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 50936f7720d386630800000000000000
+      internalID: 3920450556437870853
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_218
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c82dd462a6776c090800000000000000
+      internalID: -8014587189066345844
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_219
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19f00b719ce90f530800000000000000
+      internalID: 3886781064943767441
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_220
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 23e56cc5a31d2f4a0800000000000000
+      internalID: -6560951658530578894
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_221
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fc20c04c574fff90800000000000000
+      internalID: -6917732041068892935
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_222
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d9c387b3142207800800000000000000
+      internalID: 608023613260971165
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_223
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: da798d2d5e99d1e60800000000000000
+      internalID: 7934667330860652461
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_224
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1e55416f32b8cb200800000000000000
+      internalID: 197185470266103265
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_225
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f669c23be99bd7160800000000000000
+      internalID: 7024975085029856879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_226
+      rect:
+        serializedVersion: 2
+        x: 445
+        y: 109
+        width: 17
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 20a44efea5b693de0800000000000000
+      internalID: -1352932174732178942
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_227
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 79
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9e91d59466922e530800000000000000
+      internalID: 3882711348041030121
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_228
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 45
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d1ec9408c5d559d70800000000000000
+      internalID: 9049241678141574685
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_229
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 45
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 303b65ee40609a990800000000000000
+      internalID: -7374356296594181373
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_230
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 45
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 150b5530c7de76870800000000000000
+      internalID: 8676164324040224849
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_231
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 79
+        width: 37
+        height: 27
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 03784c35f08259780800000000000000
+      internalID: -8676985060764383440
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_232
+      rect:
+        serializedVersion: 2
+        x: 1
+        y: 1
+        width: 42
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 66e33152f777ff9a0800000000000000
+      internalID: -6197103174271943066
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_233
+      rect:
+        serializedVersion: 2
+        x: 45
+        y: 1
+        width: 37
+        height: 42
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 07ebb80afc2622640800000000000000
+      internalID: 5053710375754382960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_234
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 36
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 160512facdd513030800000000000000
+      internalID: 3472659990091747425
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_235
+      rect:
+        serializedVersion: 2
+        x: 104
+        y: 36
+        width: 12
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 35735b3dff03972e0800000000000000
+      internalID: -2127615473629186221
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_236
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 88fe6da405eeeb7b0800000000000000
+      internalID: -5206462090573320312
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_237
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c13994ddd03711690800000000000000
+      internalID: -7633193390031924452
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_238
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0f104e2a09dd0cd0800000000000000
+      internalID: -2590175572919312626
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_239
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aee8f6f209f26280800000000000000
+      internalID: -9051398509932515675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_240
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 374c5e2ee823c2450800000000000000
+      internalID: 6065278387434669171
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_241
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 47d7577f0bf996130800000000000000
+      internalID: 3560552562827820404
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_242
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5aad346552639b520800000000000000
+      internalID: 2718263384083782309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_243
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efef076435e535970800000000000000
+      internalID: 8742435013413371646
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_244
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9d27d5daa2d2667b0800000000000000
+      internalID: -5231444255823793447
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_245
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 40
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e2660635a6698a2c0800000000000000
+      internalID: -4420117650854615506
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_246
+      rect:
+        serializedVersion: 2
+        x: 84
+        y: 1
+        width: 37
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76c0304b9e8358840800000000000000
+      internalID: 5225645519031962727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_247
+      rect:
+        serializedVersion: 2
+        x: 123
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aeaad9ffc802c53f0800000000000000
+      internalID: -910817234679649558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_248
+      rect:
+        serializedVersion: 2
+        x: 162
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175eaa24ff8f32320800000000000000
+      internalID: 2532141190731195761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_249
+      rect:
+        serializedVersion: 2
+        x: 201
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 392a2e2d43eec7050800000000000000
+      internalID: 5799772330790134419
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_250
+      rect:
+        serializedVersion: 2
+        x: 240
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a277c6144b5517960800000000000000
+      internalID: 7597948279030839082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_251
+      rect:
+        serializedVersion: 2
+        x: 279
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 994039291b5c52370800000000000000
+      internalID: 8297255254958998681
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_252
+      rect:
+        serializedVersion: 2
+        x: 318
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a970b8e01d6bcdc00800000000000000
+      internalID: 926816632339892122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_253
+      rect:
+        serializedVersion: 2
+        x: 357
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: df6a25a0fe3f1de10800000000000000
+      internalID: 2220824299266287357
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_254
+      rect:
+        serializedVersion: 2
+        x: 396
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: afcc08798ddad12f0800000000000000
+      internalID: -1000452396440040198
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_255
+      rect:
+        serializedVersion: 2
+        x: 435
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6261ad21de40e1a0800000000000000
+      internalID: -6782334378499284374
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: PressStart2P-Regular Atlas_256
+      rect:
+        serializedVersion: 2
+        x: 474
+        y: 1
+        width: 37
+        height: 37
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e0e772aa371c2c610800000000000000
+      internalID: 1640085916836396558
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

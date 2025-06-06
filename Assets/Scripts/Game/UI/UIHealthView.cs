@@ -19,7 +19,7 @@ namespace UI
         public void Draw(Health health)
         {
             Draw(health.CurrentHp, health.Percentage);
-            maxHpText.text = $"/ {(int)health.MaxHp}";
+            maxHpText.text = $"/{(int)health.MaxHp}";
         }
 
         public void Draw(float currentHp, float percentage)

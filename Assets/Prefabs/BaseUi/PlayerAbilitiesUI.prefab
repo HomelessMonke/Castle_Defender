@@ -152,8 +152,8 @@ MonoBehaviour:
 
     defenders'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 002e3e340758b8b4ca6b9b18772e8e95, type: 2}
+  m_sharedMaterial: {fileID: -3719246100971431176, guid: 002e3e340758b8b4ca6b9b18772e8e95, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -177,15 +177,15 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 23.87
-  m_fontSizeBase: 23.87
+  m_fontSize: 12.7
+  m_fontSizeBase: 12.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
   m_HorizontalAlignment: 2
-  m_VerticalAlignment: 256
+  m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
   m_wordSpacing: 0
@@ -235,6 +235,7 @@ GameObject:
   - component: {fileID: 3415284203438121219}
   - component: {fileID: 3563960446579830006}
   - component: {fileID: 4089048518884622171}
+  - component: {fileID: 6492521984740402305}
   m_Layer: 5
   m_Name: PlayerAbilitiesUI
   m_TagString: Untagged
@@ -260,7 +261,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
   m_AnchoredPosition: {x: 346.055, y: -101.74735}
-  m_SizeDelta: {x: 124.97119, y: 150.9529}
+  m_SizeDelta: {x: 0, y: 150.9529}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &4072110441596866258
 MonoBehaviour:
@@ -330,6 +331,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curveObj: {fileID: 11400000, guid: cb5c6115fe31a404697b27d36fdd4cd0, type: 2}
+  canvasGroup: {fileID: 6492521984740402305}
 --- !u!114 &3563960446579830006
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -343,7 +345,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   rectTransform: {fileID: 7745147856020061669}
-  moveAnimator: {fileID: 3415284203438121219}
+  uiAnimator: {fileID: 3415284203438121219}
   itemId: PlayerAbilities
 --- !u!114 &4089048518884622171
 MonoBehaviour:
@@ -352,13 +354,25 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5952942933327615962}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3245ec927659c4140ac4f8d17403cc18, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   m_HorizontalFit: 2
   m_VerticalFit: 0
+--- !u!225 &6492521984740402305
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5952942933327615962}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &6104509530408739368
 GameObject:
   m_ObjectHideFlags: 0
