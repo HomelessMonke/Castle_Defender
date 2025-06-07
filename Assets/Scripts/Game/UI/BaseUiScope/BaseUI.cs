@@ -45,6 +45,24 @@ namespace Game.UI.BaseUiScope
             currentDefaultConfig = preBattlePopupConfig;
             Switch(preBattlePopupConfig, immediate);
         }
+
+        [Button]
+        public void Hide()
+        {
+            Hide(false);
+        }
+        
+        [Button]
+        public void SwitchPreBattleConfig()
+        {
+            SwitchPreBattleConfig(false);
+        }
+        
+        [Button]
+        public void SwitchInBattleConfig()
+        {
+            SwitchInBattleConfig(false);
+        }
         
         public void Hide(bool immediate = true)
         {

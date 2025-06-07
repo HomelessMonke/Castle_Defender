@@ -1245,7 +1245,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   layoutGroup: {fileID: 300923641}
-  offsetVector: {x: 0, y: 50}
+  offsetVector: {x: 250, y: 0}
 --- !u!1 &342208114
 GameObject:
   m_ObjectHideFlags: 0
