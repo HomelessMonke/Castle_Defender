@@ -14,7 +14,19 @@ namespace Game.UI.BaseUiScope
         CanvasGroup canvasGroup;
         
         Tween moveTween, alphaTween;
-
+        
+        public void AnimateShow(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
+        {
+            AnimateMove(startPos, targetPos, duration, complete);
+            AnimateAlpha(0, 1, duration);
+        }
+        
+        public void AnimateHide(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
+        {
+            AnimateMove(startPos, targetPos, duration, complete);
+            AnimateAlpha(1, 0, duration);
+        }
+        
         public void AnimateMove(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
         {
             gameObject.SetActive(true);
@@ -26,18 +38,6 @@ namespace Game.UI.BaseUiScope
             {
                 transform.position = Vector3.Lerp(startPos, targetPos, curveObj.Curve.Evaluate(x));
             }, 1, duration).SetAutoKill(true).OnComplete(()=> complete?.Invoke());
-        }
-
-        public void AnimateShow(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
-        {
-            AnimateMove(startPos, targetPos, duration, complete);
-            AnimateAlpha(0, 1, duration);
-        }
-        
-        public void AnimateHide(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
-        {
-            AnimateMove(startPos, targetPos, duration, complete);
-            AnimateAlpha(1, 0, duration);
         }
 
         void AnimateAlpha(float from, float to, float duration, Action complete = null)

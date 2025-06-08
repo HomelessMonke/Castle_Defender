@@ -19,6 +19,9 @@ namespace Game.Characters.Spawners
         [SerializeField]
         ProjectileSpawner projectileSpawner;
         
+        [SerializeField]
+        LootBubbleSpawner bubbleSpawner;
+        
         [Space(10)]
         [SerializeField]
         Transform spawnPointTransform;
@@ -61,6 +64,7 @@ namespace Game.Characters.Spawners
 
         void OnDie(EnemyRangedCharacter unit)
         {
+            bubbleSpawner.Spawn(unit.transform.position, unitParameters.CoinReward);
             pool.Despawn(unit);
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
             signalBus.Fire<CurrencyChangedSignal>();

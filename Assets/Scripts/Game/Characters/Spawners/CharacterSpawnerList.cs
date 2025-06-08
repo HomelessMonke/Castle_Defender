@@ -1,7 +1,6 @@
 ﻿using System.Linq;
 using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
-using Game.Waves;
 using UnityEditor;
 using UnityEngine;
 using Utilities.Attributes;
@@ -16,9 +15,13 @@ namespace Game.Characters.Spawners
         [SerializeField]
         ProjectileSpawner projectileSpawner;
         
+        [SerializeField]
+        LootBubbleSpawner lootBubbleSpawner;
+        
         public void Init()
         {
             projectileSpawner.Init();
+            lootBubbleSpawner.Init();
             foreach (var spawner in spawners)
             {
                 spawner.Init();
@@ -35,7 +38,8 @@ namespace Game.Characters.Spawners
             }
             return null;
         }
-
+        
+#if UNITY_EDITOR
         [Button]
         void SetAllSpawners()
         {
@@ -43,5 +47,6 @@ namespace Game.Characters.Spawners
             EditorUtility.SetDirty(this);
             projectileSpawner = GetComponentInChildren<ProjectileSpawner>();
         }
+#endif
     }
 }

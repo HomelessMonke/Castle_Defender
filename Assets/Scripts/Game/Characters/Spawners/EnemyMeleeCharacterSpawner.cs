@@ -19,6 +19,9 @@ namespace Game.Characters.Spawners
         [Space(10)]
         [SerializeField]
         Transform spawnPointTransform;
+        
+        [SerializeField]
+        LootBubbleSpawner bubbleSpawner;
 
         SignalBus signalBus;
         CurrencyManager currencyService;
@@ -58,6 +61,7 @@ namespace Game.Characters.Spawners
 
         void OnDie(MeleeCharacter unit)
         {
+            bubbleSpawner.Spawn(unit.transform.position, unitParameters.CoinReward);
             pool.Despawn(unit);
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
             signalBus.Fire<CurrencyChangedSignal>();
