@@ -12,7 +12,7 @@ namespace Game.Characters
     {
         public void Glide(Transform tf, TextMeshPro tmpText, SpriteRenderer icon, Action complete = null)
         {
-            float angle = Random.Range(-45f, 45f);
+            float angle = Random.Range(-45f, 0);
             Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.up;
             Sequence seq = DOTween.Sequence();
             seq.Append(tf.DOMove(tf.position + dir, .3f)
