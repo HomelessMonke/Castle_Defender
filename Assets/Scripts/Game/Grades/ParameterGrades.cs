@@ -16,7 +16,6 @@ namespace Game.Grades
         protected SignalBus signalBus;
         
         public Sprite Sprite => sprite;
-        public int GradeIndex => gradeIndex;
         public int TotalUpgrades => gradeIndex<0 ? 0 : gradeIndex + 1;
         
         protected abstract string SaveKey { get; }

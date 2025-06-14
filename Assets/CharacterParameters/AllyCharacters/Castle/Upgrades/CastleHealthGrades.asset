@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 80c18d32481c4337b907fc74feae0bab, type: 3}
   m_Name: CastleHealthGrades
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 6404778677824247896, guid: 52aced4bee339d04ca5b7594e9ba04ef, type: 3}
   defaultHp: 50
   grades:
   - value: 100

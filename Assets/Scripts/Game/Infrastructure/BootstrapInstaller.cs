@@ -3,8 +3,6 @@ using Game.Grades;
 using Game.Signals;
 using Game.Signals.AllyArcher;
 using Game.Signals.Castle;
-using Game.UI.Popups.UpgradesPopupSpace;
-using Game.Upgrades;
 using UnityEngine;
 using Zenject;
 
@@ -19,7 +17,7 @@ namespace Game.Infrastructure
         {
             BindSelf();
             BindSignals();
-            BindPresenters();
+            BindGradesList();
             BindCurrencyService();
         }
 
@@ -44,9 +42,9 @@ namespace Game.Infrastructure
             Container.DeclareSignal<CurrencyChangedSignal>();
         }
 
-        void BindPresenters()
+        void BindGradesList()
         {
-            Container.Bind<UpgradesPopupPresenter>().AsTransient();
+            Container.Bind<AllGradesSequenceList>().FromInstance(gradesSequenceList);
         }
 
         public void Initialize()

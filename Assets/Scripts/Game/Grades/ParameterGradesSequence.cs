@@ -17,10 +17,11 @@ namespace Game.Grades
         [SerializeField]
         LocalizedString headerLocalization;
         
-        int TotalUpgrades => parametersToUpgrade.Sum(x => x.TotalUpgrades);
-        
+        public int Level => TotalUpgrades+1;
         public bool IsCompleted => parametersToUpgrade.All(x => x.IsCompleted);
         public string HeaderText => headerLocalization.GetLocalizedString(); 
+        
+        int TotalUpgrades => parametersToUpgrade.Sum(x => x.TotalUpgrades);
         
         public void Init(SignalBus signalBus)
         {

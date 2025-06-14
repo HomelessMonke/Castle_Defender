@@ -12,14 +12,7 @@ namespace Game.UI.BaseUiScope
         [SerializeField]
         protected UIBehaviour layoutGroup;
         
-        protected BaseUiItem[] currentItems;
-        
         public abstract Direction Direction { get; }
-
-        void Awake()
-        {
-            currentItems = transform.GetComponentsInChildren<BaseUiItem>().Where(x => x.gameObject.activeSelf).ToArray();
-        }
         
         IEnumerator Start()
         {
@@ -33,6 +26,8 @@ namespace Game.UI.BaseUiScope
             Dictionary<BaseUiItem, RectInfo> oldItemsInfo = new Dictionary<BaseUiItem, RectInfo>();
             Dictionary<BaseUiItem, RectInfo> newItemsInfo = new Dictionary<BaseUiItem, RectInfo>();
             
+            BaseUiItem[] currentItems = transform.GetComponentsInChildren<BaseUiItem>().Where(x => x.gameObject.activeSelf).ToArray();
+            
             foreach (var element in currentItems)
             {
                 allUniqueElements.Add(element);
@@ -43,11 +38,11 @@ namespace Game.UI.BaseUiScope
             for (int i = 0; i < itemsToShow.Length; i++)
             {
                 var item = itemsToShow[i];
-                item.transform.SetSiblingIndex(i);
                 if (!currentItems.Contains(item))
                 {
                     item.transform.SetParent(transform);
                 }
+                item.transform.SetSiblingIndex(i);
                 item.gameObject.SetActive(true);
 
                 if (!allUniqueElements.Contains(item))
@@ -67,8 +62,6 @@ namespace Game.UI.BaseUiScope
                 var newRectInfo = newItemsInfo.TryGetValue(item, out var newStateInfo) ? newStateInfo : new RectInfo();
                 AnimateItem(item, oldRectInfo, newRectInfo, duration);
             }
-
-            currentItems = itemsToShow;
         }
         
         protected abstract void AnimateItem(BaseUiItem item, RectInfo oldRectInfo, RectInfo newRectInfo, float duration);

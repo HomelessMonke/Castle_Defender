@@ -84,17 +84,6 @@ namespace Game.UI.BaseUiScope
             canvasGroup.interactable = interactable;
         }
 
-        void SwitchInternal(PopupConfig config, float duration)
-        {
-            foreach (var anim in animators)
-            {
-                var uiGroup = config.GetUIGroupByDirection(anim.Direction);
-                var visibleElements = uiGroup != null ? uiGroup.VisibleElements : new string[] { };
-                var itemsToShow = itemsArray.GetUiElementsArray(visibleElements);
-                anim.SetState(itemsToShow, duration);
-            }
-        }
-
         IEnumerator SwitchCoroutine(PopupConfig config, bool immediate = false)
         {
             InteractUiButtons(false);
@@ -104,6 +93,17 @@ namespace Game.UI.BaseUiScope
             
             yield return new WaitForSeconds(duration);
             InteractUiButtons(true);
+        }
+        
+        void SwitchInternal(PopupConfig config, float duration)
+        {
+            foreach (var anim in animators)
+            {
+                var uiGroup = config.GetUIGroupByDirection(anim.Direction);
+                var visibleElements = uiGroup != null ? uiGroup.VisibleElements : new string[] { };
+                var itemsToShow = itemsArray.GetUiElementsArray(visibleElements);
+                anim.SetState(itemsToShow, duration);
+            }
         }
         
 #if UNITY_EDITOR

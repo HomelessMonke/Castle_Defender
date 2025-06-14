@@ -30,7 +30,7 @@ namespace Game.Grades.AllyArchersGrades
         protected override string SaveKey => "AllyArchersDamageGradeIndex";
         
         public override bool IsCompleted => gradeIndex == grades.Length-1;
-        public override CurrencyItem CurrencyToUpgrade => grades[gradeIndex].Currency;
+        public override CurrencyItem CurrencyToUpgrade => grades[gradeIndex+1].Currency;
         public override string LocalizedDescription => String.Format(localization.GetLocalizedString(), grades[gradeIndex+1].Value);
 
         public float Damage => currentDamage;

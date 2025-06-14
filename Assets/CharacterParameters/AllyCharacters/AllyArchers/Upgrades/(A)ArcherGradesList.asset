@@ -15,3 +15,15 @@ MonoBehaviour:
   parametersToUpgrade:
   - {fileID: 11400000, guid: e27d0f26c3b44344c8374bcb788119f9, type: 2}
   - {fileID: 11400000, guid: efc45d436bae4f340ab674f0119b5a53, type: 2}
+  headerLocalization:
+    m_TableReference:
+      m_TableCollectionName: GUID:bce447c7e74e6ea449d30afb4932dacb
+    m_TableEntryReference:
+      m_KeyId: 8857957113528320
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

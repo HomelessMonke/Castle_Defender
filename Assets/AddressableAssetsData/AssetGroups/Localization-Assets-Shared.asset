@@ -20,6 +20,11 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 8874a96ece3168f42b456c94b241f3ea
+    m_Address: Assets/Localization/Text/Popups/UpgradesPopup Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bce447c7e74e6ea449d30afb4932dacb
     m_Address: Assets/Localization/Text/Upgrades/AllyArcher/AllyArcherUpgrades Shared
       Data.asset

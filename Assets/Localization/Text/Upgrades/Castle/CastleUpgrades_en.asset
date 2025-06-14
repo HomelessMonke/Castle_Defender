@@ -22,6 +22,10 @@ MonoBehaviour:
     m_Localized: Increase castle health points by {0}
     m_Metadata:
       m_Items: []
+  - m_Id: 7107743465865216
+    m_Localized: Castle
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

@@ -1,4 +1,5 @@
-﻿using Game.Currencies;
+﻿using System.Linq;
+using Game.Currencies;
 using Game.Grades;
 using Game.Popups;
 using Zenject;
@@ -27,8 +28,10 @@ namespace Game.UI.Popups.UpgradesPopupSpace
                 popup = p;
                 p.BuyClick += OnBuyClick;
                 p.CloseClick += OnCloseClick;
+                
+                ParameterGradesSequence[] sequences = gradesSequenceList.GetNotCompletedSequences.ToArray();
                 p.Init();
-                p.Draw(gradesSequenceList);
+                p.Draw(sequences);
             });
         }
 
@@ -40,7 +43,7 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             {
                 upgrades.Upgrade();
                 var parameterToDraw = sequence.GetParameterToUpgrade();
-                view.Draw(parameterToDraw);
+                view.Draw(parameterToDraw, sequence.Level);
             }
             else
             {

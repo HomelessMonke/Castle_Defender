@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91b04691c1d84940a26583a38183d8ec, type: 3}
   m_Name: (A)ArchersCountGrades
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 338793532501073182, guid: 41718dc88ac3d354b9afb3521737781a, type: 3}
   defaultCount: 4
   grades:
   - value: 5

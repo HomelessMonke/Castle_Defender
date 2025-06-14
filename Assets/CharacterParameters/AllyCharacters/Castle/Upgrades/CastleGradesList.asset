@@ -14,3 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parametersToUpgrade:
   - {fileID: 11400000, guid: 264853cf14163064991a404fa819c785, type: 2}
+  headerLocalization:
+    m_TableReference:
+      m_TableCollectionName: GUID:d750194130298a848bba9656609b84ed
+    m_TableEntryReference:
+      m_KeyId: 7107743465865216
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

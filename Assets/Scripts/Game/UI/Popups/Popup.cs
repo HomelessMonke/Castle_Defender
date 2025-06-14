@@ -10,14 +10,14 @@ namespace Game.UI.Popups
         
         public PopupConfig Config => config;
 
-        public event Action Closed;
+        public event Action<Popup> Closed;
         
         public virtual void Open() => gameObject.SetActive(true);
         
         public virtual void Close()
         {
             gameObject.SetActive(false);
-            Closed?.Invoke();
+            Closed?.Invoke(this);
         }
     }
 

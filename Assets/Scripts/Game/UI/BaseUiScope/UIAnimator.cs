@@ -8,6 +8,9 @@ namespace Game.UI.BaseUiScope
     public class UIAnimator : MonoBehaviour
     {
         [SerializeField]
+        RectTransform rectTransform;
+        
+        [SerializeField]
         AnimationCurveObject curveObj;
 
         [SerializeField]
@@ -15,19 +18,19 @@ namespace Game.UI.BaseUiScope
         
         Tween moveTween, alphaTween;
         
-        public void AnimateShow(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
+        public void AnimateShow(Vector2 startPos, Vector2 targetPos, float duration, Action complete = null)
         {
-            AnimateMove(startPos, targetPos, duration, complete);
             AnimateAlpha(0, 1, duration);
-        }
-        
-        public void AnimateHide(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
-        {
             AnimateMove(startPos, targetPos, duration, complete);
-            AnimateAlpha(1, 0, duration);
         }
         
-        public void AnimateMove(Vector3 startPos, Vector3 targetPos, float duration, Action complete = null)
+        public void AnimateHide(Vector2 startPos, Vector2 targetPos, float duration, Action complete = null)
+        {
+            AnimateAlpha(1, 0, duration);
+            AnimateMove(startPos, targetPos, duration, complete);
+        }
+        
+        public void AnimateMove(Vector2 startPos, Vector2 targetPos, float duration, Action complete = null)
         {
             gameObject.SetActive(true);
             
@@ -36,7 +39,7 @@ namespace Game.UI.BaseUiScope
             
             moveTween = DOTween.To(() => (float)0, x =>
             {
-                transform.position = Vector3.Lerp(startPos, targetPos, curveObj.Curve.Evaluate(x));
+                rectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, curveObj.Curve.Evaluate(x));
             }, 1, duration).SetAutoKill(true).OnComplete(()=> complete?.Invoke());
         }
 

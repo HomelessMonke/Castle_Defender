@@ -1,14 +1,14 @@
 ﻿using Game.Characters;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
+using Utilities;
 
-namespace UI
+namespace Game.UI
 {
     public class UIHealthView: MonoBehaviour
     {
         [SerializeField]
-        Image filler;
+        SlicedFilledImage filler;
 
         [SerializeField]
         TextMeshProUGUI currentHpText;

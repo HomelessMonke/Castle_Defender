@@ -27,7 +27,7 @@ namespace Game.Grades.CastleGrades
         protected override string SaveKey => "CastleHpGradeIndex";
         
         public override bool IsCompleted => gradeIndex == grades.Length-1;
-        public override CurrencyItem CurrencyToUpgrade => grades[gradeIndex].Currency;
+        public override CurrencyItem CurrencyToUpgrade => grades[gradeIndex+1].Currency;
 
         public override string LocalizedDescription => String.Format(localization.GetLocalizedString(), GetValueForLocalization);
         float GetValueForLocalization => gradeIndex<0

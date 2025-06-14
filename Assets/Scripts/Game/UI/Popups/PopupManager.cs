@@ -12,23 +12,16 @@ namespace Game.Popups
         
         [SerializeField]
         GameObject overlay;
-
-        readonly Dictionary<string, Popup> popupCache = new();
-
+        
         public event Action<PopupConfig> ConfigChanged;
 
         public T OpenPopup<T>(string name, Action<T> popupLoaded = null) where T : Popup
         {
-            if (!popupCache.TryGetValue(name, out var popup))
+            var popup = LoadPopup(name);
+            if (popup == null)
             {
-                popup = LoadPopup(name);
-                if (popup == null)
-                {
-                    Debug.LogError($"Popup '{name}' not found in Resources/Popups/");
-                    return null;
-                }
-
-                popupCache[name] = popup;
+                Debug.LogError($"Popup '{name}' not found in Resources/Popups/");
+                return null;
             }
 
             if (popup is not T typedPopup)
@@ -56,8 +49,9 @@ namespace Game.Popups
             overlay.SetActive(false);
         }
 
-        void OnPopupClosed()
+        void OnPopupClosed(Popup popup)
         {
+            Destroy(popup.gameObject);
             ConfigChanged?.Invoke(null);
         }
 

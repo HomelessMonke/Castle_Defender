@@ -1,7 +1,10 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.Linq;
 using Game.Grades;
 using UnityEngine;
 using UnityEngine.UI;
+using Utilities.Extensions;
 
 namespace Game.UI.Popups.UpgradesPopupSpace
 {
@@ -14,8 +17,11 @@ namespace Game.UI.Popups.UpgradesPopupSpace
         UpgradeView viewTemplate;
 
         [SerializeField]
+        LayoutGroup layoutGroup;
+        
+        [SerializeField]
         Button closeButton;
-
+        
         public event Action<UpgradeView, ParameterGradesSequence> BuyClick;
         public event Action CloseClick;
         
@@ -24,9 +30,9 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             closeButton.onClick.AddListener(()=> CloseClick?.Invoke());
         }
 
-        public void Draw(AllGradesSequenceList gradesSequenceList)
+        public void Draw(ParameterGradesSequence[] sequences)
         {
-            var sequences = gradesSequenceList.GetNotCompletedSequences;
+            root.DestroyChildren();
             foreach (var sequence in sequences)
             {
                 var parameterUpgrade = sequence.GetParameterToUpgrade();
@@ -34,10 +40,13 @@ namespace Game.UI.Popups.UpgradesPopupSpace
                     continue;
                 
                 var view = Instantiate(viewTemplate, root);
-                view.BuyClick += ()=> BuyClick?.Invoke(view, sequence);
+                var seq = sequence;
+                view.BuyClick += ()=> BuyClick?.Invoke(view, seq);
                 view.Init();
-                view.Draw(sequence.HeaderText, parameterUpgrade);
+                view.gameObject.SetActive(true);
+                view.Draw(parameterUpgrade, sequence.Level, sequence.HeaderText);
             }
+            viewTemplate.gameObject.SetActive(false);
         }
     }
 }

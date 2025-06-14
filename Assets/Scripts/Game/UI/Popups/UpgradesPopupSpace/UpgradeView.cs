@@ -2,6 +2,7 @@
 using Game.Grades;
 using TMPro;
 using UnityEngine;
+using UnityEngine.Localization;
 using UnityEngine.UI;
 
 namespace Game.UI.Popups.UpgradesPopupSpace
@@ -18,7 +19,13 @@ namespace Game.UI.Popups.UpgradesPopupSpace
         TextMeshProUGUI descriptionTmp;
         
         [SerializeField]
-        TextMeshProUGUI valueText;
+        TextMeshProUGUI buyValueTmp;
+
+        [SerializeField]
+        LocalizedString levelLocalization;
+        
+        [SerializeField]
+        TextMeshProUGUI levelTmp;
 
         [SerializeField]
         Button buyButton;
@@ -27,20 +34,26 @@ namespace Game.UI.Popups.UpgradesPopupSpace
 
         public void Init()
         {
-            buyButton.onClick.AddListener(() => { BuyClick?.Invoke(); });
+            buyButton.onClick.AddListener(OnBuyClick);
         }
 
-        public void Draw(string headerText, ParameterGrades parameter)
+        public void Draw(ParameterGrades parameter, int level, string headerText)
         {
             headerTmp.text = headerText;
-            Draw(parameter);
+            Draw(parameter, level);
         }
         
-        public void Draw(ParameterGrades parameter)
+        public void Draw(ParameterGrades parameter, int level)
         {
             image.sprite = parameter.Sprite;
+            levelTmp.text = $"{levelLocalization.GetLocalizedString()} {level}";
             descriptionTmp.text = parameter.LocalizedDescription;
-            valueText.text = parameter.CurrencyToUpgrade.ToString();
+            buyValueTmp.text = parameter.CurrencyToUpgrade.AmountText;
+        }
+
+        void OnBuyClick()
+        {
+            BuyClick?.Invoke();
         }
     }
 }

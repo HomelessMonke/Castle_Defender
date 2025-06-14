@@ -14,6 +14,7 @@ namespace Game.Currencies
 
         public CurrencyType Type => type;
         public int Amount => amount;
+        public string AmountText => amount.ToString();
         
         public CurrencyItem(CurrencyType type, int amount)
         {

@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: adbd5533a39546928c2f037a3d630099, type: 3}
   m_Name: (A)ArchersDamageGrades
   m_EditorClassIdentifier: 
-  sprite: {fileID: 0}
+  sprite: {fileID: 7843083181360032193, guid: 8401f43c0470eb848bf1dd73ee6837d5, type: 3}
   baseDamage: 4
   grades:
   - value: 5

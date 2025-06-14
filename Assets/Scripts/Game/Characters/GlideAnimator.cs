@@ -10,8 +10,6 @@ namespace Game.Characters
 {
     public class GlideAnimator
     {
-        Tween glideTween;
-        
         public void Glide(Transform tf, TextMeshPro tmpText, SpriteRenderer icon, Action complete = null)
         {
             float angle = Random.Range(-45f, 45f);

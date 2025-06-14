@@ -1138,6 +1138,7 @@ MonoBehaviour:
   wavesManager: {fileID: 415040425}
   currenciesPanel: {fileID: 1201001271}
   startWaveButton: {fileID: 2015276056}
+  upgradesButton: {fileID: 911848334}
   abilitiesPanel: {fileID: 283635194}
   popupManager: {fileID: 1550109968}
 --- !u!224 &283635193 stripped
@@ -1280,7 +1281,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -431.09998, y: -68.3}
+  m_AnchoredPosition: {x: -431.09998, y: -68.29999}
   m_SizeDelta: {x: 862.10986, y: 136.1698}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &342208116
@@ -2981,6 +2982,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   popupManager: {fileID: 1550109968}
+--- !u!114 &911848334 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7306767901370834877, guid: 7c4150ebafabd084d8e9668a2c19d752, type: 3}
+  m_PrefabInstance: {fileID: 6478604311878372799}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &913231241
 GameObject:
   m_ObjectHideFlags: 0
@@ -3689,8 +3701,8 @@ Canvas:
   m_GameObject: {fileID: 1201001266}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -3700,7 +3712,7 @@ Canvas:
   m_VertexColorAlwaysGammaSpace: 0
   m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -1296771309
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1201001270
@@ -3837,7 +3849,7 @@ CanvasGroup:
   m_GameObject: {fileID: 1206440149}
   m_Enabled: 1
   m_Alpha: 1
-  m_Interactable: 1
+  m_Interactable: 0
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
 --- !u!224 &1206440151
@@ -4769,8 +4781,8 @@ Canvas:
   m_GameObject: {fileID: 1550109963}
   m_Enabled: 1
   serializedVersion: 3
-  m_RenderMode: 0
-  m_Camera: {fileID: 0}
+  m_RenderMode: 1
+  m_Camera: {fileID: 519420031}
   m_PlaneDistance: 100
   m_PixelPerfect: 0
   m_ReceivesEvents: 1
@@ -4778,9 +4790,9 @@ Canvas:
   m_OverridePixelPerfect: 0
   m_SortingBucketNormalizedSize: 0
   m_VertexColorAlwaysGammaSpace: 0
-  m_AdditionalShaderChannelsFlag: 0
+  m_AdditionalShaderChannelsFlag: 25
   m_UpdateRectTransformForStandalone: 0
-  m_SortingLayerID: 0
+  m_SortingLayerID: -872739
   m_SortingOrder: 0
   m_TargetDisplay: 0
 --- !u!224 &1550109967
@@ -5239,7 +5251,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0.5}
   m_AnchorMax: {x: 0, y: 0.5}
-  m_AnchoredPosition: {x: 71.732, y: 0.099976}
+  m_AnchoredPosition: {x: 71.731995, y: 0.099976}
   m_SizeDelta: {x: 143.4635, y: 1079.8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1763203300
@@ -5411,10 +5423,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 1453624628131225199, guid: c2b7f3a061b24f6448a4d47dfd2239b6, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 0}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c2b7f3a061b24f6448a4d47dfd2239b6, type: 3}
 --- !u!4 &1957535359 stripped
 Transform:
@@ -6103,6 +6112,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 865702852}
     m_Modifications:
+    - target: {fileID: 4115449152674797957, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
+      propertyPath: rectTransform
+      value: 
+      objectReference: {fileID: 120686585}
     - target: {fileID: 4204019372181424662, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
       propertyPath: m_Name
       value: CoinView
@@ -6571,7 +6584,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9139240752249746183, guid: f6bee6352a382464b8b93710c884b5a3, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 85.6822
+      value: 85.68219
       objectReference: {fileID: 0}
     - target: {fileID: 9139240752249746183, guid: f6bee6352a382464b8b93710c884b5a3, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6634,6 +6647,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 300923640}
     m_Modifications:
+    - target: {fileID: 1953953036179475653, guid: 7c4150ebafabd084d8e9668a2c19d752, type: 3}
+      propertyPath: itemId
+      value: UpgradesButton
+      objectReference: {fileID: 0}
     - target: {fileID: 3738160059602944498, guid: 7c4150ebafabd084d8e9668a2c19d752, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -6731,9 +6748,21 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1748985789}
     m_Modifications:
+    - target: {fileID: 5372480450444629437, guid: 3f7058be8c2951c4892a588b6d3330b5, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.7
+      objectReference: {fileID: 0}
     - target: {fileID: 6660371519807965186, guid: 3f7058be8c2951c4892a588b6d3330b5, type: 3}
       propertyPath: m_Name
       value: CastleHP_View
+      objectReference: {fileID: 0}
+    - target: {fileID: 7008926373358485054, guid: 3f7058be8c2951c4892a588b6d3330b5, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 7864850168163017247, guid: 3f7058be8c2951c4892a588b6d3330b5, type: 3}
+      propertyPath: m_PixelsPerUnitMultiplier
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8380639312913481537, guid: 3f7058be8c2951c4892a588b6d3330b5, type: 3}
       propertyPath: m_Pivot.x

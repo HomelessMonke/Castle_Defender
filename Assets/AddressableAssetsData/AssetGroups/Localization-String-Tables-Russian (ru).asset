@@ -15,6 +15,13 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Russian (ru)
   m_GUID: 8b9a80cb490231744b7c4dccb7d06c17
   m_SerializeEntries:
+  - m_GUID: 239f876ee4f540a45aec0075bb12ad35
+    m_Address: UpgradesPopup_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ca32340a10863c4381a7368996d5926
     m_Address: AllyArcherUpgrades_ru
     m_ReadOnly: 1

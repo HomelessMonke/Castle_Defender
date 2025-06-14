@@ -18,7 +18,6 @@ namespace Game.UI.BaseUiScope
         void Awake()
         {
             rotatedOffsetVector = Quaternion.AngleAxis(-(int)direction * 45, Vector3.forward) * offsetVector;
-            currentItems = transform.GetComponentsInChildren<BaseUiItem>().Where(x => x.gameObject.activeSelf).ToArray();
         }
         
         protected override void AnimateItem(BaseUiItem item, RectInfo oldRectInfo, RectInfo newRectInfo, float duration)

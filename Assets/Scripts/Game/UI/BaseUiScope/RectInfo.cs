@@ -12,7 +12,7 @@ namespace Game.UI.BaseUiScope
         
         public RectInfo(BaseUiItem item)
         {
-            pos = item.RectTransform.position;
+            pos = item.RectTransform.anchoredPosition;
             enable = item.IsEnabled;
         }
     }
