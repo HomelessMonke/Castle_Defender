@@ -5,7 +5,7 @@ namespace Game.Currencies
 {
     public class CurrencyManager
     {
-        const string SaveKeyPrefix = "Currency_";
+        public const string SaveKeyPrefix = "Currency_";
 
         Dictionary<CurrencyType, int> currencies = new();
 
