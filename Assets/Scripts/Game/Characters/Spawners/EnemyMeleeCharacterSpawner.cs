@@ -64,7 +64,7 @@ namespace Game.Characters.Spawners
             bubbleSpawner.Spawn(unit.transform.position, unitParameters.CoinReward);
             pool.Despawn(unit);
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
-            signalBus.Fire<CurrencyChangedSignal>();
+            signalBus.Fire<DespawnEnemySignal>();
         }
     }
 }

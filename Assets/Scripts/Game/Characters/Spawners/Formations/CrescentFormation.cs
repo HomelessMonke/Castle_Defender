@@ -12,10 +12,6 @@ namespace Game.Characters.Spawners.Formations
         [SerializeField]
         bool facingLeft;
         
-        [Header("Сколько позиций в каждой линии")]
-        [SerializeField]
-        int[] linePositionsCounts;
-        
         [Header("Расстояние между линиями")]
         [SerializeField]
         [Range(0.5f, 1f)]
@@ -37,20 +33,20 @@ namespace Game.Characters.Spawners.Formations
             angleRangeDegrees = 90;
         }
 
-        public Vector2[] GetSpawnPoints(Transform transform)
+        public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)
         {
             Vector2 startPosition = transform.position;
-            var count = linePositionsCounts.Sum(x => x);
+            var count = charactersInLines.Sum(x => x);
             Vector2[] positions = new Vector2[count];
 
-            if (linePositionsCounts == null || linePositionsCounts.Length == 0)
+            if (charactersInLines == null || charactersInLines.Length == 0)
                 return positions;
 
             int directionSign = facingLeft ? 1 : -1;
             var posIndex = 0;
-            for (int i = 0; i < linePositionsCounts.Length; i++)
+            for (int i = 0; i < charactersInLines.Length; i++)
             {
-                int unitCount = linePositionsCounts[i];
+                int unitCount = charactersInLines[i];
                 if (unitCount <= 0) continue;
 
                 float radius = baseRadius + i * lineSpacing;

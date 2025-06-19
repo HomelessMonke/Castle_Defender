@@ -1,19 +1,19 @@
-﻿using System.Collections.Generic;
-using UnityEngine.Events;
+﻿using System;
+using System.Collections.Generic;
 
 namespace Game.Currencies
 {
     public class CurrencyManager
     {
-        public UnityEvent<CurrencyType, int> OnCurrencyChanged = new();
+        const string SaveKeyPrefix = "Currency_";
 
         Dictionary<CurrencyType, int> currencies = new();
 
-        const string SaveKeyPrefix = "Currency_";
-        
+        public Action<CurrencyType, int> OnCurrencyChanged;
+
         public void Init()
         {
-            foreach (CurrencyType type in System.Enum.GetValues(typeof(CurrencyType)))
+            foreach (CurrencyType type in Enum.GetValues(typeof(CurrencyType)))
             {
                 int savedValue = ES3.KeyExists(SaveKeyPrefix + type)
                     ? ES3.Load<int>(SaveKeyPrefix + type)
@@ -38,8 +38,8 @@ namespace Game.Currencies
         {
             return Spend(currencyItem.Type, currencyItem.Amount);
         }
-        
-        public bool Spend(CurrencyType type, int amount)
+
+        bool Spend(CurrencyType type, int amount)
         {
             if (currencies[type] >= amount)
             {
@@ -56,11 +56,21 @@ namespace Game.Currencies
             OnCurrencyChanged?.Invoke(type, currencies[type]);
         }
 
-        public void SaveAll()
+        public void SaveCurrencies()
         {
             foreach (var pair in currencies)
             {
                 ES3.Save(SaveKeyPrefix + pair.Key, pair.Value);
+            }
+        }
+        
+        public void ResetCurrencies()
+        {
+            foreach (var currency in currencies)
+            {
+                var type = currency.Key;
+                currencies[type] = 0;
+                ES3.DeleteKey(SaveKeyPrefix + type);
             }
         }
     }

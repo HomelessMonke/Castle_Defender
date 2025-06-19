@@ -18,7 +18,7 @@ MonoBehaviour:
   - value: 5
     currency:
       type: 0
-      amount: 0
+      amount: 250
   - value: 10
     currency:
       type: 0

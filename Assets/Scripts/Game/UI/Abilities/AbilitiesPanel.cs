@@ -3,7 +3,7 @@ using Game.Characters.Spawners.Formations;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace UI.Abilities
+namespace Game.UI.Abilities
 {
     public class AbilitiesPanel: MonoBehaviour
     {

@@ -12,10 +12,6 @@ namespace Game.Characters.Spawners.Formations
         [SerializeField]
         bool spawnToRight = true;
         
-        [Header("Сколько позиций в каждой линии")]
-        [SerializeField]
-        int[] linePositionsCounts;
-        
         [Header("Отступы между позициями по X")]
         [SerializeField, Range(0.2f, 1)]
         float unitsOffsetX;
@@ -29,31 +25,16 @@ namespace Game.Characters.Spawners.Formations
             unitsOffsetX = unitsOffsetY = 0.2f;
         }
 
-        public void SetLinePositionsCounts(int currentCount, int maxInLine)
-        {
-            List<int> lineCounts = new();
-            while (currentCount / maxInLine >= 1)
-            {
-                lineCounts.Add(maxInLine);
-                currentCount-=maxInLine;
-            }
-            
-            if(currentCount>0)
-                lineCounts.Add(currentCount);
-            
-            linePositionsCounts = lineCounts.ToArray();
-        }
-
-        public Vector2[] GetSpawnPoints(Transform transform)
+        public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)
         {
             Vector2 startPosition = transform.position;
-            var count = linePositionsCounts.Sum(x => x);
+            var count = charactersInLines.Sum(x => x);
             Vector2[] positions = new Vector2[count];
 
             int posIndex = 0;
-            for (int i = 0; i < linePositionsCounts.Length; i++)
+            for (int i = 0; i < charactersInLines.Length; i++)
             {
-                var positionsCount = linePositionsCounts[i];
+                var positionsCount = charactersInLines[i];
                 var yOffset = unitsOffsetY * ((float)(positionsCount-1) / 2);
                 var lineOffset = (spawnToRight ? 1 : -1) * ((Vector2)transform.right * i * unitsOffsetX) - (Vector2)transform.up * yOffset;
                 var lineStartPos = startPosition + lineOffset;

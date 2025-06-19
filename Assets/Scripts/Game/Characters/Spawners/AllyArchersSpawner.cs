@@ -76,8 +76,23 @@ namespace Game.Characters.Spawners
 
         Vector2[] GetSpawnPoints(int count)
         {
-            formation.SetLinePositionsCounts(count, parameters.MaxInLine);
-            return formation.GetSpawnPoints(startSpawnPoint);
+            var charactersInLineArr = GetCharactersLineArr(count, parameters.MaxInLine);
+            return formation.GetSpawnPoints(charactersInLineArr, startSpawnPoint);
+        }
+        
+        int[] GetCharactersLineArr(int currentCount, int maxInLine)
+        {
+            List<int> lineCounts = new();
+            while (currentCount / maxInLine >= 1)
+            {
+                lineCounts.Add(maxInLine);
+                currentCount-=maxInLine;
+            }
+            
+            if(currentCount>0)
+                lineCounts.Add(currentCount);
+            
+            return lineCounts.ToArray();
         }
 
         void OnArchersCountIncreased(AllyArchersCountUpgradeSignal signal)

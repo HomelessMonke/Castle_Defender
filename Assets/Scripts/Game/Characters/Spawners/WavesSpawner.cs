@@ -1,11 +1,8 @@
 ﻿using System.Collections;
-using Game.Characters;
-using Game.Characters.Spawners;
 using Game.Characters.Spawners.Formations;
-using Game.Currencies;
+using Game.Signals;
 using Game.Waves;
 using UnityEngine;
-using Utilities.Attributes;
 using Zenject;
 
 namespace Game.Characters.Spawners
@@ -18,24 +15,27 @@ namespace Game.Characters.Spawners
         [SerializeField]
         WavesList wavesList;
 
+        SignalBus signalBus;
+        
+        [Inject]
+        void Construct(SignalBus signalBus)
+        {
+            this.signalBus = signalBus;
+        }
+
         public void LaunchNextWave()
         {
-            StartCoroutine(LaunchWavesCoroutine());
+            StartCoroutine(LaunchWave());
         }
 
-        IEnumerator LaunchWavesCoroutine()
+        IEnumerator LaunchWave()
         {
-            var waves = wavesList.Waves;
-            var timeBetweenWaves = wavesList.TimeBetweenWaves;
-            foreach (var wave in waves)
-            {
-                yield return SpawnWave(wave);
-                yield return new WaitForSeconds(timeBetweenWaves);
-            }
-        }
+            var wave = wavesList.NextWave;
+            signalBus.Fire(new LaunchWaveSignal(wave.CharactersCount));
 
-        IEnumerator SpawnWave(Wave wave)
-        {
+            if(wave == null)
+                yield break;
+            
             foreach (var squad in wave.Squads)
             {
                 yield return SpawnSquad(squad);
@@ -46,12 +46,6 @@ namespace Game.Characters.Spawners
         {
             yield return new WaitForSeconds(squadInfo.SpawnDelay);
             charactersSpawner.Spawn(squadInfo);
-        }
-        
-        [Button(runtimeOnly: true)]
-        public void SpawnFirstWave()
-        {
-            StartCoroutine(SpawnWave(wavesList.Waves[0]));
         }
     }
 }

@@ -1,7 +1,6 @@
 ﻿using Game.Characters;
 using Game.Characters.Spawners;
 using Game.UI;
-using UI;
 using UnityEngine;
 
 namespace Game
@@ -25,7 +24,7 @@ namespace Game
         
         [SerializeField]
         UIEntryPoint uiEntryPoint;
-        
+
         public void Start()
         {
             castle.Init();

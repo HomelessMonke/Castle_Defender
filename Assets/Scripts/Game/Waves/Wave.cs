@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using Game.Characters.Spawners.Formations;
 using UnityEditor;
 using UnityEngine;
@@ -13,6 +14,8 @@ namespace Game.Waves
         SquadInfo[] squads;
 
         public SquadInfo[] Squads => squads;
+
+        public int CharactersCount => squads.Sum(x => x.Count);
 
         [Button]
         public void AddSquad()

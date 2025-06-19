@@ -3,11 +3,9 @@ using Game.Characters.Parameters;
 using Game.Characters.Projectiles;
 using Game.Characters.Spawners;
 using Game.Characters.States;
-using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
-using Utilities.Attributes;
 
 namespace Game.Characters.Units
 {
@@ -45,9 +43,6 @@ namespace Game.Characters.Units
         AnimatedAttackState attackState;
         MoveState moveState;
         
-        float attackDistance;
-        float fovDistance;
-        
         public event UnityAction Died;
         
         void Awake()
@@ -63,9 +58,6 @@ namespace Game.Characters.Units
 
         public void Init(EnemyRangedParameters parameters, ProjectileSpawner projSpawner)
         {
-            attackDistance = parameters.AttackDistance;
-            fovDistance = parameters.FovDistance;
-            
             healthView.SetActive(false);
             health.Init(parameters.Hp);
             health.DamageTaken += (_)=> OnGetDamage();

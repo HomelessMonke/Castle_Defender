@@ -3,6 +3,7 @@ using Game.UI.Popups;
 using UnityEditor;
 using UnityEngine;
 using Utilities.Attributes;
+using Zenject;
 
 namespace Game.UI.BaseUiScope
 {
@@ -44,24 +45,6 @@ namespace Game.UI.BaseUiScope
         {
             currentDefaultConfig = preBattlePopupConfig;
             Switch(preBattlePopupConfig, immediate);
-        }
-
-        [Button]
-        public void Hide()
-        {
-            Hide(false);
-        }
-        
-        [Button]
-        public void SwitchPreBattleConfig()
-        {
-            SwitchPreBattleConfig(false);
-        }
-        
-        [Button]
-        public void SwitchInBattleConfig()
-        {
-            SwitchInBattleConfig(false);
         }
         
         public void Hide(bool immediate = true)
@@ -107,6 +90,24 @@ namespace Game.UI.BaseUiScope
         }
         
 #if UNITY_EDITOR
+        [Button]
+        public void Hide()
+        {
+            Hide(false);
+        }
+        
+        [Button]
+        public void SwitchPreBattleConfig()
+        {
+            SwitchPreBattleConfig(false);
+        }
+        
+        [Button]
+        public void SwitchInBattleConfig()
+        {
+            SwitchInBattleConfig(false);
+        }
+        
         [Button]
         void SetAllChildrenItems()
         {

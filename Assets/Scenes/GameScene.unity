@@ -2455,7 +2455,6 @@ MonoBehaviour:
   arrowForTowerSpawner: {fileID: 1423010076}
   formation:
     spawnToRight: 0
-    linePositionsCounts: 
     unitsOffsetX: 0.45
     unitsOffsetY: 0.6
 --- !u!1 &686667118
@@ -6250,6 +6249,18 @@ PrefabInstance:
       propertyPath: soldiersSpawner
       value: 
       objectReference: {fileID: 1709023014}
+    - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: soldiersInfo.charactersInLines.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: 'soldiersInfo.charactersInLines.Array.data[0]'
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: 'soldiersInfo.charactersInLines.Array.data[1]'
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5952942933327615962, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: m_Name
       value: PlayerAbilitiesUI

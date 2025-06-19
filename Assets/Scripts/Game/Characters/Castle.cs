@@ -2,9 +2,7 @@ using System;
 using Game.Characters.Parameters;
 using Game.Signals.Castle;
 using Game.UI;
-using UI;
 using UnityEngine;
-using Utilities.Attributes;
 using Zenject;
 
 namespace Game.Characters

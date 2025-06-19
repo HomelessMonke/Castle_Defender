@@ -1,7 +1,6 @@
 ﻿using Game.Characters.Attacks;
 using Game.Characters.Parameters;
 using Game.Characters.States;
-using UI;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;

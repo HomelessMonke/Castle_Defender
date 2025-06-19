@@ -9,10 +9,6 @@ namespace Game.Characters.Spawners.Formations
     [Serializable, Description("Неупорядоченное построение")]
     public class RandomSpawnFormation: ISpawnFormation
     {
-        [Header("Сколько позиций в каждой линии")]
-        [SerializeField]
-        int[] linePositionsCounts;
-        
         [SerializeField, Range(0.2f, 1)]
         float maxOffsetX;
         
@@ -24,16 +20,16 @@ namespace Game.Characters.Spawners.Formations
             maxOffsetX = maxOffsetY = 0.2f;
         }
 
-        public Vector2[] GetSpawnPoints(Transform transform)
+        public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)
         {
             Vector2 startPosition = transform.position; 
-            var count = linePositionsCounts.Sum(x => x);
+            var count = charactersInLines.Sum(x => x);
             Vector2[] positions = new Vector2[count];
 
             int posIndex = 0;
-            for (int i = 0; i < linePositionsCounts.Length; i++)
+            for (int i = 0; i < charactersInLines.Length; i++)
             {
-                var positionsCount = linePositionsCounts[i];
+                var positionsCount = charactersInLines[i];
                 var yOffset = maxOffsetY * ((float)(positionsCount-1) / 2);
                 var linePos = startPosition + new Vector2(i * maxOffsetX, yOffset);
                 for (int j = 0; j < positionsCount; j++)

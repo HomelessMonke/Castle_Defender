@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using UnityEngine;
 
 namespace Game.Characters.Spawners.Formations
@@ -11,6 +12,10 @@ namespace Game.Characters.Spawners.Formations
         
         [SerializeField]
         CharacterType type;
+        
+        [Header("Сколько юнитов в каждой линии")]
+        [SerializeField]
+        int[] charactersInLines;
 
         [Header("Параметры построения")]
         [SerializeReference, SelectType]
@@ -19,9 +24,11 @@ namespace Game.Characters.Spawners.Formations
         public CharacterType Type => type;
         public float SpawnDelay => spawnDelay;
         
+        public int Count => charactersInLines.Sum(x => x);
+        
         public Vector2[] GetSpawnPoints(Transform transform)
         {
-            return formation.GetSpawnPoints(transform);
+            return formation.GetSpawnPoints(charactersInLines, transform);
         }
     }
 }

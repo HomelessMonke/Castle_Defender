@@ -8,12 +8,43 @@ namespace Game.Waves
         [SerializeField]
         Wave[] waves;
         
-        [SerializeField]
-        float timeBetweenWaves = 5f;
+        const string waveIndexSave = "WaveIndex";
         
-        public Wave[] Waves => waves;
-        public float TimeBetweenWaves => timeBetweenWaves;
+        int nextWaveIndex = -1;
+
+        public int WaveNumber => NextWaveIndex + 1;
         
-        //TODO: Добавить сейв int каунтер последней волны.
+        public Wave NextWave => waves[NextWaveIndex];
+        
+        int NextWaveIndex
+        {
+            get
+            {
+                if (nextWaveIndex == -1)
+                    InitWaveIndex();
+                
+                return nextWaveIndex;
+            }
+        }
+        
+        public void IncreaseNextWaveIndex()
+        {
+            if (nextWaveIndex == -1)
+                InitWaveIndex();
+
+            nextWaveIndex = Mathf.Clamp(nextWaveIndex + 1, 0, waves.Length - 1);
+        }
+
+        public void SaveWavesData()
+        {
+            ES3.Save(waveIndexSave, nextWaveIndex);
+        }
+
+        void InitWaveIndex()
+        {
+            nextWaveIndex = ES3.KeyExists(waveIndexSave) ?
+                ES3.Load<int>(waveIndexSave) :
+                0;
+        }
     }
 }

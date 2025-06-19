@@ -33,5 +33,10 @@ namespace Game.Grades
         }
         
         public abstract void Upgrade();
+        
+        public void Save()
+        {
+            ES3.Save(SaveKey, gradeIndex);
+        }
     }
 }

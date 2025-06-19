@@ -14,19 +14,17 @@ namespace Game.UI.Currencies
         
         Dictionary<CurrencyType,CurrencyView> viewsDict = new ();
 
-        SignalBus signalBus;
         CurrencyManager currencyManager;
 
         [Inject]
-        void Construct(SignalBus signalBus, CurrencyManager currencyManager)
+        void Construct(CurrencyManager currencyManager)
         {
-            this.signalBus = signalBus;
             this.currencyManager = currencyManager;
         }
 
-        void Start()
+        public void Init()
         {
-            signalBus.Subscribe<CurrencyChangedSignal>(OnCurrencyChanged);
+            currencyManager.OnCurrencyChanged += OnCurrencyChanged;
             foreach (var view in views)
             {
                 viewsDict.Add(view.Type, view);
@@ -48,9 +46,10 @@ namespace Game.UI.Currencies
             viewsDict[type].Draw(convertedValue);
         }
 
-        void OnCurrencyChanged(CurrencyChangedSignal signal)
+        void OnCurrencyChanged(CurrencyType type, int value)
         {
-            DrawViewByType(signal.CurrencyType);
+            var convertedValue = NumberFormatter.FormatNumber(value);
+            viewsDict[type].Draw(convertedValue);
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System.Linq;
+﻿using System.Collections.Generic;
+using System.Linq;
 using Game.Currencies;
 using Game.Grades;
 using Game.Popups;
@@ -12,6 +13,8 @@ namespace Game.UI.Popups.UpgradesPopupSpace
         PopupManager popupManager;
         CurrencyManager currencyManager;
         AllGradesSequenceList gradesSequenceList;
+
+        HashSet<ParameterGrades> parametersToSave = new();
         
         [Inject]
         public UpgradesPopupPresenter(PopupManager popupManager, CurrencyManager currencyManager, AllGradesSequenceList gradesSequenceList)
@@ -37,11 +40,12 @@ namespace Game.UI.Popups.UpgradesPopupSpace
 
         void OnBuyClick(UpgradeView view, ParameterGradesSequence sequence)
         {
-            var upgrades = sequence.GetParameterToUpgrade();
-            var currencyToUpgrade = upgrades.CurrencyToUpgrade;
+            var grades = sequence.GetParameterToUpgrade();
+            var currencyToUpgrade = grades.CurrencyToUpgrade;
             if (currencyManager.Spend(currencyToUpgrade))
             {
-                upgrades.Upgrade();
+                grades.Upgrade();
+                parametersToSave.Add(grades);
                 var parameterToDraw = sequence.GetParameterToUpgrade();
                 view.Draw(parameterToDraw, sequence.Level);
             }
@@ -51,9 +55,21 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             }
         }
 
+        void SaveSequences()
+        {
+            foreach (var parameter in parametersToSave)
+            {
+                parameter.Save();
+            }
+            
+            if(parametersToSave.Count != 0)
+                currencyManager.SaveCurrencies();
+        }
+
         void OnCloseClick()
         {
             popup.Close();
+            SaveSequences();
         }
     }
 }
