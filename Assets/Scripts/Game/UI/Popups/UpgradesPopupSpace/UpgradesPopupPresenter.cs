@@ -40,12 +40,19 @@ namespace Game.UI.Popups.UpgradesPopupSpace
 
         void OnBuyClick(UpgradeView view, ParameterGradesSequence sequence)
         {
-            var grades = sequence.GetParameterToUpgrade();
-            var currencyToUpgrade = grades.CurrencyToUpgrade;
+            var parameter = sequence.GetParameterToUpgrade();
+            var currencyToUpgrade = parameter.CurrencyToUpgrade;
             if (currencyManager.Spend(currencyToUpgrade))
             {
-                grades.Upgrade();
-                parametersToSave.Add(grades);
+                parameter.Upgrade();
+                parametersToSave.Add(parameter);
+
+                if (sequence.IsCompleted)
+                {
+                    view.gameObject.SetActive(false);
+                    return;
+                }
+                
                 var parameterToDraw = sequence.GetParameterToUpgrade();
                 view.Draw(parameterToDraw, sequence.Level);
             }
@@ -55,7 +62,7 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             }
         }
 
-        void SaveSequences()
+        void SaveProgress()
         {
             foreach (var parameter in parametersToSave)
             {
@@ -69,7 +76,7 @@ namespace Game.UI.Popups.UpgradesPopupSpace
         void OnCloseClick()
         {
             popup.Close();
-            SaveSequences();
+            SaveProgress();
         }
     }
 }
