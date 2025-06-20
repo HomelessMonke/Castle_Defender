@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using Game.Grades;
 using TMPro;
 using UnityEngine;
@@ -9,6 +10,9 @@ namespace Game.UI.Popups.UpgradesPopupSpace
 {
     public class UpgradeView : MonoBehaviour
     {
+        [SerializeField]
+        CanvasGroup canvasGroup;
+        
         [SerializeField]
         Image image;
         
@@ -29,12 +33,18 @@ namespace Game.UI.Popups.UpgradesPopupSpace
 
         [SerializeField]
         Button buyButton;
+
+        [SerializeField]
+        UpgradeViewAnimatorData animatorData;
+        
+        UpgradeViewAnimator animator;
         
         public event Action BuyClick;
 
         public void Init()
         {
             buyButton.onClick.AddListener(OnBuyClick);
+            animator = new UpgradeViewAnimator(animatorData, this, canvasGroup);
         }
 
         public void Draw(ParameterGrades parameter, int level, string headerText)
@@ -51,9 +61,20 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             buyValueTmp.text = parameter.CurrencyToUpgrade.AmountText;
         }
 
+        public void AnimateShow()
+        {
+            animator.Show();
+        }
+        
+        public void AnimateHide(Action onComplete)
+        {
+            animator.Hide(onComplete);
+        }
+        
         void OnBuyClick()
         {
             BuyClick?.Invoke();
         }
     }
+
 }

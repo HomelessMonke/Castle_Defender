@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.41960785, g: 0.59607846, b: 0.09019608, a: 1}
+  m_Color: {r: 0.37859422, g: 0.59607846, b: 0.09019606, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -452,7 +452,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
     m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_DisabledColor: {r: 1, g: 1, b: 1, a: 1}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
@@ -1265,6 +1265,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6307981478219177537}
   - component: {fileID: 5629790913772993418}
+  - component: {fileID: 8170203547222186564}
   m_Layer: 5
   m_Name: UpgradeViewTemplate
   m_TagString: Untagged
@@ -1282,7 +1283,7 @@ RectTransform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 1574191116095531552}
   - {fileID: 5572930453537619474}
@@ -1305,6 +1306,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 237d1f33e765431a8db227bd9c02285c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvasGroup: {fileID: 8170203547222186564}
   image: {fileID: 4736799060641215064}
   headerTmp: {fileID: 3595258801643909858}
   descriptionTmp: {fileID: 8459143830387557054}
@@ -1320,9 +1322,28 @@ MonoBehaviour:
     m_LocalVariables: []
   levelTmp: {fileID: 4297501581753385512}
   buyButton: {fileID: 3850925028988873493}
+  animatorData:
+    showDuration: 0.35
+    hideDurationStep1: 0.15
+    hideDurationStep2: 0.25
+    beforeShowScale: {x: 0.5, y: 0.5}
+    foldScale: {x: 0.9, y: 0.9}
+    expandScale: {x: 1.1, y: 1.1}
   references:
     version: 2
     RefIds: []
+--- !u!225 &8170203547222186564
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4249667925276908070}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &4704443000128114149
 GameObject:
   m_ObjectHideFlags: 0
@@ -1850,7 +1871,7 @@ MonoBehaviour:
   m_Padding:
     m_Left: 78
     m_Right: 0
-    m_Top: 0
+    m_Top: 40
     m_Bottom: 0
   m_ChildAlignment: 0
   m_StartCorner: 0
@@ -1895,8 +1916,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28.988289, y: -50.502197}
-  m_SizeDelta: {x: 842.6554, y: 795.5292}
+  m_AnchoredPosition: {x: 28.988289, y: -29.2286}
+  m_SizeDelta: {x: 842.6554, y: 838.0765}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &204048992108551325
 CanvasRenderer:
@@ -2005,6 +2026,7 @@ GameObject:
   - component: {fileID: 7450276368355989703}
   - component: {fileID: 4233781131357269797}
   - component: {fileID: 2737171028573177940}
+  - component: {fileID: 8122172501880240585}
   m_Layer: 5
   m_Name: Viewport
   m_TagString: Untagged
@@ -2083,6 +2105,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_ShowMaskGraphic: 0
+--- !u!114 &8122172501880240585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8799598954921137034}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3312d7739989d2b4e91e6319e9a96d76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Padding: {x: 0, y: 0, z: 0, w: 0}
+  m_Softness: {x: 0, y: 105}
 --- !u!1 &9108934012793387441
 GameObject:
   m_ObjectHideFlags: 0

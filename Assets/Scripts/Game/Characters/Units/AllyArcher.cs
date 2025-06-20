@@ -51,7 +51,6 @@ namespace Game.Characters.Units
             {
                 currentState.Update();
             }
-            
         }
 
         public void Init(AllyArchersParameters parameters, ProjectileSpawner projectileSpawner)

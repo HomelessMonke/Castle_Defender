@@ -46,20 +46,25 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             {
                 parameter.Upgrade();
                 parametersToSave.Add(parameter);
-
-                if (sequence.IsCompleted)
-                {
-                    view.gameObject.SetActive(false);
-                    return;
-                }
-                
-                var parameterToDraw = sequence.GetParameterToUpgrade();
-                view.Draw(parameterToDraw, sequence.Level);
+                view.AnimateHide(()=> OnHideAnimated(view, sequence));
             }
             else
             {
                 //
             }
+        }
+
+        void OnHideAnimated(UpgradeView view, ParameterGradesSequence sequence)
+        {
+            if (sequence.IsCompleted)
+            {
+                view.gameObject.SetActive(false);
+                return;
+            }
+            
+            var parameterToDraw = sequence.GetParameterToUpgrade();
+            view.Draw(parameterToDraw, sequence.Level);
+            view.AnimateShow();
         }
 
         void SaveProgress()
