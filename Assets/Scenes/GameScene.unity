@@ -6111,10 +6111,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 865702852}
     m_Modifications:
-    - target: {fileID: 4115449152674797957, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
-      propertyPath: rectTransform
-      value: 
-      objectReference: {fileID: 120686585}
     - target: {fileID: 4204019372181424662, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
       propertyPath: m_Name
       value: CoinView
@@ -6145,11 +6141,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5210614767627302065, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 85.45001
+      value: 165.62
       objectReference: {fileID: 0}
     - target: {fileID: 5210614767627302065, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
       propertyPath: m_SizeDelta.y
-      value: 95.35608
+      value: 103.24
       objectReference: {fileID: 0}
     - target: {fileID: 5210614767627302065, guid: 2af649a24bf4f7d43a37e91c9aa68f9a, type: 3}
       propertyPath: m_LocalPosition.x
