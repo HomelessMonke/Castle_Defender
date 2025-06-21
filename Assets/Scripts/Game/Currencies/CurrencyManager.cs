@@ -34,6 +34,11 @@ namespace Game.Currencies
             OnCurrencyChanged?.Invoke(type, currencies[type]);
         }
 
+        public bool CanSpend(CurrencyItem item)
+        {
+            return currencies[item.Type] >= item.Amount;
+        }
+
         public bool Spend(CurrencyItem currencyItem)
         {
             return Spend(currencyItem.Type, currencyItem.Amount);

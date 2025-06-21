@@ -410,7 +410,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.37859422, g: 0.59607846, b: 0.09019606, a: 1}
+  m_Color: {r: 0.3689418, g: 0.6320754, b: 0.014907437, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -642,7 +642,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 59, y: -122}
+  m_AnchoredPosition: {x: 59, y: -99}
   m_SizeDelta: {x: 462.4386, y: 70.2994}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5622732877820289105
@@ -700,8 +700,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 55.7
+  m_fontSizeBase: 55.7
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -1322,10 +1322,13 @@ MonoBehaviour:
     m_LocalVariables: []
   levelTmp: {fileID: 4297501581753385512}
   buyButton: {fileID: 3850925028988873493}
+  buyButtonImage: {fileID: 1450539422082223762}
+  canBuyColor: {r: 0.36862746, g: 0.6313726, b: 0.015686275, a: 1}
+  cantBuyColor: {r: 0.5764706, g: 0.5764706, b: 0.5764706, a: 1}
   animatorData:
-    showDuration: 0.35
-    hideDurationStep1: 0.15
-    hideDurationStep2: 0.25
+    showDuration: 0.25
+    hideDurationStep1: 0.1
+    hideDurationStep2: 0.2
     beforeShowScale: {x: 0.5, y: 0.5}
     foldScale: {x: 0.9, y: 0.9}
     expandScale: {x: 1.1, y: 1.1}

@@ -19,7 +19,7 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             this.canvasGroup = canvasGroup;
         }
 
-        public void Show(Action onComplete = null)
+        public void AnimateShowView(Action onComplete = null)
         {
             if (animationTween != null && animationTween.IsActive())
                 animationTween.Kill();
@@ -39,7 +39,7 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             onComplete?.Invoke();
         }
 
-        public void Hide(Action onComplete = null)
+        public void AnimateHideView(Action onComplete = null)
         {
             if (animationTween != null && animationTween.IsActive())
                 animationTween.Kill();

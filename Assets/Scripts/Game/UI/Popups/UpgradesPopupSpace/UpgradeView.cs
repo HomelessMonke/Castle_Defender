@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections;
+using Game.Currencies;
 using Game.Grades;
 using TMPro;
 using UnityEngine;
@@ -30,14 +31,22 @@ namespace Game.UI.Popups.UpgradesPopupSpace
         
         [SerializeField]
         TextMeshProUGUI levelTmp;
-
+        
         [SerializeField]
         Button buyButton;
+        
+        [SerializeField]
+        Image buyButtonImage;
 
+        [SerializeField]
+        Color canBuyColor, cantBuyColor;
+        
         [SerializeField]
         UpgradeViewAnimatorData animatorData;
         
         UpgradeViewAnimator animator;
+
+        CurrencyItem currencyToUpgrade;
         
         public event Action BuyClick;
 
@@ -47,28 +56,40 @@ namespace Game.UI.Popups.UpgradesPopupSpace
             animator = new UpgradeViewAnimator(animatorData, this, canvasGroup);
         }
 
-        public void Draw(ParameterGrades parameter, int level, string headerText)
+        public void Draw(ParameterGrades parameter, CurrencyManager currencyManager, int level, string headerText)
         {
             headerTmp.text = headerText;
-            Draw(parameter, level);
+            Draw(parameter, currencyManager, level);
         }
         
-        public void Draw(ParameterGrades parameter, int level)
+        public void Draw(ParameterGrades parameter, CurrencyManager currencyManager, int level)
         {
+            currencyToUpgrade = parameter.CurrencyToUpgrade;
+            DrawButtonState(currencyManager);
+            
             image.sprite = parameter.Sprite;
             levelTmp.text = $"{levelLocalization.GetLocalizedString()} {level}";
             descriptionTmp.text = parameter.LocalizedDescription;
             buyValueTmp.text = parameter.CurrencyToUpgrade.AmountText;
         }
 
+        public void DrawButtonState(CurrencyManager currencyManager)
+        {
+            var currencyToBuy = currencyToUpgrade;
+            var canBuy = currencyManager.CanSpend(currencyToBuy);
+            
+            buyButton.interactable = canBuy;
+            buyButtonImage.color = canBuy ? canBuyColor : cantBuyColor;
+        }
+
         public void AnimateShow()
         {
-            animator.Show();
+            animator.AnimateShowView();
         }
         
         public void AnimateHide(Action onComplete)
         {
-            animator.Hide(onComplete);
+            animator.AnimateHideView(onComplete);
         }
         
         void OnBuyClick()

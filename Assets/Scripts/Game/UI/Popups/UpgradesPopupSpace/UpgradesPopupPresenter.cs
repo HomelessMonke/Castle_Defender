@@ -34,7 +34,7 @@ namespace Game.UI.Popups.UpgradesPopupSpace
                 
                 ParameterGradesSequence[] sequences = gradesSequenceList.GetNotCompletedSequences.ToArray();
                 p.Init();
-                p.Draw(sequences);
+                p.Draw(sequences, currencyManager);
             });
         }
 
@@ -48,22 +48,19 @@ namespace Game.UI.Popups.UpgradesPopupSpace
                 parametersToSave.Add(parameter);
                 view.AnimateHide(()=> OnHideAnimated(view, sequence));
             }
-            else
-            {
-                //
-            }
         }
 
         void OnHideAnimated(UpgradeView view, ParameterGradesSequence sequence)
         {
             if (sequence.IsCompleted)
             {
-                view.gameObject.SetActive(false);
+                popup.HideView(view);
                 return;
             }
             
             var parameterToDraw = sequence.GetParameterToUpgrade();
-            view.Draw(parameterToDraw, sequence.Level);
+            view.Draw(parameterToDraw, currencyManager, sequence.Level);
+            popup.RedrawViewsButtonStateExceptView(currencyManager, view);
             view.AnimateShow();
         }
 
