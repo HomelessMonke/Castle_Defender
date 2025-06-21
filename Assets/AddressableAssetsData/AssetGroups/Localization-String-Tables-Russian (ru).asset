@@ -22,6 +22,12 @@ MonoBehaviour:
     - Locale-ru
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 5d51f14fadc62204093be9d04ae25997
+    m_Address: StartWavePopup_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 7ca32340a10863c4381a7368996d5926
     m_Address: AllyArcherUpgrades_ru
     m_ReadOnly: 1

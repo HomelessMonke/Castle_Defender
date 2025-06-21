@@ -1,5 +1,6 @@
 ﻿using System;
 using Game.Popups;
+using Game.UI.Popups.StartWavePopupSpace;
 using Game.UI.Popups.UpgradesPopupSpace;
 using UnityEngine;
 using Zenject;
@@ -25,6 +26,7 @@ namespace Game.Infrastructure
         void BindPopupPresenters()
         {
             Container.BindFactory<UpgradesPopupPresenter, UpgradesPopupFactory>().AsTransient();
+            Container.BindFactory<StartWavePopupPresenter, StartWavePopupFactory>().AsTransient();
         }
     }
 }

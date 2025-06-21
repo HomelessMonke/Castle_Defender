@@ -1,7 +1,10 @@
 ﻿using Game.Characters;
 using Game.Characters.Spawners;
+using Game.Signals;
 using Game.UI;
+using Game.Waves;
 using UnityEngine;
+using Zenject;
 
 namespace Game
 {
@@ -23,8 +26,19 @@ namespace Game
         AllyInitializer allyInitializer;
         
         [SerializeField]
+        WavesList wavesList;
+        
+        [SerializeField]
         UIEntryPoint uiEntryPoint;
 
+        SignalBus signalBus;
+        
+        [Inject]
+        void Construct(SignalBus signalBus)
+        {
+            this.signalBus = signalBus;
+        }
+        
         public void Start()
         {
             castle.Init();
@@ -33,6 +47,14 @@ namespace Game
             allyInitializer.Init();
             
             allyDetectionArea.Init(128);
+            
+            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinishedSignal);
+        }
+
+        void OnWaveFinishedSignal()
+        {
+            wavesList.IncreaseNextWaveIndex();
+            wavesList.SaveWavesData();
         }
     }
 }

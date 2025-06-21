@@ -1121,6 +1121,7 @@ MonoBehaviour:
   allyDetectionArea: {fileID: 1397719111}
   spawnManager: {fileID: 1131912206}
   allyInitializer: {fileID: 2085461807}
+  wavesList: {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}
   uiEntryPoint: {fileID: 267978359}
 --- !u!114 &267978359
 MonoBehaviour:
@@ -1135,7 +1136,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   baseUI: {fileID: 1201001272}
-  wavesManager: {fileID: 415040425}
+  wavesList: {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}
+  wavesSpawner: {fileID: 415040427}
   currenciesPanel: {fileID: 1201001271}
   startWaveButton: {fileID: 2015276056}
   upgradesButton: {fileID: 911848334}
@@ -1365,7 +1367,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 415040426}
-  - component: {fileID: 415040425}
+  - component: {fileID: 415040427}
   m_Layer: 0
   m_Name: WavesSpawner
   m_TagString: Untagged
@@ -1373,20 +1375,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &415040425
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 415040424}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 02248a1e258d49ba9482f7fbe7c8003f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  charactersSpawner: {fileID: 1131912206}
-  wavesList: {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}
 --- !u!4 &415040426
 Transform:
   m_ObjectHideFlags: 0
@@ -1402,6 +1390,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &415040427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 415040424}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 951a09a769d816249a19cbf8b7560bb0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charactersSpawner: {fileID: 1131912206}
+  wavesList: {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}
 --- !u!1 &436918092
 GameObject:
   m_ObjectHideFlags: 0
@@ -6234,12 +6236,32 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 342292371598751869, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 342292371598751869, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: m_AnchoredPosition.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 342292371598751869, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856928297887930572, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856928297887930572, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856928297887930572, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1856928297887930572, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: m_Colors.m_DisabledColor.r
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: soldiersSpawner
