@@ -35,6 +35,11 @@ namespace Game.UI.BaseUiScope
             SwitchPreBattleConfig(true);
         }
         
+        public void SetInBattleConfig()
+        {
+            currentDefaultConfig = inBattlePopupConfig;
+        }
+        
         public void SwitchInBattleConfig(bool immediate = false)
         {
             currentDefaultConfig = inBattlePopupConfig;

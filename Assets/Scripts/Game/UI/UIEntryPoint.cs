@@ -69,7 +69,7 @@ namespace Game.UI
         
         void OnStartWaveClick()
         {
-            baseUI.SwitchInBattleConfig(false);
+            baseUI.SetInBattleConfig();
             wavesSpawner.LaunchNextWave();
             
             var presenter = startWavePresenterFactory.Create();
