@@ -6273,11 +6273,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: 'soldiersInfo.charactersInLines.Array.data[0]'
-      value: 2
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: 'soldiersInfo.charactersInLines.Array.data[1]'
-      value: 3
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5952942933327615962, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: m_Name
@@ -6486,11 +6486,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.32
+      value: 1.41
       objectReference: {fileID: 0}
     - target: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.21
+      value: 1.78
       objectReference: {fileID: 0}
     - target: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6527,6 +6527,18 @@ PrefabInstance:
     - target: {fileID: 2334795779472546635, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_Name
       value: Knight(A)
+      objectReference: {fileID: 0}
+    - target: {fileID: 2334795779472546635, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6010292926967338893, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
+      propertyPath: m_Name
+      value: Shadow
+      objectReference: {fileID: 0}
+    - target: {fileID: 8564103599731851920, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.143
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

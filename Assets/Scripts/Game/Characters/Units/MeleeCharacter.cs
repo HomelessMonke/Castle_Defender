@@ -6,7 +6,6 @@ using UnityEngine.AI;
 using UnityEngine.Events;
 using Utilities.Attributes;
 
-
 namespace Game.Characters.Units
 {
     [RequireComponent(typeof(Health))]

@@ -1,37 +1,30 @@
 fileFormatVersion: 2
-guid: 40834912ca492db44b62044b38a8dd65
-AssetOrigin:
-  serializedVersion: 1
-  productId: 168019
-  packageName: Hero Knight 2
-  packageVersion: 1.0
-  assetPath: Assets/Hero_Knight_2/Sprites/Attack.png
-  uploadId: 365878
+guid: aaabc171c6d5e0e49a97eebc49e503dd
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7008412969330441016
-    second: Attack_0
+      213: -7875821802048230255
+    second: AttackNew_0
   - first:
-      213: -7763475090823894447
-    second: Attack_1
+      213: -8517882061377059234
+    second: AttackNew_1
   - first:
-      213: 302641331129538988
-    second: Attack_2
+      213: 3999592300767915286
+    second: AttackNew_2
   - first:
-      213: -6329420634031446844
-    second: Attack_3
+      213: -4345960902723225045
+    second: AttackNew_3
   - first:
-      213: -910092549403018386
-    second: Attack_4
+      213: -9129890697461382580
+    second: AttackNew_4
   - first:
-      213: 221524225039350300
-    second: Attack_5
+      213: 4917341905682108964
+    second: AttackNew_5
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
     mipMapMode: 0
-    enableMipMap: 1
+    enableMipMap: 0
     sRGBTexture: 1
     linearTexture: 0
     fadeOut: 0
@@ -88,9 +81,9 @@ TextureImporter:
   compressionQualitySet: 0
   textureFormatSet: 0
   ignorePngGamma: 0
-  applyGammaDecoding: 1
+  applyGammaDecoding: 0
   swizzle: 50462976
-  cookieLightType: 1
+  cookieLightType: 0
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
@@ -119,20 +112,7 @@ TextureImporter:
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
   - serializedVersion: 4
-    buildTarget: WindowsStoreApps
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Lumin
+    buildTarget: Android
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
@@ -157,150 +137,137 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: Android
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Attack_0
+      name: AttackNew_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 140
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 57
+        y: 56
+        width: 27
+        height: 63
+      alignment: 9
+      pivot: {x: 0.37354702, y: 0.22128901}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 5b4ed5d97b1367c45b44eeef23ff3450
-      internalID: -7008412969330441016
+      spriteID: 19c63a68cc573b290800000000000000
+      internalID: -7875821802048230255
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_1
+      name: AttackNew_1
       rect:
         serializedVersion: 2
-        x: 140
-        y: 0
-        width: 140
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 195
+        y: 55
+        width: 29
+        height: 54
+      alignment: 9
+      pivot: {x: 0.41875643, y: 0.28673157}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: e45c0cd381e18bf4d9d6a53e5ef3cda9
-      internalID: -7763475090823894447
+      spriteID: e56c2f415676ac980800000000000000
+      internalID: -8517882061377059234
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_2
+      name: AttackNew_2
       rect:
         serializedVersion: 2
-        x: 280
-        y: 0
-        width: 140
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 330
+        y: 56
+        width: 35
+        height: 49
+      alignment: 9
+      pivot: {x: 0.49134433, y: 0.26936963}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3c0069b649eedb342a5d672186c92ccb
-      internalID: 302641331129538988
+      spriteID: 61da8adb108618730800000000000000
+      internalID: 3999592300767915286
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_3
+      name: AttackNew_3
       rect:
         serializedVersion: 2
-        x: 420
-        y: 0
-        width: 140
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 471
+        y: 56
+        width: 33
+        height: 49
+      alignment: 9
+      pivot: {x: 0.49999723, y: 0.26936963}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 0419077530193824bb3ce522196cf5c2
-      internalID: -6329420634031446844
+      spriteID: b2a3279b59b00b3c0800000000000000
+      internalID: -4345960902723225045
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_4
+      name: AttackNew_4
       rect:
         serializedVersion: 2
-        x: 560
-        y: 0
-        width: 140
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 612
+        y: 57
+        width: 50
+        height: 34
+      alignment: 9
+      pivot: {x: 0.45, y: 0.37970665}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 619cc829c87c62f458608c17e33ee58b
-      internalID: -910092549403018386
+      spriteID: c42cbab68cc1c4180800000000000000
+      internalID: -9129890697461382580
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Attack_5
+      name: AttackNew_5
       rect:
         serializedVersion: 2
-        x: 700
-        y: 0
-        width: 140
-        height: 140
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 732
+        y: 56
+        width: 51
+        height: 34
+      alignment: 9
+      pivot: {x: 0.7421025, y: 0.441001}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 487671cdc0621974bb578f06619de666
-      internalID: 221524225039350300
+      spriteID: 4221357f868ed3440800000000000000
+      internalID: 4917341905682108964
       vertices: []
       indices: 
       edges: []
@@ -309,7 +276,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: a2baf29a7a7e63244a42351e060f77d6
     internalID: 0
     vertices: []
     indices: 
@@ -319,12 +286,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Attack_0: -7008412969330441016
-      Attack_1: -7763475090823894447
-      Attack_2: 302641331129538988
-      Attack_3: -6329420634031446844
-      Attack_4: -910092549403018386
-      Attack_5: 221524225039350300
+      AttackNew_0: -7875821802048230255
+      AttackNew_1: -8517882061377059234
+      AttackNew_2: 3999592300767915286
+      AttackNew_3: -4345960902723225045
+      AttackNew_4: -9129890697461382580
+      AttackNew_5: 4917341905682108964
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
