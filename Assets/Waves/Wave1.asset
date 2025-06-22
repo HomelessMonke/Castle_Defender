@@ -15,7 +15,7 @@ MonoBehaviour:
   squads:
   - spawnDelay: 0
     type: 4
-    charactersInLines: 05000000070000000a000000
+    charactersInLines: 0a0000000c0000000c000000
     formation:
       rid: 707701132208898447
   - spawnDelay: 2
