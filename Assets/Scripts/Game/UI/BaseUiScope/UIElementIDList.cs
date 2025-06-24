@@ -12,5 +12,7 @@ namespace Game.UI.BaseUiScope
         public const string CoinsBar = "Coins";
         public const string HpBar = "HpBar";
         public const string UpgradesButton = "UpgradesButton";
+        public const string SpeedChangeButton = "SpeedChangeButton";
+        public const string PauseButton = "PauseButton";
     }
 }

@@ -10,31 +10,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
-  m_Name: GUI Shared Data
+  m_Name: PausePopup Shared Data
   m_EditorClassIdentifier: 
-  m_TableCollectionName: GUI
-  m_TableCollectionNameGuidString: 04cb00bf7ebe2cd42abda25f5bc81408
+  m_TableCollectionName: PausePopup
+  m_TableCollectionNameGuidString: c109cfa2d560e244f93b57ee74709cd5
   m_Entries:
-  - m_Id: 15375269888
-    m_Key: StartWave_Button
-    m_Metadata:
-      m_Items: []
-  - m_Id: 110250426368
-    m_Key: Upgrades_Button
-    m_Metadata:
-      m_Items: []
-  - m_Id: 4686938751758336
-    m_Key: SpeedChange_Button
+  - m_Id: 20687425536
+    m_Key: Pause
     m_Metadata:
       m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:
-    rid: 6397388684058427495
+    rid: 106515730365415509
   references:
     version: 2
     RefIds:
-    - rid: 6397388684058427495
+    - rid: 106515730365415509
       type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
       data:
-        m_CustomEpoch: 1749137032315
+        m_CustomEpoch: 1750727528572

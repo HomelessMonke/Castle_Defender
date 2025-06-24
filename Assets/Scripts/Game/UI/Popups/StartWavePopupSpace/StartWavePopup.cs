@@ -25,7 +25,7 @@ namespace Game.UI.Popups.StartWavePopupSpace
         
         public void DrawWaveNumber(int waveNumber)
         {
-            waveNumberTMP.text = waveLocalization.GetLocalizedString() + waveNumber;
+            waveNumberTMP.text = $"{waveLocalization.GetLocalizedString()} {waveNumber}";
         }
         
         public void AnimatePopup(Action onComplete)

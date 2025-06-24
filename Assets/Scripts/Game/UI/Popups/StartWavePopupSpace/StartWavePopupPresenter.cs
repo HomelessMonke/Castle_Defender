@@ -15,11 +15,18 @@ namespace Game.UI.Popups.StartWavePopupSpace
 
         public void OpenPopup(int waveNumber)
         {
+            popupManager.ShowDarkPanel();
             popupManager.OpenPopup<StartWavePopup>(nameof(StartWavePopup), p =>
             {
                 p.DrawWaveNumber(waveNumber);
-                p.AnimatePopup(p.Close);
+                p.AnimatePopup(() => OnPopupAnimated(p));
             });
+        }
+
+        void OnPopupAnimated(Popup p)
+        {
+            p.Close();
+            popupManager.HideDarkPanel();
         }
     }
 }

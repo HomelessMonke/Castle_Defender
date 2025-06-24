@@ -26,6 +26,10 @@ MonoBehaviour:
     m_Localized: Upgrades
     m_Metadata:
       m_Items: []
+  - m_Id: 4686938751758336
+    m_Localized: '{0}x'
+    m_Metadata:
+      m_Items: []
   references:
     version: 2
     RefIds: []

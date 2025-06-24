@@ -27,6 +27,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-en
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 68ab0b8a6e044044d8f90038a3874f3a
+    m_Address: PausePopup_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a024914336acc0447a3d59a29a71f8cc
     m_Address: AllyArcherUpgrades_en
     m_ReadOnly: 1

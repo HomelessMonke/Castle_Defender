@@ -40,7 +40,7 @@ namespace Game.UI.BaseUiScope
             moveTween = DOTween.To(() => (float)0, x =>
             {
                 rectTransform.anchoredPosition = Vector2.Lerp(startPos, targetPos, curveObj.Curve.Evaluate(x));
-            }, 1, duration).SetAutoKill(true).OnComplete(()=> complete?.Invoke());
+            }, 1, duration).SetUpdate(true).SetAutoKill(true).OnComplete(()=> complete?.Invoke());
         }
 
         void AnimateAlpha(float from, float to, float duration, Action complete = null)
@@ -53,7 +53,7 @@ namespace Game.UI.BaseUiScope
             alphaTween = DOTween.To(() => (float)0, x =>
             {
                canvasGroup.alpha = Mathf.Lerp(from, to, curveObj.Curve.Evaluate(x));
-            }, 1, duration).SetAutoKill(true).OnComplete(()=> complete?.Invoke());
+            }, 1, duration).SetUpdate(true).SetAutoKill(true).OnComplete(()=> complete?.Invoke());
         }
     }
 }

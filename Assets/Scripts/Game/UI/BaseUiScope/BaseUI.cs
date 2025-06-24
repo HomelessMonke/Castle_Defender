@@ -3,7 +3,6 @@ using Game.UI.Popups;
 using UnityEditor;
 using UnityEngine;
 using Utilities.Attributes;
-using Zenject;
 
 namespace Game.UI.BaseUiScope
 {

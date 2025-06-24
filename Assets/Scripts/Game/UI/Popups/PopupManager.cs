@@ -1,5 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
+using Game.UI;
 using Game.UI.Popups;
 using UnityEngine;
 
@@ -9,9 +9,9 @@ namespace Game.Popups
     {
         [SerializeField]
         Transform popupRoot;
-        
+
         [SerializeField]
-        GameObject overlay;
+        DarkPanel darkPanel;
         
         public event Action<PopupConfig> ConfigChanged;
 
@@ -39,18 +39,19 @@ namespace Game.Popups
             return typedPopup;
         }
 
-        public void ShowOverlay()
+        public void ShowDarkPanel()
         {
-            overlay.SetActive(true);
+            darkPanel.TogglePanel(true);
         }
         
-        public void HideOverlay()
+        public void HideDarkPanel()
         {
-            overlay.SetActive(false);
+            darkPanel.TogglePanel(false);
         }
 
         void OnPopupClosed(Popup popup)
         {
+            darkPanel.TogglePanel(false);
             Destroy(popup.gameObject);
             ConfigChanged?.Invoke(null);
         }
