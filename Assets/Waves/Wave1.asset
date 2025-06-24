@@ -14,12 +14,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   squads:
   - spawnDelay: 0
-    type: 4
+    type: 1
     charactersInLines: 0a0000000c0000000c000000
     formation:
       rid: 707701132208898447
   - spawnDelay: 2
-    type: 3
+    type: 0
     charactersInLines: 04000000040000000600000002000000
     formation:
       rid: 707701132208898448

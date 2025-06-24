@@ -1119,8 +1119,8 @@ MonoBehaviour:
   castle: {fileID: 1351481472}
   castleHpView: {fileID: 124140656}
   allyDetectionArea: {fileID: 1397719111}
-  spawnManager: {fileID: 1131912206}
-  allyInitializer: {fileID: 2085461807}
+  enemySpawnersList: {fileID: 1131912206}
+  allySpawnersList: {fileID: 2085461807}
   wavesList: {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}
   uiEntryPoint: {fileID: 267978359}
 --- !u!114 &267978359
@@ -2428,7 +2428,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 670028983}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -2436,7 +2436,7 @@ Transform:
   - {fileID: 413913389}
   - {fileID: 1045404676}
   - {fileID: 1363838824}
-  m_Father: {fileID: 837731370}
+  m_Father: {fileID: 2085461808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &670028985
 MonoBehaviour:
@@ -2522,39 +2522,6 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1194152383}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &837731369
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 837731370}
-  m_Layer: 0
-  m_Name: AllySpawners
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &837731370
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 837731369}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1709023013}
-  - {fileID: 670028984}
-  m_Father: {fileID: 1131912205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &852067306
 GameObject:
@@ -2660,39 +2627,6 @@ MonoBehaviour:
   m_Area: 1
   m_IgnoreFromBuild: 0
   m_AffectedAgents: ffffffff
---- !u!1 &862440844
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 862440845}
-  m_Layer: 0
-  m_Name: EnemySpawners
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &862440845
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 862440844}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 1722922279}
-  - {fileID: 1194152383}
-  m_Father: {fileID: 1131912205}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &865702851
 GameObject:
   m_ObjectHideFlags: 0
@@ -3298,7 +3232,7 @@ GameObject:
   - component: {fileID: 1131912205}
   - component: {fileID: 1131912206}
   m_Layer: 0
-  m_Name: CharacterSpawnerList
+  m_Name: EnemySpawnerList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -3317,8 +3251,8 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 862440845}
-  - {fileID: 837731370}
+  - {fileID: 1722922279}
+  - {fileID: 1194152383}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1131912206
@@ -3601,7 +3535,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1194152382}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -3609,7 +3543,7 @@ Transform:
   - {fileID: 688048814}
   - {fileID: 1237871085}
   - {fileID: 1002090365}
-  m_Father: {fileID: 862440845}
+  m_Father: {fileID: 1131912205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1194152384
 MonoBehaviour:
@@ -3623,7 +3557,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f39ca91e909d4d5fa50f8797728de048, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 3
+  enemyType: 0
   pool:
     prefab: {fileID: 1002090367}
     root: {fileID: 688048814}
@@ -4937,7 +4871,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1709023012}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -4945,7 +4879,7 @@ Transform:
   - {fileID: 652525932}
   - {fileID: 162432940}
   - {fileID: 4479702241005134581}
-  m_Father: {fileID: 837731370}
+  m_Father: {fileID: 2085461808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1709023014
 MonoBehaviour:
@@ -4994,7 +4928,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1722922278}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5002,7 +4936,7 @@ Transform:
   - {fileID: 686667119}
   - {fileID: 34672000}
   - {fileID: 1802005270}
-  m_Father: {fileID: 862440845}
+  m_Father: {fileID: 1131912205}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1722922280
 MonoBehaviour:
@@ -5016,7 +4950,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 586ed7f88ad949afa226e3ef7bfcaa0d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 4
+  enemyType: 1
   pool:
     prefab: {fileID: 3973691326169565893}
     root: {fileID: 686667119}
@@ -5794,7 +5728,7 @@ GameObject:
   - component: {fileID: 2085461808}
   - component: {fileID: 2085461807}
   m_Layer: 0
-  m_Name: AllyInitializer
+  m_Name: AllySpawnersList
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5827,7 +5761,9 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 1709023013}
+  - {fileID: 670028984}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138511718
@@ -6961,11 +6897,11 @@ SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
   - {fileID: 267978357}
-  - {fileID: 2085461808}
   - {fileID: 519420032}
   - {fileID: 619394802}
   - {fileID: 1351481471}
   - {fileID: 415040426}
+  - {fileID: 2085461808}
   - {fileID: 1131912205}
   - {fileID: 6059057656875677196}
   - {fileID: 649942107}

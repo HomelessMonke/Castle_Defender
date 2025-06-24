@@ -10,7 +10,7 @@ namespace Game.Characters.Spawners
     public class WavesSpawner: MonoBehaviour
     {
         [SerializeField]
-        CharacterSpawnerList charactersSpawner;
+        EnemySpawnersList charactersSpawner;
         
         [SerializeField]
         WavesList wavesList;

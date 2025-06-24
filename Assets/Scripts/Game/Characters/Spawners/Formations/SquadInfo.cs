@@ -11,7 +11,7 @@ namespace Game.Characters.Spawners.Formations
         float spawnDelay;
         
         [SerializeField]
-        CharacterType type;
+        EnemyType type;
         
         [Header("Сколько юнитов в каждой линии")]
         [SerializeField]
@@ -21,7 +21,7 @@ namespace Game.Characters.Spawners.Formations
         [SerializeReference, SelectType]
         ISpawnFormation formation;
         
-        public CharacterType Type => type;
+        public EnemyType Type => type;
         public float SpawnDelay => spawnDelay;
         
         public int Count => charactersInLines.Sum(x => x);

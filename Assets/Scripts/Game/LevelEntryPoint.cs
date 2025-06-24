@@ -20,10 +20,10 @@ namespace Game
         TargetsDetectionArea allyDetectionArea;
         
         [SerializeField]
-        CharacterSpawnerList spawnManager;
+        EnemySpawnersList enemySpawnersList;
 
         [SerializeField]
-        AllyInitializer allyInitializer;
+        AllySpawnersList allySpawnersList;
         
         [SerializeField]
         WavesList wavesList;
@@ -43,8 +43,8 @@ namespace Game
         {
             castle.Init();
             uiEntryPoint.Init();
-            spawnManager.Init();
-            allyInitializer.Init();
+            allySpawnersList.Init();
+            enemySpawnersList.Init();
             
             allyDetectionArea.Init(128);
             

@@ -4,13 +4,12 @@ using UnityEngine;
 
 namespace Game.Characters.Spawners
 {
-
-    public abstract class CharacterSpawner: MonoBehaviour
+    public abstract class EnemyCharacterSpawner: MonoBehaviour
     {
         [SerializeField]
-        CharacterType characterType;
+        EnemyType enemyType;
         
-        public CharacterType CharacterType => characterType;
+        public EnemyType Enemy => enemyType;
 
         public abstract void Init();
 

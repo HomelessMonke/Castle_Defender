@@ -1,10 +1,7 @@
 ﻿namespace Game.Characters
 {
-    public enum CharacterType
+    public enum EnemyType
     {
-        AllyKnight,
-        AllyArcher,
-        AllyBallistaTower,
         EnemyArcher,
         EnemySwordsManSkeleton,
         EnemyTroll

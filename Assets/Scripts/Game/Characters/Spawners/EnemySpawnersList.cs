@@ -7,10 +7,10 @@ using Utilities.Attributes;
 
 namespace Game.Characters.Spawners
 {
-    public class CharacterSpawnerList: MonoBehaviour
+    public class EnemySpawnersList: MonoBehaviour
     {
         [SerializeField]
-        CharacterSpawner[] spawners;
+        EnemyCharacterSpawner[] spawners;
 
         [SerializeField]
         ProjectileSpawner projectileSpawner;
@@ -31,7 +31,7 @@ namespace Game.Characters.Spawners
         public Character[] Spawn(SquadInfo squadInfo)
         {
             var characterType = squadInfo.Type;
-            var spawner = spawners.FirstOrDefault(x => x.CharacterType.Equals(characterType));
+            var spawner = spawners.FirstOrDefault(x => x.Enemy.Equals(characterType));
             if (spawner)
             {
                 return spawner.Spawn(squadInfo);;
@@ -43,7 +43,7 @@ namespace Game.Characters.Spawners
         [Button]
         void SetAllSpawners()
         {
-            spawners = GetComponentsInChildren<CharacterSpawner>();
+            spawners = GetComponentsInChildren<EnemyCharacterSpawner>();
             EditorUtility.SetDirty(this);
             projectileSpawner = GetComponentInChildren<ProjectileSpawner>();
         }

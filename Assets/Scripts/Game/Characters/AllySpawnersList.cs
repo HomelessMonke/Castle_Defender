@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Game.Characters
 {
-    public class AllyInitializer: MonoBehaviour
+    public class AllySpawnersList: MonoBehaviour
     {
         [SerializeField]
         AllyArchersSpawner allyArchersSpawner;

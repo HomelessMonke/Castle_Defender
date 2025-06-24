@@ -8,7 +8,7 @@ using Zenject;
 
 namespace Game.Characters.Spawners
 {
-    public class EnemyRangedCharacterSpawner: CharacterSpawner
+    public class EnemyRangedCharacterSpawner: EnemyCharacterSpawner
     {
         [SerializeField]
         ObjectsPool<EnemyRangedCharacter> pool;
