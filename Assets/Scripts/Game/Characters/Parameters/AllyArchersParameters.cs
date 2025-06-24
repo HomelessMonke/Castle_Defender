@@ -1,4 +1,4 @@
-﻿using Game.Grades.AllyArchersGrades;
+﻿using Game.Grades.AllyCharacters;
 using UnityEngine;
 
 namespace Game.Characters.Parameters
@@ -25,7 +25,7 @@ namespace Game.Characters.Parameters
         [SerializeField]
         float attackDistance = 10;
         
-        public int ArchersCount => countGrades.ArchersCount;
+        public int ArchersCount => countGrades.CharactersCount;
         public float Damage => damageGrades.Damage;
         public int MaxInLine => maxInLine;
         public float ProjectileSpeed => projectileSpeed;

@@ -7,7 +7,7 @@ using UnityEngine.Localization;
 using Utilities.Attributes;
 using Zenject;
 
-namespace Game.Grades.AllyArchersGrades
+namespace Game.Grades.AllyCharacters
 {
     /// <summary>
     /// Конфиг грейдов урона союзных лучников

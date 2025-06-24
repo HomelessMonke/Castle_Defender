@@ -10,24 +10,24 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
-  m_Name: AllyArcherUpgrades_en
+  m_Name: AllyKnightUpgrades_en
   m_EditorClassIdentifier: 
   m_LocaleId:
     m_Code: en
-  m_SharedData: {fileID: 11400000, guid: bce447c7e74e6ea449d30afb4932dacb, type: 2}
+  m_SharedData: {fileID: 11400000, guid: 8619bfd9e5fe0414b9f73468164ab419, type: 2}
   m_Metadata:
     m_Items: []
   m_TableData:
-  - m_Id: 165636210688
-    m_Localized: Increase the number of archers by {0}.
+  - m_Id: 179817152512
+    m_Localized: Swordsmens
     m_Metadata:
       m_Items: []
-  - m_Id: 1379939759685632
-    m_Localized: Increase archers damage by {0}%
+  - m_Id: 5782896640
+    m_Localized: Increase the number of swordsmens by {0}.
     m_Metadata:
       m_Items: []
-  - m_Id: 8857957113528320
-    m_Localized: Archers
+  - m_Id: 30424432640
+    m_Localized: Increase swordsmens damage by {0}%
     m_Metadata:
       m_Items: []
   references:

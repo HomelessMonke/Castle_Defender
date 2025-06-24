@@ -1,5 +1,8 @@
-﻿using Game.Characters.Parameters;
+﻿using System;
+using System.Linq;
+using Game.Characters.Parameters;
 using Game.Characters.Units;
+using Game.Signals.AllyMelee;
 using UnityEngine;
 
 namespace Game.Characters.Spawners
@@ -10,15 +13,22 @@ namespace Game.Characters.Spawners
         [SerializeField]
         AllyMeleeParameters parameters;
 
+        void Start()
+        {
+            signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnArchersCountIncreased);
+        }
+
         public override void Init()
         {
-            pool.Init(parameters.Count);
+            pool.Init(parameters.MeleeCount);
         }
+        
         public override void SpawnAllUnits()
         {
-            var positions = GetSpawnPoints(parameters.Count, parameters.MaxInLineCount);
+            var positions = GetSpawnPoints(parameters.MeleeCount, parameters.MaxInLineCount);
             SpawnUnitsAtPositions(positions);
         }
+        
         protected override void SpawnUnit(Vector2 spawnPos)
         {
             var unit = pool.Spawn(true);
@@ -32,6 +42,14 @@ namespace Game.Characters.Spawners
         {
             pool.Despawn(unit);
             units.Remove(unit);
+        }
+        
+        void OnArchersCountIncreased(AllyMeleeCountUpgradeSignal signal)
+        {
+            var positions = GetSpawnPoints(parameters.MeleeCount, parameters.MaxInLineCount);
+            UpdateUnitsPositions(positions);
+            var newArchersPositions = positions.TakeLast(signal.AddCount);
+            SpawnUnitsAtPositions(newArchersPositions);
         }
     }
 }

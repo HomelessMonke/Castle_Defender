@@ -34,6 +34,12 @@ MonoBehaviour:
     m_SerializedLabels:
     - Locale-ru
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: ce608121fa9abff4faf6661d4c66698c
+    m_Address: AllyKnightUpgrades_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: da115ad990a6c5b4da9559b968a0d5b8
     m_Address: GUI_ru
     m_ReadOnly: 1

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 21dcfb18d0184444a21f5e6753c13683, type: 3}
-  m_Name: KnightParameters(A)
+  m_Name: KnightsParameters(A)
   m_EditorClassIdentifier: 
-  count: 5
+  countGrades: {fileID: 11400000, guid: d2b0d624c466cc048a9bdbbbb58bb7af, type: 2}
   maxInLineCount: 14
   hp: 20
   attackPoints: 4

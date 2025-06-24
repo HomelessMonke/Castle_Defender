@@ -1,0 +1,73 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3603355aeb3d4f759145a37f1acabe68, type: 3}
+  m_Name: KnightsCountGrades(A)
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -5550981945017787116, guid: 68b6ea9f854c8d241b2edc802e382e19, type: 3}
+  defaultCount: 2
+  grades:
+  - value: 3
+    currency:
+      type: 0
+      amount: 500
+  - value: 4
+    currency:
+      type: 0
+      amount: 750
+  - value: 5
+    currency:
+      type: 0
+      amount: 1000
+  - value: 6
+    currency:
+      type: 0
+      amount: 1500
+  - value: 8
+    currency:
+      type: 0
+      amount: 3000
+  - value: 10
+    currency:
+      type: 0
+      amount: 5000
+  - value: 11
+    currency:
+      type: 0
+      amount: 6000
+  - value: 12
+    currency:
+      type: 0
+      amount: 7000
+  - value: 15
+    currency:
+      type: 0
+      amount: 12000
+  - value: 20
+    currency:
+      type: 0
+      amount: 20000
+  - value: 25
+    currency:
+      type: 0
+      amount: 30000
+  localization:
+    m_TableReference:
+      m_TableCollectionName: GUID:8619bfd9e5fe0414b9f73468164ab419
+    m_TableEntryReference:
+      m_KeyId: 5782896640
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

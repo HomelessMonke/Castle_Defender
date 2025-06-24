@@ -1,5 +1,5 @@
-﻿using UnityEngine;
-using UnityEngine.Serialization;
+﻿using Game.Grades.AllyCharacters;
+using UnityEngine;
 
 namespace Game.Characters.Parameters
 {
@@ -7,7 +7,7 @@ namespace Game.Characters.Parameters
     public class AllyMeleeParameters: ScriptableObject
     {
         [SerializeField]
-        int count;
+        AllyMeleeCountGrades countGrades;
         
         [SerializeField]
         int maxInLineCount;
@@ -24,7 +24,7 @@ namespace Game.Characters.Parameters
         [SerializeField]
         float attackDistance = 0.5f;
         
-        public int Count => count;
+        public int MeleeCount => countGrades.CharactersCount;
         public int MaxInLineCount => maxInLineCount;
         public Vector2 MoveDirection => moveDirection;
         public float Speed => Mathf.Abs(moveDirection.x);

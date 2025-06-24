@@ -13,5 +13,6 @@ MonoBehaviour:
   m_Name: CharacterGradesList
   m_EditorClassIdentifier: 
   upgradeSequences:
+  - {fileID: 11400000, guid: 17ca799baf7281744b8b6807904d0cd5, type: 2}
   - {fileID: 11400000, guid: ab079b350cb5004418747e30c1d45e6c, type: 2}
   - {fileID: 11400000, guid: 5edbc8a34caf8464a89bb6d33805cd4f, type: 2}

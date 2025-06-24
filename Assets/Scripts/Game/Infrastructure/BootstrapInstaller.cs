@@ -2,6 +2,7 @@
 using Game.Grades;
 using Game.Signals;
 using Game.Signals.AllyArcher;
+using Game.Signals.AllyMelee;
 using Game.Signals.Castle;
 using Game.Waves;
 using UnityEngine;
@@ -41,12 +42,13 @@ namespace Game.Infrastructure
         void BindSignals()
         {
             SignalBusInstaller.Install(Container);
-            Container.DeclareSignal<AllyArchersCountUpgradeSignal>();
             Container.DeclareSignal<AllyArchersDamageUpgradeSignal>();
+            Container.DeclareSignal<AllyArchersCountUpgradeSignal>();
+            Container.DeclareSignal<AllyMeleeCountUpgradeSignal>();
             Container.DeclareSignal<CastleHealthUpgradeSignal>();
+            Container.DeclareSignal<DespawnEnemySignal>();
             Container.DeclareSignal<WaveFinishedSignal>();
             Container.DeclareSignal<LaunchWaveSignal>();
-            Container.DeclareSignal<DespawnEnemySignal>();
         }
 
         void BindCurrencyService()
