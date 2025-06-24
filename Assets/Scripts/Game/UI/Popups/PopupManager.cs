@@ -51,7 +51,6 @@ namespace Game.Popups
 
         void OnPopupClosed(Popup popup)
         {
-            darkPanel.TogglePanel(false);
             Destroy(popup.gameObject);
             ConfigChanged?.Invoke(null);
         }
