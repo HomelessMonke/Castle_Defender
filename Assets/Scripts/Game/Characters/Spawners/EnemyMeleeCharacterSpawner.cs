@@ -11,10 +11,10 @@ namespace Game.Characters.Spawners
     public class EnemyMeleeCharacterSpawner: CharacterSpawner
     {
         [SerializeField]
-        ObjectsPool<MeleeCharacter> pool;
+        ObjectsPool<EnemyMeleeCharacter> pool;
         
         [SerializeField]
-        EnemyMeleeUnitParameters unitParameters;
+        EnemyMeleeParameters unitParameters;
         
         [Space(10)]
         [SerializeField]
@@ -59,7 +59,7 @@ namespace Game.Characters.Spawners
             return unit;
         }
 
-        void OnDie(MeleeCharacter unit)
+        void OnDie(EnemyMeleeCharacter unit)
         {
             bubbleSpawner.Spawn(unit.transform.position, unitParameters.CoinReward);
             pool.Despawn(unit);

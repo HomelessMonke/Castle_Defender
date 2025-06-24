@@ -4,12 +4,11 @@ using Game.Characters.States;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
-using Utilities.Attributes;
 
 namespace Game.Characters.Units
 {
     [RequireComponent(typeof(Health))]
-    public class MeleeCharacter: Character
+    public class EnemyMeleeCharacter: Character
     {
         [SerializeField]
         CharacterFieldOfView fieldOfView;
@@ -35,21 +34,25 @@ namespace Game.Characters.Units
         MeleeAttack meleeAttack;
 
         AnimatedAttackState attackState;
-        MoveState moveState;
+        NoneTargetMoveState noneTargetMoveState;
+        TargetMoveState targetMoveState;
         
         public event UnityAction Died;
         
         void Awake()
         {
-            moveState = new MoveState(agent, characterAnimator.Animator);
             meleeAttack = new MeleeAttack();
             attackState = new AnimatedAttackState(meleeAttack, characterAnimator);
-            moveState.ArrivedToTarget += OnArrivedToTarget;
             attackState.LoseTargetToAttack += OnLoseTargetToAttack;
+            
+            noneTargetMoveState = new NoneTargetMoveState(transform, characterAnimator.Animator);
+            targetMoveState = new TargetMoveState(agent, characterAnimator.Animator);
+            targetMoveState.ArrivedToTarget += OnArrivedToTarget;
+            
             fieldOfView.TargetChanged += OnTargetChanged;
         }
 
-        public void Init(MeleeUnitParameters parameters)
+        public void Init(EnemyMeleeParameters parameters)
         {
             healthView.SetActive(false);
             health.Init(parameters.Hp);
@@ -57,7 +60,8 @@ namespace Game.Characters.Units
             health.Died += OnDeath;
 
             fieldOfView.Init(transform);
-            moveState.Init(parameters.MoveDirection, parameters.AttackDistance);
+            noneTargetMoveState.Init(parameters.MoveDirection);
+            targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
             attackState.Init(parameters.AttackPoints);
             SetMoveState();
         }
@@ -77,25 +81,16 @@ namespace Game.Characters.Units
             Debug.DrawLine(transform.position, agent.destination, pathLineColor);
         }
 
-        bool TrySetAttackState(Transform target)
-        {
-            if (!target)
-                return false;
-                
-            var targetHP = target.GetComponent<Health>();
-            if (targetHP && targetHP.IsAlive)
-            {
-                attackState.SetTarget(targetHP);
-                SetState(attackState);
-                return true;
-            }
-            return false;
-        }
-
         void SetMoveState(Transform target = null)
         {
-            moveState.SetTarget(target);
-            SetState(moveState);
+            if (target)
+            {
+                targetMoveState.SwitchTarget(target);
+                SetState(targetMoveState);
+                return;
+            } 
+            
+            SetState(noneTargetMoveState);
         }
 
         void OnTargetChanged(Transform target)
@@ -126,6 +121,21 @@ namespace Game.Characters.Units
             }
         }
         
+        bool TrySetAttackState(Transform target)
+        {
+            if (!target)
+                return false;
+                
+            var targetHP = target.GetComponent<Health>();
+            if (targetHP && targetHP.IsAlive)
+            {
+                attackState.SetTarget(targetHP);
+                SetState(attackState);
+                return true;
+            }
+            return false;
+        }
+        
         void OnLoseTargetToAttack()
         {
             OnTargetChanged(fieldOfView.CurrentTarget);
@@ -141,11 +151,6 @@ namespace Game.Characters.Units
             Died?.Invoke();
             Died = null;
         }
-
-        [Button]
-        void SetOneHP()
-        {
-            health.GetDamage(health.MaxHp-1);
-        }
     }
+
 }

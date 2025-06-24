@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 21dcfb18d0184444a21f5e6753c13683, type: 3}
   m_Name: KnightParameters(A)
   m_EditorClassIdentifier: 
+  count: 5
+  maxInLineCount: 14
   hp: 20
   attackPoints: 4
-  moveDirection: {x: 1.4, y: 0}
-  attackDistance: 0.5
-  attackCD: 2
+  moveDirection: {x: 1.25, y: 0}
+  attackDistance: 0.6

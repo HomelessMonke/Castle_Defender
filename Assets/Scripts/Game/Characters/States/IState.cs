@@ -7,5 +7,4 @@
         void Update();
         void Exit();
     }
-
 }

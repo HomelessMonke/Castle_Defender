@@ -28,5 +28,4 @@ namespace Game.Characters.States
             
         }
     }
-
 }

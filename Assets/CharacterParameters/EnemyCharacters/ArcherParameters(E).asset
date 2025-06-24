@@ -13,12 +13,9 @@ MonoBehaviour:
   m_Name: ArcherParameters(E)
   m_EditorClassIdentifier: 
   hp: 5
-  moveDirection: {x: -0.8, y: 0}
+  moveDirection: {x: -1, y: 0}
   damage: 3
   projectileSpeed: 7
-  attackCD: 3
   attackDistance: 5
-  fovDistance: 7
-  updateFovCD: 1
   minCoinsReward: 5
   maxCoinsReward: 10

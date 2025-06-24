@@ -796,13 +796,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 162432939}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -3.52, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: 0.067349836, w: -0.9977295}
+  m_LocalPosition: {x: -3.03, y: 0.2, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1709023013}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -7.724}
 --- !u!1 &200493900
 GameObject:
   m_ObjectHideFlags: 0
@@ -2450,15 +2450,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 14c27acd1a2641948a19f97d5f8facc2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  archerTemplate: {fileID: 1363838825}
-  parameters: {fileID: 11400000, guid: b51d4c8fa01862a47a4938efa580541b, type: 2}
-  startSpawnPoint: {fileID: 1045404676}
-  root: {fileID: 413913389}
-  arrowForTowerSpawner: {fileID: 1423010076}
+  pool:
+    prefab: {fileID: 1363838825}
+    root: {fileID: 413913389}
+    initialCount: 30
+  spawnPoint: {fileID: 1045404676}
   formation:
     spawnToRight: 0
     unitsOffsetX: 0.45
     unitsOffsetY: 0.6
+  parameters: {fileID: 11400000, guid: b51d4c8fa01862a47a4938efa580541b, type: 2}
+  arrowsSpawner: {fileID: 1423010076}
 --- !u!1 &686667118
 GameObject:
   m_ObjectHideFlags: 0
@@ -3278,8 +3280,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1045404675}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.072668545, w: 0.9973562}
-  m_LocalPosition: {x: -5.89, y: 0.23, z: 0}
+  m_LocalRotation: {x: 0, y: 0, z: 0.06734983, w: -0.9977295}
+  m_LocalPosition: {x: -5.849, y: 0.53, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -3334,7 +3336,6 @@ MonoBehaviour:
   spawners:
   - {fileID: 1722922280}
   - {fileID: 1194152384}
-  - {fileID: 1709023014}
   projectileSpawner: {fileID: 436918094}
   lootBubbleSpawner: {fileID: 3367227924412149409}
 --- !u!1 &1160670777
@@ -4958,13 +4959,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 514ba9bcae5a48188c2542bcdda43b01, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterType: 0
   pool:
-    prefab: {fileID: 6039229518978487604}
+    prefab: {fileID: 6039229518978487605}
     root: {fileID: 652525932}
     initialCount: 5
-  unitParameters: {fileID: 11400000, guid: dfe34c47e9c9123468ea406803b8b532, type: 2}
-  spawnPointTransform: {fileID: 162432940}
+  spawnPoint: {fileID: 162432940}
+  formation:
+    spawnToRight: 1
+    unitsOffsetX: 0.35
+    unitsOffsetY: 0.4
+  parameters: {fileID: 11400000, guid: dfe34c47e9c9123468ea406803b8b532, type: 2}
 --- !u!1 &1722922278
 GameObject:
   m_ObjectHideFlags: 0
@@ -5809,6 +5813,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   allyArchersSpawner: {fileID: 670028985}
+  allyMeleeSpawner: {fileID: 1709023014}
   towersInitializer: {fileID: 1971017065}
 --- !u!4 &2085461808
 Transform:
@@ -6022,10 +6027,6 @@ PrefabInstance:
     - target: {fileID: 1658558143131122232, guid: c3b4c326ee8c86143b2dde71cde55562, type: 3}
       propertyPath: m_Name
       value: Archer(A)
-      objectReference: {fileID: 0}
-    - target: {fileID: 1658558143131122232, guid: c3b4c326ee8c86143b2dde71cde55562, type: 3}
-      propertyPath: m_IsActive
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9181583064679490256, guid: c3b4c326ee8c86143b2dde71cde55562, type: 3}
       propertyPath: m_LocalPosition.x
@@ -6279,6 +6280,10 @@ PrefabInstance:
       propertyPath: 'soldiersInfo.charactersInLines.Array.data[1]'
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4072110441596866258, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
+      propertyPath: managedReferences[707701132208898211].unitsOffsetY
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 5952942933327615962, guid: 1c118dee6179f6f46acecd10670c960d, type: 3}
       propertyPath: m_Name
       value: PlayerAbilitiesUI
@@ -6486,11 +6491,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 1.41
+      value: -2.597
       objectReference: {fileID: 0}
     - target: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.78
+      value: 0.298
       objectReference: {fileID: 0}
     - target: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_LocalPosition.z
@@ -6528,32 +6533,20 @@ PrefabInstance:
       propertyPath: m_Name
       value: Knight(A)
       objectReference: {fileID: 0}
-    - target: {fileID: 2334795779472546635, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6010292926967338893, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
-      propertyPath: m_Name
-      value: Shadow
-      objectReference: {fileID: 0}
-    - target: {fileID: 8564103599731851920, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: -0.143
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
---- !u!114 &6039229518978487604 stripped
+--- !u!114 &6039229518978487605 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1431322647330348535, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
+  m_CorrespondingSourceObject: {fileID: 906396336838298757, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
   m_PrefabInstance: {fileID: 6039229518978487597}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 22f2543701494437b3f1857c14c22857, type: 3}
+  m_Script: {fileID: 11500000, guid: 68c6373ca70d48c086db86e102f8b2e6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!4 &6059057656875677196

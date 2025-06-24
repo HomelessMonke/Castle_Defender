@@ -1,7 +1,5 @@
 ﻿using Game.Characters.Attacks;
 using Game.Characters.Parameters;
-using Game.Characters.Projectiles;
-using Game.Characters.Spawners;
 using Game.Characters.States;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,19 +8,13 @@ using UnityEngine.Events;
 namespace Game.Characters.Units
 {
     [RequireComponent(typeof(Health))]
-    public class EnemyRangedCharacter: Character
+    public class AllyMeleeCharacter: Character
     {
         [SerializeField]
+        CharacterFieldOfView fieldOfView;
+        
+        [SerializeField]
         CharacterAnimator characterAnimator;
-
-        [SerializeField]
-        CharacterFieldOfView fov;
-
-        [SerializeField]
-        Transform projSpawnPos;
-
-        [SerializeField]
-        ProjectileAnimationData animationData;
         
         [SerializeField]
         Health health;
@@ -34,50 +26,57 @@ namespace Game.Characters.Units
         NavMeshAgent agent;
         
         [SerializeField]
-        Color pathLineColor = Color.red;
+        Color pathLineColor = Color.blue;
 
         [SerializeField]
         DamageFlash damageFlash;
         
-        RangedAttack rangedAttack;
+        MeleeAttack meleeAttack;
         
-        AnimatedAttackState attackState;
+        AnimatedIdleState idleState;
         NoneTargetMoveState noneTargetMoveState;
         TargetMoveState targetMoveState;
+        AnimatedAttackState attackState;
         
         public event UnityAction Died;
         
         void Awake()
         {
+            meleeAttack = new MeleeAttack();
+            attackState = new AnimatedAttackState(meleeAttack, characterAnimator);
+            attackState.LoseTargetToAttack += OnLoseTargetToAttack;
+            
+            idleState = new AnimatedIdleState(characterAnimator.Animator);
             noneTargetMoveState = new NoneTargetMoveState(transform, characterAnimator.Animator);
             targetMoveState = new TargetMoveState(agent, characterAnimator.Animator);
             targetMoveState.ArrivedToTarget += OnArrivedToTarget;
             
-            rangedAttack = new RangedAttack(projSpawnPos, animationData);
-            attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
-            attackState.LoseTargetToAttack += OnLoseTargetToAttack;
-            fov.TargetChanged += UpdateTarget;
+            fieldOfView.TargetChanged += OnTargetChanged;
         }
 
-        public void Init(EnemyRangedParameters parameters, ProjectileSpawner projSpawner)
+        public void Init(AllyMeleeParameters parameters)
         {
             healthView.SetActive(false);
             health.Init(parameters.Hp);
             health.DamageTaken += (_)=> OnGetDamage();
             health.Died += OnDeath;
 
-            fov.Init(transform);
-            rangedAttack.Init(parameters.ProjectileSpeed, projSpawner);
+            fieldOfView.Init(transform);
             noneTargetMoveState.Init(parameters.MoveDirection);
             targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
-            attackState.Init(parameters.Damage);
-            SetMoveState();
+            attackState.Init(parameters.AttackPoints);
+            SetState(idleState);
         }
         
         void OnGetDamage()
         {
             healthView.Draw(health);
             damageFlash.Flash();
+
+            if (currentState.Equals(idleState))
+            {
+                SetMoveState();
+            }
         }
 
         void Update()
@@ -89,7 +88,7 @@ namespace Game.Characters.Units
             Debug.DrawLine(transform.position, agent.destination, pathLineColor);
         }
 
-        void UpdateTarget(Transform target)
+        void OnTargetChanged(Transform target)
         {
             if (target && target.gameObject.activeSelf)
             {
@@ -108,11 +107,25 @@ namespace Game.Characters.Units
             
             SetMoveState();
         }
+
+        void OnArrivedToTarget(Transform target)
+        {
+            if(!TrySetAttackState(target))
+            {
+                SetMoveState();
+            }
+        }
         
         void SetMoveState(Transform target = null)
         {
-            IState state = target? targetMoveState : noneTargetMoveState;
-            SetState(state);
+            if (target)
+            {
+                targetMoveState.SwitchTarget(target);
+                SetState(targetMoveState);
+                return;
+            }
+            
+            SetState(noneTargetMoveState);
         }
         
         bool TrySetAttackState(Transform target)
@@ -130,24 +143,18 @@ namespace Game.Characters.Units
             return false;
         }
         
-        void OnArrivedToTarget(Transform target)
-        {
-            if(!TrySetAttackState(target))
-            {
-                SetMoveState();
-            }
-        }
-        
         void OnLoseTargetToAttack()
         {
-            UpdateTarget(fov.CurrentTarget);
+            OnTargetChanged(fieldOfView.CurrentTarget);
         }
-
+        
         void OnDeath()
         {
-            if(currentState != null)
+            if (currentState != null)
+            {
                 currentState.Exit();
-            currentState = null;
+                currentState = null;
+            }
             Died?.Invoke();
             Died = null;
         }

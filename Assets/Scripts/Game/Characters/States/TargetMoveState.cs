@@ -1,25 +1,23 @@
-﻿using UnityEngine;
+﻿ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
 namespace Game.Characters.States
 {
-    public class MoveState : IState
+    public class TargetMoveState : IState
     {
         Animator animator;
         NavMeshAgent agent;
         Transform agentTransform;
         Transform targetObj;
         bool canSelfEnter;
-        Vector2 moveDirection;
-        
         
         bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
         public bool CanSelfEnter => canSelfEnter;
         
         public event UnityAction<Transform> ArrivedToTarget;
         
-        public MoveState(NavMeshAgent agent, Animator animator, bool canSelfEnter = false)
+        public TargetMoveState(NavMeshAgent agent, Animator animator, bool canSelfEnter = false)
         {
             this.agent = agent;
             this.animator = animator;
@@ -27,14 +25,13 @@ namespace Game.Characters.States
             this.canSelfEnter = canSelfEnter;
         }
 
-        public void Init(Vector2 moveDirection, float attackDistance)
+        public void Init(float speed, float stoppingDistance)
         {
-            agent.speed = Mathf.Abs(moveDirection.x);
-            this.moveDirection = moveDirection;
-            agent.stoppingDistance = attackDistance;
+            agent.speed = speed;
+            agent.stoppingDistance = stoppingDistance;
         }
 
-        public void SetTarget(Transform target)
+        public void SwitchTarget(Transform target)
         {
             if (!target)
             {
@@ -50,6 +47,7 @@ namespace Game.Characters.States
             
             agent.ResetPath();
             targetObj = target;
+            agent.SetDestination(targetObj.position);
         }
 
         public void Enter()
@@ -59,15 +57,6 @@ namespace Game.Characters.States
         
         public void Update()
         {
-            if (targetObj)
-            {
-                agent.SetDestination(targetObj.position);
-            }
-            else
-            {
-                agentTransform.Translate(moveDirection * Time.deltaTime);
-            }
-            
             if (IsArrivedToTarget)
                 ArrivedToTarget?.Invoke(targetObj);
         }

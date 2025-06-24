@@ -9,12 +9,16 @@ namespace Game.Characters
         AllyArchersSpawner allyArchersSpawner;
         
         [SerializeField]
+        AllyMeleeCharacterSpawner allyMeleeSpawner;
+        
+        [SerializeField]
         TowersInitializer towersInitializer;
         
         public void Init()
         {
             towersInitializer.Init();
-            allyArchersSpawner.SpawnAllyArchers();
+            allyArchersSpawner.SpawnAllUnits();
+            allyMeleeSpawner.SpawnAllUnits();
         }
     }
 }

@@ -1,46 +1,37 @@
 ﻿using Game.Characters.Parameters;
-using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
 using UnityEngine;
 
 namespace Game.Characters.Spawners
 {
-    public class AllyMeleeCharacterSpawner : CharacterSpawner
+    public class AllyMeleeCharacterSpawner : AllySpawner<AllyMeleeCharacter>
     {
+        [Space(20)]
         [SerializeField]
-        ObjectsPool<MeleeCharacter> pool;
-        
-        [SerializeField]
-        AllyMeleeUnitParameters unitParameters;
-        
-        [Space(10)]
-        [SerializeField]
-        Transform spawnPointTransform;
-        
+        AllyMeleeParameters parameters;
+
         public override void Init()
         {
-            pool.Init();
+            pool.Init(parameters.Count);
         }
-        
-        public override Character[] Spawn(SquadInfo squadInfo)
+        public override void SpawnAllUnits()
         {
-            var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform);
-            var count = spawnPositions.Length;
-            var characters = new Character[count];
-            for (int i = 0; i < count; i++)
-            {
-                characters[i] = Spawn(spawnPositions[i]);
-            }
-            return characters;
+            var positions = GetSpawnPoints(parameters.Count, parameters.MaxInLineCount);
+            SpawnUnitsAtPositions(positions);
         }
-        
-        Character Spawn(Vector2 spawnPosition)
+        protected override void SpawnUnit(Vector2 spawnPos)
         {
             var unit = pool.Spawn(true);
-            unit.transform.position = spawnPosition;
-            unit.Init(unitParameters);
-            unit.Died+= ()=> pool.Despawn(unit);
-            return unit;
+            unit.transform.position = spawnPos;
+            unit.Init(parameters);
+            unit.Died += () => OnUnitDied(unit);
+            units.Add(unit);
+        }
+
+        void OnUnitDied(AllyMeleeCharacter unit)
+        {
+            pool.Despawn(unit);
+            units.Remove(unit);
         }
     }
 }

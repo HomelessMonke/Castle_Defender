@@ -24,6 +24,11 @@ namespace Game.Characters.Spawners
             
         public void Init()
         {
+            Init(initialCount);
+        }
+        
+        public void Init(int initialCount)
+        {
             root.DestroyChildren();
             for (int i = 0; i < initialCount; i++)
             {
