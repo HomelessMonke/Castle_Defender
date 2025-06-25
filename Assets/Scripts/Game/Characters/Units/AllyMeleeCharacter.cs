@@ -170,12 +170,17 @@ namespace Game.Characters.Units
         
         void OnDeath()
         {
+            Died?.Invoke();
+            Reset();
+        }
+        
+        public void Reset()
+        {
             if (currentState != null)
             {
                 currentState.Exit();
                 currentState = null;
             }
-            Died?.Invoke();
             Died = null;
         }
     }

@@ -39,7 +39,7 @@ namespace Game.Characters.Spawners
             }
         }
         
-        protected void UpdateUnitsPositions(Vector2[] positions)
+        protected void SetPositionsForUnits(Vector2[] positions)
         {
             for (int i = 0; i < units.Count; i++)
             {

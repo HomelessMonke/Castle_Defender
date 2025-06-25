@@ -11,19 +11,10 @@ namespace Game
     public class LevelEntryPoint: MonoBehaviour
     {
         [SerializeField]
-        Castle castle;
-        
-        [SerializeField]
-        UIHealthView castleHpView;
-
-        [SerializeField]
-        TargetsDetectionArea allyDetectionArea;
-        
-        [SerializeField]
         EnemySpawnersList enemySpawnersList;
 
         [SerializeField]
-        AllySpawnersList allySpawnersList;
+        AlliesInitializer alliesInitializer;
         
         [SerializeField]
         WavesList wavesList;
@@ -41,12 +32,9 @@ namespace Game
         
         public void Start()
         {
-            castle.Init();
             uiEntryPoint.Init();
-            allySpawnersList.Init();
+            alliesInitializer.Init();
             enemySpawnersList.Init();
-            
-            allyDetectionArea.Init(128);
             
             signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinishedSignal);
         }

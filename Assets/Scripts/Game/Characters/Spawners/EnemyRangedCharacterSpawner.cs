@@ -30,7 +30,7 @@ namespace Game.Characters.Spawners
         CurrencyManager currencyService;
         
         [Inject]
-        public void Constructor(CurrencyManager currencyService, SignalBus signalBus)
+        public void Construct(CurrencyManager currencyService, SignalBus signalBus)
         {
             this.currencyService = currencyService;
             this.signalBus = signalBus;

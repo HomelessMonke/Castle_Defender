@@ -43,7 +43,7 @@ namespace Game.Characters.Spawners
         void OnArchersCountIncreased(AllyArchersCountUpgradeSignal signal)
         {
             var positions = GetSpawnPoints(parameters.ArchersCount, parameters.MaxInLine);
-            UpdateUnitsPositions(positions);
+            SetPositionsForUnits(positions);
             var newArchersPositions = positions.TakeLast(signal.AddCount);
             SpawnUnitsAtPositions(newArchersPositions);
         }

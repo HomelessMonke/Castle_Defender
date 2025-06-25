@@ -16,7 +16,7 @@ namespace Game.Characters.Spawners
         void Start()
         {
             signalBus.Subscribe<AllyMeleeHealthUpgradeSignal>(OnHealthPointsIncreased);
-            signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnArchersCountIncreased);
+            signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnUnitsCountIncreased);
             signalBus.Subscribe<AllyMeleeDamageUpgradeSignal>(OnDamageIncreased);
         }
 
@@ -30,7 +30,19 @@ namespace Game.Characters.Spawners
             var positions = GetSpawnPoints(parameters.MeleeCount, parameters.MaxInLineCount);
             SpawnUnitsAtPositions(positions);
         }
-        
+
+        public void RestoreUnits()
+        {
+            foreach (var unit in units)
+            {
+                unit.Reset();
+                pool.Despawn(unit);
+            }
+            units.Clear();
+
+            SpawnAllUnits();
+        }
+
         protected override void SpawnUnit(Vector2 spawnPos)
         {
             var unit = pool.Spawn(true);
@@ -46,12 +58,12 @@ namespace Game.Characters.Spawners
             units.Remove(unit);
         }
         
-        void OnArchersCountIncreased(AllyMeleeCountUpgradeSignal signal)
+        void OnUnitsCountIncreased(AllyMeleeCountUpgradeSignal signal)
         {
             var positions = GetSpawnPoints(parameters.MeleeCount, parameters.MaxInLineCount);
-            UpdateUnitsPositions(positions);
-            var newArchersPositions = positions.TakeLast(signal.AddCount);
-            SpawnUnitsAtPositions(newArchersPositions);
+            SetPositionsForUnits(positions);
+            var newUnitsPositions = positions.TakeLast(signal.AddCount);
+            SpawnUnitsAtPositions(newUnitsPositions);
         }
         
         void OnDamageIncreased()

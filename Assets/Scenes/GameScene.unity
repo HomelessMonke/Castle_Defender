@@ -1117,11 +1117,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98cbb5174a47441fae9733ce633e30d4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  castle: {fileID: 1351481472}
-  castleHpView: {fileID: 124140656}
-  allyDetectionArea: {fileID: 1397719111}
   enemySpawnersList: {fileID: 1131912206}
-  allySpawnersList: {fileID: 2085461807}
+  alliesInitializer: {fileID: 2085461807}
   wavesList: {fileID: 11400000, guid: 2e7f2b76c6efe824fac155e5e8ada08f, type: 2}
   uiEntryPoint: {fileID: 267978359}
 --- !u!114 &267978359
@@ -4129,7 +4126,6 @@ Transform:
   - {fileID: 882566234}
   - {fileID: 38424950}
   - {fileID: 1960752038}
-  - {fileID: 1397719109}
   - {fileID: 920593439}
   - {fileID: 1971017064}
   - {fileID: 104219363}
@@ -4337,11 +4333,11 @@ Transform:
   m_GameObject: {fileID: 1397719108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 1.475913, y: -0.08283913, z: -0.0784666}
+  m_LocalPosition: {x: 2.915913, y: -0.08283913, z: -0.0784666}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 1351481471}
+  m_Father: {fileID: 2085461808}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!61 &1397719110
 BoxCollider2D:
@@ -5821,7 +5817,7 @@ GameObject:
   - component: {fileID: 2085461808}
   - component: {fileID: 2085461807}
   m_Layer: 0
-  m_Name: AllySpawnersList
+  m_Name: AlliesInitializer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -5839,6 +5835,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 858ff1fdabfb4cedae23f80389451dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  castle: {fileID: 1351481472}
+  allyDetectionArea: {fileID: 1397719111}
   allyArchersSpawner: {fileID: 670028985}
   allyMeleeSpawner: {fileID: 1709023014}
   towersInitializer: {fileID: 1971017065}
@@ -5857,6 +5855,7 @@ Transform:
   m_Children:
   - {fileID: 1709023013}
   - {fileID: 670028984}
+  - {fileID: 1397719109}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2138511718
@@ -7198,9 +7197,9 @@ SceneRoots:
   - {fileID: 267978357}
   - {fileID: 519420032}
   - {fileID: 619394802}
+  - {fileID: 2085461808}
   - {fileID: 1351481471}
   - {fileID: 415040426}
-  - {fileID: 2085461808}
   - {fileID: 1131912205}
   - {fileID: 6059057656875677196}
   - {fileID: 649942107}

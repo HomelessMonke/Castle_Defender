@@ -72,7 +72,8 @@ namespace Game.Characters.States
         
         public void Exit()
         {
-            agent.ResetPath();
+            if(agent.isActiveAndEnabled)
+                agent.ResetPath();
         }
     }
 }

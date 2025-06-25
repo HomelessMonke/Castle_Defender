@@ -29,6 +29,11 @@ namespace Game.Characters
             currentHp = maxHealth;
         }
 
+        public void RestoreHealth()
+        {
+            currentHp = MaxHp;
+        }
+
         public void GetDamage(float amount)
         {
             if (isImmortal)

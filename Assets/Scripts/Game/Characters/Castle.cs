@@ -57,6 +57,12 @@ namespace Game.Characters
             hpView.Draw(health);
         }
 
+        public void RestoreHealth()
+        {
+            health.RestoreHealth();
+            hpView.Draw(health);
+        }
+
         void OnHpUpgrade(CastleHealthUpgradeSignal signal)
         {
             health.SetHealth(parameters.HP);
