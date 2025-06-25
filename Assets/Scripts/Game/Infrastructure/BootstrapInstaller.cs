@@ -49,7 +49,7 @@ namespace Game.Infrastructure
             Container.DeclareSignal<AllyMeleeCountUpgradeSignal>();
             Container.DeclareSignal<CastleHealthUpgradeSignal>();
             Container.DeclareSignal<DespawnEnemySignal>();
-            Container.DeclareSignal<WaveFinishedSignal>();
+            Container.DeclareSignal<FinishWaveSignal>();
             Container.DeclareSignal<LaunchWaveSignal>();
         }
 

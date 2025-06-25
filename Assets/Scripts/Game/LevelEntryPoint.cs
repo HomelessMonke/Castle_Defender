@@ -36,7 +36,7 @@ namespace Game
             alliesInitializer.Init();
             enemySpawnersList.Init();
             
-            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinishedSignal);
+            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinishedSignal);
         }
 
         void OnWaveFinishedSignal()

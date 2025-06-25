@@ -18,7 +18,7 @@ namespace Game.Infrastructure
         
         public void Init()
         {
-            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinished);
+            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
             waveProgressCounter.Init();
         }
 

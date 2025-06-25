@@ -73,6 +73,11 @@ namespace Game.Characters.Units
             SetState(idleState);
         }
 
+        public void SetImmortal(bool isImmortal)
+        {
+            health.SetImmortal(isImmortal);
+        }
+
         public void SetHealthPoints(float healthPoints)
         {
             health.SetHealth(healthPoints);
@@ -85,7 +90,7 @@ namespace Game.Characters.Units
         
         void OnGetDamage()
         {
-            if (!health.IsAlive)
+            if (!health.IsAlive || health.IsImmortal)
                 return;
             
             healthView.Draw(health);

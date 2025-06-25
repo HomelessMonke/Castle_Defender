@@ -14,6 +14,8 @@ namespace Game.Characters
         Transform characterTransform;
         List<Transform> triggeredObjects = new ();
         
+        public bool HaveTargets => triggeredObjects.Count > 0;
+        
         public Transform CurrentTarget => currentTarget;
         
         public event UnityAction<Transform> TargetChanged;

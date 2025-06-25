@@ -39,7 +39,7 @@ namespace Game.Characters
             allyArchersSpawner.SpawnAllUnits();
             allyMeleeSpawner.SpawnAllUnits();
             
-            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinished);
+            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
         }
 
         void OnWaveFinished()

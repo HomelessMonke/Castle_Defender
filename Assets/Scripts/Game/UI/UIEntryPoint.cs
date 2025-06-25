@@ -70,7 +70,7 @@ namespace Game.UI
             currenciesPanel.DrawViews();
             
             popupManager.ConfigChanged += OnPopupConfigChanged;
-            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinished);
+            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
             
             pauseButton.onClick.AddListener(OnPauseClick);
             startWaveButton.onClick.AddListener(OnStartWaveClick);

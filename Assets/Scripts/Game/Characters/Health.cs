@@ -12,6 +12,7 @@ namespace Game.Characters
         public float CurrentHp => currentHp; 
         public float Percentage => currentHp / MaxHp;
         public bool IsAlive => currentHp > 0;
+        public bool IsImmortal => isImmortal;
         
         public event UnityAction Healed, Died;
         public event UnityAction<float> DamageTaken;
@@ -20,6 +21,11 @@ namespace Game.Characters
         {
             ResetEvents();
             SetHealth(maxHealth);
+            SetImmortal(isImmortal);
+        }
+
+        public void SetImmortal(bool isImmortal)
+        {
             this.isImmortal = isImmortal;
         }
 

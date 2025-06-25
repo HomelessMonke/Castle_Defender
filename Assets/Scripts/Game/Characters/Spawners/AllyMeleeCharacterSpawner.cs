@@ -2,6 +2,7 @@
 using System.Linq;
 using Game.Characters.Parameters;
 using Game.Characters.Units;
+using Game.Signals;
 using Game.Signals.AllyMelee;
 using UnityEngine;
 
@@ -18,6 +19,8 @@ namespace Game.Characters.Spawners
             signalBus.Subscribe<AllyMeleeHealthUpgradeSignal>(OnHealthPointsIncreased);
             signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnUnitsCountIncreased);
             signalBus.Subscribe<AllyMeleeDamageUpgradeSignal>(OnDamageIncreased);
+            signalBus.Subscribe<LaunchWaveSignal>(OnLaunchWave);
+            signalBus.Subscribe<FinishWaveSignal>(OnFinishWave);
         }
 
         public override void Init()
@@ -47,8 +50,8 @@ namespace Game.Characters.Spawners
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPos;
-            unit.Init(parameters);
             unit.Died += () => OnUnitDied(unit);
+            unit.Init(parameters);
             units.Add(unit);
         }
 
@@ -83,6 +86,22 @@ namespace Game.Characters.Spawners
             foreach (var unit in units)
             {
                 unit.SetHealthPoints(hp);
+            }
+        }
+
+        void OnLaunchWave()
+        {
+            foreach (var unit in units)
+            {
+                unit.SetImmortal(false);
+            }
+        }
+
+        void OnFinishWave()
+        {
+            foreach (var unit in units)
+            {
+                unit.SetImmortal(true);
             }
         }
     }

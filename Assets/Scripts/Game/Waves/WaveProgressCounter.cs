@@ -31,7 +31,7 @@ namespace Game.Waves
             counter--;
             if (counter == 0)
             {
-                signalBus.Fire<WaveFinishedSignal>();
+                signalBus.Fire<FinishWaveSignal>();
             }
         }
     }
