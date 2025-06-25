@@ -7,7 +7,6 @@ namespace Game.Grades.AllyCharacters
     /// <summary>
     /// Конфиг грейдов кол-ва союзных лучников
     /// </summary>
-    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllyArchers/(A)ArchersCount", fileName = "(A)ArchersCountUpgrades")]
     public class AllyArchersCountGrades: AllyCharacterCountGrades
     {
         protected override string SaveKey => "AllyArchersCountGradeIndex";

@@ -1,5 +1,4 @@
 ﻿using Game.Characters.Spawners;
-using Game.Popups;
 using Game.Signals;
 using Game.UI.Abilities;
 using Game.UI.BaseUiScope;

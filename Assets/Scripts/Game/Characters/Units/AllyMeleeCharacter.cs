@@ -70,6 +70,9 @@ namespace Game.Characters.Units
         
         void OnGetDamage()
         {
+            if (!health.IsAlive)
+                return;
+            
             healthView.Draw(health);
             damageFlash.Flash();
 

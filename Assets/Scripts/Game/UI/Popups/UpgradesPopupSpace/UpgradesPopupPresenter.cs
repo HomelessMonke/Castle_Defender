@@ -2,7 +2,6 @@
 using System.Linq;
 using Game.Currencies;
 using Game.Grades;
-using Game.Popups;
 using Zenject;
 
 namespace Game.UI.Popups.UpgradesPopupSpace

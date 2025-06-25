@@ -1,5 +1,4 @@
-﻿using Game.Popups;
-using Zenject;
+﻿using Zenject;
 
 namespace Game.UI.Popups.StartWavePopupSpace
 {

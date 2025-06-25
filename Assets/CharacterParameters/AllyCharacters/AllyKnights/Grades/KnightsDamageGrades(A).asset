@@ -1,0 +1,61 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41b4c489a9554a15a42e23d86984ff1c, type: 3}
+  m_Name: KnightsDamageGrades(A)
+  m_EditorClassIdentifier: 
+  sprite: {fileID: -1400734978927520801, guid: 92148c92e69f598428ed84af1ea55fb6, type: 3}
+  baseDamage: 2.5
+  grades:
+  - value: 5
+    currency:
+      type: 0
+      amount: 500
+  - value: 2.5
+    currency:
+      type: 0
+      amount: 1000
+  - value: 2.5
+    currency:
+      type: 0
+      amount: 2000
+  - value: 5
+    currency:
+      type: 0
+      amount: 2500
+  - value: 2.5
+    currency:
+      type: 0
+      amount: 2750
+  - value: 2.5
+    currency:
+      type: 0
+      amount: 3000
+  - value: 2.5
+    currency:
+      type: 0
+      amount: 3500
+  - value: 2.5
+    currency:
+      type: 0
+      amount: 4000
+  localization:
+    m_TableReference:
+      m_TableCollectionName: GUID:8619bfd9e5fe0414b9f73468164ab419
+    m_TableEntryReference:
+      m_KeyId: 30424432640
+      m_Key: 
+    m_FallbackState: 0
+    m_WaitForCompletion: 0
+    m_LocalVariables: []
+  references:
+    version: 2
+    RefIds: []

@@ -7,7 +7,6 @@ namespace Game.Grades.AllyCharacters
     /// <summary>
     /// Конфиг грейдов кол-ва союзных юнитов ближнего боя
     /// </summary>
-    [CreateAssetMenu(menuName = "Upgrades/CharacterParameters/AllyMelee/CountGrades", fileName = "AllyMeleeCountGrades")]
     public class AllyMeleeCountGrades: AllyCharacterCountGrades
     {
         protected override string SaveKey => "AllyMeleeCountGradeIndex";

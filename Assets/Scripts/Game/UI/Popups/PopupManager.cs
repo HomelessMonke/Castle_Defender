@@ -1,9 +1,7 @@
 ﻿using System;
-using Game.UI;
-using Game.UI.Popups;
 using UnityEngine;
 
-namespace Game.Popups
+namespace Game.UI.Popups
 {
     public class PopupManager : MonoBehaviour
     {

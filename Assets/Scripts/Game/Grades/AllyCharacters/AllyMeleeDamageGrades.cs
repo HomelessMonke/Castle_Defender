@@ -5,11 +5,11 @@ using Utilities.Attributes;
 namespace Game.Grades.AllyCharacters
 {
     /// <summary>
-    /// Конфиг грейдов урона союзных лучников
+    /// Конфиг грейдов урона союзных мечников
     /// </summary>
-    public class AllyArchersDamageGrades: AllyCharacterDamageGrades
+    public class AllyMeleeDamageGrades: AllyCharacterDamageGrades
     {
-        protected override string SaveKey => "AllyArchersDamageGradeIndex";
+        protected override string SaveKey => "AllyMeleeDamageGradesIndex";
 
         [Button(runtimeOnly:true)]
         public override void Upgrade()

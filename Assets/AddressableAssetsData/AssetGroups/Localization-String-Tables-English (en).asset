@@ -15,6 +15,12 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: 2726e9b44098f5a4ebeda3c0239c0d89
   m_SerializeEntries:
+  - m_GUID: 68ab0b8a6e044044d8f90038a3874f3a
+    m_Address: PausePopup_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 9cc8b3683cc808a48a8df84d42f1697f
     m_Address: AllyKnightUpgrades_en
     m_ReadOnly: 1
@@ -23,12 +29,6 @@ MonoBehaviour:
     FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: a021ccc1cf80e004690aff5c2decdbaf
     m_Address: StartWavePopup_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
-    FlaggedDuringContentUpdateRestriction: 0
-  - m_GUID: 68ab0b8a6e044044d8f90038a3874f3a
-    m_Address: PausePopup_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en

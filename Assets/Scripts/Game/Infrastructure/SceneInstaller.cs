@@ -1,5 +1,5 @@
 ﻿using System;
-using Game.Popups;
+using Game.UI.Popups;
 using Game.UI.Popups.StartWavePopupSpace;
 using Game.UI.Popups.PausePopupSpace;
 using Game.UI.Popups.UpgradesPopupSpace;

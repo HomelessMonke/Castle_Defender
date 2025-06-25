@@ -1,4 +1,3 @@
-using Game.Popups;
 using Zenject;
 
 namespace Game.UI.Popups.PausePopupSpace
