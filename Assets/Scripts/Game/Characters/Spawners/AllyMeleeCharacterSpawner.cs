@@ -16,6 +16,7 @@ namespace Game.Characters.Spawners
         void Start()
         {
             signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnArchersCountIncreased);
+            signalBus.Subscribe<AllyMeleeDamageUpgradeSignal>(OnDamageIncreased);
         }
 
         public override void Init()
@@ -50,6 +51,16 @@ namespace Game.Characters.Spawners
             UpdateUnitsPositions(positions);
             var newArchersPositions = positions.TakeLast(signal.AddCount);
             SpawnUnitsAtPositions(newArchersPositions);
+        }
+        
+        void OnDamageIncreased()
+        {
+            var damage = parameters.Damage;
+            Debug.Log($"AllyMeleeDamage = {damage}");
+            foreach (var unit in units)
+            {
+                unit.SetAttackParameter(damage);
+            }
         }
     }
 }

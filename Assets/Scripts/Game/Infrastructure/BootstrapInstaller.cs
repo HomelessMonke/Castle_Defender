@@ -44,6 +44,7 @@ namespace Game.Infrastructure
             SignalBusInstaller.Install(Container);
             Container.DeclareSignal<AllyArchersDamageUpgradeSignal>();
             Container.DeclareSignal<AllyArchersCountUpgradeSignal>();
+            Container.DeclareSignal<AllyMeleeDamageUpgradeSignal>();
             Container.DeclareSignal<AllyMeleeCountUpgradeSignal>();
             Container.DeclareSignal<CastleHealthUpgradeSignal>();
             Container.DeclareSignal<DespawnEnemySignal>();

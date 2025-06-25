@@ -51,9 +51,10 @@ namespace Game.Characters.Spawners
         void OnArchersDamageIncreased(AllyArchersDamageUpgradeSignal signal)
         {
             var damage = parameters.Damage;
-            foreach (var archer in units)
+            Debug.Log($"AllyArchersDamage = {damage}");
+            foreach (var unit in units)
             {
-                archer.SetAttackParameter(damage);
+                unit.SetAttackParameter(damage);
             }
         }
     }

@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Game.Characters.Attacks
+﻿namespace Game.Characters.Attacks
 {
     public class MeleeAttack: IAttack
     {

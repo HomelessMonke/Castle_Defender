@@ -15,6 +15,6 @@ MonoBehaviour:
   countGrades: {fileID: 11400000, guid: d2b0d624c466cc048a9bdbbbb58bb7af, type: 2}
   maxInLineCount: 14
   hp: 20
-  attackPoints: 4
-  moveDirection: {x: 1.25, y: 0}
+  damageGrades: {fileID: 11400000, guid: 2d423a22dbcb9104b9975c282d8a93c3, type: 2}
+  moveVector: {x: 2, y: 0}
   attackDistance: 0.6

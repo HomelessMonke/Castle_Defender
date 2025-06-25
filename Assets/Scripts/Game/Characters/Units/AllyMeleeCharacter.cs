@@ -26,8 +26,13 @@ namespace Game.Characters.Units
         NavMeshAgent agent;
         
         [SerializeField]
+        int updatePathPerFrame = 10;
+        
+#if UNITY_EDITOR
+        [SerializeField]
         Color pathLineColor = Color.blue;
-
+#endif
+        
         [SerializeField]
         DamageFlash damageFlash;
         
@@ -48,7 +53,7 @@ namespace Game.Characters.Units
             
             idleState = new AnimatedIdleState(characterAnimator.Animator);
             noneTargetMoveState = new NoneTargetMoveState(transform, characterAnimator.Animator);
-            targetMoveState = new TargetMoveState(agent, characterAnimator.Animator);
+            targetMoveState = new TargetMoveState(agent, characterAnimator.Animator, updatePathPerFrame);
             targetMoveState.ArrivedToTarget += OnArrivedToTarget;
             
             fieldOfView.TargetChanged += OnTargetChanged;
@@ -62,10 +67,15 @@ namespace Game.Characters.Units
             health.Died += OnDeath;
 
             fieldOfView.Init(transform);
-            noneTargetMoveState.Init(parameters.MoveDirection);
-            targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
-            attackState.Init(parameters.AttackPoints);
+            noneTargetMoveState.Init(parameters.MoveVector);
+            targetMoveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
+            SetAttackParameter(parameters.Damage);
             SetState(idleState);
+        }
+        
+        public void SetAttackParameter(float damage)
+        {
+            attackState.Init(damage);
         }
         
         void OnGetDamage()
@@ -88,7 +98,9 @@ namespace Game.Characters.Units
             {
                 currentState.Update();
             }
+#if UNITY_EDITOR
             Debug.DrawLine(transform.position, agent.destination, pathLineColor);
+#endif
         }
 
         void OnTargetChanged(Transform target)

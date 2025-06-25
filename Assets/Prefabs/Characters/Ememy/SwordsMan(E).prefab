@@ -280,7 +280,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2137269318669401915
 Transform:
   m_ObjectHideFlags: 0
@@ -427,6 +427,7 @@ MonoBehaviour:
   healthView: {fileID: 836918250081237646}
   agent: {fileID: 1610290838426017790}
   pathLineColor: {r: 1, g: 0, b: 0, a: 1}
+  updatePathPerFrame: 8
   damageFlash: {fileID: 6471174509453400754}
 --- !u!1 &4487463840025273662
 GameObject:

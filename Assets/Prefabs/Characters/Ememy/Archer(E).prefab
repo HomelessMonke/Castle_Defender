@@ -394,6 +394,7 @@ MonoBehaviour:
   health: {fileID: 897571594082543944}
   healthView: {fileID: 7376855907337040070}
   agent: {fileID: 956961722799384660}
+  updatePathPerFrame: 15
   pathLineColor: {r: 0.73635197, g: 0, b: 1, a: 1}
   damageFlash: {fileID: 9117760756905823504}
 --- !u!195 &956961722799384660

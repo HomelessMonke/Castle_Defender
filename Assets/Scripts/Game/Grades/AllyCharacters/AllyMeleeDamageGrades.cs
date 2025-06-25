@@ -1,4 +1,4 @@
-﻿using Game.Signals.AllyArcher;
+﻿using Game.Signals.AllyMelee;
 using UnityEngine;
 using Utilities.Attributes;
 
@@ -16,7 +16,7 @@ namespace Game.Grades.AllyCharacters
         {
             gradeIndex = Mathf.Min(gradeIndex+1, grades.Length-1);
             UpdateDamageValue();
-            signalBus.Fire(new AllyArchersDamageUpgradeSignal());
+            signalBus.Fire(new AllyMeleeDamageUpgradeSignal());
         }
     }
 }

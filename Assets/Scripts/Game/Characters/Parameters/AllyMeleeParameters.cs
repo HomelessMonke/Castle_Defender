@@ -1,5 +1,6 @@
 ﻿using Game.Grades.AllyCharacters;
 using UnityEngine;
+using UnityEngine.Serialization;
 
 namespace Game.Characters.Parameters
 {
@@ -16,19 +17,19 @@ namespace Game.Characters.Parameters
         int hp = 20;
 
         [SerializeField]
-        int attackPoints = 4;
+        AllyMeleeDamageGrades damageGrades;
 
         [SerializeField]
-        Vector2 moveDirection = new (2, 0);
+        Vector2 moveVector = new (2, 0);
         
         [SerializeField]
         float attackDistance = 0.5f;
         
         public int MeleeCount => countGrades.CharactersCount;
         public int MaxInLineCount => maxInLineCount;
-        public Vector2 MoveDirection => moveDirection;
-        public float Speed => Mathf.Abs(moveDirection.x);
-        public int AttackPoints => attackPoints;
+        public Vector2 MoveVector => moveVector;
+        public float MoveSpeed => Mathf.Abs(moveVector.x);
+        public float Damage => damageGrades.Damage;
         public float AttackDistance => attackDistance;
         public int Hp => hp;
     }

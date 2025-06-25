@@ -8,21 +8,23 @@ namespace Game.Characters.States
     {
         Animator animator;
         NavMeshAgent agent;
-        Transform agentTransform;
         Transform targetObj;
         bool canSelfEnter;
+        int updatePathPerFrame;
+
+        int currentFrameNumber;
         
         bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
         public bool CanSelfEnter => canSelfEnter;
         
         public event UnityAction<Transform> ArrivedToTarget;
         
-        public TargetMoveState(NavMeshAgent agent, Animator animator, bool canSelfEnter = false)
+        public TargetMoveState(NavMeshAgent agent, Animator animator, int updatePathPerFrame, bool canSelfEnter = false)
         {
             this.agent = agent;
             this.animator = animator;
-            agentTransform = agent.transform;
             this.canSelfEnter = canSelfEnter;
+            this.updatePathPerFrame = updatePathPerFrame;
         }
 
         public void Init(float speed, float stoppingDistance)
@@ -57,6 +59,13 @@ namespace Game.Characters.States
         
         public void Update()
         {
+            currentFrameNumber++;
+            if (currentFrameNumber >= updatePathPerFrame)
+            {
+                agent.SetDestination(targetObj.position);
+                currentFrameNumber = 0;
+            }
+            
             if (IsArrivedToTarget)
                 ArrivedToTarget?.Invoke(targetObj);
         }

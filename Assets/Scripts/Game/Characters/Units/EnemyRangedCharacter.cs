@@ -32,10 +32,14 @@ namespace Game.Characters.Units
         
         [SerializeField]
         NavMeshAgent agent;
-        
+
+        [SerializeField]
+        int updatePathPerFrame = 10;
+
+#if UNITY_EDITOR
         [SerializeField]
         Color pathLineColor = Color.red;
-
+#endif
         [SerializeField]
         DamageFlash damageFlash;
         
@@ -50,7 +54,7 @@ namespace Game.Characters.Units
         void Awake()
         {
             noneTargetMoveState = new NoneTargetMoveState(transform, characterAnimator.Animator);
-            targetMoveState = new TargetMoveState(agent, characterAnimator.Animator);
+            targetMoveState = new TargetMoveState(agent, characterAnimator.Animator, updatePathPerFrame);
             targetMoveState.ArrivedToTarget += OnArrivedToTarget;
             
             rangedAttack = new RangedAttack(projSpawnPos, animationData);
@@ -86,7 +90,9 @@ namespace Game.Characters.Units
             {
                 currentState.Update();
             }
+#if UNITY_EDITOR
             Debug.DrawLine(transform.position, agent.destination, pathLineColor);
+#endif
         }
 
         void UpdateTarget(Transform target)

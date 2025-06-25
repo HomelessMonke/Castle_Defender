@@ -6470,10 +6470,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: SwordsManSkeleton(E)
       objectReference: {fileID: 0}
-    - target: {fileID: 4483097558059183312, guid: 2af2064cb378a314180283d3aa2fe233, type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
