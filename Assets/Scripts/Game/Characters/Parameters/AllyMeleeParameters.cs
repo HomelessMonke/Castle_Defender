@@ -14,7 +14,7 @@ namespace Game.Characters.Parameters
         int maxInLineCount;
         
         [SerializeField]
-        int hp = 20;
+        AllyMeleeHealthGrades healthGrades;
 
         [SerializeField]
         AllyMeleeDamageGrades damageGrades;
@@ -31,6 +31,6 @@ namespace Game.Characters.Parameters
         public float MoveSpeed => Mathf.Abs(moveVector.x);
         public float Damage => damageGrades.Damage;
         public float AttackDistance => attackDistance;
-        public int Hp => hp;
+        public float HealthPoints => healthGrades.HealthPoints;
     }
 }

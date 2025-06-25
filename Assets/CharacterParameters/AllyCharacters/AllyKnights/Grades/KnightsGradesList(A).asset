@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   parametersToUpgrade:
   - {fileID: 11400000, guid: d2b0d624c466cc048a9bdbbbb58bb7af, type: 2}
+  - {fileID: 11400000, guid: 65a2fe6ed4eb56b439dc83fe554684f8, type: 2}
   - {fileID: 11400000, guid: 2d423a22dbcb9104b9975c282d8a93c3, type: 2}
   headerLocalization:
     m_TableReference:

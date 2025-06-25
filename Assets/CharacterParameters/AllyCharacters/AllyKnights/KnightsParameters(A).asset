@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: KnightsParameters(A)
   m_EditorClassIdentifier: 
   countGrades: {fileID: 11400000, guid: d2b0d624c466cc048a9bdbbbb58bb7af, type: 2}
-  maxInLineCount: 14
-  hp: 20
+  maxInLineCount: 12
+  healthGrades: {fileID: 11400000, guid: 65a2fe6ed4eb56b439dc83fe554684f8, type: 2}
   damageGrades: {fileID: 11400000, guid: 2d423a22dbcb9104b9975c282d8a93c3, type: 2}
   moveVector: {x: 2, y: 0}
   attackDistance: 0.6

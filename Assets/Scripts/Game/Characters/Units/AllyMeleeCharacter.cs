@@ -62,7 +62,7 @@ namespace Game.Characters.Units
         public void Init(AllyMeleeParameters parameters)
         {
             healthView.SetActive(false);
-            health.Init(parameters.Hp);
+            health.Init(parameters.HealthPoints);
             health.DamageTaken += (_)=> OnGetDamage();
             health.Died += OnDeath;
 
@@ -71,6 +71,11 @@ namespace Game.Characters.Units
             targetMoveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
             SetAttackParameter(parameters.Damage);
             SetState(idleState);
+        }
+
+        public void SetHealthPoints(float healthPoints)
+        {
+            health.SetHealth(healthPoints);
         }
         
         public void SetAttackParameter(float damage)

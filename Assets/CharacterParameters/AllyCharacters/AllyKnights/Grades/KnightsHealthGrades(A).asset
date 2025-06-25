@@ -9,49 +9,37 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41b4c489a9554a15a42e23d86984ff1c, type: 3}
-  m_Name: KnightsDamageGrades(A)
+  m_Script: {fileID: 11500000, guid: 756a37dc246947a2bb876badbb927bcd, type: 3}
+  m_Name: KnightsHealthGrades(A)
   m_EditorClassIdentifier: 
-  sprite: {fileID: -1400734978927520801, guid: 92148c92e69f598428ed84af1ea55fb6, type: 3}
-  baseDamage: 2.5
+  sprite: {fileID: -3450657354816585775, guid: 748871726d8f19040a5ff403391bd059, type: 3}
+  defaultValue: 20
   grades:
-  - value: 5
-    currency:
-      type: 0
-      amount: 500
-  - value: 7.5
-    currency:
-      type: 0
-      amount: 1000
   - value: 10
     currency:
       type: 0
-      amount: 2000
+      amount: 250
   - value: 15
     currency:
       type: 0
-      amount: 2500
-  - value: 17.5
-    currency:
-      type: 0
-      amount: 2750
-  - value: 20
-    currency:
-      type: 0
-      amount: 3000
+      amount: 500
   - value: 22.5
     currency:
       type: 0
-      amount: 3500
+      amount: 1000
   - value: 25
     currency:
       type: 0
-      amount: 4000
+      amount: 1500
+  - value: 30
+    currency:
+      type: 0
+      amount: 2000
   localization:
     m_TableReference:
       m_TableCollectionName: GUID:8619bfd9e5fe0414b9f73468164ab419
     m_TableEntryReference:
-      m_KeyId: 30424432640
+      m_KeyId: 480961761378304
       m_Key: 
     m_FallbackState: 0
     m_WaitForCompletion: 0

@@ -20,8 +20,8 @@ namespace Game.Grades
         
         protected abstract string SaveKey { get; }
         public abstract bool IsCompleted { get; }
-        public abstract string LocalizedDescription { get; }
         public abstract CurrencyItem CurrencyToUpgrade { get; }
+        public abstract string LocalizedDescription { get; }
         
         public virtual void Init(SignalBus signalBus)
         {

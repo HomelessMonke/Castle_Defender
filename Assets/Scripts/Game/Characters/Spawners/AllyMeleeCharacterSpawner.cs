@@ -15,6 +15,7 @@ namespace Game.Characters.Spawners
 
         void Start()
         {
+            signalBus.Subscribe<AllyMeleeHealthUpgradeSignal>(OnHealthPointsIncreased);
             signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnArchersCountIncreased);
             signalBus.Subscribe<AllyMeleeDamageUpgradeSignal>(OnDamageIncreased);
         }
@@ -60,6 +61,16 @@ namespace Game.Characters.Spawners
             foreach (var unit in units)
             {
                 unit.SetAttackParameter(damage);
+            }
+        }
+        
+        void OnHealthPointsIncreased()
+        {
+            var hp = parameters.HealthPoints;
+            Debug.Log($"AllyMeleeHealth = {hp}");
+            foreach (var unit in units)
+            {
+                unit.SetHealthPoints(hp);
             }
         }
     }
