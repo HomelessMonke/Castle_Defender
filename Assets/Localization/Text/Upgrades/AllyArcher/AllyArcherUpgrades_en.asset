@@ -19,11 +19,11 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 165636210688
-    m_Localized: Increase the number of archers by {0}.
+    m_Localized: Increase quantity of archers by {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 1379939759685632
-    m_Localized: Increase archers damage by {0}%
+    m_Localized: Increase damage by {0}%
     m_Metadata:
       m_Items: []
   - m_Id: 8857957113528320

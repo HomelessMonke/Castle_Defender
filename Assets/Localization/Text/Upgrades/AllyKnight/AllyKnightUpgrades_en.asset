@@ -19,15 +19,19 @@ MonoBehaviour:
     m_Items: []
   m_TableData:
   - m_Id: 179817152512
-    m_Localized: Swordsmens
+    m_Localized: Swordsmen
     m_Metadata:
       m_Items: []
   - m_Id: 5782896640
-    m_Localized: Increase the number of swordsmens by {0}.
+    m_Localized: Increase quantity of swordsmen by {0}.
     m_Metadata:
       m_Items: []
   - m_Id: 30424432640
-    m_Localized: Increase swordsmens damage by {0}%
+    m_Localized: Increase damage by {0}%
+    m_Metadata:
+      m_Items: []
+  - m_Id: 480961761378304
+    m_Localized: Increase health points by {0}.
     m_Metadata:
       m_Items: []
   references:
