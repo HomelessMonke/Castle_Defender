@@ -8,7 +8,6 @@ using Zenject;
 
 namespace Game.Grades.AllyCharacters
 {
-    [CreateAssetMenu(menuName = "Grades/AllyMeleeHealthGrades", fileName = "AllyMeleeHealthGrades")]
     public class AllyMeleeHealthGrades: ParameterGrades
     {
         [SerializeField]
