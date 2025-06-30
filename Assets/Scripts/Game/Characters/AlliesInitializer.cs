@@ -50,7 +50,6 @@ namespace Game.Characters
         
         void OnWaveFinished()
         {
-            castle.RestoreHealth();
             allyMeleeSpawner.RestoreUnits();
         }
     }

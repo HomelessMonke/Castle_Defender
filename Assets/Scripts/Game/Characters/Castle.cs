@@ -1,5 +1,6 @@
 using System;
 using Game.Characters.Parameters;
+using Game.Signals;
 using Game.Signals.Castle;
 using Game.UI;
 using UnityEngine;
@@ -38,6 +39,8 @@ namespace Game.Characters
 
         void Start()
         {
+            signalBus.Subscribe<LaunchWaveSignal>(OnWaveLaunched);
+            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
             signalBus.Subscribe<CastleHealthUpgradeSignal>(OnHpUpgrade);
         }
 
@@ -58,15 +61,21 @@ namespace Game.Characters
             hpView.Draw(health);
         }
 
-        public void RestoreHealth()
-        {
-            health.RestoreHealth();
-            hpView.Draw(health);
-        }
-
         void OnHpUpgrade(CastleHealthUpgradeSignal signal)
         {
             health.SetHealth(parameters.HP);
+            hpView.Draw(health);
+        }
+
+        void OnWaveLaunched()
+        {
+            health.SetImmortal(false);
+        }
+
+        void OnWaveFinished()
+        {
+            health.SetImmortal(true);
+            health.RestoreHealth();
             hpView.Draw(health);
         }
 
