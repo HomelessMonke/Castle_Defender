@@ -1,4 +1,5 @@
 ﻿using DG.Tweening;
+using Game.Characters.Units;
 using UnityEngine;
 
 namespace Game.Characters.Projectiles
@@ -6,9 +7,8 @@ namespace Game.Characters.Projectiles
 
     public class Arrow: Projectile 
     {
-        public override void Launch(Health target, ProjectileAnimationData animationData, float damage, float speed)
+        public override void Launch(ProjectileAnimationData animationData, float damage, float speed)
         {
-            this.target = target;
             var yOffset = animationData.YOffset;
             var yCurve = animationData.YCurve;
             var xCurve = animationData.XCurve;
@@ -16,7 +16,7 @@ namespace Game.Characters.Projectiles
             Vector2 previousPosition = startPosition;
             
             transform.LookAt(Vector2.Lerp(startPosition, targetPos, 0.01f));
-            float distance = Vector2.Distance(startPosition, target.transform.position);
+            float distance = Vector2.Distance(startPosition, targetPos);
             float duration = distance / speed;
             DOTween.To(() => (float)0, x =>
             {
@@ -30,16 +30,16 @@ namespace Game.Characters.Projectiles
                 float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
                 transform.rotation = Quaternion.Euler(0, 0, angle);
                 previousPosition = currentPosition;
-            }, 1, duration).OnComplete(()=> OnFlew(damage));
+            }, 1, duration).OnComplete(()=> OnFlew(damage)).SetAutoKill(true);
         }
 
         void OnFlew(float damage)
         {
-            if (target && target.IsAlive)
+            if (!TargetMissed)
             {
-                target.GetDamage(damage);
+                target.HealthComponent.GetDamage(damage);
             }
-            InvokeHit();
+            OnFlew();
         }
     }
 }

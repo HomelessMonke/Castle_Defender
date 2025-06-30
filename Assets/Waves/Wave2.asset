@@ -30,11 +30,11 @@ MonoBehaviour:
       type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:
         maxOffsetX: 0.329
-        maxOffsetY: 0.306
+        maxOffsetY: 0.35
     - rid: 6397389247852576896
       type: {class: CrescentFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:
         facingLeft: 0
-        lineSpacing: 0.5
-        angleRangeDegrees: 90
-        baseRadius: 0
+        lineSpacing: 0.601
+        angleRangeDegrees: 180
+        baseRadius: 0.3

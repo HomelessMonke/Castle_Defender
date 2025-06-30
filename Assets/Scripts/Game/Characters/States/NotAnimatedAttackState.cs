@@ -72,7 +72,7 @@ namespace Game.Characters.States
                 return;
             }
             
-            attackVariation.Attack(damage, target.HealthComponent);
+            attackVariation.Attack(damage, target);
             timer.Restart();
         }
     }

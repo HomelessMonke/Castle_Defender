@@ -1,6 +1,6 @@
-﻿using System;
-using Game.Characters.Projectiles;
+﻿using Game.Characters.Projectiles;
 using Game.Characters.Spawners;
+using Game.Characters.Units;
 using UnityEngine;
 
 namespace Game.Characters.Attacks
@@ -24,10 +24,11 @@ namespace Game.Characters.Attacks
             this.projectileSpeed = projectileSpeed;
         }
         
-        public void Attack(float damage, Health targetHP)
+        public void Attack(float damage, IDamageable target)
         {
             var projectile = spawner.Spawn(projSpawnPos.position);
-            projectile.Launch(targetHP, animationData, damage, projectileSpeed);
+            projectile.Init(target);
+            projectile.Launch(animationData, damage, projectileSpeed);
         }
     }
 }

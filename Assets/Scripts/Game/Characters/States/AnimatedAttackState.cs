@@ -59,7 +59,7 @@ namespace Game.Characters.States
             if (TargetMissed)
                 LoseTargetToAttack?.Invoke();
             
-            attackVariation.Attack(damage, target.HealthComponent);
+            attackVariation.Attack(damage, target);
         }
     }
 }

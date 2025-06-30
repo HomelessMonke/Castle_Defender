@@ -1,24 +1,37 @@
 ﻿using System;
+using Game.Characters.Units;
 using UnityEngine;
 
 namespace Game.Characters.Projectiles
 {
     public abstract class Projectile: MonoBehaviour
     {
-        protected Health target;
+        protected IDamageable target;
         protected Vector2 targetPos;
-        
-        public event Action Hit;
+        Transform targetTransform;
+        string targetId;
 
-        public abstract void Launch(Health target, ProjectileAnimationData animationData, float damage, float speed);
+        protected bool TargetMissed => target == null || !target.IsAlive || !target.Id.Equals(targetId);
+        
+        public event Action Flew;
+
+        public abstract void Launch(ProjectileAnimationData animationData, float damage, float speed);
+
+        public void Init(IDamageable target)
+        {
+            this.target = target;
+            targetTransform = target.Transform;
+            targetPos = targetTransform.position;
+            targetId = target.Id;
+        }
 
         void Update()
         {
-            if (target)
+            if (target != null)
             {
-                if (target.IsAlive)
+                if (!TargetMissed)
                 {
-                    targetPos = target.transform.position;
+                    targetPos = targetTransform.position;
                     return;
                 }
 
@@ -26,16 +39,18 @@ namespace Game.Characters.Projectiles
             }
         }
 
-        protected void InvokeHit()
+        protected void OnFlew()
         {
-            Hit?.Invoke();
+            Flew?.Invoke();
             Reset();
         }
 
         void Reset()
         {
             target = null;
-            Hit = null;
+            targetTransform = null;
+            targetId = String.Empty;
+            Flew = null;
         }
     }
 }
