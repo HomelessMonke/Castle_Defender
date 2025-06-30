@@ -10,7 +10,7 @@ using UnityEngine.Events;
 namespace Game.Characters.Units
 {
     [RequireComponent(typeof(Health))]
-    public class EnemyRangedCharacter: Character
+    public class EnemyRangedCharacter: Character, IDamageable
     {
         [SerializeField]
         CharacterAnimator characterAnimator;
@@ -49,6 +49,13 @@ namespace Game.Characters.Units
         NoneTargetMoveState noneTargetMoveState;
         TargetMoveState targetMoveState;
         
+        string id;
+        
+        public string Id => id;
+        public bool IsAlive => health.IsAlive;
+        public Transform Transform => transform;
+        public Health HealthComponent => health;
+        
         public event UnityAction Died;
         
         void Awake()
@@ -60,17 +67,18 @@ namespace Game.Characters.Units
             rangedAttack = new RangedAttack(projSpawnPos, animationData);
             attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
             attackState.LoseTargetToAttack += OnLoseTargetToAttack;
-            fov.TargetChanged += UpdateTarget;
+            fov.TargetUpdated += UpdateTarget;
         }
 
-        public void Init(EnemyRangedParameters parameters, ProjectileSpawner projSpawner)
+        public void Init(string id, EnemyRangedParameters parameters, ProjectileSpawner projSpawner)
         {
+            this.id = id;
             healthView.SetActive(false);
             health.Init(parameters.Hp);
             health.DamageTaken += (_)=> OnGetDamage();
             health.Died += OnDeath;
 
-            fov.Init(transform);
+            fov.Init();
             rangedAttack.Init(parameters.ProjectileSpeed, projSpawner);
             noneTargetMoveState.Init(parameters.MoveDirection);
             targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
@@ -95,11 +103,11 @@ namespace Game.Characters.Units
 #endif
         }
 
-        void UpdateTarget(Transform target)
+        void UpdateTarget(IDamageable target)
         {
-            if (target && target.gameObject.activeSelf)
+            if (target != null && target.IsAlive)
             {
-                var targetDistance = Vector2.Distance(transform.position, target.position);
+                var targetDistance = Vector2.Distance(transform.position, target.Transform.position);
                 if (targetDistance > agent.stoppingDistance)
                 {
                     SetMoveState(target);
@@ -115,28 +123,27 @@ namespace Game.Characters.Units
             SetMoveState();
         }
         
-        void SetMoveState(Transform target = null)
+        void SetMoveState(IDamageable target = null)
         {
-            IState state = target? targetMoveState : noneTargetMoveState;
+            IState state = target != null ? targetMoveState : noneTargetMoveState;
             SetState(state);
         }
         
-        bool TrySetAttackState(Transform target)
+        bool TrySetAttackState(IDamageable target)
         {
-            if (!target)
+            if (target == null)
                 return false;
-                
-            var targetHP = target.GetComponent<Health>();
-            if (targetHP && targetHP.IsAlive)
+            
+            if (target.HealthComponent && target.IsAlive)
             {
-                attackState.SetTarget(targetHP);
+                attackState.SetTarget(target);
                 SetState(attackState);
                 return true;
             }
             return false;
         }
         
-        void OnArrivedToTarget(Transform target)
+        void OnArrivedToTarget(IDamageable target)
         {
             if(!TrySetAttackState(target))
             {
@@ -146,7 +153,7 @@ namespace Game.Characters.Units
         
         void OnLoseTargetToAttack()
         {
-            UpdateTarget(fov.CurrentTarget);
+            fov.UpdateTarget();
         }
 
         void OnDeath()

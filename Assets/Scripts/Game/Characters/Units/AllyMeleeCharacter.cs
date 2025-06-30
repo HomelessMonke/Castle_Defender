@@ -8,7 +8,7 @@ using UnityEngine.Events;
 namespace Game.Characters.Units
 {
     [RequireComponent(typeof(Health))]
-    public class AllyMeleeCharacter: Character
+    public class AllyMeleeCharacter: Character, IDamageable
     {
         [SerializeField]
         CharacterFieldOfView fieldOfView;
@@ -35,6 +35,8 @@ namespace Game.Characters.Units
         
         [SerializeField]
         DamageFlash damageFlash;
+
+        string id;
         
         MeleeAttack meleeAttack;
         
@@ -42,6 +44,11 @@ namespace Game.Characters.Units
         NoneTargetMoveState noneTargetMoveState;
         TargetMoveState targetMoveState;
         AnimatedAttackState attackState;
+
+        public string Id => id;
+        public bool IsAlive => health.IsAlive;
+        public Health HealthComponent => health;
+        public Transform Transform => transform;
         
         public event UnityAction Died;
         
@@ -56,17 +63,18 @@ namespace Game.Characters.Units
             targetMoveState = new TargetMoveState(agent, characterAnimator.Animator, updatePathPerFrame);
             targetMoveState.ArrivedToTarget += OnArrivedToTarget;
             
-            fieldOfView.TargetChanged += OnTargetChanged;
+            fieldOfView.TargetUpdated += OnTargetChanged;
         }
 
-        public void Init(AllyMeleeParameters parameters)
+        public void Init(string id, AllyMeleeParameters parameters)
         {
+            this.id = id;
             healthView.SetActive(false);
             health.Init(parameters.HealthPoints);
             health.DamageTaken += (_)=> OnGetDamage();
             health.Died += OnDeath;
 
-            fieldOfView.Init(transform);
+            fieldOfView.Init();
             noneTargetMoveState.Init(parameters.MoveVector);
             targetMoveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
             SetAttackParameter(parameters.Damage);
@@ -113,11 +121,11 @@ namespace Game.Characters.Units
 #endif
         }
 
-        void OnTargetChanged(Transform target)
+        void OnTargetChanged(IDamageable target)
         {
-            if (target && target.gameObject.activeSelf)
+            if (target != null && target.IsAlive)
             {
-                var targetDistance = Vector2.Distance(transform.position, target.position);
+                var targetDistance = Vector2.Distance(transform.position, target.Transform.position);
                 if (targetDistance > agent.stoppingDistance)
                 {
                     SetMoveState(target);
@@ -133,7 +141,7 @@ namespace Game.Characters.Units
             SetMoveState();
         }
 
-        void OnArrivedToTarget(Transform target)
+        void OnArrivedToTarget(IDamageable target)
         {
             if(!TrySetAttackState(target))
             {
@@ -141,9 +149,9 @@ namespace Game.Characters.Units
             }
         }
         
-        void SetMoveState(Transform target = null)
+        void SetMoveState(IDamageable target = null)
         {
-            if (target)
+            if (target != null)
             {
                 targetMoveState.SwitchTarget(target);
                 SetState(targetMoveState);
@@ -153,15 +161,14 @@ namespace Game.Characters.Units
             SetState(noneTargetMoveState);
         }
         
-        bool TrySetAttackState(Transform target)
+        bool TrySetAttackState(IDamageable target)
         {
-            if (!target)
+            if (target == null)
                 return false;
                 
-            var targetHP = target.GetComponent<Health>();
-            if (targetHP && targetHP.IsAlive)
+            if (target.IsAlive)
             {
-                attackState.SetTarget(targetHP);
+                attackState.SetTarget(target);
                 SetState(attackState);
                 return true;
             }
@@ -170,7 +177,7 @@ namespace Game.Characters.Units
         
         void OnLoseTargetToAttack()
         {
-            OnTargetChanged(fieldOfView.CurrentTarget);
+            fieldOfView.UpdateTarget();
         }
         
         void OnDeath()

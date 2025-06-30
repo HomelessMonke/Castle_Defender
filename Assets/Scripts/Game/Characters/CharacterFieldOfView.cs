@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using Game.Characters.Units;
 using UnityEngine;
 using UnityEngine.Events;
 using Utilities.Extensions;
@@ -10,70 +11,55 @@ namespace Game.Characters
         [SerializeField]
         LayerMask layerMask;
         
-        Transform currentTarget;
-        Transform characterTransform;
-        List<Transform> triggeredObjects = new ();
+        string currentTargetID;
+        IDamageable currentTarget;
+        List<IDamageable> triggeredCharacters = new ();
         
-        public bool HaveTargets => triggeredObjects.Count > 0;
-        
-        public Transform CurrentTarget => currentTarget;
-        
-        public event UnityAction<Transform> TargetChanged;
+        public event UnityAction<IDamageable> TargetUpdated;
 
-        public void Init(Transform characterTransform)
+        public void Init()
         {
-            currentTarget = null;
-            triggeredObjects.Clear();
-            this.characterTransform = characterTransform;
+            ResetTarget();
+            triggeredCharacters.Clear();
         }
 
-        public void Update()
+        public void UpdateTarget()
         {
-            TryUpdateTarget();
-        }
-
-        void TryUpdateTarget()
-        {
-            var isTargetChanged = false;
-            
-            if(currentTarget && !currentTarget.gameObject.activeSelf)
+            if(currentTarget != null && (!currentTarget.IsAlive || currentTarget.Id != currentTargetID))
             {
-                triggeredObjects.Remove(currentTarget);
-                currentTarget = null;
-                isTargetChanged = true;
+                triggeredCharacters.Remove(currentTarget);
+                ResetTarget();
             }
-            
-            for (int i = triggeredObjects.Count-1; i >=0 ; i--)
-            {
-                var triggeredObj = triggeredObjects[i];
 
-                if (!triggeredObj.gameObject.activeSelf)
+            var fovPos = transform.position;
+            for (int i = triggeredCharacters.Count-1; i >=0 ; i--)
+            {
+                var triggeredObj = triggeredCharacters[i];
+
+                if (!triggeredObj.IsAlive)
                 {
-                    triggeredObjects.Remove(triggeredObj);
+                    triggeredCharacters.Remove(triggeredObj);
                     continue;
                 }
                 
-                if (!currentTarget)
+                if (currentTarget == null)
                 {
-                    currentTarget = triggeredObj;
-                    isTargetChanged = true;
+                    SetTarget(triggeredObj);
                     continue;
                 }
 
-                if (triggeredObjects.Count > 1)
+                if (triggeredCharacters.Count > 1)
                 {
-                    var sqrTargetDistance = (currentTarget.position - characterTransform.position).sqrMagnitude;
-                    var sqrTriggeredObjDistance = (triggeredObj.position - characterTransform.position).sqrMagnitude;
-                    if (sqrTriggeredObjDistance < sqrTargetDistance)
+                    var sqrCurrentTargetDistance = (currentTarget.Transform.position - fovPos).sqrMagnitude;
+                    var sqrTriggeredObjDistance = (triggeredObj.Transform.position - fovPos).sqrMagnitude;
+                    if (sqrTriggeredObjDistance < sqrCurrentTargetDistance)
                     {
-                        currentTarget = triggeredObj;
-                        isTargetChanged = true;
+                        SetTarget(triggeredObj);
                     }
                 }
             }
             
-            if(isTargetChanged)
-                TargetChanged?.Invoke(currentTarget);
+            TargetUpdated?.Invoke(currentTarget);
         }
 
         void OnTriggerEnter2D(Collider2D other)
@@ -81,13 +67,27 @@ namespace Game.Characters
             var otherObj = other.gameObject;
             if (layerMask.Contains(otherObj.layer))
             {
-                if (!triggeredObjects.Contains(otherObj.transform))
+                var character = otherObj.GetComponent<IDamageable>();
+                if (!triggeredCharacters.Contains(character))
                 {
-                    triggeredObjects.Add(otherObj.transform);
+                    triggeredCharacters.Add(character);
+                    UpdateTarget();
                 }
             }
         }
-        
+
+        void ResetTarget()
+        {
+            currentTarget = null;
+            currentTargetID = string.Empty;
+        }
+
+        void SetTarget(IDamageable target)
+        {
+            currentTarget = target;
+            currentTargetID = target.Id;
+        }
+
         void OnTriggerExit2D(Collider2D other)
         {
             if(!gameObject.activeInHierarchy)
@@ -97,13 +97,14 @@ namespace Game.Characters
             if (!layerMask.Contains(otherObj.layer))
                 return;
             
-            triggeredObjects.Remove(otherObj.transform);
-            TryUpdateTarget();     
+            var character = otherObj.GetComponent<IDamageable>();
+            triggeredCharacters.Remove(character);
+            UpdateTarget();     
         }
 
         void OnDestroy()
         {
-            TargetChanged = null;
+            TargetUpdated = null;
         }
     }
 }

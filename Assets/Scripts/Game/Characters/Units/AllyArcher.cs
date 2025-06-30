@@ -1,12 +1,9 @@
-﻿using System;
-using Game.Characters.Attacks;
+﻿using Game.Characters.Attacks;
 using Game.Characters.Parameters;
 using Game.Characters.Projectiles;
 using Game.Characters.Spawners;
 using Game.Characters.States;
-using UnityEditor;
 using UnityEngine;
-using Utilities.Attributes;
 
 namespace Game.Characters.Units
 {
@@ -40,9 +37,10 @@ namespace Game.Characters.Units
             idleState = new AnimatedIdleState(characterAnimator.Animator);
             aimState = new AimAttackState(transform, 10);
             attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
-            attackState.LoseTargetToAttack += OnUpdateTargets;
+            attackState.LoseTargetToAttack += UpdateTarget;
             aimState.AttackTarget += OnAimStateCanAttack;
-            fov.TargetsChanged += OnUpdateTargets;
+            aimState.LoseTargetToAim += UpdateTarget;
+            fov.TargetsUpdated += UpdateTarget;
         }
 
         void Update()
@@ -67,10 +65,10 @@ namespace Game.Characters.Units
             attackState.Init(damage);
         }
 
-        void OnUpdateTargets()
+        void UpdateTarget()
         {
             (var target, bool inRange) = fov.GetRandomTargetInRange(transform.position, attackDistance);
-            if (!target)
+            if (target == null)
             {
                 SetState(idleState);
                 return;
@@ -89,7 +87,7 @@ namespace Game.Characters.Units
             }
         }
 
-        void OnAimStateCanAttack(Health target)
+        void OnAimStateCanAttack(IDamageable target)
         {
             attackState.SetTarget(target);
             SetState(attackState);

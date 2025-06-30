@@ -12,9 +12,12 @@ namespace Game.Characters.States
         IAttack attackVariation;
         Character character;
         CustomTimer timer;
-        
-        Health targetHP;
 
+        IDamageable target;
+        string targetID;
+
+        bool TargetMissed => !target.IsAlive || !targetID.Equals(target.Id);
+        
         public bool CanSelfEnter => false;
         
         public event UnityAction LoseTargetToAttack;
@@ -32,9 +35,10 @@ namespace Game.Characters.States
             timer.SetDuration(attackCD);
         }
 
-        public void SetTarget(Health targetHP)
+        public void SetTarget(IDamageable target)
         {
-            this.targetHP = targetHP;
+            this.target = target;
+            targetID = target.Id;
         }
 
         public void Enter()
@@ -46,7 +50,7 @@ namespace Game.Characters.States
         
         public void Update()
         {
-            if (!targetHP.IsAlive)
+            if (TargetMissed)
             {
                 LoseTargetToAttack?.Invoke();
                 return;
@@ -62,13 +66,13 @@ namespace Game.Characters.States
         
         void Attack()
         {
-            if (!targetHP.IsAlive)
+            if (TargetMissed)
             {
                 LoseTargetToAttack?.Invoke();
                 return;
             }
             
-            attackVariation.Attack(damage, targetHP);
+            attackVariation.Attack(damage, target.HealthComponent);
             timer.Restart();
         }
     }

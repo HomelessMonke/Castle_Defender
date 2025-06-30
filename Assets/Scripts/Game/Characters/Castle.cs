@@ -16,15 +16,15 @@ namespace Game.Characters
         [SerializeField]
         CastleParameters parameters;
         
+        [Header("Участки линии которые принимают урон")]
+        [SerializeField]
+        CastlePart[] parts;
+        
         [SerializeField]
         Health health;
 
         [SerializeField]
         UIHealthView hpView;
-        
-        [Header("Участки линии которые принимают урон")]
-        [SerializeField]
-        Health[] hpAreas;
         
         public event Action Die;
 
@@ -46,12 +46,13 @@ namespace Game.Characters
             health.Init(parameters.HP);
             health.Died -= OnDie;
             health.Died += OnDie;
+            health.DamageTaken -= OnDamageTaken;
+            health.DamageTaken += OnDamageTaken;
 
-            foreach (var hpArea in hpAreas)
+            for (int i = 0; i < parts.Length; i++)
             {
-                hpArea.Init(1, true);
-                hpArea.DamageTaken -= OnDamageTaken;
-                hpArea.DamageTaken += OnDamageTaken;
+                var part = parts[i];
+                part.Init(i, health);
             }
             
             hpView.Draw(health);
@@ -71,7 +72,6 @@ namespace Game.Characters
 
         void OnDamageTaken(float damage)
         {
-            health.GetDamage(damage);
             hpView.Draw(health.CurrentHp, health.Percentage);
         }
         

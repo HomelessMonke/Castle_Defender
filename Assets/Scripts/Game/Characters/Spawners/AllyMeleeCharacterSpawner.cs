@@ -13,6 +13,8 @@ namespace Game.Characters.Spawners
         [Space(20)]
         [SerializeField]
         AllyMeleeParameters parameters;
+        
+        const string idPattern = "AllyMelee{0}";
 
         void Start()
         {
@@ -51,7 +53,8 @@ namespace Game.Characters.Spawners
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPos;
             unit.Died += () => OnUnitDied(unit);
-            unit.Init(parameters);
+            var id = String.Format(idPattern, pool.Counter);
+            unit.Init(id, parameters);
             units.Add(unit);
         }
 

@@ -34,14 +34,20 @@ namespace Game.Characters
         {
             castle.Init();
             towersInitializer.Init();
-            allyDetectionArea.Init(128);
+            allyDetectionArea.Init(100);
             
             allyArchersSpawner.SpawnAllUnits();
             allyMeleeSpawner.SpawnAllUnits();
             
             signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
+            signalBus.Subscribe<LaunchWaveSignal>(OnWaveLaunched);
         }
 
+        void OnWaveLaunched()
+        {
+            allyDetectionArea.SetMaxTargetsRange(allyArchersSpawner.ArchersCount);
+        }
+        
         void OnWaveFinished()
         {
             castle.RestoreHealth();

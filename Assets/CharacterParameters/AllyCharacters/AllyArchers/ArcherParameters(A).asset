@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: ArcherParameters(A)
   m_EditorClassIdentifier: 
   countGrades: {fileID: 11400000, guid: e27d0f26c3b44344c8374bcb788119f9, type: 2}
-  maxInLine: 14
+  maxInLine: 13
   damageGrades: {fileID: 11400000, guid: efc45d436bae4f340ab674f0119b5a53, type: 2}
   projectileSpeed: 9
   attackCD: 3
-  attackDistance: 10
+  attackDistance: 9

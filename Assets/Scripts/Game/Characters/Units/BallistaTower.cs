@@ -32,9 +32,10 @@ namespace Game.Characters.Units
             idleState = new NotAnimatedIdleState();
             aimState = new AimAttackState(transform, 10);
             attackState = new NotAnimatedAttackState(rangedAttack);
-            attackState.LoseTargetToAttack += OnUpdateTargets;
+            attackState.LoseTargetToAttack += UpdateTarget;
             aimState.AttackTarget += OnAimStateCanAttack;
-            fov.TargetsChanged += OnUpdateTargets;
+            aimState.LoseTargetToAim += UpdateTarget;
+            fov.TargetsUpdated += UpdateTarget;
         }
 
         void Update()
@@ -54,10 +55,10 @@ namespace Game.Characters.Units
             SetState(idleState);
         }
 
-        void OnUpdateTargets()
+        void UpdateTarget()
         {
             (var target, bool inRange) = fov.GetClosestTarget(transform.position, attackDistance);
-            if (!target)
+            if (target == null)
             {
                 SetState(idleState);
                 return;
@@ -75,7 +76,7 @@ namespace Game.Characters.Units
             }
         }
 
-        void OnAimStateCanAttack(Health target)
+        void OnAimStateCanAttack(IDamageable target)
         {
             attackState.SetTarget(target);
             SetState(attackState);

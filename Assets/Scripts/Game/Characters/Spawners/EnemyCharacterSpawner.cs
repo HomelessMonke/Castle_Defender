@@ -7,9 +7,12 @@ namespace Game.Characters.Spawners
     public abstract class EnemyCharacterSpawner: MonoBehaviour
     {
         [SerializeField]
+        protected Transform spawnPointTransform;
+        
+        [SerializeField]
         EnemyType enemyType;
         
-        public EnemyType Enemy => enemyType;
+        public EnemyType EnemyType => enemyType;
 
         public abstract void Init();
 

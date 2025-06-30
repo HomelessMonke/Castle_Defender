@@ -21,6 +21,7 @@ namespace Game.Characters.Spawners
         int counter = 0;
         
         Queue<T> queue = new Queue<T>();
+        public int Counter => counter;
             
         public void Init()
         {
