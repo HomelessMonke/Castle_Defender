@@ -16,5 +16,5 @@ MonoBehaviour:
   maxCoinsReward: 20
   hp: 15
   attackPoints: 3
-  moveDirection: {x: -2, y: 0}
+  moveDirection: {x: -1.7, y: 0}
   attackDistance: 0.5
