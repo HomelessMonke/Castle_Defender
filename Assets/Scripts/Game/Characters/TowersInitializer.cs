@@ -18,19 +18,22 @@ namespace Game.Characters
         [SerializeField]
         ProjectileSpawner arrowForTowerSpawner;
         
+        
         public void Init()
         {
-            foreach (var tower in towers)
+            foreach (var t in towers)
             {
-                tower.Init(parameters, arrowForTowerSpawner);
-            }                    
+                t.Init(parameters, arrowForTowerSpawner);
+            }
         }
 
+#if UNITY_EDITOR
         [Button]
         void GetTowersInChildren()
         {
             towers = transform.GetComponentsInChildren<BallistaTower>();
             EditorUtility.SetDirty(this);
         }
+#endif
     }
 }

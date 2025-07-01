@@ -17,4 +17,12 @@ namespace Game.Characters.Units
             currentState = newState;
         }
     }
+
+    public interface IDamageable
+    {
+        public string Id { get; }
+        public bool IsAlive { get; }
+        public Transform Transform { get; }
+        public Health HealthComponent { get; }
+    }
 }

@@ -10,10 +10,11 @@ namespace Game.Characters.States
         float damage;
         Animator animator;
         IAttack attackVariation;
-        Character character;
         
-        Health targetHP;
-
+        IDamageable target;
+        string targetID;
+        
+        bool TargetMissed => !target.IsAlive || !targetID.Equals(target.Id);
         public bool CanSelfEnter => false;
         
         public event UnityAction LoseTargetToAttack;
@@ -31,9 +32,10 @@ namespace Game.Characters.States
             this.damage = damage;
         }
 
-        public void SetTarget(Health targetHP)
+        public void SetTarget(IDamageable target)
         {
-            this.targetHP = targetHP;
+            this.target = target;
+            targetID = target.Id;
         }
 
         public void Enter()
@@ -44,7 +46,7 @@ namespace Game.Characters.States
         
         public void Update()
         {
-            if (!targetHP.IsAlive)
+            if (TargetMissed)
                 LoseTargetToAttack?.Invoke();
         }
         
@@ -54,7 +56,10 @@ namespace Game.Characters.States
 
         void Attack()
         {
-            attackVariation.Attack(damage, targetHP);
+            if (TargetMissed)
+                LoseTargetToAttack?.Invoke();
+            
+            attackVariation.Attack(damage, target);
         }
     }
 }

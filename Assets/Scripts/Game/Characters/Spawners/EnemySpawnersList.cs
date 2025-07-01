@@ -10,28 +10,23 @@ namespace Game.Characters.Spawners
     public class EnemySpawnersList: MonoBehaviour
     {
         [SerializeField]
-        EnemyCharacterSpawner[] spawners;
-
-        [SerializeField]
-        ProjectileSpawner projectileSpawner;
+        EnemyCharacterSpawner[] characterSpawners;
         
         [SerializeField]
         LootBubbleSpawner lootBubbleSpawner;
         
         public void Init()
         {
-            projectileSpawner.Init();
             lootBubbleSpawner.Init();
-            foreach (var spawner in spawners)
-            {
+            
+            foreach (var spawner in characterSpawners)
                 spawner.Init();
-            }
         }
 
         public Character[] Spawn(SquadInfo squadInfo)
         {
             var characterType = squadInfo.Type;
-            var spawner = spawners.FirstOrDefault(x => x.Enemy.Equals(characterType));
+            var spawner = characterSpawners.FirstOrDefault(x => x.EnemyType.Equals(characterType));
             if (spawner)
             {
                 return spawner.Spawn(squadInfo);;
@@ -43,9 +38,8 @@ namespace Game.Characters.Spawners
         [Button]
         void SetAllSpawners()
         {
-            spawners = GetComponentsInChildren<EnemyCharacterSpawner>();
+            characterSpawners = GetComponentsInChildren<EnemyCharacterSpawner>();
             EditorUtility.SetDirty(this);
-            projectileSpawner = GetComponentInChildren<ProjectileSpawner>();
         }
 #endif
     }

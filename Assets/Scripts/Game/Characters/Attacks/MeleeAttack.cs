@@ -1,10 +1,12 @@
-﻿namespace Game.Characters.Attacks
+﻿using Game.Characters.Units;
+
+namespace Game.Characters.Attacks
 {
     public class MeleeAttack: IAttack
     {
-        public void Attack(float damage, Health targetHP)
+        public void Attack(float damage, IDamageable target)
         {
-            targetHP.GetDamage(damage);
+            target.HealthComponent.GetDamage(damage);
         }
     }
 }

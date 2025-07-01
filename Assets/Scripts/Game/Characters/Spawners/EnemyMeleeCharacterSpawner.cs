@@ -11,20 +11,19 @@ namespace Game.Characters.Spawners
     public class EnemyMeleeCharacterSpawner: EnemyCharacterSpawner
     {
         [SerializeField]
-        ObjectsPool<EnemyMeleeCharacter> pool;
+        protected ObjectsPool<EnemyMeleeCharacter> pool;
         
         [SerializeField]
         EnemyMeleeParameters unitParameters;
-        
-        [Space(10)]
-        [SerializeField]
-        Transform spawnPointTransform;
         
         [SerializeField]
         LootBubbleSpawner bubbleSpawner;
 
         SignalBus signalBus;
         CurrencyManager currencyService;
+        
+        [SerializeField]
+        string idPattern = "EnemyMelee{0}";
         
         [Inject]
         public void Construct(CurrencyManager currencyService, SignalBus signalBus)
@@ -54,7 +53,8 @@ namespace Game.Characters.Spawners
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
-            unit.Init(unitParameters);
+            var id = string.Format(idPattern, pool.Counter);
+            unit.Init(id, unitParameters);
             unit.Died+= ()=> OnDie(unit);
             return unit;
         }

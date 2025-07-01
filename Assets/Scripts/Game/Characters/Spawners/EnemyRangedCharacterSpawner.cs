@@ -12,7 +12,7 @@ namespace Game.Characters.Spawners
     {
         [SerializeField]
         ObjectsPool<EnemyRangedCharacter> pool;
-        
+
         [SerializeField]
         EnemyRangedParameters unitParameters;
         
@@ -21,11 +21,10 @@ namespace Game.Characters.Spawners
         
         [SerializeField]
         LootBubbleSpawner bubbleSpawner;
-        
-        [Space(10)]
-        [SerializeField]
-        Transform spawnPointTransform;
 
+        [SerializeField]
+        string idPattern = "EnemyMelee{0}";
+        
         SignalBus signalBus;
         CurrencyManager currencyService;
         
@@ -35,7 +34,7 @@ namespace Game.Characters.Spawners
             this.currencyService = currencyService;
             this.signalBus = signalBus;
         }
-
+        
         public override void Init()
         {
             pool.Init();
@@ -57,7 +56,8 @@ namespace Game.Characters.Spawners
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
-            unit.Init(unitParameters, projectileSpawner);
+            var id = string.Format(idPattern, pool.Counter);
+            unit.Init(id, unitParameters, projectileSpawner);
             unit.Died+= ()=> OnDie(unit);
             return unit;
         }

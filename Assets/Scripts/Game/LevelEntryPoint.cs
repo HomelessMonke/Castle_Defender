@@ -17,6 +17,9 @@ namespace Game
         AlliesInitializer alliesInitializer;
         
         [SerializeField]
+        ProjectileSpawnersList projectileSpawnersList;
+        
+        [SerializeField]
         WavesList wavesList;
         
         [SerializeField]
@@ -33,6 +36,8 @@ namespace Game
         public void Start()
         {
             uiEntryPoint.Init();
+            
+            projectileSpawnersList.Init();
             alliesInitializer.Init();
             enemySpawnersList.Init();
             

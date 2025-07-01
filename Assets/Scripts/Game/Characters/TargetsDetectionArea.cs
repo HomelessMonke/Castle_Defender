@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
+using Game.Characters.Units;
 using UnityEngine;
+using Utilities;
 using Utilities.Extensions;
 using Random = UnityEngine.Random;
 
@@ -10,17 +13,38 @@ namespace Game.Characters
     {
         [SerializeField]
         LayerMask layerMask;
-
-        List<Health> targetsInArea;
         
-        public event Action TargetsChanged;
+        [SerializeField]
+        float updatePerSeconds = 1.5f;
+        
+        int maxUnitsToTarget = 10;
+        
+        List<IDamageable> targetsInArea;
+
+        CustomTimer timer;
+        float timeFromUpdate;
+        
+        public event Action TargetsUpdated;
 
         public void Init(int capacity)
         {
-            targetsInArea = new List<Health>(capacity);
+            targetsInArea = new List<IDamageable>(capacity);
+            timer = new CustomTimer(updatePerSeconds);
+            timer.TimerEnd += OnTimerEnd;
+        }
+        
+        /// <param name="targetRange"> Максимальное кол-во юнитов среди которых будет выбираться таргет</param>
+        public void SetMaxTargetsRange(int targetRange)
+        {
+            maxUnitsToTarget = targetRange;
         }
 
-        public Health GetTargetByIndex(int index)
+        void Update()
+        {
+            timer.Tick(Time.deltaTime);
+        }
+
+        public IDamageable GetTargetByIndex(int index)
         {
             if (targetsInArea.Count == 0)
                 return null;
@@ -29,7 +53,7 @@ namespace Game.Characters
             return targetsInArea[targetIndex];
         }
         
-        public (Health, bool) GetClosestTarget(Vector2 comparePos, float range)
+        public (IDamageable, bool) GetClosestTarget(Vector2 comparePos, float range)
         {
             if (targetsInArea.Count == 0)
                 return (null, false);
@@ -39,17 +63,18 @@ namespace Game.Characters
             if (targetsInArea.Count > 1)
             {
                 var sqrRange = range * range;
-                var targetSqrDistance = ((Vector2)closestTarget.transform.position - comparePos).sqrMagnitude;
-                for (int i = 1; i < targetsInArea.Count; i++)
+                var targetSqrDistance = ((Vector2)closestTarget.Transform.position - comparePos).sqrMagnitude;
+                var lenght = targetsInArea.Count >= maxUnitsToTarget? maxUnitsToTarget : targetsInArea.Count;
+                for (int i = 1; i < lenght; i++)
                 {
                     var targetInArea = targetsInArea[i];
-                    Vector2 distance = (Vector2)targetInArea.transform.position - comparePos;
+                    Vector2 distance = (Vector2)targetInArea.Transform.position - comparePos;
                     float sqrDistance = distance.sqrMagnitude;
                     if (sqrDistance < targetSqrDistance)
                     {
                         closestTarget = targetInArea;
                         targetSqrDistance = sqrDistance;
-                        if (sqrDistance < range)
+                        if (sqrDistance < sqrRange)
                         {
                             inRange = true;
                         }
@@ -59,22 +84,23 @@ namespace Game.Characters
             return (closestTarget, inRange);
         }
         
-        public (Health, bool) GetRandomTargetInRange(Vector2 comparePos, float range)
+        public (IDamageable, bool) GetRandomTargetInRange(Vector2 comparePos, float range)
         {
             if (targetsInArea.Count == 0)
                 return (null,false);
             
             if (targetsInArea.Count > 1)
             {
-                var targetsInRange = new List<Health>();
+                var targetsInRange = new List<IDamageable>();
                 var sqrRange = range * range;
 
-                Health closestTarget = null;
+                IDamageable closestTarget = null;
                 var minDistance = Mathf.Infinity;
-                for (int i = 1; i < targetsInArea.Count; i++)
+                var lenght = targetsInArea.Count >= maxUnitsToTarget? maxUnitsToTarget : targetsInArea.Count;
+                for (int i = 1; i < lenght; i++)
                 {
                     var target = targetsInArea[i];
-                    Vector2 distance = (Vector2)target.transform.position - comparePos;
+                    Vector2 distance = (Vector2)target.Transform.position - comparePos;
                     float targetSqrDistance = distance.sqrMagnitude;
                     if (targetSqrDistance < sqrRange)
                     {
@@ -102,16 +128,34 @@ namespace Game.Characters
             return (targetsInArea[0], false);
         }
 
+        void OnTimerEnd()
+        {
+            SortTargetsByAxisX();
+            timer.Restart();
+            
+            if(targetsInArea.Count > 0)
+                TargetsUpdated?.Invoke();
+        }
+        
+        void SortTargetsByAxisX()
+        {
+            if (targetsInArea == null || targetsInArea.Count < 2)
+                return;
+            
+            targetsInArea = targetsInArea.OrderBy(x=> x.Transform.position.x).ToList();
+        }
+
         void OnTriggerEnter2D(Collider2D other)
         {
             var otherObj = other.gameObject;
             if (layerMask.Contains(otherObj.layer))
             {
-                var hpComponent = otherObj.GetComponent<Health>();
-                if (hpComponent.IsAlive)
+                var character = otherObj.GetComponent<IDamageable>();
+                if (character != null && character.IsAlive)
                 {
-                    targetsInArea.Add(hpComponent);
-                    TargetsChanged?.Invoke();
+                    targetsInArea.Add(character);
+                    if(targetsInArea.Count > 1 && !timer.IsRunning)
+                        timer.Start();
                 }
             }
         }
@@ -122,9 +166,11 @@ namespace Game.Characters
             if (!layerMask.Contains(otherObj.layer))
                 return;
             
-            var hpComponent = otherObj.GetComponent<Health>();
-            targetsInArea.Remove(hpComponent);
-            TargetsChanged?.Invoke();
+            var character = otherObj.GetComponent<IDamageable>();
+            targetsInArea.Remove(character);
+            
+            if(targetsInArea.Count <= 1)
+                timer.Stop();
         }
     }
 }

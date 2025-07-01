@@ -1,4 +1,5 @@
-﻿ using UnityEngine;
+﻿ using Game.Characters.Units;
+ using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.Events;
 
@@ -8,22 +9,25 @@ namespace Game.Characters.States
     {
         Animator animator;
         NavMeshAgent agent;
-        Transform targetObj;
-        bool canSelfEnter;
-        int updatePathPerFrame;
 
+        string targetID;
+        IDamageable target;
+
+        int updatePathPerFrame;
         int currentFrameNumber;
         
+        bool TargetMissed => !target.IsAlive || !targetID.Equals(target.Id);
         bool IsArrivedToTarget => agent.hasPath && agent.remainingDistance <= agent.stoppingDistance;
-        public bool CanSelfEnter => canSelfEnter;
-        
-        public event UnityAction<Transform> ArrivedToTarget;
+        public bool CanSelfEnter { get; }
+
+        public event UnityAction LoseTarget;
+        public event UnityAction<IDamageable> ArrivedToTarget;
         
         public TargetMoveState(NavMeshAgent agent, Animator animator, int updatePathPerFrame, bool canSelfEnter = false)
         {
             this.agent = agent;
             this.animator = animator;
-            this.canSelfEnter = canSelfEnter;
+            CanSelfEnter = canSelfEnter;
             this.updatePathPerFrame = updatePathPerFrame;
         }
 
@@ -33,23 +37,21 @@ namespace Game.Characters.States
             agent.stoppingDistance = stoppingDistance;
         }
 
-        public void SwitchTarget(Transform target)
+        public void SwitchTarget(IDamageable targetObj)
         {
-            if (!target)
+            if (targetObj == null)
             {
-                agent.ResetPath();
-                targetObj = null;
+                ResetTarget();
                 return;
             }
 
-            if (target.Equals(targetObj))
-            {
+            if (targetObj.Equals(target))
                 return;
-            }
             
             agent.ResetPath();
-            targetObj = target;
-            agent.SetDestination(targetObj.position);
+            target = targetObj;
+            targetID = targetObj.Id;
+            agent.SetDestination(target.Transform.position);
         }
 
         public void Enter()
@@ -59,15 +61,28 @@ namespace Game.Characters.States
         
         public void Update()
         {
+            if (TargetMissed)
+            {
+                LoseTarget?.Invoke();
+                return;
+            }
+            
             currentFrameNumber++;
             if (currentFrameNumber >= updatePathPerFrame)
             {
-                agent.SetDestination(targetObj.position);
+                agent.SetDestination(target.Transform.position);
                 currentFrameNumber = 0;
             }
             
             if (IsArrivedToTarget)
-                ArrivedToTarget?.Invoke(targetObj);
+                ArrivedToTarget?.Invoke(target);
+        }
+
+        void ResetTarget()
+        {
+            agent.ResetPath();
+            target = null;
+            targetID = null;
         }
         
         public void Exit()

@@ -14,6 +14,8 @@ namespace Game.Characters.Spawners
 
         [SerializeField]
         ProjectileSpawner arrowsSpawner;
+
+        public int ArchersCount => parameters.ArchersCount;
         
         public void Start()
         {
