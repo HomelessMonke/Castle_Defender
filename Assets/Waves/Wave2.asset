@@ -14,10 +14,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   squads:
   - spawnDelay: 0
+    type: 2
+    charactersInLines: 0a0000000c0000000e000000
+    formation:
+      rid: 4060279870179246186
+  - spawnDelay: 2
     type: 1
     charactersInLines: 06000000080000000a0000000c0000000e000000
     formation:
-      rid: 707701132208898447
+      rid: 4060279870179246187
   - spawnDelay: 2
     type: 0
     charactersInLines: 080000000a0000000c000000
@@ -26,11 +31,17 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 707701132208898447
+    - rid: 4060279870179246186
       type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:
-        maxOffsetX: 0.329
-        maxOffsetY: 0.35
+        maxOffsetX: 0.3
+        maxOffsetY: 0.3
+    - rid: 4060279870179246187
+      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        spawnToRight: 1
+        unitsOffsetX: 0.2
+        unitsOffsetY: 0.2
     - rid: 6397389247852576896
       type: {class: CrescentFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
       data:

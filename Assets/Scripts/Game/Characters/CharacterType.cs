@@ -2,8 +2,9 @@
 {
     public enum EnemyType
     {
-        EnemyArcher,
-        EnemySwordsManSkeleton,
-        EnemyTroll
+        Archer,
+        SwordsManSkeleton,
+        Goblin,
+        FlyingEye
     }
 }
