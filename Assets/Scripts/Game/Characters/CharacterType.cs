@@ -5,6 +5,7 @@
         Archer,
         SwordsManSkeleton,
         Goblin,
-        FlyingEye
+        FlyingEye,
+        Mushroom
     }
 }

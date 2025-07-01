@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618e369894404989853d982a96ec906a, type: 3}
+  m_Name: Wave3
+  m_EditorClassIdentifier: 
+  squads:
+  - spawnDelay: 2
+    type: 2
+    charactersInLines: 06000000080000000c0000000c000000
+    formation:
+      rid: 707701132208898448
+  - spawnDelay: 3
+    type: 4
+    charactersInLines: 0a000000
+    formation:
+      rid: 707701132208898447
+  references:
+    version: 2
+    RefIds:
+    - rid: 707701132208898447
+      type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        maxOffsetX: 0.361
+        maxOffsetY: 0.327
+    - rid: 707701132208898448
+      type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        maxOffsetX: 0.317
+        maxOffsetY: 0.276

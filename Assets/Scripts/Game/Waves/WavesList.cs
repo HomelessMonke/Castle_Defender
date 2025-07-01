@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using Utilities.Attributes;
 
 namespace Game.Waves
 {
@@ -27,6 +28,7 @@ namespace Game.Waves
             }
         }
         
+        [Button]
         public void IncreaseNextWaveIndex()
         {
             if (nextWaveIndex == -1)
@@ -46,5 +48,23 @@ namespace Game.Waves
                 ES3.Load<int>(waveIndexSave) :
                 0;
         }
+        
+#if UNITY_EDITOR
+        [Button]
+        void ResetWaveIndex()
+        {
+            nextWaveIndex = 0;
+            ES3.Save(waveIndexSave, 0);
+        }
+        
+        [Button]
+        void DecreaseNextWaveIndex()
+        {
+            if (nextWaveIndex == -1)
+                InitWaveIndex();
+            
+            nextWaveIndex = Mathf.Clamp(nextWaveIndex - 1, 0, waves.Length - 1);
+        }
+#endif
     }
 }
