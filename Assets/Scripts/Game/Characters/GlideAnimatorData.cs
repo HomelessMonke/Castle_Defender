@@ -10,10 +10,6 @@ namespace Game.Characters
         [SerializeField]
         float glideHeight;
 
-        public float MinAngle => minAngle;
-
-        public float MaxAngle => maxAngle;
-
         public float GlideHeight => glideHeight;
         
         public float GetRandomAngle()

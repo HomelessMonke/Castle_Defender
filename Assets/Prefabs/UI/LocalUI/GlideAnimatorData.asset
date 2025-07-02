@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0e0e8534d6747c2918db2e19154a3ae, type: 3}
   m_Name: GlideAnimatorData
   m_EditorClassIdentifier: 
-  minAngle: 0
-  maxAngle: 0
-  glideHeight: 0
+  minAngle: -45
+  maxAngle: 45
+  glideHeight: 1
