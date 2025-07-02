@@ -9,15 +9,23 @@ namespace Game.UI
         [SerializeField]
         CanvasGroup canvasGroup;
 
+        Tween fadeTween;
+
         public void TogglePanel(bool isActive)
         {
+            if (fadeTween != null && fadeTween.IsActive())
+                fadeTween.Kill();
+            
             if (isActive)
             {
                 gameObject.SetActive(true);
-                canvasGroup.DOFade(1f, 0.3f).SetUpdate(true);
+                fadeTween = DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 1, 0.3f).SetUpdate(true);
             }
             else
-                canvasGroup.DOFade(0f, 0.3f).SetUpdate(true).OnComplete(() => gameObject.SetActive(false));
+            {
+                fadeTween = DOTween.To(() => canvasGroup.alpha, x => canvasGroup.alpha = x, 0, 0.3f).SetUpdate(true).OnComplete(() => gameObject.SetActive(false));
+            }
         }
+        
     }
 }

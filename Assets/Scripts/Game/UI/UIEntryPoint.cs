@@ -112,6 +112,8 @@ namespace Game.UI
 
         void OnWaveFinished()
         {
+            GameSpeed.ResetSpeed();
+            speedChangeButton.Draw();
             baseUI.SwitchPreBattleConfig();
         }
     }
