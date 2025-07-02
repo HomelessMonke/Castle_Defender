@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections;
 using Game.Currencies;
 using Game.Grades;
 using TMPro;
@@ -7,7 +6,7 @@ using UnityEngine;
 using UnityEngine.Localization;
 using UnityEngine.UI;
 
-namespace Game.UI.Popups.UpgradesPopupSpace
+namespace Game.UI.Popups.UpgradesPopupScope
 {
     public class UpgradeView : MonoBehaviour
     {

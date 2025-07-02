@@ -2,7 +2,7 @@
 using DG.Tweening;
 using UnityEngine;
 
-namespace Game.UI.Popups.UpgradesPopupSpace
+namespace Game.UI.Popups.UpgradesPopupScope
 {
     public class UpgradeViewAnimator
     {

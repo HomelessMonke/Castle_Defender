@@ -4,7 +4,7 @@ using Game.Currencies;
 using Game.Grades;
 using Zenject;
 
-namespace Game.UI.Popups.UpgradesPopupSpace
+namespace Game.UI.Popups.UpgradesPopupScope
 {
     public class UpgradesPopupPresenter
     {

@@ -1,11 +1,11 @@
 ﻿using System.Collections;
+using Game.Characters.Spawners;
 using Game.Characters.Spawners.Formations;
 using Game.Signals;
-using Game.Waves;
 using UnityEngine;
 using Zenject;
 
-namespace Game.Characters.Spawners
+namespace Game.Waves
 {
     public class WavesSpawner: MonoBehaviour
     {

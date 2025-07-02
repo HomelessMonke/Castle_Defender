@@ -22,6 +22,12 @@ MonoBehaviour:
     - Locale-ru
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 2432f12180081394eb8c857e72f6f70b
+    m_Address: WinPopup_ru
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-ru
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 5d51f14fadc62204093be9d04ae25997
     m_Address: StartWavePopup_ru
     m_ReadOnly: 1

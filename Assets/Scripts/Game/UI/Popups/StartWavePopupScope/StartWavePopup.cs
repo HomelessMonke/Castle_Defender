@@ -4,7 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.Localization;
 
-namespace Game.UI.Popups.StartWavePopupSpace
+namespace Game.UI.Popups.StartWavePopupScope
 {
     public class StartWavePopup: Popup
     {

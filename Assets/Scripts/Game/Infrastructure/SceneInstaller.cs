@@ -1,8 +1,8 @@
-﻿using System;
-using Game.UI.Popups;
-using Game.UI.Popups.StartWavePopupSpace;
-using Game.UI.Popups.PausePopupSpace;
-using Game.UI.Popups.UpgradesPopupSpace;
+﻿using Game.UI.Popups;
+using Game.UI.Popups.PausePopupScope;
+using Game.UI.Popups.StartWavePopupScope;
+using Game.UI.Popups.UpgradesPopupScope;
+using Game.UI.Popups.WinPopupScope;
 using UnityEngine;
 using Zenject;
 
@@ -29,6 +29,7 @@ namespace Game.Infrastructure
             Container.BindFactory<UpgradesPopupPresenter, UpgradesPopupFactory>().AsTransient();
             Container.BindFactory<PausePopupPresenter, PausePopupFactory>().AsTransient();
             Container.BindFactory<StartWavePopupPresenter, StartWavePopupFactory>().AsTransient();
+            Container.BindFactory<WinPopupPresenter, WinPopupFactory>().AsTransient();
         }
     }
 }

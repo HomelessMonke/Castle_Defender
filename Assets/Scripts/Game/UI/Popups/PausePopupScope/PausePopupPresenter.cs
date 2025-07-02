@@ -1,6 +1,6 @@
 using Zenject;
 
-namespace Game.UI.Popups.PausePopupSpace
+namespace Game.UI.Popups.PausePopupScope
 {
     public class PausePopupPresenter
     {

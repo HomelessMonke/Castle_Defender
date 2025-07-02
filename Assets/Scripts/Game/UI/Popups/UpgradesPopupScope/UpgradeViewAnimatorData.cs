@@ -1,7 +1,7 @@
 ﻿using System;
 using UnityEngine;
 
-namespace Game.UI.Popups.UpgradesPopupSpace
+namespace Game.UI.Popups.UpgradesPopupScope
 {
     [Serializable]
     public struct UpgradeViewAnimatorData

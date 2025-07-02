@@ -27,6 +27,11 @@ namespace Game.Currencies
         {
             return currencies.GetValueOrDefault(type, 0);
         }
+        
+        public void Earn(CurrencyItem currencyItem)
+        {
+            Earn(currencyItem.Type, currencyItem.Amount);
+        }
 
         public void Earn(CurrencyType type, int amount)
         {

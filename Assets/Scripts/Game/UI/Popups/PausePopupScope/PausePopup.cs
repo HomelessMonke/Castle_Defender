@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.UI;
 
-namespace Game.UI.Popups.PausePopupSpace
+namespace Game.UI.Popups.PausePopupScope
 {
     public class PausePopup : Popup
     {

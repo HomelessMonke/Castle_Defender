@@ -6,7 +6,7 @@ using UnityEngine;
 using UnityEngine.UI;
 using Utilities.Extensions;
 
-namespace Game.UI.Popups.UpgradesPopupSpace
+namespace Game.UI.Popups.UpgradesPopupScope
 {
     public class UpgradesPopup : Popup
     {
