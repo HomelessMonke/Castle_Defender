@@ -1,4 +1,5 @@
 ﻿using Game.UI.Popups;
+using Game.UI.Popups.LosePopupScope;
 using Game.UI.Popups.PausePopupScope;
 using Game.UI.Popups.StartWavePopupScope;
 using Game.UI.Popups.UpgradesPopupScope;
@@ -30,6 +31,7 @@ namespace Game.Infrastructure
             Container.BindFactory<PausePopupPresenter, PausePopupFactory>().AsTransient();
             Container.BindFactory<StartWavePopupPresenter, StartWavePopupFactory>().AsTransient();
             Container.BindFactory<WinPopupPresenter, WinPopupFactory>().AsTransient();
+            Container.BindFactory<LosePopupPresenter, LosePopupFactory>().AsTransient();
         }
     }
 }
