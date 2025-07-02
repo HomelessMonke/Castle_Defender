@@ -13,24 +13,26 @@ MonoBehaviour:
   m_Name: AudioLibrary
   m_EditorClassIdentifier: 
   soundCategories:
-  - 
+  - Sounds
   musicCategories:
   - 
-  Sounds: []
+  Sounds:
+  - {fileID: 11400000, guid: 14bd844fbba03e942801b2e3382b3c7c, type: 2}
   Music: []
-  useCustomNames: 0
-  generatedName: 
-  musicEnum: 
-  musicEnumGenerated: 
+  useCustomNames: 1
+  generatedName: AudioLibrary
+  musicEnum: Music
+  musicEnumGenerated: Music
   musicNamespace: 
   musicNamespaceGenerated: 
-  soundEnum: 
-  soundEnumGenerated: 
+  soundEnum: Sounds
+  soundEnumGenerated: Sounds
   soundNamespace: 
   soundNamespaceGenerated: 
   soundCategoriesToList:
-  - name: 
-    files: []
+  - name: Sounds
+    files:
+    - {fileID: 11400000, guid: 14bd844fbba03e942801b2e3382b3c7c, type: 2}
     foldout: 1
   musicCategoriesToList:
   - name: 

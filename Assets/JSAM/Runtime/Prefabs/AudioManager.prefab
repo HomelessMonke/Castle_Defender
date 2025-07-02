@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4502563656087406104}
   - component: {fileID: 2133915684049951699}
   m_Layer: 0
-  m_Name: Audio Manager
+  m_Name: AudioManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -45,4 +45,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   preloadedLibraries:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b28cae107dfbb264f86baa8fe347a0d3, type: 2}
