@@ -4028,6 +4028,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1194152383}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1255031962 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 3039410683915328159, guid: 00f1aed3912325046afde32f3a1d9f05, type: 3}
+  m_PrefabInstance: {fileID: 8771296238378179544}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1323199091
 GameObject:
   m_ObjectHideFlags: 0
@@ -5144,6 +5149,11 @@ MonoBehaviour:
   unitParameters: {fileID: 11400000, guid: 033415c39d1aef8449b6f1696a95f3f6, type: 2}
   bubbleSpawner: {fileID: 3367227924412149409}
   idPattern: Mushroom{0}
+--- !u!212 &1579310590 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 6722726479061784755, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
+  m_PrefabInstance: {fileID: 6039229518978487597}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1607776037
 GameObject:
   m_ObjectHideFlags: 0
@@ -5252,6 +5262,11 @@ MonoBehaviour:
     prefab: {fileID: 913231243}
     root: {fileID: 1884199379}
     initialCount: 40
+--- !u!212 &1642532490 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7521734537391967807, guid: 2af2064cb378a314180283d3aa2fe233, type: 3}
+  m_PrefabInstance: {fileID: 3973691326169565891}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1709023012
 GameObject:
   m_ObjectHideFlags: 0
@@ -6649,6 +6664,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f2543701494437b3f1857c14c22857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!212 &2774073120981362579 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 4272870526028645083, guid: 54358081e14d8574cb52fc8e28ea1c32, type: 3}
+  m_PrefabInstance: {fileID: 7953733710971256076}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3283524604961362785
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6877,6 +6897,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3530338669787106506, guid: 2af2064cb378a314180283d3aa2fe233, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1642532490}
     - target: {fileID: 4483097558059183312, guid: 2af2064cb378a314180283d3aa2fe233, type: 3}
       propertyPath: m_Name
       value: SwordsManSkeleton(E)
@@ -6916,6 +6940,11 @@ Transform:
 Transform:
   m_CorrespondingSourceObject: {fileID: 887646720392928295, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
   m_PrefabInstance: {fileID: 6039229518978487597}
+  m_PrefabAsset: {fileID: 0}
+--- !u!212 &4494843871941616848 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 7245135310790472242, guid: 924b71d5a121a0146b0ee0e5eb18734a, type: 3}
+  m_PrefabInstance: {fileID: 6577132280367093878}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4531793795613898385
 PrefabInstance:
@@ -7034,6 +7063,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 906396336838298757, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1579310590}
     - target: {fileID: 2334795779472546635, guid: 0c9e6a7547b9c094ca883ebd4a422313, type: 3}
       propertyPath: m_Name
       value: Knight(A)
@@ -7287,6 +7320,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 367012141}
     m_Modifications:
+    - target: {fileID: 2903137089187636340, guid: 924b71d5a121a0146b0ee0e5eb18734a, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 4494843871941616848}
     - target: {fileID: 3948260123036974510, guid: 924b71d5a121a0146b0ee0e5eb18734a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.892
@@ -7635,11 +7672,20 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7305650544471324708, guid: 0bbd209171ae0ae46afad61b3cf575e8, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 7521734538149141638}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0bbd209171ae0ae46afad61b3cf575e8, type: 3}
+--- !u!212 &7521734538149141638 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 9012781511620462165, guid: 0bbd209171ae0ae46afad61b3cf575e8, type: 3}
+  m_PrefabInstance: {fileID: 7247534862553765972}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7559315364256535016 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4538751407451677002, guid: 5d5de1e933c320c48949d2af24a9883f, type: 3}
@@ -7678,6 +7724,10 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2035012757435653366, guid: 54358081e14d8574cb52fc8e28ea1c32, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 2774073120981362579}
     - target: {fileID: 8530584564869562219, guid: 54358081e14d8574cb52fc8e28ea1c32, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.892
@@ -7736,6 +7786,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1194152383}
     m_Modifications:
+    - target: {fileID: 2027516982929994749, guid: 00f1aed3912325046afde32f3a1d9f05, type: 3}
+      propertyPath: spriteRenderer
+      value: 
+      objectReference: {fileID: 1255031962}
     - target: {fileID: 2298023219617457201, guid: 00f1aed3912325046afde32f3a1d9f05, type: 3}
       propertyPath: m_Name
       value: Archer(E)

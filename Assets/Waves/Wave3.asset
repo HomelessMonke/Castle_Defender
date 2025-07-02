@@ -20,7 +20,7 @@ MonoBehaviour:
       rid: 707701132208898448
   - spawnDelay: 3
     type: 4
-    charactersInLines: 0a000000
+    charactersInLines: 0c00000008000000
     formation:
       rid: 707701132208898447
   references:

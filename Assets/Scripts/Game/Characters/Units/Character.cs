@@ -5,6 +5,9 @@ namespace Game.Characters.Units
 {
     public abstract class Character: MonoBehaviour
     {
+        protected const int sortingLayerMedium = 100;
+        protected const int sortingLayerMultiplier = 10;
+        
         protected IState currentState;
         
         protected void SetState(IState newState)

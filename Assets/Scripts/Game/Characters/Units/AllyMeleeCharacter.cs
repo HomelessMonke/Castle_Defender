@@ -11,6 +11,9 @@ namespace Game.Characters.Units
     public class AllyMeleeCharacter: Character, IDamageable
     {
         [SerializeField]
+        SpriteRenderer spriteRenderer;
+        
+        [SerializeField]
         CharacterFieldOfView fieldOfView;
         
         [SerializeField]
@@ -79,6 +82,8 @@ namespace Game.Characters.Units
             targetMoveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
             SetAttackParameter(parameters.Damage);
             SetState(idleState);
+            
+            spriteRenderer.sortingOrder = sortingLayerMedium - Mathf.RoundToInt(transform.position.y * sortingLayerMultiplier);
         }
 
         public void SetImmortal(bool isImmortal)
