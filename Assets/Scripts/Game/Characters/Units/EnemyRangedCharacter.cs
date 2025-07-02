@@ -13,6 +13,9 @@ namespace Game.Characters.Units
     public class EnemyRangedCharacter: Character, IDamageable
     {
         [SerializeField]
+        SpriteRenderer spriteRenderer;
+        
+        [SerializeField]
         CharacterAnimator characterAnimator;
 
         [SerializeField]
@@ -84,6 +87,8 @@ namespace Game.Characters.Units
             targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
             attackState.Init(parameters.Damage);
             SetMoveState();
+            
+            spriteRenderer.sortingOrder = sortingLayerMedium - Mathf.RoundToInt(transform.position.y * sortingLayerMultiplier);
         }
         
         void OnGetDamage()

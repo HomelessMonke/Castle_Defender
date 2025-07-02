@@ -12,8 +12,11 @@ namespace Game.Characters
         [SerializeField]
         SpriteRenderer icon;
 
+        [SerializeField]
+        GlideAnimatorData data;
+
         GlideAnimator glideAnimator;
-        
+
         public void Draw(int value)
         {
             tmpText.text = $"+{value}";
@@ -33,6 +36,7 @@ namespace Game.Characters
         public void Glide(Action complete = null)
         {
             glideAnimator ??= new();
+            glideAnimator.Init(data);
             glideAnimator.Glide(transform, tmpText, icon, complete);
         }
     }

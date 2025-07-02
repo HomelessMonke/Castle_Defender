@@ -11,6 +11,9 @@ namespace Game.Characters.Units
     public class EnemyMeleeCharacter: Character, IDamageable
     {
         [SerializeField]
+        SpriteRenderer spriteRenderer;
+        
+        [SerializeField]
         CharacterFieldOfView fieldOfView;
         
         [SerializeField]
@@ -78,6 +81,8 @@ namespace Game.Characters.Units
             targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
             attackState.Init(parameters.AttackPoints);
             SetMoveState();
+
+            spriteRenderer.sortingOrder = sortingLayerMedium - Mathf.RoundToInt(transform.position.y * sortingLayerMultiplier);
         }
         
         void OnGetDamage()

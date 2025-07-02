@@ -4,9 +4,9 @@ using Game.UI.Abilities;
 using Game.UI.BaseUiScope;
 using Game.UI.Currencies;
 using Game.UI.Popups;
-using Game.UI.Popups.StartWavePopupSpace;
-using Game.UI.Popups.PausePopupSpace;
-using Game.UI.Popups.UpgradesPopupSpace;
+using Game.UI.Popups.PausePopupScope;
+using Game.UI.Popups.StartWavePopupScope;
+using Game.UI.Popups.UpgradesPopupScope;
 using Game.Waves;
 using UnityEngine;
 using UnityEngine.UI;
@@ -112,6 +112,8 @@ namespace Game.UI
 
         void OnWaveFinished()
         {
+            GameSpeed.ResetSpeed();
+            speedChangeButton.Draw();
             baseUI.SwitchPreBattleConfig();
         }
     }

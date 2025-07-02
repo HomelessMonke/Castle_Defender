@@ -15,6 +15,14 @@ namespace Game
             TimeMultiplier = Time.timeScale;
         }
 
+        public static void ResetSpeed()
+        {
+            if (!boosted) return;
+            boosted = !boosted;
+            Time.timeScale = 1f;
+            TimeMultiplier = Time.timeScale;
+        }
+
         public static void TogglePause(bool paused)
         {
             Time.timeScale = paused ? 0f : TimeMultiplier;
