@@ -9,15 +9,15 @@ namespace Game.Characters.Spawners.Formations
     [Serializable, Description("Неупорядоченное построение")]
     public class RandomSpawnFormation: ISpawnFormation
     {
-        [SerializeField, Range(0.2f, 1)]
+        [SerializeField, Range(0.25f, 1)]
         float maxOffsetX;
         
-        [SerializeField, Range(0.2f, 1)]
+        [SerializeField, Range(0.25f, 1)]
         float maxOffsetY;
 
         public RandomSpawnFormation()
         {
-            maxOffsetX = maxOffsetY = 0.2f;
+            maxOffsetX = maxOffsetY = 0.25f;
         }
 
         public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)

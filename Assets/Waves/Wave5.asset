@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 618e369894404989853d982a96ec906a, type: 3}
+  m_Name: Wave5
+  m_EditorClassIdentifier: 
+  squads:
+  - spawnDelay: 0
+    type: 3
+    charactersInLines: 0e0000000c0000000e0000000f000000
+    formation:
+      rid: 4060279870179246190
+  - spawnDelay: 2
+    type: 2
+    charactersInLines: 0a0000000c0000000e000000
+    formation:
+      rid: 4060279870179246186
+  - spawnDelay: 2
+    type: 1
+    charactersInLines: 06000000080000000a0000000c0000000e000000
+    formation:
+      rid: 4060279870179246187
+  - spawnDelay: 2
+    type: 0
+    charactersInLines: 080000000a0000000c000000
+    formation:
+      rid: 6397389247852576896
+  rewardCurrency:
+    type: 0
+    amount: 1500
+  references:
+    version: 2
+    RefIds:
+    - rid: 4060279870179246186
+      type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        maxOffsetX: 0.3
+        maxOffsetY: 0.3
+    - rid: 4060279870179246187
+      type: {class: LinesSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        spawnToRight: 1
+        unitsOffsetX: 0.2
+        unitsOffsetY: 0.2
+    - rid: 4060279870179246190
+      type: {class: RandomSpawnFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        maxOffsetX: 0.4
+        maxOffsetY: 0.3
+    - rid: 6397389247852576896
+      type: {class: CrescentFormation, ns: Game.Characters.Spawners.Formations, asm: Assembly-CSharp}
+      data:
+        facingLeft: 1
+        lineSpacing: 0.601
+        angleRangeDegrees: 180
+        baseRadius: 0.3

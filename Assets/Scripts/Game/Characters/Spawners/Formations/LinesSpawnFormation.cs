@@ -12,16 +12,16 @@ namespace Game.Characters.Spawners.Formations
         bool spawnToRight = true;
         
         [Header("Отступы между позициями по X")]
-        [SerializeField, Range(0.2f, 1)]
+        [SerializeField, Range(0.25f, 1)]
         float unitsOffsetX;
         
         [Header("Отступы между позициями по Y")]
-        [SerializeField, Range(0.2f, 1)]
+        [SerializeField, Range(0.25f, 1)]
         float unitsOffsetY;
 
         public LinesSpawnFormation()
         {
-            unitsOffsetX = unitsOffsetY = 0.2f;
+            unitsOffsetX = unitsOffsetY = 0.25f;
         }
 
         public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)
