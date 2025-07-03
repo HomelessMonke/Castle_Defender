@@ -10,29 +10,29 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 0d15ae218647a2d4f85e14306846c10c, type: 3}
-  m_Name: ButtonClick
+  m_Name: ArrowImpact
   m_EditorClassIdentifier: 
   safeName: 
   presetDescription: 
   files:
-  - {fileID: 8300000, guid: e42ddf75f773b974aa8bdc45921db541, type: 3}
-  neverRepeat: 1
+  - {fileID: 8300000, guid: 21a58da606a553c43875d3e57e55f6d8, type: 3}
+  neverRepeat: 0
   loopStart: 0
   loopEnd: 0
   bpm: 120
-  relativeVolume: 1
+  relativeVolume: 0.2
   spatialize: 0
   maxDistance: 0
   priority: 128
   startingPitch: 1
-  pitchShift: 0.05
+  pitchShift: 0.4
   loopMode: 0
   delay: 0
   ignoreTimeScale: 1
-  maxPlayingInstances: 10
+  maxPlayingInstances: 4
   channelOverride: 2
-  mixerGroupOverride: {fileID: 0}
-  fadeInOut: 1
+  mixerGroupOverride: {fileID: 2609797869227875114, guid: 555edaf44a04f6341a9483f43608463d, type: 2}
+  fadeInOut: 0
   fadeInDuration: 0
   fadeOutDuration: 0
   bypassEffects: 0

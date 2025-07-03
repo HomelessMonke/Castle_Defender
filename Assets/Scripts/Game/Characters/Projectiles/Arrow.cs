@@ -1,10 +1,10 @@
-﻿using DG.Tweening;
-using Game.Characters.Units;
+﻿using Audio.Sounds;
+using DG.Tweening;
+using JSAM;
 using UnityEngine;
 
 namespace Game.Characters.Projectiles
 {
-
     public class Arrow: Projectile 
     {
         public override void Launch(ProjectileAnimationData animationData, float damage, float speed)
@@ -18,6 +18,7 @@ namespace Game.Characters.Projectiles
             transform.LookAt(Vector2.Lerp(startPosition, targetPos, 0.01f));
             float distance = Vector2.Distance(startPosition, targetPos);
             float duration = distance / speed;
+            AudioManager.PlaySound(Sounds.ArrowRelease);
             DOTween.To(() => (float)0, x =>
             {
                 var t = xCurve.Evaluate(x);
@@ -37,6 +38,7 @@ namespace Game.Characters.Projectiles
         {
             if (!TargetMissed)
             {
+                AudioManager.PlaySound(Sounds.ArrowImpact);
                 target.HealthComponent.GetDamage(damage);
             }
             OnFlew();

@@ -1349,8 +1349,8 @@ namespace JSAM.JSAMEditor
                 }
             }
 
-            string fileName = "//AudioEnums - " + asset.SafeName + ".cs";
-            string prevName = "//AudioEnums - " + asset.generatedName + ".cs";
+            string fileName = "//AudioEnums.cs";
+            string prevName = "//AudioEnums.cs";
 
             if (!JSAMEditorHelper.GenerateFolderStructureAt(filePath))
             {

@@ -1,7 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using Audio.Sounds;
 using Game.Currencies;
 using Game.Grades;
+using JSAM;
 using Zenject;
 
 namespace Game.UI.Popups.UpgradesPopupScope
@@ -43,6 +45,7 @@ namespace Game.UI.Popups.UpgradesPopupScope
             var currencyToUpgrade = parameter.CurrencyToUpgrade;
             if (currencyManager.Spend(currencyToUpgrade))
             {
+                AudioManager.PlaySound(Sounds.Purchase);
                 parameter.Upgrade();
                 parametersToSave.Add(parameter);
                 view.AnimateHide(()=> OnHideAnimated(view, sequence));
