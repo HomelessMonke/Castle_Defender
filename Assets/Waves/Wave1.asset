@@ -23,6 +23,9 @@ MonoBehaviour:
     charactersInLines: 0400000004000000060000000a000000
     formation:
       rid: 707701132208898448
+  rewardCurrency:
+    type: 0
+    amount: 500
   references:
     version: 2
     RefIds:

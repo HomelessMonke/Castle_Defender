@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using System;
+using Zenject;
 
 namespace Game.UI.Popups.StartWavePopupScope
 {
@@ -12,20 +13,21 @@ namespace Game.UI.Popups.StartWavePopupScope
             this.popupManager = popupManager;
         }
 
-        public void OpenPopup(int waveNumber)
+        public void OpenPopup(int waveNumber, Action closeCallback)
         {
             popupManager.ShowDarkPanel();
             popupManager.OpenPopup<StartWavePopup>(nameof(StartWavePopup), p =>
             {
                 p.DrawWaveNumber(waveNumber);
-                p.AnimatePopup(() => OnPopupAnimated(p));
+                p.AnimatePopup(() => OnPopupAnimated(p, closeCallback));
             });
         }
 
-        void OnPopupAnimated(Popup p)
+        void OnPopupAnimated(Popup p, Action closeCallback)
         {
             p.Close();
             popupManager.HideDarkPanel();
+            closeCallback?.Invoke();
         }
     }
 }

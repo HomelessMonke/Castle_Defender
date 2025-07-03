@@ -730,6 +730,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22f2543701494437b3f1857c14c22857, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spriteRenderer: {fileID: 7245135310790472242}
   fieldOfView: {fileID: 4303428255119536531}
   characterAnimator: {fileID: 7804182538039943652}
   health: {fileID: 7357087688726465707}

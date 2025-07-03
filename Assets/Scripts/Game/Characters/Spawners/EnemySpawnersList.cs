@@ -1,44 +1,67 @@
-﻿using System.Linq;
-using Game.Characters.Spawners.Formations;
-using Game.Characters.Units;
+﻿using System;
+using System.Linq;
+using Game.Currencies;
+using Game.Signals;
 using UnityEditor;
 using UnityEngine;
 using Utilities.Attributes;
+using Zenject;
 
 namespace Game.Characters.Spawners
 {
     public class EnemySpawnersList: MonoBehaviour
     {
         [SerializeField]
-        EnemyCharacterSpawner[] characterSpawners;
+        EnemyCharacterSpawner[] enemySpawners;
         
         [SerializeField]
         LootBubbleSpawner lootBubbleSpawner;
         
+        SignalBus signalBus;
+        CurrencyManager currencyManager;
+        
+        public EnemyCharacterSpawner GetSpawnerByType(EnemyType type) => enemySpawners.FirstOrDefault(x => x.EnemyType.Equals(type));
+        
+        [Inject]
+        public void Construct(CurrencyManager currencyManager, SignalBus signalBus)
+        {
+            this.currencyManager = currencyManager;
+            this.signalBus = signalBus;
+        }
+
+        void Start()
+        {
+            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinished);
+            signalBus.Subscribe<ResetGameBoard>(OnResetGameBoard);
+        }
+
         public void Init()
         {
             lootBubbleSpawner.Init();
             
-            foreach (var spawner in characterSpawners)
-                spawner.Init();
+            foreach (var spawner in enemySpawners)
+                spawner.Init(currencyManager, signalBus);
         }
 
-        public Character[] Spawn(SquadInfo squadInfo)
+        void OnWaveFinished()
         {
-            var characterType = squadInfo.Type;
-            var spawner = characterSpawners.FirstOrDefault(x => x.EnemyType.Equals(characterType));
-            if (spawner)
+            foreach (var spawner in enemySpawners)
             {
-                return spawner.Spawn(squadInfo);;
+                spawner.SetAllUnitsIdleState();
             }
-            return null;
+        }
+        
+        void OnResetGameBoard()
+        {
+            foreach (var spawner in enemySpawners)
+                spawner.DespawnAllUnits();
         }
         
 #if UNITY_EDITOR
         [Button]
         void SetAllSpawners()
         {
-            characterSpawners = GetComponentsInChildren<EnemyCharacterSpawner>();
+            enemySpawners = GetComponentsInChildren<EnemyCharacterSpawner>();
             EditorUtility.SetDirty(this);
         }
 #endif

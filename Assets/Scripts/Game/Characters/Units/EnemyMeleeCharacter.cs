@@ -41,6 +41,7 @@ namespace Game.Characters.Units
 
         MeleeAttack meleeAttack;
 
+        AnimatedIdleState idleState;
         AnimatedAttackState attackState;
         NoneTargetMoveState noneTargetMoveState;
         TargetMoveState targetMoveState;
@@ -60,6 +61,7 @@ namespace Game.Characters.Units
             attackState = new AnimatedAttackState(meleeAttack, characterAnimator);
             attackState.LoseTargetToAttack += OnLoseTarget;
             
+            idleState = new AnimatedIdleState(characterAnimator.Animator);
             noneTargetMoveState = new NoneTargetMoveState(transform, characterAnimator.Animator);
             targetMoveState = new TargetMoveState(agent, characterAnimator.Animator, updatePathPerFrame);
             targetMoveState.ArrivedToTarget += OnArrivedToTarget;
@@ -172,6 +174,16 @@ namespace Game.Characters.Units
             Died?.Invoke();
             Died = null;
         }
-    }
 
+        public void Reset()
+        {
+            currentState = null;
+            Died = null;
+        }
+        
+        public override void SetIdleState()
+        {
+            SetState(idleState);
+        }
+    }
 }

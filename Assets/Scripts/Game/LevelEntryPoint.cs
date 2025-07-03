@@ -25,13 +25,6 @@ namespace Game
         [SerializeField]
         UIEntryPoint uiEntryPoint;
 
-        SignalBus signalBus;
-        
-        [Inject]
-        void Construct(SignalBus signalBus)
-        {
-            this.signalBus = signalBus;
-        }
         
         public void Start()
         {
@@ -40,14 +33,6 @@ namespace Game
             projectileSpawnersList.Init();
             alliesInitializer.Init();
             enemySpawnersList.Init();
-            
-            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinishedSignal);
-        }
-
-        void OnWaveFinishedSignal()
-        {
-            wavesList.IncreaseNextWaveIndex();
-            wavesList.SaveWavesData();
         }
     }
 }

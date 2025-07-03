@@ -27,6 +27,14 @@ namespace Game.Characters
             }
         }
 
+        public void SetTowersIdleState()
+        {
+            foreach (var tower in towers)
+            {
+                tower.SetIdleState();
+            }
+        }
+
 #if UNITY_EDITOR
         [Button]
         void GetTowersInChildren()

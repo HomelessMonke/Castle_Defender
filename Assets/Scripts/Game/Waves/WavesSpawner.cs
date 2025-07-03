@@ -1,51 +1,36 @@
 ﻿using System.Collections;
 using Game.Characters.Spawners;
 using Game.Characters.Spawners.Formations;
-using Game.Signals;
 using UnityEngine;
-using Zenject;
 
 namespace Game.Waves
 {
     public class WavesSpawner: MonoBehaviour
     {
         [SerializeField]
-        EnemySpawnersList charactersSpawner;
-        
-        [SerializeField]
-        WavesList wavesList;
+        EnemySpawnersList spawnersList;
 
-        SignalBus signalBus;
-        
-        [Inject]
-        void Construct(SignalBus signalBus)
+        public void LaunchWave(Wave wave)
         {
-            this.signalBus = signalBus;
+            StartCoroutine(LaunchWaveCoroutine(wave));
         }
 
-        public void LaunchNextWave()
+        IEnumerator LaunchWaveCoroutine(Wave wave)
         {
-            StartCoroutine(LaunchWave());
-        }
-
-        IEnumerator LaunchWave()
-        {
-            var wave = wavesList.NextWave;
-            signalBus.Fire(new LaunchWaveSignal(wave.CharactersCount));
-
             if(wave == null)
                 yield break;
             
             foreach (var squad in wave.Squads)
             {
-                yield return SpawnSquad(squad);
+                yield return new WaitForSeconds(squad.SpawnDelay);
+                SpawnSquad(squad);
             }
         }
 
-        IEnumerator SpawnSquad(SquadInfo squadInfo)
+        void SpawnSquad(SquadInfo squadInfo)
         {
-            yield return new WaitForSeconds(squadInfo.SpawnDelay);
-            charactersSpawner.Spawn(squadInfo);
+            var spawner = spawnersList.GetSpawnerByType(squadInfo.Type);
+            spawner.Spawn(squadInfo);
         }
     }
 }

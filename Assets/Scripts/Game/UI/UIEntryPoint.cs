@@ -23,7 +23,7 @@ namespace Game.UI
         WavesList wavesList;
         
         [SerializeField]
-        WavesSpawner wavesSpawner;
+        WavesManager wavesManager;
         
         [SerializeField]
         CurrenciesPanel currenciesPanel;
@@ -48,17 +48,15 @@ namespace Game.UI
 
         UpgradesPopupFactory upgradesPresenterFactory;
         PausePopupFactory pausePopupFactory;
-        StartWavePopupFactory startWavePresenterFactory;
         
         SignalBus signalBus;
 
         [Inject]
-        void Construct(SignalBus signalBus, UpgradesPopupFactory upgradesPresenterFactory, PausePopupFactory pausePopupFactory, StartWavePopupFactory startWavePresenterFactory)
+        void Construct(SignalBus signalBus, UpgradesPopupFactory upgradesPresenterFactory, PausePopupFactory pausePopupFactory)
         {
             this.signalBus = signalBus;
             this.upgradesPresenterFactory = upgradesPresenterFactory;
             this.pausePopupFactory = pausePopupFactory;
-            this.startWavePresenterFactory = startWavePresenterFactory;
         }
 
         public void Init()
@@ -70,7 +68,7 @@ namespace Game.UI
             currenciesPanel.DrawViews();
             
             popupManager.ConfigChanged += OnPopupConfigChanged;
-            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
+            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinished);
             
             pauseButton.onClick.AddListener(OnPauseClick);
             startWaveButton.onClick.AddListener(OnStartWaveClick);
@@ -81,10 +79,7 @@ namespace Game.UI
         void OnStartWaveClick()
         {
             baseUI.SetInBattleConfig();
-            wavesSpawner.LaunchNextWave();
-            
-            var presenter = startWavePresenterFactory.Create();
-            presenter.OpenPopup(wavesList.WaveNumber);
+            wavesManager.LaunchNextWave();
         }
         
         void OnUpgradesClick()
@@ -114,7 +109,6 @@ namespace Game.UI
         {
             GameSpeed.ResetSpeed();
             speedChangeButton.Draw();
-            baseUI.SwitchPreBattleConfig();
         }
     }
 }

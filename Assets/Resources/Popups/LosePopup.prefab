@@ -246,6 +246,6 @@ MonoBehaviour:
     uiGroups: []
   headerTmp: {fileID: 6411901672052102935}
   offsetPos: {x: 0, y: 100}
-  showDuration: 0.5
-  stayDuration: 1
-  hideDuration: 0.3
+  showDuration: 0.7
+  stayDuration: 1.2
+  hideDuration: 0.5

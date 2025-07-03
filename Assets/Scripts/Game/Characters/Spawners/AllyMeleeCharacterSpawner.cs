@@ -5,6 +5,7 @@ using Game.Characters.Units;
 using Game.Signals;
 using Game.Signals.AllyMelee;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Characters.Spawners
 {
@@ -14,23 +15,25 @@ namespace Game.Characters.Spawners
         [SerializeField]
         AllyMeleeParameters parameters;
         
-        const string idPattern = "AllyMelee{0}";
+        [SerializeField]
+        string idPattern = "AllyMelee{0}";
 
         void Start()
         {
             signalBus.Subscribe<AllyMeleeHealthUpgradeSignal>(OnHealthPointsIncreased);
             signalBus.Subscribe<AllyMeleeCountUpgradeSignal>(OnUnitsCountIncreased);
             signalBus.Subscribe<AllyMeleeDamageUpgradeSignal>(OnDamageIncreased);
-            signalBus.Subscribe<LaunchWaveSignal>(OnLaunchWave);
-            signalBus.Subscribe<FinishWaveSignal>(OnFinishWave);
+            signalBus.Subscribe<WaveLaunchedSignal>(OnLaunchWave);
+            signalBus.Subscribe<WaveFinishedSignal>(OnFinishWave);
         }
 
-        public override void Init()
+        public void Init(SignalBus signalBus)
         {
+            this.signalBus = signalBus;
             pool.Init(parameters.MeleeCount);
         }
         
-        public override void SpawnAllUnits()
+        public void SpawnAllUnits()
         {
             var positions = GetSpawnPoints(parameters.MeleeCount, parameters.MaxInLineCount);
             SpawnUnitsAtPositions(positions);

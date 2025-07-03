@@ -1,37 +1,32 @@
 ﻿using Game.Signals;
+using UnityEngine;
 using Zenject;
 
 namespace Game.Waves
 {
     public class WaveProgressCounter
     {
-        int counter;
-        
+        int currentCount;
         SignalBus signalBus;
-        
-        [Inject]
-        public void Construct(SignalBus signalBus)
+
+        public void Init(SignalBus signalBus)
         {
             this.signalBus = signalBus;
         }
 
-        public void Init()
+        public void SetCount(int count)
         {
-            signalBus.Subscribe<LaunchWaveSignal>(OnLaunchWave);
-            signalBus.Subscribe<DespawnEnemySignal>(OnDespawnEnemy);
-        }
-
-        void OnLaunchWave(LaunchWaveSignal signal)
-        {
-            counter = signal.CharactersCount;
+            currentCount = count;
+            Debug.Log($"SET currentCount: {currentCount}");
         }
         
-        void OnDespawnEnemy()
+        public void DecreaseCount()
         {
-            counter--;
-            if (counter == 0)
+            currentCount--;
+            Debug.Log($"currentCount: {currentCount}");
+            if (currentCount == 0)
             {
-                signalBus.Fire<FinishWaveSignal>();
+                signalBus.Fire(new WaveFinishedSignal(true));
             }
         }
     }

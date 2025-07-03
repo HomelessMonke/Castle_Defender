@@ -4,7 +4,7 @@ namespace Game
 {
     public static class GameSpeed
     {
-        public static float TimeMultiplier = 1f;
+        static float TimeMultiplier = 1f;
 
         static bool boosted;
 

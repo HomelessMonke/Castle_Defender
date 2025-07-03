@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using System;
+using UnityEngine;
 using Utilities.Attributes;
 
 namespace Game.Waves
@@ -11,6 +12,7 @@ namespace Game.Waves
         
         const string waveIndexSave = "WaveIndex";
         
+        [NonSerialized]
         int nextWaveIndex = -1;
 
         public int WaveNumber => NextWaveIndex + 1;

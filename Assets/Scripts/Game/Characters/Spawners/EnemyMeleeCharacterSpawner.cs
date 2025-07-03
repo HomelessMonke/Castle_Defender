@@ -1,4 +1,5 @@
-﻿using Game.Characters.Parameters;
+﻿using System.Collections.Generic;
+using Game.Characters.Parameters;
 using Game.Characters.Spawners.Formations;
 using Game.Characters.Units;
 using Game.Currencies;
@@ -25,20 +26,18 @@ namespace Game.Characters.Spawners
         [SerializeField]
         string idPattern = "EnemyMelee{0}";
         
-        [Inject]
-        public void Construct(CurrencyManager currencyService, SignalBus signalBus)
+        List<EnemyMeleeCharacter> units = new();
+
+        public override void Init(CurrencyManager currencyService, SignalBus signalBus)
         {
             this.currencyService = currencyService;
             this.signalBus = signalBus;
-        }
-
-        public override void Init()
-        {
             pool.Init();
         }
-        
+
         public override Character[] Spawn(SquadInfo squadInfo)
         {
+            units.Clear();
             var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform);
             var count = spawnPositions.Length;
             var characters = new Character[count];
@@ -48,7 +47,23 @@ namespace Game.Characters.Spawners
             }
             return characters;
         }
+        public override void DespawnAllUnits()
+        {
+            foreach (var unit in units)
+            {
+                unit.Reset();
+                pool.Despawn(unit);
+            }
+        }
         
+        public override void SetAllUnitsIdleState()
+        {
+            foreach (var unit in units)
+            {
+                unit.SetIdleState();
+            }
+        }
+
         Character Spawn(Vector2 spawnPosition)
         {
             var unit = pool.Spawn(true);
@@ -56,14 +71,18 @@ namespace Game.Characters.Spawners
             var id = string.Format(idPattern, pool.Counter);
             unit.Init(id, unitParameters);
             unit.Died+= ()=> OnDie(unit);
+            units.Add(unit);
             return unit;
         }
 
         void OnDie(EnemyMeleeCharacter unit)
         {
             bubbleSpawner.Spawn(unit.transform.position, unitParameters.CoinReward);
+            units.Remove(unit);
             pool.Despawn(unit);
+            
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
+            Debug.Log($"Die {unit.name}");
             signalBus.Fire<DespawnEnemySignal>();
         }
     }

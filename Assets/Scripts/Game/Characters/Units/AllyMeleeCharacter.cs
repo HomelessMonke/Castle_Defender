@@ -200,5 +200,10 @@ namespace Game.Characters.Units
             }
             Died = null;
         }
+        
+        public override void SetIdleState()
+        {
+            SetState(idleState);
+        }
     }
 }

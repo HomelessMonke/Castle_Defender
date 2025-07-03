@@ -17,11 +17,7 @@ namespace Game.Characters.Spawners
         {
             var projectile = pool.Spawn(true);
             projectile.transform.position = spawnPosition;
-            projectile.Flew+= ()=>
-            {
-                Debug.Log($"Projectile to Despawn: {projectile.name}");
-                pool.Despawn(projectile);
-            };
+            projectile.Flew+= ()=> pool.Despawn(projectile);
             return projectile;
         }
     }

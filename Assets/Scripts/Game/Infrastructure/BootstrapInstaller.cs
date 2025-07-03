@@ -21,7 +21,6 @@ namespace Game.Infrastructure
             BindSignals();
             BindGradesList();
             BindCurrencyService();
-            BindWaveProgressCounter();
         }
 
         void BindSelf()
@@ -32,11 +31,6 @@ namespace Game.Infrastructure
         void BindGradesList()
         {
             Container.Bind<AllGradesSequenceList>().FromInstance(gradesSequenceList);
-        }
-        
-        void BindWaveProgressCounter()
-        {
-            Container.Bind<WaveProgressCounter>().AsSingle();
         }
 
         void BindSignals()
@@ -49,8 +43,9 @@ namespace Game.Infrastructure
             Container.DeclareSignal<AllyMeleeCountUpgradeSignal>();
             Container.DeclareSignal<CastleHealthUpgradeSignal>();
             Container.DeclareSignal<DespawnEnemySignal>();
-            Container.DeclareSignal<FinishWaveSignal>();
-            Container.DeclareSignal<LaunchWaveSignal>();
+            Container.DeclareSignal<WaveFinishedSignal>();
+            Container.DeclareSignal<WaveLaunchedSignal>();
+            Container.DeclareSignal<ResetGameBoard>();
         }
 
         void BindCurrencyService()
@@ -63,14 +58,6 @@ namespace Game.Infrastructure
         public void Initialize()
         {
             InjectToGradeSequences();
-            InitGameInitializer();
-        }
-        
-        void InitGameInitializer()
-        {
-            var initializer = new GameInitializer();
-            Container.Inject(initializer);
-            initializer.Init();
         }
 
         void InjectToGradeSequences()

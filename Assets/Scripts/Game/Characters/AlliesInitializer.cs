@@ -33,24 +33,42 @@ namespace Game.Characters
         public void Init()
         {
             castle.Init();
+            castle.Die += OnCastleDied;
             towersInitializer.Init();
             allyDetectionArea.Init(100);
             
-            allyArchersSpawner.SpawnAllUnits();
+            allyMeleeSpawner.Init(signalBus);
+            allyArchersSpawner.Init(signalBus);
             allyMeleeSpawner.SpawnAllUnits();
+            allyArchersSpawner.SpawnAllUnits();
             
-            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
-            signalBus.Subscribe<LaunchWaveSignal>(OnWaveLaunched);
+            signalBus.Subscribe<WaveFinishedSignal>(OnWaveFinished);
+            signalBus.Subscribe<WaveLaunchedSignal>(OnWaveLaunched);
+            signalBus.Subscribe<ResetGameBoard>(OnResetGameBoard);
         }
 
         void OnWaveLaunched()
         {
+            allyDetectionArea.Activate();
             allyDetectionArea.SetMaxTargetsRange(allyArchersSpawner.ArchersCount);
         }
         
         void OnWaveFinished()
         {
+            allyDetectionArea.Deactivate();
+            towersInitializer.SetTowersIdleState();
+            allyMeleeSpawner.SetAllUnitsIdleState();
+            allyArchersSpawner.SetAllUnitsIdleState();
+        }
+
+        void OnResetGameBoard()
+        {
             allyMeleeSpawner.RestoreUnits();
+        }
+        
+        void OnCastleDied()
+        {
+            signalBus.Fire(new WaveFinishedSignal(false));
         }
     }
 }
