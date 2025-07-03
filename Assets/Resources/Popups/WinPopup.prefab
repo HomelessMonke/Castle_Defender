@@ -849,7 +849,7 @@ MonoBehaviour:
   headerOffset: {x: 0, y: -100}
   rewardOffset: {x: 0, y: -50}
   hideOffset: {x: 0, y: 10}
-  showHeaderDuration: 0.35
-  showRewardDuration: 0.25
-  stayDuration: 1
-  hideDuration: 0.3
+  showHeaderDuration: 0.5
+  showRewardDuration: 0.3
+  stayDuration: 1.1
+  hideDuration: 0.5

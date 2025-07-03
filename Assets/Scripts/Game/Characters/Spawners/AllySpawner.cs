@@ -21,14 +21,6 @@ namespace Game.Characters.Spawners
         protected List<T> units = new ();
         protected SignalBus signalBus;
         
-        [Inject]
-        void Construct(SignalBus signalBus)
-        {
-            this.signalBus = signalBus;
-        }
-
-        public abstract void Init();
-        public abstract void SpawnAllUnits();
         protected abstract void SpawnUnit(Vector2 spawnPos);
         
         protected void SpawnUnitsAtPositions(IEnumerable<Vector2> positions)
@@ -44,6 +36,14 @@ namespace Game.Characters.Spawners
             for (int i = 0; i < units.Count; i++)
             {
                 units[i].transform.position = positions[i];
+            }
+        }
+        
+        public void SetAllUnitsIdleState()
+        {
+            foreach (var unit in units)
+            {
+                unit.SetIdleState();
             }
         }
 

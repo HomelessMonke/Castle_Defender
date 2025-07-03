@@ -39,6 +39,11 @@ namespace Game.UI.BaseUiScope
             currentDefaultConfig = inBattlePopupConfig;
         }
         
+        public void SetPreBattleConfig()
+        {
+            currentDefaultConfig = preBattlePopupConfig;
+        }
+        
         public void SwitchInBattleConfig(bool immediate = false)
         {
             currentDefaultConfig = inBattlePopupConfig;
@@ -94,24 +99,6 @@ namespace Game.UI.BaseUiScope
         }
         
 #if UNITY_EDITOR
-        [Button]
-        public void Hide()
-        {
-            Hide(false);
-        }
-        
-        [Button]
-        public void SwitchPreBattleConfig()
-        {
-            SwitchPreBattleConfig(false);
-        }
-        
-        [Button]
-        public void SwitchInBattleConfig()
-        {
-            SwitchInBattleConfig(false);
-        }
-        
         [Button]
         void SetAllChildrenItems()
         {

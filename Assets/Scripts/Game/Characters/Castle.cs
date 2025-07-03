@@ -39,8 +39,8 @@ namespace Game.Characters
 
         void Start()
         {
-            signalBus.Subscribe<LaunchWaveSignal>(OnWaveLaunched);
-            signalBus.Subscribe<FinishWaveSignal>(OnWaveFinished);
+            signalBus.Subscribe<WaveLaunchedSignal>(OnWaveLaunched);
+            signalBus.Subscribe<ResetGameBoard>(OnResetGameBoard);
             signalBus.Subscribe<CastleHealthUpgradeSignal>(OnHpUpgrade);
         }
 
@@ -72,7 +72,7 @@ namespace Game.Characters
             health.SetImmortal(false);
         }
 
-        void OnWaveFinished()
+        void OnResetGameBoard()
         {
             health.SetImmortal(true);
             health.RestoreHealth();

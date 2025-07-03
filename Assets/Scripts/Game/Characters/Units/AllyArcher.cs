@@ -92,5 +92,10 @@ namespace Game.Characters.Units
             attackState.SetTarget(target);
             SetState(attackState);
         }
+
+        public override void SetIdleState()
+        {
+            SetState(idleState);
+        }
     }
 }

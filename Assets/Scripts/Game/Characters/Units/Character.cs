@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace Game.Characters.Units
 {
+
     public abstract class Character: MonoBehaviour
     {
         protected const int sortingLayerMedium = 100;
@@ -19,6 +20,8 @@ namespace Game.Characters.Units
             newState.Enter();
             currentState = newState;
         }
+        
+        public abstract void SetIdleState();
     }
 
     public interface IDamageable

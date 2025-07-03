@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: GlideAnimatorData
   m_EditorClassIdentifier: 
   minAngle: -45
-  maxAngle: 45
-  glideHeight: 1
+  maxAngle: -135
+  glideHeight: 1.2

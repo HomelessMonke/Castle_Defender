@@ -1,5 +1,5 @@
-﻿using Game.Currencies;
-using UnityEditor.Localization.Plugins.XLIFF.V12;
+﻿using System;
+using Game.Currencies;
 using Zenject;
 
 namespace Game.UI.Popups.WinPopupScope
@@ -7,30 +7,28 @@ namespace Game.UI.Popups.WinPopupScope
     public class WinPopupPresenter
     {
         PopupManager popupManager;
-        CurrencyManager currencyManager;
         
         [Inject]
-        public WinPopupPresenter(PopupManager popupManager,CurrencyManager currencyManager)
+        public WinPopupPresenter(PopupManager popupManager)
         {
             this.popupManager = popupManager;
-            this.currencyManager = currencyManager;
         }
 
-        public void OpenPopup(CurrencyItem item)
+        public void OpenPopup(CurrencyItem item, Action closeCallback)
         {
             popupManager.ShowDarkPanel();
             popupManager.OpenPopup<WinPopup>(nameof(WinPopup), p =>
             {
                 p.Draw(item);
-                p.Animate(()=> OnPopupAnimated(p, item));
+                p.Animate(()=> OnPopupAnimated(p, item, closeCallback));
             });
         }
         
-        void OnPopupAnimated(Popup p, CurrencyItem item)
+        void OnPopupAnimated(Popup p, CurrencyItem item, Action closeCallback)
         {
-            currencyManager.Earn(item);
             popupManager.HideDarkPanel();
             p.Close();
+            closeCallback?.Invoke();
         }
     }
 }

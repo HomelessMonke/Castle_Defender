@@ -3,6 +3,7 @@ using Game.Characters.Parameters;
 using Game.Characters.Units;
 using Game.Signals.AllyArcher;
 using UnityEngine;
+using Zenject;
 
 namespace Game.Characters.Spawners
 {
@@ -23,12 +24,13 @@ namespace Game.Characters.Spawners
             signalBus.Subscribe<AllyArchersDamageUpgradeSignal>(OnArchersDamageIncreased);
         }
 
-        public override void Init()
+        public void Init(SignalBus signalBus)
         {
+            this.signalBus = signalBus;
             pool.Init(parameters.ArchersCount);
         }
         
-        public override void SpawnAllUnits()
+        public void SpawnAllUnits()
         {
             var positions = GetSpawnPoints(parameters.ArchersCount, parameters.MaxInLine);
             SpawnUnitsAtPositions(positions);

@@ -18,7 +18,7 @@ namespace Game.Characters.Spawners.Formations
         int[] charactersInLines;
 
         [Header("Параметры построения")]
-        [SerializeReference, SelectType]
+        [SerializeReference, SelectType(typeof(RandomSpawnFormation))]
         ISpawnFormation formation;
         
         public EnemyType Type => type;

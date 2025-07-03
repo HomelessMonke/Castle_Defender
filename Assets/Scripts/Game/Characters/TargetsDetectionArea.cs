@@ -39,18 +39,22 @@ namespace Game.Characters
             maxUnitsToTarget = targetRange;
         }
 
+        public void Activate()
+        {
+            gameObject.SetActive(true);
+        }
+
+        public void Deactivate()
+        {
+            timer.Stop();
+            targetsInArea.Clear();
+            gameObject.SetActive(false);
+        }
+        
+
         void Update()
         {
             timer.Tick(Time.deltaTime);
-        }
-
-        public IDamageable GetTargetByIndex(int index)
-        {
-            if (targetsInArea.Count == 0)
-                return null;
-                
-            var targetIndex = index % targetsInArea.Count;
-            return targetsInArea[targetIndex];
         }
         
         public (IDamageable, bool) GetClosestTarget(Vector2 comparePos, float range)

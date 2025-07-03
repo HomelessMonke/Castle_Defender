@@ -1,4 +1,5 @@
-﻿using Zenject;
+﻿using System;
+using Zenject;
 
 namespace Game.UI.Popups.LosePopupScope
 {
@@ -12,19 +13,20 @@ namespace Game.UI.Popups.LosePopupScope
             this.popupManager = popupManager;
         }
 
-        public void OpenPopup()
+        public void OpenPopup(Action closeCallback)
         {
             popupManager.ShowDarkPanel();
             popupManager.OpenPopup<LosePopup>(nameof(LosePopup), p =>
             {
-                p.Animate(()=> OnPopupAnimated(p));
+                p.Animate(()=> OnPopupAnimated(p, closeCallback));
             });
         }
 
-        void OnPopupAnimated(Popup p)
+        void OnPopupAnimated(Popup p, Action closeCallback)
         {
             popupManager.HideDarkPanel();
             p.Close();
+            closeCallback?.Invoke();
         }
     }
 }

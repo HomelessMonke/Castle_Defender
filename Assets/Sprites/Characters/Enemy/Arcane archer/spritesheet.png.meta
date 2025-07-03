@@ -1062,7 +1062,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_36
+      name: Idle1
       rect:
         serializedVersion: 2
         x: 16
@@ -1084,7 +1084,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_37
+      name: Idle2
       rect:
         serializedVersion: 2
         x: 80
@@ -1106,7 +1106,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_38
+      name: Idle3
       rect:
         serializedVersion: 2
         x: 144
@@ -1128,7 +1128,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spritesheet_39
+      name: Idle4
       rect:
         serializedVersion: 2
         x: 208
@@ -1390,6 +1390,10 @@ TextureImporter:
       Attack_4: -5895191231709818157
       Attack_5: 4116411608050698257
       Attack_6: 2696214034221626940
+      Idle1: -2800876817223335725
+      Idle2: 7686511047796825374
+      Idle3: -3654083477062011090
+      Idle4: -2213891765562235112
       Run_0: 8020143640844766479
       Run_1: -6251682230944352461
       Run_2: -1259408508766424310

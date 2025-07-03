@@ -48,6 +48,7 @@ namespace Game.Characters.Units
         
         RangedAttack rangedAttack;
         
+        AnimatedIdleState idleState;
         AnimatedAttackState attackState;
         NoneTargetMoveState noneTargetMoveState;
         TargetMoveState targetMoveState;
@@ -67,6 +68,7 @@ namespace Game.Characters.Units
             targetMoveState = new TargetMoveState(agent, characterAnimator.Animator, updatePathPerFrame);
             targetMoveState.ArrivedToTarget += OnArrivedToTarget;
             
+            idleState = new AnimatedIdleState(characterAnimator.Animator);
             rangedAttack = new RangedAttack(projSpawnPos, animationData);
             attackState = new AnimatedAttackState(rangedAttack, characterAnimator);
             attackState.LoseTargetToAttack += OnLoseTargetToAttack;
@@ -168,6 +170,17 @@ namespace Game.Characters.Units
             currentState = null;
             Died?.Invoke();
             Died = null;
+        }
+        
+        public void Reset()
+        {
+            currentState = null;
+            Died = null;
+        }
+        
+        public override void SetIdleState()
+        {
+            SetState(idleState);
         }
     }
 }

@@ -42,6 +42,9 @@ namespace Game.Characters
 
         public void GetDamage(float amount)
         {
+            if (!IsAlive)
+                return;
+            
             if (isImmortal)
             {
                 DamageTaken?.Invoke(amount);
