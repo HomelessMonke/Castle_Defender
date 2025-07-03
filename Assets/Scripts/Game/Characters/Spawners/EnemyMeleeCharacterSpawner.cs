@@ -82,7 +82,6 @@ namespace Game.Characters.Spawners
             pool.Despawn(unit);
             
             currencyService.Earn(CurrencyType.Soft, unitParameters.CoinReward);
-            Debug.Log($"Die {unit.name}");
             signalBus.Fire<DespawnEnemySignal>();
         }
     }

@@ -17,13 +17,11 @@ namespace Game.Waves
         public void SetCount(int count)
         {
             currentCount = count;
-            Debug.Log($"SET currentCount: {currentCount}");
         }
         
         public void DecreaseCount()
         {
             currentCount--;
-            Debug.Log($"currentCount: {currentCount}");
             if (currentCount == 0)
             {
                 signalBus.Fire(new WaveFinishedSignal(true));
