@@ -70,7 +70,7 @@ namespace Game.Characters.Units
             fieldOfView.TargetUpdated += OnTargetChanged;
         }
 
-        public void Init(string id, EnemyMeleeParameters parameters)
+        public void Init(string id, EnemyMeleeParameters parameters, bool isSyncMove)
         {
             this.id = id;
             healthView.SetActive(false);
@@ -79,7 +79,7 @@ namespace Game.Characters.Units
             health.Died += OnDeath;
 
             fieldOfView.Init();
-            noneTargetMoveState.Init(parameters.MoveDirection);
+            noneTargetMoveState.Init(parameters.MoveDirection, isSyncMove);
             targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
             attackState.Init(parameters.AttackPoints);
             SetMoveState();

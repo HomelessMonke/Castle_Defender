@@ -78,7 +78,7 @@ namespace Game.Characters.Units
             health.Died += OnDeath;
 
             fieldOfView.Init();
-            noneTargetMoveState.Init(parameters.MoveVector);
+            noneTargetMoveState.Init(parameters.MoveVector, true);
             targetMoveState.Init(parameters.MoveSpeed, parameters.AttackDistance);
             SetAttackParameter(parameters.Damage);
             SetState(idleState);

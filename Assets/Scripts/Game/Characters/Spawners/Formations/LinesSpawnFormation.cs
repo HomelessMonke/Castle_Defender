@@ -19,11 +19,13 @@ namespace Game.Characters.Spawners.Formations
         [SerializeField, Range(0.25f, 1)]
         float unitsOffsetY;
 
+        public bool SyncMovement => true;
+        
         public LinesSpawnFormation()
         {
             unitsOffsetX = unitsOffsetY = 0.25f;
         }
-
+        
         public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)
         {
             Vector2 startPosition = transform.position;

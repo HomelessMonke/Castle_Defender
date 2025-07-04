@@ -24,6 +24,8 @@ namespace Game.Characters.Spawners.Formations
         public EnemyType Type => type;
         public float SpawnDelay => spawnDelay;
         
+        public bool IsSyncMovement => formation.SyncMovement;
+        
         public int Count => charactersInLines.Sum(x => x);
         
         public Vector2[] GetSpawnPoints(Transform transform)

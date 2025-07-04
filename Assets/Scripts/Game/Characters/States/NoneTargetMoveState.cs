@@ -20,9 +20,13 @@ namespace Game.Characters.States
             this.animator = animator;
         }
 
-        public void Init(Vector2 moveDirection)
+        public void Init(Vector2 moveDirection, bool isSyncMove)
         {
             this.moveDirection = moveDirection;
+            if (!isSyncMove)
+            {
+                animator.SetFloat("WalkOffset", Random.Range(0f, 1f));
+            }
         }
 
         public void Enter()

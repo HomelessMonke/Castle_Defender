@@ -44,9 +44,10 @@ namespace Game.Characters.Spawners
             var spawnPositions = squadInfo.GetSpawnPoints(spawnPointTransform);
             var count = spawnPositions.Length;
             var characters = new Character[count];
+            var isSyncMove = squadInfo.IsSyncMovement;
             for (int i = 0; i < count; i++)
             {
-                characters[i] = Spawn(spawnPositions[i]);
+                characters[i] = Spawn(spawnPositions[i], isSyncMove);
             }
             return characters;
         }
@@ -68,12 +69,12 @@ namespace Game.Characters.Spawners
             }
         }
         
-        Character Spawn(Vector2 spawnPosition)
+        Character Spawn(Vector2 spawnPosition, bool isSyncMove)
         {
             var unit = pool.Spawn(true);
             unit.transform.position = spawnPosition;
             var id = string.Format(idPattern, pool.Counter);
-            unit.Init(id, unitParameters, projectileSpawner);
+            unit.Init(id, unitParameters, projectileSpawner, isSyncMove);
             unit.Died+= ()=> OnDie(unit);
             units.Add(unit);
             return unit;

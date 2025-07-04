@@ -75,7 +75,7 @@ namespace Game.Characters.Units
             fov.TargetUpdated += UpdateTarget;
         }
 
-        public void Init(string id, EnemyRangedParameters parameters, ProjectileSpawner projSpawner)
+        public void Init(string id, EnemyRangedParameters parameters, ProjectileSpawner projSpawner, bool isSyncMove)
         {
             this.id = id;
             healthView.SetActive(false);
@@ -85,7 +85,7 @@ namespace Game.Characters.Units
 
             fov.Init();
             rangedAttack.Init(parameters.ProjectileSpeed, projSpawner);
-            noneTargetMoveState.Init(parameters.MoveDirection);
+            noneTargetMoveState.Init(parameters.MoveDirection, isSyncMove);
             targetMoveState.Init(parameters.Speed, parameters.AttackDistance);
             attackState.Init(parameters.Damage);
             SetMoveState();

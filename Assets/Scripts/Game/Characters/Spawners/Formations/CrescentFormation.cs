@@ -33,6 +33,8 @@ namespace Game.Characters.Spawners.Formations
             angleRangeDegrees = 90;
         }
 
+        public bool SyncMovement => true;
+        
         public Vector2[] GetSpawnPoints(int[] charactersInLines, Transform transform)
         {
             Vector2 startPosition = transform.position;

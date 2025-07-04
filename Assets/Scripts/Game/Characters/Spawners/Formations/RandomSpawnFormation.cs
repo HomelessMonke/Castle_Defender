@@ -15,6 +15,8 @@ namespace Game.Characters.Spawners.Formations
         [SerializeField, Range(0.25f, 1)]
         float maxOffsetY;
 
+        public bool SyncMovement => false;
+        
         public RandomSpawnFormation()
         {
             maxOffsetX = maxOffsetY = 0.25f;
